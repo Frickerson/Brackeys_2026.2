@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ds7ccqppihk8u"]
+
+[node name="Label" type="Label" unique_id=1851572043]
+offset_left = 535.0
+offset_top = 338.0
+offset_right = 618.0
+offset_bottom = 361.0
+text = "Hello Jihad"
