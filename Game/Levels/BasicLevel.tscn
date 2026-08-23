@@ -16,8 +16,8 @@ tile_set = ExtResource("1_oe62m")
 tile_map_data = PackedByteArray("AAAKAAgAAQAMAAMAAAALAAgAAQAMAAMAAAAMAAgAAQAMAAMAAAANAAgAAQAMAAMAAAAOAAgAAQAMAAMAAAAPAAgAAQAMAAMAAAAQAAgAAQAMAAMAAAAHAAUAAQANAAEAAAAJAAIAAQAKAAcAAAAEAAIAAQAMAAAAAAAEAAgAAQAKAAYAAAAPAAIAAQAMAAIAAAA=")
 tile_set = ExtResource("1_oe62m")
 
-[node name="CharacterBody2D" parent="." unique_id=1713415423 instance=ExtResource("1_6sy8i")]
+[node name="Player" parent="." unique_id=1713415423 instance=ExtResource("1_6sy8i")]
 position = Vector2(776, 299)
 
-[node name="RigidBody2D" parent="." unique_id=840740489 instance=ExtResource("2_thqke")]
+[node name="Enemy" parent="." unique_id=840740489 instance=ExtResource("2_thqke")]
 position = Vector2(313, 300)
