@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://bvno76xx5ykpq"]
 
 [ext_resource type="PackedScene" uid="uid://dprglki4vqowe" path="res://Game/Objects/Player/Player.tscn" id="1_6sy8i"]
-[ext_resource type="TileSet" uid="uid://75h2q4bwmh6i" path="res://Game/Assets/Tilesets/DrawnLevelTileSet.tres" id="1_oe62m"]
+[ext_resource type="TileSet" uid="uid://75h2q4bwmh6i" path="res://Game/Assets/Tilesets/DrawnLevelTileset.tres" id="1_oe62m"]
 [ext_resource type="PackedScene" uid="uid://cmya67a02jmjj" path="res://Game/Objects/Enemy/Enemy.tscn" id="2_thqke"]
 
 [node name="Node2D" type="Node2D" unique_id=1310273676]
