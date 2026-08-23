@@ -1,19 +1,18 @@
 [gd_scene format=3 uid="uid://qjyuecuw6ve5"]
 
-[ext_resource type="Texture2D" uid="uid://x66tsxte8o5r" path="res://icon.svg" id="1_617kg"]
 [ext_resource type="Script" uid="uid://0st2yvo8wdhu" path="res://Game/Objects/Player/Bullet.gd" id="1_hbtjo"]
+[ext_resource type="Texture2D" uid="uid://ndjxe06qdy7n" path="res://Game/Assets/Sprites/Characters/green_hand.png" id="2_hbtjo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bu7o8"]
-radius = 68.117546
+radius = 16.0
 
-[node name="Area2D" type="Area2D" unique_id=1582658277]
+[node name="Bullet" type="Area2D" unique_id=1582658277]
 script = ExtResource("1_hbtjo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1271787194]
-scale = Vector2(0.2, 0.2)
 shape = SubResource("CircleShape2D_bu7o8")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=980642888]
-texture = ExtResource("1_617kg")
+texture = ExtResource("2_hbtjo")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -8,5 +8,6 @@ func _process(delta: float) -> void:
 	position += velocity * delta
 
 func _on_body_entered(body: Node2D) -> void:
+	body.get_script()
 	body.queue_free()
 	self.queue_free()
