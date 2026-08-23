@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://c5m530sf0s0xh"]
+
+[ext_resource type="Script" uid="uid://dtd3o0kqtkiuf" path="res://Game/UI/MainMenu.gd" id="1_lss2e"]
+
+[node name="MainMenu" type="Control" unique_id=329740308]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lss2e")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=601234022]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 652.0
+stretch_mode = 3
+
+[node name="Panel" type="Panel" parent="AspectRatioContainer" unique_id=555335378]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="AspectRatioContainer" unique_id=1949640481]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="AspectRatioContainer/CenterContainer" unique_id=969987787]
+unique_name_in_owner = true
+layout_mode = 2
+text = "START
+"
+
+[connection signal="pressed" from="AspectRatioContainer/CenterContainer/StartButton" to="." method="_on_start_button_pressed"]

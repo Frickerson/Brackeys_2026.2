@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://cn3nhfqdxy8me"]
 
-[ext_resource type="TileSet" uid="uid://75h2q4bwmh6i" path="res://Game/Assets/Tilesets/drawn-level-tileset.tres" id="1_suuk5"]
+[ext_resource type="TileSet" uid="uid://75h2q4bwmh6i" path="res://Game/Assets/Tilesets/DrawnLevelTileSet.tres" id="1_suuk5"]
 
 [node name="TemplateLevel" type="Node2D" unique_id=1843045589]
 
