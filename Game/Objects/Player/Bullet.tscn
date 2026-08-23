@@ -1,18 +1,23 @@
 [gd_scene format=3 uid="uid://qjyuecuw6ve5"]
 
 [ext_resource type="Script" uid="uid://0st2yvo8wdhu" path="res://Game/Objects/Player/Bullet.gd" id="1_hbtjo"]
-[ext_resource type="Texture2D" uid="uid://ndjxe06qdy7n" path="res://Game/Assets/Sprites/Characters/green_hand.png" id="2_hbtjo"]
+[ext_resource type="Texture2D" uid="uid://cag5cox6tfu2p" path="res://Game/Assets/Sprites/Objects/effect_shotLarge.png" id="2_hbtjo"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_bu7o8"]
-radius = 16.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bu7o8"]
+size = Vector2(63, 8)
 
 [node name="Bullet" type="Area2D" unique_id=1582658277]
 script = ExtResource("1_hbtjo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1271787194]
-shape = SubResource("CircleShape2D_bu7o8")
+scale = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_bu7o8")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=980642888]
 texture = ExtResource("2_hbtjo")
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1989107162]
+rect = Rect2(-50, -50, 100, 100)
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]

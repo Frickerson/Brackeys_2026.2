@@ -11,3 +11,7 @@ func _on_body_entered(body: Node2D) -> void:
 	body.get_script()
 	body.queue_free()
 	self.queue_free()
+
+
+func _on_screen_exited() -> void:
+	self.queue_free() # Replace with function body.
