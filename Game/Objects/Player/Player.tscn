@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dprglki4vqowe"]
+
+[ext_resource type="Script" uid="uid://by12bqobms5mi" path="res://Game/Objects/Player/Player.gd" id="1_5anc7"]
+[ext_resource type="Texture2D" uid="uid://x66tsxte8o5r" path="res://icon.svg" id="1_f664l"]
+[ext_resource type="PackedScene" uid="uid://qjyuecuw6ve5" path="res://Game/Objects/Player/Bullet.tscn" id="2_bupal"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bu7o8"]
+radius = 71.00704
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1713415423]
+script = ExtResource("1_5anc7")
+Attack = ExtResource("2_bupal")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1050555902]
+texture = ExtResource("1_f664l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1653081082]
+shape = SubResource("CircleShape2D_bu7o8")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=769246578]
+position = Vector2(100, 0)
+gizmo_extents = 25.0
