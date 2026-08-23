@@ -49,7 +49,8 @@ func _process(delta: float) -> void:
 func _attack():
 	var attack = Attack.instantiate()
 	owner.add_child(attack)
-	attack.transform = $Marker2D.global_transform
+	attack.position = $Marker2D.global_position
+	attack.rotation = $Marker2D.global_rotation
 	AttackTimer += 1.0 / AttackSpeed
 	
 func _update_bobbing(delta: float):

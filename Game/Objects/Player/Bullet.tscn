@@ -8,6 +8,7 @@ size = Vector2(63, 8)
 
 [node name="Bullet" type="Area2D" unique_id=1582658277]
 script = ExtResource("1_hbtjo")
+Speed = 1000.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1271787194]
 scale = Vector2(0.5, 1)

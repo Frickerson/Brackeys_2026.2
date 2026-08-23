@@ -11,6 +11,7 @@ radius = 39.012817
 [node name="Player" type="CharacterBody2D" unique_id=1713415423]
 script = ExtResource("1_5anc7")
 Attack = ExtResource("2_bupal")
+MoveSpeed = 20000.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1050555902]
 texture = ExtResource("3_g70qv")
@@ -18,10 +19,9 @@ texture = ExtResource("3_g70qv")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1653081082]
 shape = SubResource("CircleShape2D_bu7o8")
 
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=813970195]
-position = Vector2(57, 32)
-texture = ExtResource("4_kgmmb")
-
 [node name="Marker2D" type="Marker2D" parent="." unique_id=769246578]
-position = Vector2(85, 0)
+position = Vector2(57, 28)
 gizmo_extents = 25.0
+
+[node name="Sprite2D2" type="Sprite2D" parent="Marker2D" unique_id=813970195]
+texture = ExtResource("4_kgmmb")
