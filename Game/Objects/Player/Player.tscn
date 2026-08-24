@@ -11,10 +11,11 @@ radius = 7.071068
 atlas = ExtResource("3_bupal")
 region = Rect2(512, 16, 16, 16)
 
-[node name="Player" type="CharacterBody2D" unique_id=1713415423]
+[node name="Player" type="CharacterBody2D" unique_id=1713415423 node_paths=PackedStringArray("AttackLocation")]
 script = ExtResource("1_5anc7")
 MoveSpeed = 20000.0
 DefaultWeapon = ExtResource("2_g70qv")
+AttackLocation = NodePath("CollisionShape2D/Sprite2D/AttackLocation")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1653081082]
 scale = Vector2(2, 2)
@@ -25,6 +26,6 @@ texture_filter = 1
 position = Vector2(3, 0)
 texture = SubResource("AtlasTexture_051ad")
 
-[node name="Marker2D" type="Marker2D" parent="CollisionShape2D/Sprite2D" unique_id=769246578]
+[node name="AttackLocation" type="Marker2D" parent="CollisionShape2D/Sprite2D" unique_id=769246578]
 position = Vector2(5, 5)
 gizmo_extents = 25.0

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ccxsa5xfbiplf" path="res://Game/Objects/Enemy/Enemy.gd" id="1_2jigs"]
 [ext_resource type="Texture2D" uid="uid://bj37e1k6so76t" path="res://Game/Assets/Tilesets/tilesheet_transparent.png" id="1_051ad"]
+[ext_resource type="PackedScene" uid="uid://c6s7ym12qv8lv" path="res://Game/Objects/Weapons/Weapon.tscn" id="2_6nsbb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bu7o8"]
 radius = 7.0
@@ -10,8 +11,10 @@ radius = 7.0
 atlas = ExtResource("1_051ad")
 region = Rect2(496, 120, 16, 16)
 
-[node name="Enemy" type="CharacterBody2D" unique_id=2024416287]
+[node name="Enemy" type="CharacterBody2D" unique_id=2024416287 node_paths=PackedStringArray("AttackLocation")]
 script = ExtResource("1_2jigs")
+DefaultWeapon = ExtResource("2_6nsbb")
+AttackLocation = NodePath("CollisionShape2D/Sprite2D/AttackLocation")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=816673183]
 scale = Vector2(2, 2)
@@ -21,6 +24,9 @@ shape = SubResource("CircleShape2D_bu7o8")
 texture_filter = 1
 position = Vector2(3, 1)
 texture = SubResource("AtlasTexture_bupal")
+
+[node name="AttackLocation" type="Marker2D" parent="CollisionShape2D/Sprite2D" unique_id=526738676]
+position = Vector2(4, 2.5)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=47733685]
 target_desired_distance = 100.0

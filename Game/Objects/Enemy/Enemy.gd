@@ -2,14 +2,32 @@ extends CharacterBody2D
 
 class_name Enemy
 
+@export var DefaultWeapon: PackedScene
+@export var AttackRange: float = 500.0
+@export var AttackLocation: Node2D
+
 @onready var NavigationAgent : NavigationAgent2D = $NavigationAgent2D 
 @onready var PlayerRef : Player = get_tree().get_first_node_in_group("Player")
+
+var EquippedWeapon: Weapon = null
+
+func _ready() -> void:
+	if DefaultWeapon != null:
+		EquippedWeapon = DefaultWeapon.instantiate()
+		AttackLocation.add_child(EquippedWeapon)
 
 func _physics_process(delta: float) -> void:
 	if PlayerRef == null:
 		return
 
 	var player_position = PlayerRef.global_position
+	_move_towards_player(player_position)
+	_check_attack_range(player_position)
+	
+func _take_damage(damage : float) -> void:
+	queue_free()
+	
+func _move_towards_player(player_position : Vector2) -> void:
 	NavigationAgent.target_position = player_position
 	
 	if NavigationAgent.is_navigation_finished():
@@ -21,6 +39,12 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	rotation = velocity.normalized().angle()
+
+func _check_attack_range(player_position : Vector2) -> void:
+	if EquippedWeapon == null:
+		return
 	
-func _take_damage(damage : float) -> void:
-	queue_free()
+	var squared_distance = global_position.distance_squared_to(player_position)
+	var enable = squared_distance <= AttackRange * AttackRange
+	EquippedWeapon._toggle_attack(enable)
+	
