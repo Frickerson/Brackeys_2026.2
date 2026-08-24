@@ -17,7 +17,6 @@ DefaultWeapon = ExtResource("2_6nsbb")
 AttackLocation = NodePath("CollisionShape2D/Sprite2D/AttackLocation")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=816673183]
-scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_bu7o8")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=1978200661]

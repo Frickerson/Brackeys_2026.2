@@ -18,7 +18,6 @@ DefaultWeapon = ExtResource("2_g70qv")
 AttackLocation = NodePath("CollisionShape2D/Sprite2D/AttackLocation")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1653081082]
-scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_bu7o8")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=1050555902]
@@ -29,3 +28,5 @@ texture = SubResource("AtlasTexture_051ad")
 [node name="AttackLocation" type="Marker2D" parent="CollisionShape2D/Sprite2D" unique_id=769246578]
 position = Vector2(5, 5)
 gizmo_extents = 25.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1183617245]
