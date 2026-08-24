@@ -17,9 +17,13 @@ class_name Enemy
 var EquippedWeapon: Weapon = null
 
 func _ready() -> void:
+	if get_groups().is_empty():
+		add_to_group("Enemy")
+	
 	if DefaultWeapon != null:
 		EquippedWeapon = DefaultWeapon.instantiate()
 		AttackLocation.add_child(EquippedWeapon)
+		EquippedWeapon.add_to_group(get_groups()[0])
 		EquippedWeapon._toggle_auto_reload(!UseAmmo)
 		
 	RayCast.add_exception(PlayerRef)
@@ -50,7 +54,7 @@ func _move_towards_player(player_position : Vector2) -> void:
 	var next_position = NavigationAgent.get_next_path_position()
 	var dir = global_position.direction_to(next_position)
 	velocity = dir * MoveSpeed
-	move_and_slide()
+	NavigationAgent.set_velocity(dir * MoveSpeed)
 	
 	var player_dir = AttackLocation.global_position.direction_to(player_position)
 	rotation = player_dir.angle()
@@ -69,3 +73,7 @@ func _in_line_of_sight(player_position : Vector2) -> bool:
 func _in_move_range(player_position : Vector2) -> bool:
 	var distance = global_position.distance_squared_to(player_position)
 	return distance <= MaxMoveRange * MaxMoveRange
+
+func _on_velocity_computed(safe_velocity: Vector2) -> void:
+	velocity = safe_velocity
+	move_and_slide()

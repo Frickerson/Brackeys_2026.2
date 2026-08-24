@@ -10,13 +10,21 @@ func _process(delta: float) -> void:
 	position += velocity * delta
 
 func _on_body_entered(body: Node2D) -> void:
-	var enemy := body as Enemy
-	if enemy:
-		enemy._take_damage(1.0)
+	if is_in_group("Player"):
+		if body.is_in_group("Player"):
+			return
+			
+		var enemy := body as Enemy
+		if enemy:
+			enemy._take_damage(1.0)
 	
-	var player := body as Player
-	if player:
-		player.take_damage(1.0)
+	if is_in_group("Enemy"):
+		if body.is_in_group("Enemy"):
+			return
+			
+		var player := body as Player
+		if player:
+			player.take_damage(1.0)
 		
 	queue_free()
 

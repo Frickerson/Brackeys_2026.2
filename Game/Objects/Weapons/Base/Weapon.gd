@@ -57,7 +57,13 @@ func _reload() -> void:
 	CurrentAmmo = MaxAmmo
 	
 func _spawn_attack() -> void:
-	var attack = AttackType.instantiate()
-	get_tree().root.add_child(attack)
+	var attack = _create_attack()
 	attack.position = global_position
 	attack.rotation = global_rotation
+	
+func _create_attack() -> Node:
+	var attack = AttackType.instantiate()
+	get_tree().root.add_child(attack)
+	attack.add_to_group(get_groups()[0])
+	
+	return attack
