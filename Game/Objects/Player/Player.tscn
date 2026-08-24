@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dprglki4vqowe"]
 
 [ext_resource type="Script" uid="uid://by12bqobms5mi" path="res://Game/Objects/Player/Player.gd" id="1_5anc7"]
-[ext_resource type="PackedScene" uid="uid://dls1bpx8qq5em" path="res://Game/Objects/Weapons/Handgun.tscn" id="2_bupal"]
+[ext_resource type="PackedScene" uid="uid://b41p3vi1b188i" path="res://Game/Objects/Weapons/Machinegun.tscn" id="2_bupal"]
 [ext_resource type="Texture2D" uid="uid://bj37e1k6so76t" path="res://Game/Assets/Tilesets/tilesheet_transparent.png" id="3_bupal"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bu7o8"]
@@ -13,7 +13,6 @@ region = Rect2(512, 16, 16, 16)
 
 [node name="Player" type="CharacterBody2D" unique_id=1713415423 node_paths=PackedStringArray("AttackLocation", "Camera")]
 script = ExtResource("1_5anc7")
-MoveSpeed = 20000.0
 DefaultWeapon = ExtResource("2_bupal")
 AttackLocation = NodePath("CollisionShape2D/Sprite2D/AttackLocation")
 Camera = NodePath("Camera2D")

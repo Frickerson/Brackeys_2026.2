@@ -25,6 +25,9 @@ func _physics_process(delta: float) -> void:
 	
 	velocity = Vector2(horizontal, vertical)
 	IsMoving = !velocity.is_zero_approx()
+	
+	if !IsMoving:
+		return
 
 	move_and_slide()
 	

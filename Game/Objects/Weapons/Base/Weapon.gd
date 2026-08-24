@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 	if Ready:
 		return
 	
-	AttackTimer += (1.0 / AttackSpeed) * delta
+	AttackTimer += AttackSpeed * delta
 	if AttackTimer >= 1.0:
 		Ready = true
 		AttackTimer -= 1.0
