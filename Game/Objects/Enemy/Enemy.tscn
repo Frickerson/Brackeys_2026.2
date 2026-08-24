@@ -16,3 +16,7 @@ texture = ExtResource("1_051ad")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=816673183]
 position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_bu7o8")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=47733685]
+avoidance_enabled = true
+debug_enabled = true
