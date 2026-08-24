@@ -18,7 +18,5 @@ shape = SubResource("RectangleShape2D_bu7o8")
 texture = SubResource("AtlasTexture_6b1xe")
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=22841112]
-radius = 77.03
 vertices = PackedVector2Array(-32, -30, 29, -30, 30, 30, -31, 31)
 affect_navigation_mesh = true
-carve_navigation_mesh = true
