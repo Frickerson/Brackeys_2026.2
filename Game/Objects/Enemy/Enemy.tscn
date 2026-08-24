@@ -11,10 +11,11 @@ radius = 7.0
 atlas = ExtResource("1_051ad")
 region = Rect2(496, 120, 16, 16)
 
-[node name="Enemy" type="CharacterBody2D" unique_id=2024416287 node_paths=PackedStringArray("AttackLocation")]
+[node name="Enemy" type="CharacterBody2D" unique_id=2024416287 node_paths=PackedStringArray("AttackLocation", "RayCast")]
 script = ExtResource("1_2jigs")
 DefaultWeapon = ExtResource("2_6nsbb")
 AttackLocation = NodePath("CollisionShape2D/Sprite2D/AttackLocation")
+RayCast = NodePath("CollisionShape2D/Sprite2D/AttackLocation/RayCast2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=816673183]
 shape = SubResource("CircleShape2D_bu7o8")
@@ -26,6 +27,9 @@ texture = SubResource("AtlasTexture_bupal")
 
 [node name="AttackLocation" type="Marker2D" parent="CollisionShape2D/Sprite2D" unique_id=526738676]
 position = Vector2(4, 2.5)
+
+[node name="RayCast2D" type="RayCast2D" parent="CollisionShape2D/Sprite2D/AttackLocation" unique_id=1028230827]
+collide_with_areas = true
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=47733685]
 target_desired_distance = 100.0

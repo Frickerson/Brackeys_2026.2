@@ -27,6 +27,9 @@ func _process(delta: float) -> void:
 		_attack()
 		
 func _toggle_attack(enable: bool) -> void:
+	if enable == Enabled:
+		return
+
 	Enabled = enable
 	if Enabled && Ready:
 		_attack()
