@@ -7,6 +7,7 @@ class_name Player
 @export var BobDifference: float = 0.1
 @export var DefaultWeapon: PackedScene
 @export var AttackLocation: Node2D
+@export var Camera: Camera2D
 
 var EquippedWeapon: Weapon = null
 var IsMoving: bool = false
@@ -27,7 +28,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
-	var mouse_position = get_viewport().get_mouse_position()
+	var mouse_position = Camera.get_global_mouse_position()
 	var direction = mouse_position - position
 	rotation = direction.angle()
 	
