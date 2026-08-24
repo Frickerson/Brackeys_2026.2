@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://doxbk2ykbvr5n"]
+
+[ext_resource type="PackedScene" uid="uid://culo107yiaal6" path="res://Game/Objects/Obstacle/Base/Obstacle.tscn" id="1_mc5h5"]
+
+[node name="Obstacle" unique_id=851229595 instance=ExtResource("1_mc5h5")]
+
+[node name="Sprite2D" parent="." index="1" unique_id=1510632375]
+region_rect = Rect2(391, 102, 16, 16)

@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://bnb5pg3vlg73b" path="res://Game/Assets/Tilesets/PixelTileset.tres" id="1_upo77"]
 [ext_resource type="PackedScene" uid="uid://dprglki4vqowe" path="res://Game/Objects/Player/Player.tscn" id="2_ef5y6"]
-[ext_resource type="PackedScene" uid="uid://culo107yiaal6" path="res://Game/Objects/Obstacle/Obstacle.tscn" id="4_x140f"]
+[ext_resource type="PackedScene" uid="uid://culo107yiaal6" path="res://Game/Objects/Obstacle/Base/Obstacle.tscn" id="4_x140f"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_bu7o8"]
 vertices = PackedVector2Array(744, 204, 744, 168, 1046, 74, 1046, 550, 74, 74, 708, 168, 74, 550, 708, 204)
@@ -25,3 +25,4 @@ position = Vector2(776, 299)
 
 [node name="Obstacle" parent="." unique_id=851229595 instance=ExtResource("4_x140f")]
 position = Vector2(726, 186)
+script = null

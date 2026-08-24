@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://culo107yiaal6"]
 
-[ext_resource type="Script" uid="uid://dk7nyb0x5fwc8" path="res://Game/Objects/Obstacle/obstacle.gd" id="1_tiyvn"]
+[ext_resource type="Script" uid="uid://dk7nyb0x5fwc8" path="res://Game/Objects/Obstacle/Base/obstacle.gd" id="1_tiyvn"]
 [ext_resource type="Texture2D" uid="uid://bj37e1k6so76t" path="res://Game/Assets/Tilesets/tilesheet_transparent.png" id="2_sueln"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bu7o8"]
