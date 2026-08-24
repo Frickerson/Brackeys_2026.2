@@ -10,6 +10,7 @@ class_name Enemy
 @export var MoveSpeed : float = 200.0
 @export var MinMoveRange : float = 100
 @export var MaxMoveRange : float = 300
+@export var UseAmmo : bool = false
 
 @onready var PlayerRef : Player = get_tree().get_first_node_in_group("Player")
 
@@ -19,6 +20,7 @@ func _ready() -> void:
 	if DefaultWeapon != null:
 		EquippedWeapon = DefaultWeapon.instantiate()
 		AttackLocation.add_child(EquippedWeapon)
+		EquippedWeapon._toggle_auto_reload(!UseAmmo)
 		
 	RayCast.add_exception(PlayerRef)
 	NavigationAgent.target_desired_distance = MinMoveRange

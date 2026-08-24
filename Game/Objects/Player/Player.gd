@@ -33,11 +33,17 @@ func _physics_process(delta: float) -> void:
 	rotation = direction.angle()
 	
 func _input(event):
-	if EquippedWeapon != null && event.is_action("Player_Shoot"):
+	if EquippedWeapon == null:
+		return
+		
+	if event.is_action("Player_Shoot"):
 		if event.pressed:
 			EquippedWeapon._toggle_attack(true)
 		if event.is_released():
 			EquippedWeapon._toggle_attack(false)
+	
+	if event.is_action("Player_Reload"):
+		EquippedWeapon._reload()
 
 func _process(delta: float) -> void:
 	if IsMoving:
