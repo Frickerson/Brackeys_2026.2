@@ -15,9 +15,13 @@ var ShouldScaleUp: bool = false
 var BobTime: float = 0.5
 
 func _ready() -> void:
+	if get_groups().is_empty():
+		add_to_group("Player")
+	
 	if DefaultWeapon != null:
 		EquippedWeapon = DefaultWeapon.instantiate()
 		AttackLocation.add_child(EquippedWeapon)
+		EquippedWeapon.add_to_group(get_groups()[0])
 
 func _physics_process(delta: float) -> void:
 	var vertical = Input.get_axis("Player_Move_Up","Player_Move_Down")

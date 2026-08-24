@@ -12,3 +12,4 @@ func _spawn_attack() -> void:
 		get_tree().root.add_child(attack)
 		attack.global_position = global_position
 		attack.global_rotation = global_rotation + deg_to_rad(rotation_offset)
+		attack.add_to_group(get_groups()[0])

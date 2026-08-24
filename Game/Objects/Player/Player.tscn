@@ -11,7 +11,7 @@ radius = 7.071068
 atlas = ExtResource("3_bupal")
 region = Rect2(512, 16, 16, 16)
 
-[node name="Player" type="CharacterBody2D" unique_id=1713415423 node_paths=PackedStringArray("AttackLocation", "Camera")]
+[node name="Player" type="CharacterBody2D" unique_id=1713415423 node_paths=PackedStringArray("AttackLocation", "Camera") groups=["Player"]]
 script = ExtResource("1_5anc7")
 DefaultWeapon = ExtResource("2_bupal")
 AttackLocation = NodePath("CollisionShape2D/Sprite2D/AttackLocation")
