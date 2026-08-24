@@ -28,7 +28,7 @@ func _physics_process(delta: float) -> void:
 	_move_towards_player(player_position)
 	
 	var enable_attack = _in_attack_range(player_position) && _in_line_of_sight(player_position)
-	EquippedWeapon._toggle_attack(enable_attack)	
+	EquippedWeapon._toggle_attack(enable_attack)
 	
 func _take_damage(damage : float) -> void:
 	queue_free()
