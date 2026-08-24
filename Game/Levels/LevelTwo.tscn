@@ -42,14 +42,19 @@ position = Vector2(64, 192)
 [node name="EnemyBackline" parent="." unique_id=2024416287 instance=ExtResource("6_tqvpg")]
 position = Vector2(48, 112)
 AttackRange = 1000.0
-MoveSpeed = 100.0
+MoveSpeed = 75.0
+MinMoveRange = 200.0
+MaxMoveRange = 400.0
 
 [node name="EnemyBackline2" parent="." unique_id=1885296905 instance=ExtResource("6_tqvpg")]
 position = Vector2(64, 256)
 AttackRange = 1000.0
-MoveSpeed = 100.0
+MoveSpeed = 75.0
+MinMoveRange = 200.0
+MaxMoveRange = 400.0
 
 [node name="EnemyFront" parent="." unique_id=1723520520 instance=ExtResource("6_tqvpg")]
 position = Vector2(368, 208)
-AttackRange = 250.0
 MoveSpeed = 125.0
+MinMoveRange = 50.0
+MaxMoveRange = 100.0
