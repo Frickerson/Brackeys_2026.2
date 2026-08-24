@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dimp0i6jmuvgs"]
+
+[ext_resource type="PackedScene" uid="uid://c6s7ym12qv8lv" path="res://Game/Objects/Weapons/Base/Weapon.tscn" id="1_4u458"]
+[ext_resource type="Script" uid="uid://bcfwi8lxvunap" path="res://Game/Objects/Weapons/Base/MultiShot.gd" id="2_t25vd"]
+
+[node name="Weapon" unique_id=294193981 instance=ExtResource("1_4u458")]
+script = ExtResource("2_t25vd")
+Angle = 45.0
+MaxAmmo = 15
+AmmoPerShot = 3
