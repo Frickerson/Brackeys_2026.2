@@ -13,7 +13,6 @@ region = Rect2(512, 16, 16, 16)
 
 [node name="Player" type="CharacterBody2D" unique_id=1713415423 node_paths=PackedStringArray("AttackLocation", "Camera")]
 script = ExtResource("1_5anc7")
-MoveSpeed = 20000.0
 DefaultWeapon = ExtResource("2_g70qv")
 AttackLocation = NodePath("CollisionShape2D/Sprite2D/AttackLocation")
 Camera = NodePath("Camera2D")
