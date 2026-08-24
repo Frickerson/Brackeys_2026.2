@@ -6,6 +6,7 @@ class_name Player
 @export var BobSpeed: float = 7.0
 @export var BobDifference: float = 0.1
 @export var DefaultWeapon: PackedScene
+@export var AttackLocation: Node2D
 
 var EquippedWeapon: Weapon = null
 var IsMoving: bool = false
@@ -13,8 +14,9 @@ var ShouldScaleUp: bool = false
 var BobTime: float = 0.5
 
 func _ready() -> void:
-	EquippedWeapon = DefaultWeapon.instantiate()
-	$CollisionShape2D/Sprite2D/Marker2D.add_child(EquippedWeapon)
+	if DefaultWeapon != null:
+		EquippedWeapon = DefaultWeapon.instantiate()
+		AttackLocation.add_child(EquippedWeapon)
 
 func _physics_process(delta: float) -> void:
 	var vertical = delta * MoveSpeed * Input.get_axis("Player_Move_Up","Player_Move_Down")
@@ -30,7 +32,7 @@ func _physics_process(delta: float) -> void:
 	rotation = direction.angle()
 	
 func _input(event):
-	if event.is_action("Player_Shoot"):
+	if EquippedWeapon != null && event.is_action("Player_Shoot"):
 		if event.pressed:
 			EquippedWeapon._toggle_attack(true)
 		if event.is_released():
