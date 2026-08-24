@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 class_name Player
 
-@export var MoveSpeed: float = 200.0
+@export var MoveSpeed: float = 150.0
 @export var BobSpeed: float = 7.0
 @export var BobDifference: float = 0.1
 @export var DefaultWeapon: PackedScene
