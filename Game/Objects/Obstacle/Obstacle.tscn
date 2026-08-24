@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://culo107yiaal6"]
+
+[ext_resource type="Texture2D" uid="uid://bagyhs5fb2svp" path="res://Game/Assets/Tilesets/tilesheet.png" id="1_87xnc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bu7o8"]
+size = Vector2(62, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6b1xe"]
+atlas = ExtResource("1_87xnc")
+region = Rect2(192, 384, 64, 64)
+
+[node name="Obstacle" type="StaticBody2D" unique_id=851229595]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=780853147]
+shape = SubResource("RectangleShape2D_bu7o8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1510632375]
+texture = SubResource("AtlasTexture_6b1xe")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=22841112]
+radius = 77.03
+vertices = PackedVector2Array(-32, -30, 29, -30, 30, 30, -31, 31)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
