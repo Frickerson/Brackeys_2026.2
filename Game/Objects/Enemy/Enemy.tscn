@@ -23,3 +23,5 @@ position = Vector2(3, 1)
 texture = SubResource("AtlasTexture_bupal")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=47733685]
+target_desired_distance = 100.0
+debug_enabled = true
