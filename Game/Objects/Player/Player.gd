@@ -20,10 +20,10 @@ func _ready() -> void:
 		AttackLocation.add_child(EquippedWeapon)
 
 func _physics_process(delta: float) -> void:
-	var vertical = MoveSpeed * Input.get_axis("Player_Move_Up","Player_Move_Down")
-	var horizontal = MoveSpeed * Input.get_axis("Player_Move_Left","Player_Move_Right")
+	var vertical = Input.get_axis("Player_Move_Up","Player_Move_Down")
+	var horizontal = Input.get_axis("Player_Move_Left","Player_Move_Right")
 	
-	velocity = Vector2(horizontal, vertical)
+	velocity = Vector2(horizontal, vertical).normalized() * MoveSpeed
 	IsMoving = !velocity.is_zero_approx()
 
 	move_and_slide()
