@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name Player
+
 @export var Attack: PackedScene
 @export var MoveSpeed: float = 30000.0
 @export var AttackSpeed: float = 1.0
@@ -70,3 +72,6 @@ func _update_bobbing(delta: float):
 	
 	var new_scale = lerp(1.0 - BobDifference, 1.0 + BobDifference, BobTime)
 	scale = Vector2(new_scale, new_scale)
+
+func take_damage (damage : float) -> void:
+	pass

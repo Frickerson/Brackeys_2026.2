@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cmya67a02jmjj"]
 
+[ext_resource type="Script" uid="uid://ccxsa5xfbiplf" path="res://Game/Objects/Enemy/Enemy.gd" id="1_2jigs"]
 [ext_resource type="Texture2D" uid="uid://cpvg457urlyy7" path="res://Game/Assets/Sprites/Characters/red_character.png" id="1_051ad"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bu7o8"]
@@ -7,6 +8,7 @@ radius = 40.04997
 
 [node name="Enemy" type="RigidBody2D" unique_id=840740489]
 gravity_scale = 0.0
+script = ExtResource("1_2jigs")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1978200661]
 texture = ExtResource("1_051ad")
