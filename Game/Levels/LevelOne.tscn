@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://fyexdlhx0gwv" path="res://Game/Objects/Obstacle/TreeGreenBig.tscn" id="9_ha1uo"]
 [ext_resource type="PackedScene" uid="uid://doxbk2ykbvr5n" path="res://Game/Objects/Obstacle/TreeRedBig.tscn" id="10_xptkl"]
 [ext_resource type="PackedScene" uid="uid://cmya67a02jmjj" path="res://Game/Objects/Enemy/Enemy.tscn" id="11_4uixm"]
+[ext_resource type="PackedScene" uid="uid://dimp0i6jmuvgs" path="res://Game/Objects/Weapons/Base/MultiShot.tscn" id="12_75e5b"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_bu7o8"]
 vertices = PackedVector2Array(306, 354, 502, 358, 26, 358, 270, 354, 270, 318, 98, 286, 162, 234, 222, 226, 258, 226, 286, 234, 306, 318, 206, 98, 242, 98, 482, 198, 446, 198, 98, 146, 98, 110, 502, 26, 482, 234, 242, 62, 286, 198, 258, 190, 26, 26, 206, 62, 446, 234, 322, 234, 162, 198, 222, 190, 98, 322, 62, 322, 62, 286, 322, 198, 126, 234, 62, 110, 62, 146, 126, 198)
@@ -19,9 +20,6 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 528, 0, 528, 384,
 cell_size = 10.0
 
 [sub_resource type="Resource" id="Resource_4uixm"]
-metadata/__load_path__ = "res://Game/Objects/Weapons/Weapon.tscn"
-
-[sub_resource type="Resource" id="Resource_75e5b"]
 metadata/__load_path__ = "res://Game/Objects/Weapons/Weapon.tscn"
 
 [sub_resource type="Resource" id="Resource_w43m7"]
@@ -39,7 +37,6 @@ tile_set = ExtResource("1_7t8pm")
 
 [node name="Player" parent="." unique_id=1713415423 groups=["Player"] instance=ExtResource("2_8g3pm")]
 position = Vector2(415, 292)
-MoveSpeed = 150.0
 
 [node name="Obstacle" parent="." unique_id=851229595 instance=ExtResource("3_u8oo6")]
 position = Vector2(464, 216)
@@ -67,15 +64,18 @@ position = Vector2(288, 336)
 
 [node name="Enemy" parent="." unique_id=2024416287 instance=ExtResource("11_4uixm")]
 position = Vector2(144, 336)
+collision_layer = 1
 DefaultWeapon = SubResource("Resource_4uixm")
 MoveSpeed = 75.0
 
 [node name="Enemy2" parent="." unique_id=1042412938 instance=ExtResource("11_4uixm")]
 position = Vector2(400, 80)
-DefaultWeapon = SubResource("Resource_75e5b")
+collision_layer = 1
+DefaultWeapon = ExtResource("12_75e5b")
 MoveSpeed = 75.0
 
 [node name="Enemy3" parent="." unique_id=707835662 instance=ExtResource("11_4uixm")]
 position = Vector2(96, 48)
+collision_layer = 1
 DefaultWeapon = SubResource("Resource_w43m7")
 MoveSpeed = 75.0
