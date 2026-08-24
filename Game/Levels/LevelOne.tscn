@@ -38,7 +38,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAQAAAAQAAAABAAAAAQACAAQAAAAAAAEAAQACAAU
 tile_set = ExtResource("1_7t8pm")
 
 [node name="Player" parent="." unique_id=1713415423 groups=["Player"] instance=ExtResource("2_8g3pm")]
-position = Vector2(272, 208)
+position = Vector2(415, 292)
 MoveSpeed = 150.0
 
 [node name="Obstacle" parent="." unique_id=851229595 instance=ExtResource("3_u8oo6")]

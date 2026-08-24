@@ -11,8 +11,9 @@ radius = 7.0
 atlas = ExtResource("1_051ad")
 region = Rect2(496, 120, 16, 16)
 
-[node name="Enemy" type="CharacterBody2D" unique_id=2024416287 node_paths=PackedStringArray("AttackLocation", "RayCast")]
+[node name="Enemy" type="CharacterBody2D" unique_id=2024416287 node_paths=PackedStringArray("NavigationAgent", "AttackLocation", "RayCast")]
 script = ExtResource("1_2jigs")
+NavigationAgent = NodePath("NavigationAgent2D")
 DefaultWeapon = ExtResource("2_6nsbb")
 AttackLocation = NodePath("CollisionShape2D/Sprite2D/AttackLocation")
 RayCast = NodePath("CollisionShape2D/Sprite2D/AttackLocation/RayCast2D")
