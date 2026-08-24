@@ -18,6 +18,15 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Arr
 outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 528, 0, 528, 384, 0, 384)])
 cell_size = 10.0
 
+[sub_resource type="Resource" id="Resource_4uixm"]
+metadata/__load_path__ = "res://Game/Objects/Weapons/Weapon.tscn"
+
+[sub_resource type="Resource" id="Resource_75e5b"]
+metadata/__load_path__ = "res://Game/Objects/Weapons/Weapon.tscn"
+
+[sub_resource type="Resource" id="Resource_w43m7"]
+metadata/__load_path__ = "res://Game/Objects/Weapons/Weapon.tscn"
+
 [node name="NavigationRegion2D2" type="NavigationRegion2D" unique_id=2058048662]
 navigation_polygon = SubResource("NavigationPolygon_bu7o8")
 
@@ -30,6 +39,7 @@ tile_set = ExtResource("1_7t8pm")
 
 [node name="Player" parent="." unique_id=1713415423 groups=["Player"] instance=ExtResource("2_8g3pm")]
 position = Vector2(272, 208)
+MoveSpeed = 150.0
 
 [node name="Obstacle" parent="." unique_id=851229595 instance=ExtResource("3_u8oo6")]
 position = Vector2(464, 216)
@@ -57,9 +67,15 @@ position = Vector2(288, 336)
 
 [node name="Enemy" parent="." unique_id=2024416287 instance=ExtResource("11_4uixm")]
 position = Vector2(144, 336)
+DefaultWeapon = SubResource("Resource_4uixm")
+MoveSpeed = 75.0
 
 [node name="Enemy2" parent="." unique_id=1042412938 instance=ExtResource("11_4uixm")]
 position = Vector2(400, 80)
+DefaultWeapon = SubResource("Resource_75e5b")
+MoveSpeed = 75.0
 
 [node name="Enemy3" parent="." unique_id=707835662 instance=ExtResource("11_4uixm")]
 position = Vector2(96, 48)
+DefaultWeapon = SubResource("Resource_w43m7")
+MoveSpeed = 75.0
