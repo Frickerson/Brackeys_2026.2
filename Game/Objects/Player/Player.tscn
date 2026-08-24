@@ -2,26 +2,29 @@
 
 [ext_resource type="Script" uid="uid://by12bqobms5mi" path="res://Game/Objects/Player/Player.gd" id="1_5anc7"]
 [ext_resource type="PackedScene" uid="uid://c6s7ym12qv8lv" path="res://Game/Objects/Weapons/Weapon.tscn" id="2_g70qv"]
-[ext_resource type="Texture2D" uid="uid://nf811uvg46xk" path="res://Game/Assets/Sprites/Characters/green_character.png" id="3_g70qv"]
-[ext_resource type="Texture2D" uid="uid://ndjxe06qdy7n" path="res://Game/Assets/Sprites/Characters/green_hand.png" id="4_kgmmb"]
+[ext_resource type="Texture2D" uid="uid://bj37e1k6so76t" path="res://Game/Assets/Tilesets/tilesheet_transparent.png" id="3_bupal"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bu7o8"]
-radius = 39.012817
+radius = 7.071068
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_051ad"]
+atlas = ExtResource("3_bupal")
+region = Rect2(512, 16, 16, 16)
 
 [node name="Player" type="CharacterBody2D" unique_id=1713415423]
 script = ExtResource("1_5anc7")
 MoveSpeed = 20000.0
 DefaultWeapon = ExtResource("2_g70qv")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1050555902]
-texture = ExtResource("3_g70qv")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1653081082]
+scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_bu7o8")
 
-[node name="Marker2D" type="Marker2D" parent="." unique_id=769246578]
-position = Vector2(57, 28)
-gizmo_extents = 25.0
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=1050555902]
+texture_filter = 1
+position = Vector2(3, 0)
+texture = SubResource("AtlasTexture_051ad")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Marker2D" unique_id=813970195]
-texture = ExtResource("4_kgmmb")
+[node name="Marker2D" type="Marker2D" parent="CollisionShape2D/Sprite2D" unique_id=769246578]
+position = Vector2(5, 5)
+gizmo_extents = 25.0

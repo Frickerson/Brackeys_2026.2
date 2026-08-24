@@ -14,7 +14,7 @@ var BobTime: float = 0.5
 
 func _ready() -> void:
 	EquippedWeapon = DefaultWeapon.instantiate()
-	$Marker2D.add_child(EquippedWeapon)
+	$CollisionShape2D/Sprite2D/Marker2D.add_child(EquippedWeapon)
 
 func _physics_process(delta: float) -> void:
 	var vertical = delta * MoveSpeed * Input.get_axis("Player_Move_Up","Player_Move_Down")
@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
 	rotation = direction.angle()
 	
 func _input(event):
-	if event is InputEventMouseButton:
+	if event.is_action("Player_Shoot"):
 		if event.pressed:
 			EquippedWeapon._toggle_attack(true)
 		if event.is_released():
