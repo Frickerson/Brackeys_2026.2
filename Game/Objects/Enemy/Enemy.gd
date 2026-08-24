@@ -38,7 +38,8 @@ func _move_towards_player(player_position : Vector2) -> void:
 	velocity = dir * 200.0
 	move_and_slide()
 	
-	rotation = velocity.normalized().angle()
+	var player_dir = global_position.direction_to(player_position)
+	rotation = player_dir.angle()
 
 func _check_attack_range(player_position : Vector2) -> void:
 	if EquippedWeapon == null:
