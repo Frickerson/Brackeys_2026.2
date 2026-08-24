@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 class_name Player
 
-@export var MoveSpeed: float = 30000.0
+@export var MoveSpeed: float = 200.0
 @export var BobSpeed: float = 7.0
 @export var BobDifference: float = 0.1
 @export var DefaultWeapon: PackedScene
@@ -20,8 +20,8 @@ func _ready() -> void:
 		AttackLocation.add_child(EquippedWeapon)
 
 func _physics_process(delta: float) -> void:
-	var vertical = delta * MoveSpeed * Input.get_axis("Player_Move_Up","Player_Move_Down")
-	var horizontal = delta * MoveSpeed * Input.get_axis("Player_Move_Left","Player_Move_Right")
+	var vertical = MoveSpeed * Input.get_axis("Player_Move_Up","Player_Move_Down")
+	var horizontal = MoveSpeed * Input.get_axis("Player_Move_Left","Player_Move_Right")
 	
 	velocity = Vector2(horizontal, vertical)
 	IsMoving = !velocity.is_zero_approx()

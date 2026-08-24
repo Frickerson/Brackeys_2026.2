@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c6s7ym12qv8lv"]
 
-[ext_resource type="Script" uid="uid://db8148t3ujfbt" path="res://Game/Objects/Weapons/Weapon.gd" id="1_lkrpe"]
+[ext_resource type="Script" uid="uid://db8148t3ujfbt" path="res://Game/Objects/Weapons/Base/Weapon.gd" id="1_lkrpe"]
 [ext_resource type="PackedScene" uid="uid://qjyuecuw6ve5" path="res://Game/Objects/Bullets/Bullet.tscn" id="2_4q7qq"]
 
 [node name="Weapon" type="Node2D" unique_id=294193981]

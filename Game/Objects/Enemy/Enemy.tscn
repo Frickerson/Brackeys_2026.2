@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ccxsa5xfbiplf" path="res://Game/Objects/Enemy/Enemy.gd" id="1_2jigs"]
 [ext_resource type="Texture2D" uid="uid://bj37e1k6so76t" path="res://Game/Assets/Tilesets/tilesheet_transparent.png" id="1_051ad"]
-[ext_resource type="PackedScene" uid="uid://c6s7ym12qv8lv" path="res://Game/Objects/Weapons/Weapon.tscn" id="2_6nsbb"]
+[ext_resource type="PackedScene" uid="uid://c6s7ym12qv8lv" path="res://Game/Objects/Weapons/Base/Weapon.tscn" id="2_6nsbb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bu7o8"]
 radius = 7.0
