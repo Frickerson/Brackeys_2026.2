@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dprglki4vqowe"]
 
 [ext_resource type="Script" uid="uid://by12bqobms5mi" path="res://Game/Objects/Player/Player.gd" id="1_5anc7"]
-[ext_resource type="PackedScene" uid="uid://dls1bpx8qq5em" path="res://Game/Objects/Weapons/Handgun.tscn" id="2_bupal"]
+[ext_resource type="PackedScene" uid="uid://b41p3vi1b188i" path="res://Game/Objects/Weapons/Machinegun.tscn" id="2_bupal"]
 [ext_resource type="Texture2D" uid="uid://bj37e1k6so76t" path="res://Game/Assets/Tilesets/tilesheet_transparent.png" id="3_bupal"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bu7o8"]
