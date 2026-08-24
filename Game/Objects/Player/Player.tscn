@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dprglki4vqowe"]
 
 [ext_resource type="Script" uid="uid://by12bqobms5mi" path="res://Game/Objects/Player/Player.gd" id="1_5anc7"]
-[ext_resource type="PackedScene" uid="uid://qjyuecuw6ve5" path="res://Game/Objects/Player/Bullet.tscn" id="2_bupal"]
+[ext_resource type="PackedScene" uid="uid://c6s7ym12qv8lv" path="res://Game/Objects/Weapons/Weapon.tscn" id="2_g70qv"]
 [ext_resource type="Texture2D" uid="uid://nf811uvg46xk" path="res://Game/Assets/Sprites/Characters/green_character.png" id="3_g70qv"]
 [ext_resource type="Texture2D" uid="uid://ndjxe06qdy7n" path="res://Game/Assets/Sprites/Characters/green_hand.png" id="4_kgmmb"]
 
@@ -10,8 +10,8 @@ radius = 39.012817
 
 [node name="Player" type="CharacterBody2D" unique_id=1713415423]
 script = ExtResource("1_5anc7")
-Attack = ExtResource("2_bupal")
 MoveSpeed = 20000.0
+DefaultWeapon = ExtResource("2_g70qv")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1050555902]
 texture = ExtResource("3_g70qv")

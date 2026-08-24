@@ -2,17 +2,19 @@ extends CharacterBody2D
 
 class_name Player
 
-@export var Attack: PackedScene
 @export var MoveSpeed: float = 30000.0
-@export var AttackSpeed: float = 1.0
 @export var BobSpeed: float = 7.0
 @export var BobDifference: float = 0.1
+@export var DefaultWeapon: PackedScene
 
-var EnableAttack = false
-var AttackTimer = 0.0
-var IsMoving = false
-var ShouldScaleUp = false
-var BobTime = 0.5
+var EquippedWeapon: Weapon = null
+var IsMoving: bool = false
+var ShouldScaleUp: bool = false
+var BobTime: float = 0.5
+
+func _ready() -> void:
+	EquippedWeapon = DefaultWeapon.instantiate()
+	$Marker2D.add_child(EquippedWeapon)
 
 func _physics_process(delta: float) -> void:
 	var vertical = delta * MoveSpeed * Input.get_axis("Player_Move_Up","Player_Move_Down")
@@ -30,17 +32,11 @@ func _physics_process(delta: float) -> void:
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.pressed:
-			EnableAttack = true
+			EquippedWeapon._toggle_attack(true)
 		if event.is_released():
-			EnableAttack = false
+			EquippedWeapon._toggle_attack(false)
 
 func _process(delta: float) -> void:
-	if AttackTimer > 0.0:
-		AttackTimer -= delta
-
-	if EnableAttack && AttackTimer <= 0.0:
-		_attack()
-	
 	if IsMoving:
 		_update_bobbing(delta)
 	else:
@@ -48,14 +44,7 @@ func _process(delta: float) -> void:
 		var new_scale = lerp(1.0 - BobDifference, 1.0 + BobDifference, BobTime)
 		scale = Vector2(new_scale, new_scale)
 	
-func _attack():
-	var attack = Attack.instantiate()
-	owner.add_child(attack)
-	attack.position = $Marker2D.global_position
-	attack.rotation = $Marker2D.global_rotation
-	AttackTimer += 1.0 / AttackSpeed
-	
-func _update_bobbing(delta: float):
+func _update_bobbing(delta: float) -> void:
 	if ShouldScaleUp:
 		BobTime += delta * BobSpeed
 		
