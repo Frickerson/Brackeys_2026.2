@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://bnlyu2aqs00du"]
+
+[ext_resource type="Script" uid="uid://c72ficu10fm3q" path="res://Game/Objects/Characters/Base/CharacterBase.gd" id="1_gp7rn"]
+[ext_resource type="Texture2D" uid="uid://bj37e1k6so76t" path="res://Game/Assets/Tilesets/tilesheet_transparent.png" id="3_eljxm"]
+[ext_resource type="PackedScene" uid="uid://bkb5662wbxhsi" path="res://Game/Objects/HealthBar/HealthBar.tscn" id="4_80e8x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bu7o8"]
+radius = 7.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bupal"]
+atlas = ExtResource("3_eljxm")
+region = Rect2(496, 120, 16, 16)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6nsbb"]
+cull_mode = 2
+polygon = PackedVector2Array(-7, -7.2, -7, 5.2, -0.8000002, 4, 1.6999998, 4, 2.1999998, 2.8000002, -0.5999999, 0, -1, -2.4, 2, -3.3000002, 2, -5.9)
+
+[node name="CharacterBase" type="CharacterBody2D" unique_id=2024416287 groups=["Enemy"]]
+collision_layer = 2
+script = ExtResource("1_gp7rn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=816673183]
+shape = SubResource("CircleShape2D_bu7o8")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=1978200661]
+texture_filter = 1
+position = Vector2(3, 1)
+texture = SubResource("AtlasTexture_bupal")
+
+[node name="AttackLocation" type="Marker2D" parent="CollisionShape2D/Sprite2D" unique_id=526738676]
+position = Vector2(4, 2.5)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="CollisionShape2D" unique_id=1837750297]
+position = Vector2(3, 1)
+occluder = SubResource("OccluderPolygon2D_6nsbb")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=47733685]
+avoidance_enabled = true
+time_horizon_obstacles = 1.0
+
+[node name="HealthBar" parent="." unique_id=1457432008 instance=ExtResource("4_80e8x")]
+
+[connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_velocity_computed"]

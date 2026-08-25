@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://kbnynsfegdr6" path="res://Game/Levels/level.gd" id="1_0vweu"]
 [ext_resource type="TileSet" uid="uid://bnb5pg3vlg73b" path="res://Game/Assets/Tilesets/PixelTileset.tres" id="1_upo77"]
-[ext_resource type="PackedScene" uid="uid://dprglki4vqowe" path="res://Game/Objects/Player/Player.tscn" id="2_ef5y6"]
+[ext_resource type="PackedScene" uid="uid://cbwjgcaupx561" path="res://Game/Objects/Characters/Player/Player.tscn" id="3_upo77"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_bu7o8"]
 vertices = PackedVector2Array(518, 374, 10, 374, 10, 10, 518, 10)
@@ -20,5 +20,5 @@ script = ExtResource("1_0vweu")
 texture_filter = 1
 tile_set = ExtResource("1_upo77")
 
-[node name="Player" parent="." unique_id=1713415423 groups=["Player"] instance=ExtResource("2_ef5y6")]
-position = Vector2(232, 208)
+[node name="Player" parent="." unique_id=2024416287 instance=ExtResource("3_upo77")]
+position = Vector2(233, 207)
