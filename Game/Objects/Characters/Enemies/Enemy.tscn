@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://ccxsa5xfbiplf" path="res://Game/Objects/Characters/Enemies/Enemy.gd" id="2_0vsr6"]
 [ext_resource type="PackedScene" uid="uid://dls1bpx8qq5em" path="res://Game/Objects/Weapons/Handgun.tscn" id="3_3m4rq"]
 
-[node name="Enemy" unique_id=2024416287 node_paths=PackedStringArray("NavigationAgent", "RayCast", "AttackLocation", "HealthBarRef") instance=ExtResource("1_koanu")]
+[node name="Enemy" unique_id=2024416287 node_paths=PackedStringArray("NavigationAgent", "RayCast", "AttackLocation", "HealthBarRef") groups=["Enemy"] instance=ExtResource("1_koanu")]
 script = ExtResource("2_0vsr6")
 NavigationAgent = NodePath("NavigationAgent2D")
 AttackRange = 200.0

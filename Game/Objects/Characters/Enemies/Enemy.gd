@@ -21,6 +21,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if PlayerRef == null:
+		EquippedWeapon._toggle_attack(false)
 		return
 
 	var player_position = PlayerRef.global_position
@@ -71,4 +72,5 @@ func _in_move_range(player_position : Vector2) -> bool:
 
 func _on_velocity_computed(safe_velocity: Vector2) -> void:
 	velocity = safe_velocity
+	IsMoving = !velocity.is_zero_approx()
 	move_and_slide()

@@ -15,7 +15,7 @@ region = Rect2(496, 120, 16, 16)
 cull_mode = 2
 polygon = PackedVector2Array(-7, -7.2, -7, 5.2, -0.8000002, 4, 1.6999998, 4, 2.1999998, 2.8000002, -0.5999999, 0, -1, -2.4, 2, -3.3000002, 2, -5.9)
 
-[node name="CharacterBase" type="CharacterBody2D" unique_id=2024416287 groups=["Enemy"]]
+[node name="CharacterBase" type="CharacterBody2D" unique_id=2024416287]
 collision_layer = 2
 script = ExtResource("1_gp7rn")
 
