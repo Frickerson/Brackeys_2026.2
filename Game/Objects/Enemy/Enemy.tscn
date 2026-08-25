@@ -43,5 +43,6 @@ occluder = SubResource("OccluderPolygon2D_6nsbb")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=47733685]
 target_desired_distance = 100.0
 avoidance_enabled = true
+time_horizon_obstacles = 1.0
 
 [connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_velocity_computed"]
