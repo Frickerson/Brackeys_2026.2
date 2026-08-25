@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Brackeys_2026.2"
-run/main_scene="uid://bsg7fo5ct4d6f"
+run/main_scene="uid://corsfbaob34an"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://caruap80cq5ba"
 
 [display]
 

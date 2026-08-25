@@ -6,3 +6,7 @@
 [node name="Weapon" type="Node2D" unique_id=294193981]
 script = ExtResource("1_lkrpe")
 AttackType = ExtResource("2_4q7qq")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=969157106]
+max_polyphony = 5
+bus = &"Sound Effects"

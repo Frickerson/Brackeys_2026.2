@@ -39,3 +39,5 @@ position = Vector2(47, 337)
 
 [node name="AlternativeWin" type="Timer" parent="." unique_id=424406886]
 one_shot = true
+
+[connection signal="timeout" from="AlternativeWin" to="." method="_on_alternative_win_timeout"]
