@@ -15,6 +15,7 @@ class_name Weapon
 @export var ShotLifeSpan : float = 5.0
 @export var SoundEffect: AudioStream
 @export var BulletSprite: AtlasTexture
+@export var ReloadTime : float = 1.0
 
 var AttackTimer: float = 0.0
 var Enabled: bool = false
@@ -23,6 +24,7 @@ var CurrentAmmo : int = 0
 var UsesAmmo : bool = true
 var AttackSpeedMultiplier : float = 1.0
 var DamageMultiplier : float = 1.0
+var Reloading : bool = false
 
 func _ready() -> void:
 	Ready = true
@@ -55,6 +57,9 @@ func _attack() -> void:
 	var out_of_ammo = CurrentAmmo >= 0 && CurrentAmmo < AmmoPerShot
 	if out_of_ammo :
 		return
+		
+	if Reloading:
+		return
 	
 	_spawn_attack()
 	
@@ -64,7 +69,11 @@ func _attack() -> void:
 	Ready = false
 		
 func _reload() -> void:
+	Reloading = true
+	await get_tree().create_timer(ReloadTime).timeout
+	
 	CurrentAmmo = MaxAmmo
+	Reloading = false
 	
 func _spawn_attack() -> void:
 	var attack = _create_attack()
