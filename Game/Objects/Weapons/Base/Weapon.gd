@@ -80,6 +80,7 @@ func _spawn_attack() -> void:
 	play_sound()
 	attack.position = global_position
 	attack.rotation = global_rotation
+	$ShotParticleEffect.restart()
 	
 func _create_attack() -> Node:
 	var attack = AttackType.instantiate() as Bullet

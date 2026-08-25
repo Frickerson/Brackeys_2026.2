@@ -26,10 +26,10 @@ scale = Vector2(0.25, 0.5)
 shape = SubResource("RectangleShape2D_bu7o8")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=980642888]
-modulate = Color(1.9749014, 1.9749014, 1.9749014, 1)
+self_modulate = Color(1.8984075, 1.8984075, 1.8984075, 1)
 oversampling_with_scale = 2
 texture_filter = 1
-position = Vector2(-0.32599163, -0.078285396)
+position = Vector2(-0.25, 7.450581e-09)
 rotation = 1.5707964
 scale = Vector2(0.99021435, 1.994737)
 texture = SubResource("AtlasTexture_niiov")

@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://b41p3vi1b188i"]
 
 [ext_resource type="PackedScene" uid="uid://c6s7ym12qv8lv" path="res://Game/Objects/Weapons/Base/Weapon.tscn" id="1_2nddt"]
-[ext_resource type="AudioStream" uid="uid://c4pgfgliib20m" path="res://Game/Sound/Effects/MachinegunRandomizer.tres" id="2_ghtm4"]
 
 [node name="Weapon" unique_id=294193981 instance=ExtResource("1_2nddt")]
 AttackSpeed = 5.0
-soundEffect = ExtResource("2_ghtm4")
+
+[node name="ShotParticleEffect" parent="." index="1" unique_id=1196183445]
+amount = 5
