@@ -4,7 +4,7 @@ class_name Player
 
 @export var Camera: Camera2D
 
-var Distrust : float = 0.0
+static var Distrust : float = 0.0
 
 func _physics_process(delta: float) -> void:
 	var vertical = Input.get_axis("Player_Move_Up","Player_Move_Down")
