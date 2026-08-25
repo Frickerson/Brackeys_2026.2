@@ -2,12 +2,17 @@ extends CharacterBase
 
 class_name Enemy
 
-@export var NavigationAgent : NavigationAgent2D
+@export_group("Weapon")
 @export var AttackRange: float = 200.0
-@export var RayCast : RayCast2D
+@export var UseAmmo : bool = false
+
+@export_group("Movement")
 @export var MinMoveRange : float = 100
 @export var MaxMoveRange : float = 300
-@export var UseAmmo : bool = false
+
+@export_group("")
+@export var NavigationAgent : NavigationAgent2D
+@export var RayCast : RayCast2D
 
 @onready var PlayerRef : Player = get_tree().get_first_node_in_group("Player")
 

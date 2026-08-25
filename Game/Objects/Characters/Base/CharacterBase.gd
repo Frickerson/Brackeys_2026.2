@@ -2,14 +2,26 @@ extends CharacterBody2D
 
 class_name CharacterBase
 
+@export var DefaultGroup : StringName = ""
+
+@export_group("Movement")
 @export var MoveSpeed: float = 150.0
+
+@export_group("Bobbing")
 @export var BobSpeed: float = 7.0
 @export var BobDifference: float = 0.1
+
+@export_group("Weapon")
 @export var DefaultWeapon: PackedScene
 @export var AttackLocation: Node2D
+
+@export_group("Health")
 @export var HealthBarRef : HealthBar
 @export var MaxHealth : int = 100
-@export var DefaultGroup : StringName = ""
+
+@export_group("Multipliers")
+@export var AttackSpeedMultiplier : float = 1.0
+
 
 var EquippedWeapon: Weapon = null
 var IsMoving: bool = false
