@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dlcaoemq06d62"]
 
-[ext_resource type="Script" uid="uid://4y61m320w2n0" path="res://Game/Objects/DistrustMeter/DistrustMeter.gd" id="1_rfast"]
+[ext_resource type="Script" uid="uid://4y61m320w2n0" path="res://Game/UI/DistrustMeter/DistrustMeter.gd" id="1_rfast"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7uuyb"]
 bg_color = Color(0.88805956, 0.47728354, 3.85046e-07, 1)

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dy6nnaibx8ckc"]
 
-[ext_resource type="PackedScene" uid="uid://dlcaoemq06d62" path="res://Game/Objects/DistrustMeter/DistrustMeter.tscn" id="1_7uuyb"]
+[ext_resource type="PackedScene" uid="uid://dlcaoemq06d62" path="res://Game/UI/DistrustMeter/DistrustMeter.tscn" id="1_7uuyb"]
 [ext_resource type="Script" uid="uid://bxtm00ktrrugf" path="res://Game/UI/HUD.gd" id="1_j561r"]
 
 [node name="HUD" type="CanvasLayer" unique_id=1916852023 node_paths=PackedStringArray("DistrustMeterRef")]
