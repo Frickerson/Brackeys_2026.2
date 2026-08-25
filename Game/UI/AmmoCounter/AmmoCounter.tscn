@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dupie3p5x2dia"]
+
+[ext_resource type="Script" uid="uid://b2axiic887c11" path="res://Game/UI/AmmoCounter/AmmoCounter.gd" id="1_6k8vq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bu7o8"]
+bg_color = Color(0.36106417, 0.15092239, 0.02547515, 1)
+
+[node name="AmmoCounter" type="PanelContainer" unique_id=919856927 node_paths=PackedStringArray("Text")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 50.0
+grow_vertical = 0
+script = ExtResource("1_6k8vq")
+Text = NodePath("Label")
+
+[node name="Label" type="Label" parent="." unique_id=2145043515]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_bu7o8")
+text = "0/15"
+horizontal_alignment = 1
+vertical_alignment = 1

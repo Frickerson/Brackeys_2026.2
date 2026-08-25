@@ -35,7 +35,17 @@ func _input(event):
 func _process(delta: float) -> void:
 	super._process(delta)
 	
-	update_distrust(10.0 * delta)
+	_update_distrust(1.0 * delta)
 		
-func update_distrust(value : float) -> void:
+func _update_distrust(value : float) -> void:
 	Distrust += value
+
+func _get_max_ammo() -> int:
+	if EquippedWeapon:
+		return EquippedWeapon.MaxAmmo
+	return -1
+	
+func _get_current_ammo() -> int:
+	if EquippedWeapon:
+		return EquippedWeapon.CurrentAmmo
+	return -1

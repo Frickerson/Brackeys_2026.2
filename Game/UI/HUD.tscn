@@ -2,20 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://dlcaoemq06d62" path="res://Game/UI/DistrustMeter/DistrustMeter.tscn" id="1_7uuyb"]
 [ext_resource type="Script" uid="uid://bxtm00ktrrugf" path="res://Game/UI/HUD.gd" id="1_j561r"]
+[ext_resource type="PackedScene" uid="uid://dupie3p5x2dia" path="res://Game/UI/AmmoCounter/AmmoCounter.tscn" id="3_0fp72"]
 
-[node name="HUD" type="CanvasLayer" unique_id=1916852023 node_paths=PackedStringArray("DistrustMeterRef")]
+[node name="HUD" type="CanvasLayer" unique_id=1916852023 node_paths=PackedStringArray("DistrustMeterRef", "AmmoCounterRef")]
 script = ExtResource("1_j561r")
 DistrustMeterRef = NodePath("DistrustMeter")
+AmmoCounterRef = NodePath("AmmoCounter")
 
 [node name="DistrustMeter" parent="." unique_id=446809101 instance=ExtResource("1_7uuyb")]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -200.0
-offset_top = -40.0
-offset_right = 0.0
-offset_bottom = 0.0
-grow_horizontal = 0
-grow_vertical = 0
+
+[node name="AmmoCounter" parent="." unique_id=325284533 instance=ExtResource("3_0fp72")]

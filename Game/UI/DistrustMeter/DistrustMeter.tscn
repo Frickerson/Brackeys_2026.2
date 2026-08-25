@@ -9,8 +9,15 @@ bg_color = Color(0.88805956, 0.47728354, 3.85046e-07, 1)
 bg_color = Color(0.6141321, 7.4891446e-05, 0.5209789, 1)
 
 [node name="DistrustMeter" type="PanelContainer" unique_id=1605835758 node_paths=PackedStringArray("Meter")]
-offset_right = 4.0
-offset_bottom = 27.0
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
 script = ExtResource("1_rfast")
 Meter = NodePath("ProgressBar")
 
