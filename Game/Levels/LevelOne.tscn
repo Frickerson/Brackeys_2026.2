@@ -3,6 +3,7 @@
 [ext_resource type="Material" uid="uid://dp5xut6f6ajkd" path="res://Game/Assets/Shaders/PixelShadowMaterial.tres" id="1_3bh1o"]
 [ext_resource type="TileSet" uid="uid://bnb5pg3vlg73b" path="res://Game/Assets/Tilesets/PixelTileset.tres" id="1_7t8pm"]
 [ext_resource type="PackedScene" uid="uid://dprglki4vqowe" path="res://Game/Objects/Player/Player.tscn" id="2_8g3pm"]
+[ext_resource type="Script" uid="uid://kbnynsfegdr6" path="res://Game/Levels/level.gd" id="2_cba8n"]
 [ext_resource type="PackedScene" uid="uid://bltc4n8lvjp2u" path="res://Game/Objects/Obstacle/ChairWooden.tscn" id="3_u8oo6"]
 [ext_resource type="PackedScene" uid="uid://c6j2r7s6g07yi" path="res://Game/Objects/Obstacle/CouchBlue.tscn" id="4_4uixm"]
 [ext_resource type="PackedScene" uid="uid://fvnw6e8cwohp" path="res://Game/Objects/Obstacle/Crate.tscn" id="5_75e5b"]
@@ -24,6 +25,7 @@ cell_size = 10.0
 [node name="NavigationRegion2D2" type="NavigationRegion2D" unique_id=2058048662]
 material = ExtResource("1_3bh1o")
 navigation_polygon = SubResource("NavigationPolygon_bu7o8")
+script = ExtResource("2_cba8n")
 
 [node name="Terrain" type="Node2D" parent="." unique_id=1609298999]
 
@@ -64,17 +66,20 @@ position = Vector2(288, 336)
 position = Vector2(144, 336)
 collision_layer = 1
 MoveSpeed = 75.0
+MaxHealth = 10
 
 [node name="Enemy2" parent="." unique_id=1042412938 instance=ExtResource("11_4uixm")]
 position = Vector2(400, 80)
 collision_layer = 1
 DefaultWeapon = ExtResource("12_75e5b")
 MoveSpeed = 75.0
+MaxHealth = 10
 
 [node name="Enemy3" parent="." unique_id=707835662 instance=ExtResource("11_4uixm")]
 position = Vector2(96, 48)
 collision_layer = 1
 MoveSpeed = 75.0
+MaxHealth = 10
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=129185914]
 position = Vector2(186, 172)
