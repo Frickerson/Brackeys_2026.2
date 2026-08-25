@@ -24,7 +24,7 @@ func _ready() -> void:
 		EquippedWeapon = DefaultWeapon.instantiate()
 		AttackLocation.add_child(EquippedWeapon)
 		EquippedWeapon.add_to_group(get_groups()[0])
-		EquippedWeapon._toggle_auto_reload(!UseAmmo)
+		EquippedWeapon._toggle_uses_ammo(UseAmmo)
 		
 	RayCast.add_exception(PlayerRef)
 	NavigationAgent.target_desired_distance = MinMoveRange
@@ -34,12 +34,18 @@ func _physics_process(delta: float) -> void:
 		return
 
 	var player_position = PlayerRef.global_position
-	if !_in_move_range(player_position):
-		return
-		
-	_move_towards_player(player_position)
+	var in_move_range = _in_move_range(player_position)
+	var in_attack_range = _in_attack_range(player_position)
+	var in_line_of_sight = _in_line_of_sight(player_position)
 	
-	var enable_attack = _in_attack_range(player_position) && _in_line_of_sight(player_position)
+	if in_move_range:
+		_move_towards_player(player_position)
+	
+	if in_move_range || (in_attack_range && in_line_of_sight):
+		var player_dir = AttackLocation.global_position.direction_to(player_position)
+		rotation = player_dir.angle()
+
+	var enable_attack = in_attack_range && in_line_of_sight
 	EquippedWeapon._toggle_attack(enable_attack)
 	
 func _take_damage(damage : float) -> void:
@@ -55,9 +61,6 @@ func _move_towards_player(player_position : Vector2) -> void:
 	var dir = global_position.direction_to(next_position)
 	velocity = dir * MoveSpeed
 	NavigationAgent.set_velocity(dir * MoveSpeed)
-	
-	var player_dir = AttackLocation.global_position.direction_to(player_position)
-	rotation = player_dir.angle()
 
 func _in_attack_range(player_position : Vector2) -> bool:
 	if EquippedWeapon == null:

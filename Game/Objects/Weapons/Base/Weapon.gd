@@ -11,7 +11,7 @@ var AttackTimer: float = 0.0
 var Enabled: bool = false
 var Ready: bool = false
 var CurrentAmmo : int = 0
-var AutoReload : bool = false
+var UsesAmmo : bool = true
 
 func _ready() -> void:
 	Ready = true
@@ -36,8 +36,8 @@ func _toggle_attack(enable: bool) -> void:
 	if Enabled && Ready:
 		_attack()
 		
-func _toggle_auto_reload(enable : bool) -> void:
-	AutoReload = enable
+func _toggle_uses_ammo(use_ammo : bool) -> void:
+	UsesAmmo = use_ammo
 		
 func _attack() -> void:
 	var out_of_ammo = CurrentAmmo >= 0 && CurrentAmmo < AmmoPerShot
@@ -46,12 +46,10 @@ func _attack() -> void:
 	
 	_spawn_attack()
 	
-	if CurrentAmmo > 0:
+	if UsesAmmo && CurrentAmmo > 0:
 		CurrentAmmo -= AmmoPerShot
 	
 	Ready = false
-	if out_of_ammo && AutoReload:
-		_reload()
 		
 func _reload() -> void:
 	CurrentAmmo = MaxAmmo
