@@ -62,20 +62,41 @@ position = Vector2(288, 336)
 [node name="Enemy" parent="." unique_id=2024416287 instance=ExtResource("13_3bh1o")]
 position = Vector2(144, 336)
 collision_layer = 1
+AttackRange = null
+UseAmmo = null
+MinMoveRange = null
+MaxMoveRange = null
 MoveSpeed = 75.0
+BobSpeed = null
+BobDifference = null
 MaxHealth = 10
+AttackSpeedMultiplier = null
 
 [node name="Enemy2" parent="." unique_id=1042412938 instance=ExtResource("13_3bh1o")]
 position = Vector2(400, 80)
 collision_layer = 1
+AttackRange = null
+UseAmmo = null
+MinMoveRange = null
+MaxMoveRange = null
 MoveSpeed = 75.0
+BobSpeed = null
+BobDifference = null
 MaxHealth = 10
+AttackSpeedMultiplier = null
 
 [node name="Enemy3" parent="." unique_id=707835662 instance=ExtResource("13_3bh1o")]
 position = Vector2(96, 48)
 collision_layer = 1
+AttackRange = null
+UseAmmo = null
+MinMoveRange = null
+MaxMoveRange = null
 MoveSpeed = 75.0
+BobSpeed = null
+BobDifference = null
 MaxHealth = 10
+AttackSpeedMultiplier = null
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=129185914]
 position = Vector2(186, 172)
@@ -93,6 +114,12 @@ texture = ExtResource("13_w43m7")
 
 [node name="Player" parent="." unique_id=413998468 instance=ExtResource("12_w43m7")]
 position = Vector2(423, 293)
+MoveSpeed = null
+BobSpeed = null
+BobDifference = null
+MaxHealth = null
+AttackSpeedMultiplier = null
+DamageMultiplier = null
 
 [node name="AlternativeWin" type="Timer" parent="." unique_id=580723321]
 one_shot = true

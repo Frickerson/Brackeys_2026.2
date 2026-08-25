@@ -12,10 +12,12 @@ func _process(delta: float) -> void:
 	position += velocity * delta
 
 func _on_body_entered(body: Node2D) -> void:
-	for group in get_groups():
-		if body.is_in_group(group):
-			return
+	if is_in_group("PlayerTeam") && body.is_in_group("Player"):
+		return
 	
+	if is_in_group("EnemyTeam") && body.is_in_group("Enemy"):
+		return
+		
 	var character := body as CharacterBase
 	if character:
 		character._take_damage(Damage)

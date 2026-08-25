@@ -4,15 +4,16 @@ class_name Level
 signal _on_win;
 @export var alternativeTimerWin = 5
 
-var enemyAmount: int
+var enemyAmount: int = 0
 
 func _ready() -> void:
-	enemyAmount = get_tree().get_node_count_in_group("Enemy")
-	if alternativeTimerWin > 0:
-		$AlternativeWin.start(alternativeTimerWin)
-
-
-func _on_alternative_win_timeout() -> void:
-	print("timeout")
-	_on_win.emit(self);
-	pass # Replace with function body.
+	var enemies = get_tree().get_nodes_in_group("Enemy")
+	for enemy in enemies:
+		var casted_enemy := enemy as Enemy
+		casted_enemy.OnDied.connect(_on_enemy_died)
+		enemyAmount += 1
+	
+func _on_enemy_died() -> void:
+	enemyAmount -= 1
+	if enemyAmount <= 0:
+		_on_win.emit(self)
