@@ -6,3 +6,7 @@ extends CanvasLayer
 
 func _ready() -> void:
 	DistrustMeterRef._set_distrust_value( PlayerRef.Distrust )
+
+func _process(delta: float) -> void:
+	DistrustMeterRef._set_distrust_value( PlayerRef.Distrust )
+	

@@ -31,3 +31,11 @@ func _input(event):
 	
 	if event.is_action("Player_Reload"):
 		EquippedWeapon._reload()
+		
+func _process(delta: float) -> void:
+	super._process(delta)
+	
+	update_distrust(10.0 * delta)
+		
+func update_distrust(value : float) -> void:
+	Distrust += value
