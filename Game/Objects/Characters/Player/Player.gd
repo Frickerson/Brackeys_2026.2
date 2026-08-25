@@ -40,6 +40,9 @@ func _process(delta: float) -> void:
 func _update_distrust(value : float) -> void:
 	Distrust += value
 
+	if Distrust > 100.0:
+		Distrust = 100.0
+	
 func _get_max_ammo() -> int:
 	if EquippedWeapon:
 		return EquippedWeapon.MaxAmmo
