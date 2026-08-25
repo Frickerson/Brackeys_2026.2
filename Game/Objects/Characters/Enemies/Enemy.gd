@@ -27,6 +27,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if PlayerRef == null:
 		EquippedWeapon._toggle_attack(false)
+		NavigationAgent.set_velocity(Vector2.ZERO)
 		return
 
 	var player_position = PlayerRef.global_position
@@ -45,9 +46,9 @@ func _physics_process(delta: float) -> void:
 	EquippedWeapon._toggle_attack(enable_attack)
 	
 func _move_towards_player(player_position : Vector2, in_line_of_sight : bool) -> void:
-	var dir_from_player = player_position.direction_to(global_position)
+	var dir_from_player = player_position.direction_to(AttackLocation.global_position)
 	if !in_line_of_sight:
-		dir_from_player = dir_from_player.rotated(deg_to_rad(10.0))
+		dir_from_player = _find_line_of_sight(dir_from_player)
 	
 	var target_position = player_position + dir_from_player * MinMoveRange
 	NavigationAgent.target_position = target_position
@@ -79,3 +80,29 @@ func _on_velocity_computed(safe_velocity: Vector2) -> void:
 	velocity = safe_velocity
 	IsMoving = !velocity.is_zero_approx()
 	move_and_slide()
+	
+func _find_line_of_sight(dir : Vector2) -> Vector2:
+	var start_position = PlayerRef.global_position
+	
+	var degrees = 10.0
+	var step = deg_to_rad(degrees)
+	var amount = (360.0 / degrees) - 1
+	
+	for index in amount:
+		var current_angle = index * step
+		var current_dir = dir.rotated(current_angle)
+	
+		var end_position = start_position + current_dir * MinMoveRange
+		var query = PhysicsRayQueryParameters2D.create(start_position, end_position)
+		query.exclude = [self, PlayerRef]
+		query.collide_with_areas = true
+		query.collide_with_bodies = true
+		query.hit_from_inside = true
+		
+		var space_state = get_world_2d().direct_space_state
+		var result = space_state.intersect_ray(query)
+		
+		if result.is_empty():
+			return current_dir
+			
+	return dir

@@ -16,6 +16,7 @@ DefaultGroup = &"Enemy"
 DefaultWeapon = ExtResource("3_3m4rq")
 AttackLocation = NodePath("CollisionShape2D/Sprite2D/AttackLocation")
 HealthBarRef = NodePath("HealthBar")
+DamageMultiplier = 0.0
 
 [node name="Sprite2D" parent="CollisionShape2D" parent_id_path=PackedInt32Array(816673183) index="0" unique_id=1978200661]
 region_rect = Rect2(510, 119, 16, 16)
