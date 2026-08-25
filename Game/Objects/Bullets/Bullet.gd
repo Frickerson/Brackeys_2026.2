@@ -2,8 +2,7 @@ extends Area2D
 
 class_name Bullet
 
-@export var Speed : float = 500.0
-
+var Speed : float = 0.0
 var Damage : float = 0.0
 
 func _process(delta: float) -> void:
@@ -27,5 +26,6 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_screen_exited() -> void:
 	queue_free()
 	
-func _initialize(damage : float) -> void:
+func _initialize(damage : float, shot_speed: float) -> void:
 	Damage = damage
+	Speed = shot_speed

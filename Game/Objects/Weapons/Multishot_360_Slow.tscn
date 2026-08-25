@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c6bcyrck55yqd"]
+
+[ext_resource type="PackedScene" uid="uid://dimp0i6jmuvgs" path="res://Game/Objects/Weapons/Base/MultiShot.tscn" id="1_18tbg"]
+
+[node name="Weapon" unique_id=294193981 instance=ExtResource("1_18tbg")]
+Angle = 360.0
+AttackSpeed = 5.0
+MaxAmmo = 100
+AmmoPerShot = 16
+ShotSpeed = 50.0

@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://doxbk2ykbvr5n" path="res://Game/Objects/Obstacle/TreeRedBig.tscn" id="10_supw7"]
 [ext_resource type="PackedScene" uid="uid://teyr6mhnpf5p" path="res://Game/Objects/Characters/Enemies/Enemy.tscn" id="11_isr3l"]
 [ext_resource type="Texture2D" uid="uid://bt5imsn2k1y4m" path="res://Game/Assets/Sprites/gradient-radial.png" id="12_078ue"]
+[ext_resource type="PackedScene" uid="uid://c6bcyrck55yqd" path="res://Game/Objects/Weapons/Multishot_360_Slow.tscn" id="12_tqs5p"]
 
 [node name="NavigationRegion2D" unique_id=2058048662 instance=ExtResource("1_sajmr")]
 
@@ -64,11 +65,13 @@ DamageMultiplier = 1.0
 position = Vector2(96, 48)
 collision_layer = 1
 MoveSpeed = 75.0
+DefaultWeapon = ExtResource("12_tqs5p")
 MaxHealth = 10
 DamageMultiplier = 1.0
 
 [node name="PointLight2D" type="PointLight2D" parent="." index="14" unique_id=88301337]
 position = Vector2(186, 172)
+scale = Vector2(0.9925548, 1)
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
 texture = ExtResource("12_078ue")
