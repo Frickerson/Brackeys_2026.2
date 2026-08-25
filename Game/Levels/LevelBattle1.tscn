@@ -57,23 +57,23 @@ position = Vector2(288, 336)
 [node name="Enemy" parent="." index="11" unique_id=1017844602 instance=ExtResource("11_isr3l")]
 position = Vector2(144, 336)
 collision_layer = 1
-MoveSpeed = 75.0
-MaxHealth = 10
+MoveSpeed = 40.0
+MaxHealth = 20
 DamageMultiplier = 1.0
 
 [node name="Enemy2" parent="." index="12" unique_id=88873582 instance=ExtResource("11_isr3l")]
 position = Vector2(400, 80)
 collision_layer = 1
-MoveSpeed = 75.0
-MaxHealth = 10
+MoveSpeed = 40.0
+MaxHealth = 20
 DamageMultiplier = 1.0
 
 [node name="Enemy3" parent="." index="13" unique_id=1936318936 instance=ExtResource("11_isr3l")]
 position = Vector2(96, 48)
 collision_layer = 1
-MoveSpeed = 75.0
+MoveSpeed = 40.0
 DefaultWeapon = ExtResource("12_tqs5p")
-MaxHealth = 10
+MaxHealth = 20
 DamageMultiplier = 1.0
 
 [node name="PointLight2D" type="PointLight2D" parent="." index="14" unique_id=88301337]
