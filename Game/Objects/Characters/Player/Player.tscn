@@ -8,10 +8,10 @@
 [node name="Player" unique_id=2024416287 node_paths=PackedStringArray("Camera", "AttackLocation", "HealthBarRef") groups=["Player"] instance=ExtResource("1_dxvqc")]
 script = ExtResource("2_e0uyt")
 Camera = NodePath("Camera2D")
+DefaultGroup = &"Player"
 DefaultWeapon = ExtResource("3_nh8tb")
 AttackLocation = NodePath("CollisionShape2D/Sprite2D/AttackLocation")
 HealthBarRef = NodePath("HealthBar")
-DefaultGroup = &"Player"
 
 [node name="Camera2D" type="Camera2D" parent="." index="3" unique_id=949102248]
 texture_filter = 1

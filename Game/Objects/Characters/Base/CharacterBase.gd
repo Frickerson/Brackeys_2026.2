@@ -21,7 +21,7 @@ class_name CharacterBase
 
 @export_group("Multipliers")
 @export var AttackSpeedMultiplier : float = 1.0
-
+@export var DamageMultiplier : float = 1.0
 
 var EquippedWeapon: Weapon = null
 var IsMoving: bool = false
@@ -36,6 +36,7 @@ func _ready() -> void:
 		EquippedWeapon = DefaultWeapon.instantiate()
 		AttackLocation.add_child(EquippedWeapon)
 		EquippedWeapon.add_to_group(get_groups()[0])
+		EquippedWeapon._update_multipliers(AttackSpeedMultiplier, DamageMultiplier)
 		
 	HealthBarRef._initialize(MaxHealth)
 	
