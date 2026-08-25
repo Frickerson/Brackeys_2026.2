@@ -20,10 +20,10 @@ script = ExtResource("1_0vweu")
 texture_filter = 1
 tile_set = ExtResource("1_upo77")
 
-
 [node name="AlternativeWin" type="Timer" parent="." unique_id=632709264]
 one_shot = true
 
-[connection signal="timeout" from="AlternativeWin" to="." method="_on_alternative_win_timeout"]
 [node name="Player" parent="." unique_id=2024416287 instance=ExtResource("3_upo77")]
 position = Vector2(233, 207)
+
+[connection signal="timeout" from="AlternativeWin" to="." method="_on_alternative_win_timeout"]

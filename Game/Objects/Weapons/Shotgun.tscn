@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dcfga7omincif"]
+
+[ext_resource type="PackedScene" uid="uid://dimp0i6jmuvgs" path="res://Game/Objects/Weapons/Base/MultiShot.tscn" id="1_1gji4"]
+[ext_resource type="AudioStream" uid="uid://ccpku13kr0p6" path="res://Game/Sound/Effects/ShotgunRandomizer.tres" id="2_2h60h"]
+
+[node name="Weapon" unique_id=294193981 instance=ExtResource("1_1gji4")]
+soundEffect = ExtResource("2_2h60h")

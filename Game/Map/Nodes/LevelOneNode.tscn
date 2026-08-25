@@ -6,5 +6,5 @@
 [node name="LevelOne" unique_id=1648746746 instance=ExtResource("1_5sfof")]
 offset_right = 185.0
 offset_bottom = 103.0
-text = "LevelOne"
+text = "Level One"
 scene_to_load = ExtResource("2_toijk")

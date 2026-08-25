@@ -6,4 +6,3 @@ class_name BaseNode
 func get_scene() -> PackedScene:
 	scene_to_load.instantiate()
 	return scene_to_load
-	 

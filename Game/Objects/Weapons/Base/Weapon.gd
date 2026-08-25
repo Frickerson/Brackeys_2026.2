@@ -12,6 +12,9 @@ class_name Weapon
 	get:
 		return Damage * DamageMultiplier
 
+@export var soundEffect: AudioStream
+
+
 var AttackTimer: float = 0.0
 var Enabled: bool = false
 var Ready: bool = false
@@ -23,6 +26,7 @@ var DamageMultiplier : float = 1.0
 func _ready() -> void:
 	Ready = true
 	CurrentAmmo = MaxAmmo
+	$AudioStreamPlayer2D.set_stream(soundEffect)
 
 func _process(delta: float) -> void:
 	if Ready:
@@ -63,6 +67,7 @@ func _reload() -> void:
 	
 func _spawn_attack() -> void:
 	var attack = _create_attack()
+	play_sound()
 	attack.position = global_position
 	attack.rotation = global_rotation
 	
@@ -77,3 +82,6 @@ func _create_attack() -> Node:
 func _update_multipliers(attack_speed_multiplier : float, damage_multiplier : float) -> void:
 	AttackSpeedMultiplier = attack_speed_multiplier
 	DamageMultiplier = damage_multiplier
+	
+func play_sound():
+	$AudioStreamPlayer2D.play()

@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://corsfbaob34an"]
 
 [ext_resource type="Script" uid="uid://xtp8fowqiim1" path="res://Game/Map/NodeMapSystem.gd" id="1_43jg8"]
+[ext_resource type="PackedScene" uid="uid://bqxd5hum0h46e" path="res://Game/Map/Nodes/LevelThreeNode.tscn" id="2_bkk0o"]
 [ext_resource type="PackedScene" uid="uid://s6gt2rbjktmx" path="res://Game/Map/Nodes/LevelOneNode.tscn" id="2_coimo"]
+[ext_resource type="PackedScene" uid="uid://3ilmlxiybj81" path="res://Game/Levels/LevelThree.tscn" id="3_1t1ls"]
 [ext_resource type="PackedScene" uid="uid://2aus6lk0is78" path="res://Game/Map/Nodes/LevelTwoNode.tscn" id="3_fai3e"]
 
-[node name="NodeMap" type="Node2D" unique_id=453470996 node_paths=PackedStringArray("nodes")]
+[node name="NodeMap" type="Node2D" unique_id=453470996]
 script = ExtResource("1_43jg8")
-nodes = [NodePath("Map/ScrollContainer/VBoxContainer/LevelOne"), NodePath("Map/ScrollContainer/VBoxContainer/LevelTwo")]
 
 [node name="Map" type="Control" parent="." unique_id=1093423881]
 unique_name_in_owner = true
@@ -39,10 +40,14 @@ size_flags_horizontal = 6
 size_flags_vertical = 3
 alignment = 2
 
-[node name="LevelTwo" parent="Map/ScrollContainer/VBoxContainer" unique_id=789534163 instance=ExtResource("3_fai3e")]
+[node name="LevelThree" parent="Map/ScrollContainer/VBoxContainer" unique_id=546445709 groups=["Node"] instance=ExtResource("2_bkk0o")]
+layout_mode = 2
+scene_to_load = ExtResource("3_1t1ls")
+
+[node name="LevelTwo" parent="Map/ScrollContainer/VBoxContainer" unique_id=789534163 groups=["Node"] instance=ExtResource("3_fai3e")]
 layout_mode = 2
 
-[node name="LevelOne" parent="Map/ScrollContainer/VBoxContainer" unique_id=1648746746 instance=ExtResource("2_coimo")]
+[node name="LevelOne" parent="Map/ScrollContainer/VBoxContainer" unique_id=1648746746 groups=["Node"] instance=ExtResource("2_coimo")]
 layout_mode = 2
 
 [node name="CurrentScene" type="Node2D" parent="." unique_id=1835926991]

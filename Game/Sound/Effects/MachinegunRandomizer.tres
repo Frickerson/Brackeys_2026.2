@@ -1,0 +1,11 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://c4pgfgliib20m"]
+
+[ext_resource type="AudioStream" uid="uid://dauwikaaeyo5" path="res://Game/Sound/Effects/Gunshots Railgun 001.wav" id="1_2efpt"]
+[ext_resource type="AudioStream" uid="uid://bg586dwdnkth3" path="res://Game/Sound/Effects/Gunshots Railgun 002.wav" id="2_07jvh"]
+[ext_resource type="AudioStream" uid="uid://dgg118e2gbt1t" path="res://Game/Sound/Effects/Gunshots Railgun 003.wav" id="3_hgp2n"]
+
+[resource]
+streams_count = 3
+stream_0/stream = ExtResource("1_2efpt")
+stream_1/stream = ExtResource("2_07jvh")
+stream_2/stream = ExtResource("3_hgp2n")
