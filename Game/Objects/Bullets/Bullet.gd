@@ -28,9 +28,6 @@ func _on_body_entered(body: Node2D) -> void:
 		character._take_damage(Damage)
 		
 	queue_free()
-
-func _on_screen_exited() -> void:
-	queue_free()
 	
 func _initialize(damage : float, shot_speed: float, shot_life_span : float) -> void:
 	Damage = damage

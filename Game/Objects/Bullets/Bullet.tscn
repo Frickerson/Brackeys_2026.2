@@ -10,7 +10,6 @@ size = Vector2(63, 8)
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_niiov")
-Speed = 1000.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1271787194]
 position = Vector2(8, 0)
@@ -20,9 +19,4 @@ shape = SubResource("RectangleShape2D_bu7o8")
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=980642888]
 texture = ExtResource("2_ejl0l")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="CollisionShape2D" unique_id=1989107162]
-scale = Vector2(2, 1)
-rect = Rect2(-50, -50, 100, 100)
-
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="screen_exited" from="CollisionShape2D/VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]
