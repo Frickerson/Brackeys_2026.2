@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 class_name CharacterBase
 
-@export var DefaultGroup : StringName = ""
+@export var TeamName : StringName = ""
 
 @export_group("Movement")
 @export var MoveSpeed: float = 150.0
@@ -30,14 +30,11 @@ var BobTime: float = 0.5
 
 signal OnDied
 
-func _ready() -> void:
-	if get_groups().is_empty():
-		add_to_group(DefaultGroup)
-	
+func _ready() -> void:	
 	if DefaultWeapon != null:
 		EquippedWeapon = DefaultWeapon.instantiate()
 		AttackLocation.add_child(EquippedWeapon)
-		EquippedWeapon.add_to_group(get_groups()[0])
+		EquippedWeapon.add_to_group(TeamName)
 		EquippedWeapon._update_multipliers(AttackSpeedMultiplier, DamageMultiplier)
 		
 	HealthBarRef._initialize(MaxHealth)
