@@ -12,6 +12,7 @@ atlas = ExtResource("1_051ad")
 region = Rect2(496, 120, 16, 16)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6nsbb"]
+cull_mode = 2
 polygon = PackedVector2Array(-7, -7.2, -7, 5.2, -0.8000002, 4, 1.6999998, 4, 2.1999998, 2.8000002, -0.5999999, 0, -1, -2.4, 2, -3.3000002, 2, -5.9)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=2024416287 node_paths=PackedStringArray("NavigationAgent", "AttackLocation", "RayCast") groups=["Enemy"]]
