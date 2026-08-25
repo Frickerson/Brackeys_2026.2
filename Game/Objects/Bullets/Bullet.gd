@@ -9,13 +9,14 @@ var LifeTimer : float = 0.0
 @export var BulletSprite: AtlasTexture
 
 func _process(delta: float) -> void:
-	var direction = Vector2.RIGHT.rotated(rotation)
-	var velocity = direction * Speed
-	position += velocity * delta
-	
 	LifeTimer += delta
 	if LifeTimer >= LifeSpan:
 		queue_free()
+		
+func _physics_process(delta: float) -> void:
+	var direction = Vector2.RIGHT.rotated(rotation)
+	var velocity = direction * Speed
+	global_position += velocity * delta
 
 func _on_body_entered(body: Node2D) -> void:
 	if is_in_group("PlayerTeam") && body.is_in_group("Player"):
