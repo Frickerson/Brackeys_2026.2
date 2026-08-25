@@ -47,3 +47,6 @@ position = Vector2(55, 113)
 
 [node name="Enemy3" parent="." unique_id=1786054312 instance=ExtResource("6_14jlf")]
 position = Vector2(62, 256)
+
+[node name="AlternativeWin" type="Timer" parent="." unique_id=1786689520]
+one_shot = true

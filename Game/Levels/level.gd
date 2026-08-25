@@ -2,7 +2,7 @@ extends NavigationRegion2D
 class_name Level
 
 signal _on_win;
-@export var alternativeTimerWin = 30
+@export var alternativeTimerWin = 5
 
 var enemyAmount: int
 
@@ -12,7 +12,7 @@ func _ready() -> void:
 		$AlternativeWin.start(alternativeTimerWin)
 
 
-
 func _on_alternative_win_timeout() -> void:
-	_on_win.emit();
+	print("timeout")
+	_on_win.emit(self);
 	pass # Replace with function body.

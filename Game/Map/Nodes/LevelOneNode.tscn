@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://s6gt2rbjktmx"]
+
+[ext_resource type="PackedScene" uid="uid://c5u2i12ivbylt" path="res://Game/Map/Nodes/BaseNode.tscn" id="1_5sfof"]
+[ext_resource type="PackedScene" uid="uid://bsg7fo5ct4d6f" path="res://Game/Levels/LevelOne.tscn" id="2_toijk"]
+
+[node name="LevelOne" unique_id=1648746746 instance=ExtResource("1_5sfof")]
+offset_right = 185.0
+offset_bottom = 103.0
+text = "LevelOne"
+scene_to_load = ExtResource("2_toijk")

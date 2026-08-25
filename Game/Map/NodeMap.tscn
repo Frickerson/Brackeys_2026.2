@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://corsfbaob34an"]
+
+[ext_resource type="Script" uid="uid://xtp8fowqiim1" path="res://Game/Map/NodeMapSystem.gd" id="1_43jg8"]
+[ext_resource type="PackedScene" uid="uid://s6gt2rbjktmx" path="res://Game/Map/Nodes/LevelOneNode.tscn" id="2_coimo"]
+[ext_resource type="PackedScene" uid="uid://2aus6lk0is78" path="res://Game/Map/Nodes/LevelTwoNode.tscn" id="3_fai3e"]
+
+[node name="NodeMap" type="Node2D" unique_id=453470996 node_paths=PackedStringArray("nodes")]
+script = ExtResource("1_43jg8")
+nodes = [NodePath("Map/ScrollContainer/VBoxContainer/LevelOne"), NodePath("Map/ScrollContainer/VBoxContainer/LevelTwo")]
+
+[node name="Map" type="Control" parent="." unique_id=1093423881]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1154.0
+offset_bottom = 656.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Map" unique_id=994869441]
+custom_minimum_size = Vector2(200, 200)
+clip_contents = false
+layout_mode = 0
+offset_left = 7.0
+offset_top = 11.0
+offset_right = 1150.0
+offset_bottom = 648.0
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Map/ScrollContainer" unique_id=1037636862]
+propagate_maximum_size = false
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+alignment = 2
+
+[node name="LevelTwo" parent="Map/ScrollContainer/VBoxContainer" unique_id=789534163 instance=ExtResource("3_fai3e")]
+layout_mode = 2
+
+[node name="LevelOne" parent="Map/ScrollContainer/VBoxContainer" unique_id=1648746746 instance=ExtResource("2_coimo")]
+layout_mode = 2
+
+[node name="CurrentScene" type="Node2D" parent="." unique_id=1835926991]
+unique_name_in_owner = true
