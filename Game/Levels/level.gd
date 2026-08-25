@@ -2,7 +2,7 @@ extends NavigationRegion2D
 class_name Level
 
 signal _on_win;
-@export var alternativeTimerWin = 5
+@export var alternativeTimerWin = 0
 
 var enemyAmount: int
 

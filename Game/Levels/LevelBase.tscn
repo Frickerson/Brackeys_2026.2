@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://cbwjgcaupx561" path="res://Game/Objects/Characters/Player/Player.tscn" id="3_upo77"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_bu7o8"]
-vertices = PackedVector2Array(518, 374, 10, 374, 10, 10, 518, 10)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+vertices = PackedVector2Array(458, 138, 458, 70, 502, 26, 502, 358, 458, 314, 26, 358, 390, 314, 138, 314, 390, 246, 70, 314, 26, 26, 70, 246, 390, 70, 138, 246, 390, 138, 138, 138, 138, 70, 70, 70, 458, 246, 70, 138)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 3, 5, 6), PackedInt32Array(6, 5, 7, 8), PackedInt32Array(9, 7, 5), PackedInt32Array(9, 5, 10, 11), PackedInt32Array(10, 2, 1, 12), PackedInt32Array(8, 7, 13, 14, 0), PackedInt32Array(15, 12, 14, 13, 11), PackedInt32Array(12, 15, 16), PackedInt32Array(10, 12, 16), PackedInt32Array(10, 16, 17), PackedInt32Array(3, 4, 18), PackedInt32Array(0, 3, 18), PackedInt32Array(0, 18, 8), PackedInt32Array(19, 15, 11), PackedInt32Array(19, 11, 10), PackedInt32Array(19, 10, 17)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 528, 0, 528, 384, 0, 384)])
 cell_size = 10.0
 

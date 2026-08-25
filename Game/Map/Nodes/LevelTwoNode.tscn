@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://2aus6lk0is78"]
 
 [ext_resource type="PackedScene" uid="uid://c5u2i12ivbylt" path="res://Game/Map/Nodes/BaseNode.tscn" id="1_jg368"]
-[ext_resource type="PackedScene" uid="uid://bmk6uus3lawtm" path="res://Game/Levels/LevelTwo.tscn" id="2_p7nxj"]
+[ext_resource type="PackedScene" uid="uid://dseqt64qilxym" path="res://Game/Levels/LevelBattle2.tscn" id="2_p7nxj"]
 
 [node name="LevelTwo" unique_id=1648746746 instance=ExtResource("1_jg368")]
 text = "Level Two"
