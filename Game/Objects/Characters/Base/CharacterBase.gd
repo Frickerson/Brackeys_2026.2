@@ -28,6 +28,8 @@ var IsMoving: bool = false
 var ShouldScaleUp: bool = false
 var BobTime: float = 0.5
 
+signal OnDied
+
 func _ready() -> void:
 	if get_groups().is_empty():
 		add_to_group(DefaultGroup)
@@ -42,6 +44,7 @@ func _ready() -> void:
 	
 func _take_damage(damage : float) -> void:
 	if HealthBarRef._update_health(damage):
+		OnDied.emit()
 		queue_free()
 		
 func _process(delta: float) -> void:
