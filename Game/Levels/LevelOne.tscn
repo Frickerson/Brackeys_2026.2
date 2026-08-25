@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cbwjgcaupx561" path="res://Game/Objects/Characters/Player/Player.tscn" id="12_w43m7"]
 [ext_resource type="PackedScene" uid="uid://teyr6mhnpf5p" path="res://Game/Objects/Characters/Enemies/Enemy.tscn" id="13_3bh1o"]
 [ext_resource type="Texture2D" uid="uid://bt5imsn2k1y4m" path="res://Game/Assets/Sprites/gradient-radial.png" id="13_w43m7"]
+[ext_resource type="PackedScene" uid="uid://dy6nnaibx8ckc" path="res://Game/UI/HUD.tscn" id="15_cba8n"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_bu7o8"]
 vertices = PackedVector2Array(306, 354, 502, 358, 26, 358, 270, 354, 270, 318, 98, 286, 162, 234, 222, 226, 258, 226, 286, 234, 306, 318, 206, 98, 242, 98, 482, 198, 446, 198, 98, 146, 98, 110, 502, 26, 482, 234, 242, 62, 286, 198, 258, 190, 26, 26, 206, 62, 446, 234, 322, 234, 162, 198, 222, 190, 98, 322, 62, 322, 62, 286, 322, 198, 126, 234, 62, 110, 62, 146, 126, 198)
@@ -95,5 +96,7 @@ position = Vector2(423, 293)
 
 [node name="AlternativeWin" type="Timer" parent="." unique_id=580723321]
 one_shot = true
+
+[node name="HUD" parent="." unique_id=1916852023 instance=ExtResource("15_cba8n")]
 
 [connection signal="timeout" from="AlternativeWin" to="." method="_on_alternative_win_timeout"]

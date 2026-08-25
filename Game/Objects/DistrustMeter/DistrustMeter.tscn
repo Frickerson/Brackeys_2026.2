@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dlcaoemq06d62"]
+
+[ext_resource type="Script" uid="uid://4y61m320w2n0" path="res://Game/Objects/DistrustMeter/DistrustMeter.gd" id="1_rfast"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7uuyb"]
+bg_color = Color(0.88805956, 0.47728354, 3.85046e-07, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j561r"]
+bg_color = Color(0.6141321, 7.4891446e-05, 0.5209789, 1)
+
+[node name="DistrustMeter" type="PanelContainer" unique_id=1605835758 node_paths=PackedStringArray("Meter")]
+offset_right = 4.0
+offset_bottom = 27.0
+script = ExtResource("1_rfast")
+Meter = NodePath("ProgressBar")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1587276269]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_7uuyb")
+theme_override_styles/fill = SubResource("StyleBoxFlat_j561r")
+value = 25.0

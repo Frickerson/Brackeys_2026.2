@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://by12bqobms5mi" path="res://Game/Objects/Characters/Player/Player.gd" id="2_e0uyt"]
 [ext_resource type="PackedScene" uid="uid://b41p3vi1b188i" path="res://Game/Objects/Weapons/Machinegun.tscn" id="3_nh8tb"]
 [ext_resource type="Material" uid="uid://dp5xut6f6ajkd" path="res://Game/Assets/Shaders/PixelShadowMaterial.tres" id="4_s1ydr"]
+[ext_resource type="PackedScene" uid="uid://dlcaoemq06d62" path="res://Game/Objects/DistrustMeter/DistrustMeter.tscn" id="5_aeaxy"]
 
 [node name="Player" unique_id=2024416287 node_paths=PackedStringArray("Camera", "AttackLocation", "HealthBarRef") groups=["Player"] instance=ExtResource("1_dxvqc")]
 script = ExtResource("2_e0uyt")
@@ -35,3 +36,9 @@ drag_right_margin = 0.25
 drag_bottom_margin = 0.25
 editor_draw_limits = true
 editor_draw_drag_margin = true
+
+[node name="DistrustMeter" parent="Camera2D" index="0" unique_id=696700392 instance=ExtResource("5_aeaxy")]
+offset_left = 278.0
+offset_top = 145.0
+offset_right = 278.0
+offset_bottom = 145.0
