@@ -57,3 +57,5 @@ drag_right_margin = 0.33
 drag_bottom_margin = 0.33
 editor_draw_limits = true
 editor_draw_drag_margin = true
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=1898455551]

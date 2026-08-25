@@ -27,7 +27,6 @@ func _ready() -> void:
 		EquippedWeapon._toggle_uses_ammo(UseAmmo)
 		
 	RayCast.add_exception(PlayerRef)
-	NavigationAgent.target_desired_distance = MinMoveRange
 
 func _physics_process(delta: float) -> void:
 	if PlayerRef == null:
@@ -39,7 +38,7 @@ func _physics_process(delta: float) -> void:
 	var in_line_of_sight = _in_line_of_sight(player_position)
 	
 	if in_move_range:
-		_move_towards_player(player_position)
+		_move_towards_player(player_position, in_line_of_sight)
 	
 	if in_move_range || (in_attack_range && in_line_of_sight):
 		var player_dir = AttackLocation.global_position.direction_to(player_position)
@@ -51,8 +50,13 @@ func _physics_process(delta: float) -> void:
 func _take_damage(damage : float) -> void:
 	queue_free()
 	
-func _move_towards_player(player_position : Vector2) -> void:
-	NavigationAgent.target_position = player_position
+func _move_towards_player(player_position : Vector2, in_line_of_sight : bool) -> void:
+	var dir_from_player = player_position.direction_to(global_position)
+	if !in_line_of_sight:
+		dir_from_player = dir_from_player.rotated(deg_to_rad(10.0))
+	
+	var target_position = player_position + dir_from_player * MinMoveRange
+	NavigationAgent.target_position = target_position
 		
 	if NavigationAgent.is_navigation_finished():
 		return
