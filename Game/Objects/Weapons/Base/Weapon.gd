@@ -3,16 +3,22 @@ extends Node2D
 class_name Weapon
 
 @export var AttackType: PackedScene
-@export var AttackSpeed: float = 1.0
+@export var AttackSpeed: float = 1.0:
+	get:
+		return AttackSpeed * AttackSpeedMultiplier
 @export var MaxAmmo : int = 5
 @export var AmmoPerShot : int = 1
-@export var Damage : float = 5.0
+@export var Damage : float = 5.0:
+	get:
+		return Damage * DamageMultiplier
 
 var AttackTimer: float = 0.0
 var Enabled: bool = false
 var Ready: bool = false
 var CurrentAmmo : int = 0
 var UsesAmmo : bool = true
+var AttackSpeedMultiplier : float = 1.0
+var DamageMultiplier : float = 1.0
 
 func _ready() -> void:
 	Ready = true
@@ -67,3 +73,7 @@ func _create_attack() -> Node:
 	attack._initialize(Damage)
 	
 	return attack
+	
+func _update_multipliers(attack_speed_multiplier : float, damage_multiplier : float) -> void:
+	AttackSpeedMultiplier = attack_speed_multiplier
+	DamageMultiplier = damage_multiplier
