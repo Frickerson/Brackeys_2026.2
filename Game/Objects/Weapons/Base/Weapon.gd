@@ -13,7 +13,8 @@ class_name Weapon
 		return Damage * DamageMultiplier
 @export var ShotSpeed : float = 500.0
 @export var ShotLifeSpan : float = 5.0
-@export var soundEffect: AudioStream
+@export var SoundEffect: AudioStream
+@export var BulletSprite: AtlasTexture
 @export var ReloadTime : float = 1.0
 
 var AttackTimer: float = 0.0
@@ -28,7 +29,7 @@ var Reloading : bool = false
 func _ready() -> void:
 	Ready = true
 	CurrentAmmo = MaxAmmo
-	$AudioStreamPlayer2D.set_stream(soundEffect)
+	$AudioStreamPlayer2D.set_stream(SoundEffect)
 
 func _process(delta: float) -> void:
 	if Ready:

@@ -6,6 +6,7 @@ var Speed : float = 0.0
 var Damage : float = 0.0
 var LifeSpan : float = 0.0
 var LifeTimer : float = 0.0
+@export var BulletSprite: AtlasTexture
 
 func _process(delta: float) -> void:
 	var direction = Vector2.RIGHT.rotated(rotation)

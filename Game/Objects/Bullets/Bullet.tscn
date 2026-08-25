@@ -1,10 +1,19 @@
 [gd_scene format=3 uid="uid://qjyuecuw6ve5"]
 
 [ext_resource type="Script" uid="uid://0st2yvo8wdhu" path="res://Game/Objects/Bullets/Bullet.gd" id="1_niiov"]
-[ext_resource type="Texture2D" uid="uid://cag5cox6tfu2p" path="res://Game/Assets/Sprites/Objects/effect_shotLarge.png" id="2_ejl0l"]
+[ext_resource type="Texture2D" uid="uid://bvxgil5ysfjue" path="res://Game/Assets/Tilesets/tiles_packed.png" id="2_niiov"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bu7o8"]
-size = Vector2(63, 8)
+size = Vector2(31.5, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_niiov"]
+atlas = ExtResource("2_niiov")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="Environment" id="Environment_b8hjc"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 1.35
 
 [node name="Bullet" type="Area2D" unique_id=1582658277]
 collision_layer = 4
@@ -12,11 +21,21 @@ collision_mask = 3
 script = ExtResource("1_niiov")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1271787194]
-position = Vector2(8, 0)
+position = Vector2(4.0625, 0)
 scale = Vector2(0.25, 0.5)
 shape = SubResource("RectangleShape2D_bu7o8")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=980642888]
-texture = ExtResource("2_ejl0l")
+modulate = Color(1.9749014, 1.9749014, 1.9749014, 1)
+oversampling_with_scale = 2
+texture_filter = 1
+position = Vector2(-0.32599163, -0.078285396)
+rotation = 1.5707964
+scale = Vector2(0.99021435, 1.994737)
+texture = SubResource("AtlasTexture_niiov")
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1431776725]
+environment = SubResource("Environment_b8hjc")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
