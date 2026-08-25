@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bg586dwdnkth3"
+path="res://.godot/imported/Gunshots Railgun 002.wav-2cbea0aefa276352fc0ba3c4018c1872.sample"
+
+[deps]
+
+source_file="res://Game/Sound/Effects/Gunshots Railgun 002.wav"
+dest_files=["res://.godot/imported/Gunshots Railgun 002.wav-2cbea0aefa276352fc0ba3c4018c1872.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

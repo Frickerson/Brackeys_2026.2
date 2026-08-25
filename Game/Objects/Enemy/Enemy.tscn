@@ -11,6 +11,9 @@ radius = 7.0
 atlas = ExtResource("1_051ad")
 region = Rect2(496, 120, 16, 16)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6nsbb"]
+polygon = PackedVector2Array(-7, -7.2, -7, 5.2, -0.8000002, 4, 1.6999998, 4, 2.1999998, 2.8000002, -0.5999999, 0, -1, -2.4, 2, -3.3000002, 2, -5.9)
+
 [node name="Enemy" type="CharacterBody2D" unique_id=2024416287 node_paths=PackedStringArray("NavigationAgent", "AttackLocation", "RayCast") groups=["Enemy"]]
 collision_layer = 2
 script = ExtResource("1_2jigs")
@@ -32,6 +35,10 @@ position = Vector2(4, 2.5)
 
 [node name="RayCast2D" type="RayCast2D" parent="CollisionShape2D/Sprite2D/AttackLocation" unique_id=1028230827]
 collide_with_areas = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="CollisionShape2D" unique_id=1837750297]
+position = Vector2(3, 1)
+occluder = SubResource("OccluderPolygon2D_6nsbb")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=47733685]
 target_desired_distance = 100.0
