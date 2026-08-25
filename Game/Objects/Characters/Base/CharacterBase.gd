@@ -1,15 +1,15 @@
 extends CharacterBody2D
 
-class_name Player
+class_name CharacterBase
 
 @export var MoveSpeed: float = 150.0
 @export var BobSpeed: float = 7.0
 @export var BobDifference: float = 0.1
 @export var DefaultWeapon: PackedScene
 @export var AttackLocation: Node2D
-@export var Camera: Camera2D
 @export var HealthBarRef : HealthBar
 @export var MaxHealth : int = 100
+@export var DefaultGroup : StringName = ""
 
 var EquippedWeapon: Weapon = null
 var IsMoving: bool = false
@@ -18,41 +18,19 @@ var BobTime: float = 0.5
 
 func _ready() -> void:
 	if get_groups().is_empty():
-		add_to_group("Player")
+		add_to_group(DefaultGroup)
 	
 	if DefaultWeapon != null:
 		EquippedWeapon = DefaultWeapon.instantiate()
 		AttackLocation.add_child(EquippedWeapon)
 		EquippedWeapon.add_to_group(get_groups()[0])
-	
-	HealthBarRef._initialize(MaxHealth)
-
-func _physics_process(delta: float) -> void:
-	var vertical = Input.get_axis("Player_Move_Up","Player_Move_Down")
-	var horizontal = Input.get_axis("Player_Move_Left","Player_Move_Right")
-	
-	velocity = Vector2(horizontal, vertical).normalized() * MoveSpeed
-	IsMoving = !velocity.is_zero_approx()
-
-	move_and_slide()
-	
-	var mouse_position = Camera.get_global_mouse_position()
-	var direction = mouse_position - position
-	rotation = direction.angle()
-	
-func _input(event):
-	if EquippedWeapon == null:
-		return
 		
-	if event.is_action("Player_Shoot"):
-		if event.pressed:
-			EquippedWeapon._toggle_attack(true)
-		if event.is_released():
-			EquippedWeapon._toggle_attack(false)
+	HealthBarRef._initialize(MaxHealth)
 	
-	if event.is_action("Player_Reload"):
-		EquippedWeapon._reload()
-
+func _take_damage(damage : float) -> void:
+	if HealthBarRef._update_health(damage):
+		queue_free()
+		
 func _process(delta: float) -> void:
 	if IsMoving:
 		_update_bobbing(delta)
@@ -60,7 +38,7 @@ func _process(delta: float) -> void:
 		BobTime = lerp(BobTime, 0.5, delta * BobSpeed)
 		var new_scale = lerp(1.0 - BobDifference, 1.0 + BobDifference, BobTime)
 		scale = Vector2(new_scale, new_scale)
-	
+		
 func _update_bobbing(delta: float) -> void:
 	if ShouldScaleUp:
 		BobTime += delta * BobSpeed
@@ -78,7 +56,3 @@ func _update_bobbing(delta: float) -> void:
 	
 	var new_scale = lerp(1.0 - BobDifference, 1.0 + BobDifference, BobTime)
 	scale = Vector2(new_scale, new_scale)
-
-func take_damage (damage : float) -> void:
-	if HealthBarRef._update_health(damage):
-		queue_free()

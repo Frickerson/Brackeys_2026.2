@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cbwjgcaupx561"]
+
+[ext_resource type="PackedScene" uid="uid://bnlyu2aqs00du" path="res://Game/Objects/Characters/Base/CharacterBase.tscn" id="1_dxvqc"]
+[ext_resource type="Script" uid="uid://by12bqobms5mi" path="res://Game/Objects/Characters/Player/Player.gd" id="2_e0uyt"]
+[ext_resource type="PackedScene" uid="uid://b41p3vi1b188i" path="res://Game/Objects/Weapons/Machinegun.tscn" id="3_nh8tb"]
+[ext_resource type="Material" uid="uid://dp5xut6f6ajkd" path="res://Game/Assets/Shaders/PixelShadowMaterial.tres" id="4_s1ydr"]
+
+[node name="Player" unique_id=2024416287 node_paths=PackedStringArray("Camera", "AttackLocation", "HealthBarRef") groups=["Player"] instance=ExtResource("1_dxvqc")]
+script = ExtResource("2_e0uyt")
+Camera = NodePath("Camera2D")
+DefaultWeapon = ExtResource("3_nh8tb")
+AttackLocation = NodePath("CollisionShape2D/Sprite2D/AttackLocation")
+HealthBarRef = NodePath("HealthBar")
+DefaultGroup = &"Player"
+
+[node name="Camera2D" type="Camera2D" parent="." index="3" unique_id=949102248]
+texture_filter = 1
+material = ExtResource("4_s1ydr")
+position = Vector2(-5, 0)
+zoom = Vector2(3, 3)
+limit_left = 0
+limit_top = 0
+limit_right = 528
+limit_bottom = 384
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.33
+drag_top_margin = 0.33
+drag_right_margin = 0.33
+drag_bottom_margin = 0.33
+editor_draw_limits = true
+editor_draw_drag_margin = true

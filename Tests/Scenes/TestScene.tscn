@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://ocmgkjvm638v"]
 
-[ext_resource type="PackedScene" uid="uid://dprglki4vqowe" path="res://Game/Objects/Player/Player.tscn" id="1_y857a"]
+[ext_resource type="PackedScene" uid="uid://cbwjgcaupx561" path="res://Game/Objects/Characters/Player/Player.tscn" id="1_y857a"]
 
 [node name="TestScene" type="Node3D" unique_id=1757694833]
 
-[node name="CharacterBody2D" parent="." unique_id=1713415423 instance=ExtResource("1_y857a")]
-position = Vector2(541, 326)
+[node name="Player" parent="." unique_id=2024416287 instance=ExtResource("1_y857a")]
+position = Vector2(544, 357)

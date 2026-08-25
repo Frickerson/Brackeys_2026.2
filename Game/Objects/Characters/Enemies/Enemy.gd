@@ -1,38 +1,27 @@
-extends CharacterBody2D
+extends CharacterBase
 
 class_name Enemy
 
 @export var NavigationAgent : NavigationAgent2D
-@export var DefaultWeapon: PackedScene
 @export var AttackRange: float = 200.0
-@export var AttackLocation: Node2D
 @export var RayCast : RayCast2D
-@export var MoveSpeed : float = 200.0
 @export var MinMoveRange : float = 100
 @export var MaxMoveRange : float = 300
 @export var UseAmmo : bool = false
-@export var HealthBarRef : HealthBar
-@export var MaxHealth : int = 100
 
 @onready var PlayerRef : Player = get_tree().get_first_node_in_group("Player")
 
-var EquippedWeapon: Weapon = null
-
 func _ready() -> void:
-	if get_groups().is_empty():
-		add_to_group("Enemy")
+	super._ready()
 	
-	if DefaultWeapon != null:
-		EquippedWeapon = DefaultWeapon.instantiate()
-		AttackLocation.add_child(EquippedWeapon)
-		EquippedWeapon.add_to_group(get_groups()[0])
+	if EquippedWeapon != null:
 		EquippedWeapon._toggle_uses_ammo(UseAmmo)
 		
 	RayCast.add_exception(PlayerRef)
-	HealthBarRef._initialize(MaxHealth)
 
 func _physics_process(delta: float) -> void:
 	if PlayerRef == null:
+		EquippedWeapon._toggle_attack(false)
 		return
 
 	var player_position = PlayerRef.global_position
@@ -49,10 +38,6 @@ func _physics_process(delta: float) -> void:
 
 	var enable_attack = in_attack_range && in_line_of_sight
 	EquippedWeapon._toggle_attack(enable_attack)
-	
-func _take_damage(damage : float) -> void:
-	if HealthBarRef._update_health(damage):
-		queue_free()
 	
 func _move_towards_player(player_position : Vector2, in_line_of_sight : bool) -> void:
 	var dir_from_player = player_position.direction_to(global_position)
@@ -87,4 +72,5 @@ func _in_move_range(player_position : Vector2) -> bool:
 
 func _on_velocity_computed(safe_velocity: Vector2) -> void:
 	velocity = safe_velocity
+	IsMoving = !velocity.is_zero_approx()
 	move_and_slide()
