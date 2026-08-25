@@ -11,11 +11,9 @@ class_name Weapon
 @export var Damage : float = 5.0:
 	get:
 		return Damage * DamageMultiplier
-		
 @export var ShotSpeed : float = 500.0
-
+@export var ShotLifeSpan : float = 5.0
 @export var soundEffect: AudioStream
-
 
 var AttackTimer: float = 0.0
 var Enabled: bool = false
@@ -75,9 +73,9 @@ func _spawn_attack() -> void:
 	
 func _create_attack() -> Node:
 	var attack = AttackType.instantiate() as Bullet
-	get_tree().root.add_child(attack)
 	attack.add_to_group(get_groups()[0])
-	attack._initialize(Damage, ShotSpeed)
+	attack._initialize(Damage, ShotSpeed, ShotLifeSpan)
+	get_tree().root.add_child(attack)
 	
 	return attack
 	

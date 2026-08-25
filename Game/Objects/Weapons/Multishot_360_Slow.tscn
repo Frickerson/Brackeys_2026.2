@@ -4,7 +4,7 @@
 
 [node name="Weapon" unique_id=294193981 instance=ExtResource("1_18tbg")]
 Angle = 360.0
-AttackSpeed = 5.0
+AttackSpeed = 2.0
 MaxAmmo = 100
 AmmoPerShot = 16
-ShotSpeed = 50.0
+ShotSpeed = 25.0
