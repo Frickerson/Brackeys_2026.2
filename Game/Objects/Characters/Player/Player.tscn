@@ -13,6 +13,9 @@ DefaultWeapon = ExtResource("3_nh8tb")
 AttackLocation = NodePath("CollisionShape2D/Sprite2D/AttackLocation")
 HealthBarRef = NodePath("HealthBar")
 
+[node name="Sprite2D" parent="CollisionShape2D" parent_id_path=PackedInt32Array(816673183) index="0" unique_id=1978200661]
+region_rect = Rect2(510, 17, 16, 16)
+
 [node name="Camera2D" type="Camera2D" parent="." index="3" unique_id=949102248]
 texture_filter = 1
 material = ExtResource("4_s1ydr")
@@ -26,9 +29,9 @@ limit_smoothed = true
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
-drag_left_margin = 0.33
-drag_top_margin = 0.33
-drag_right_margin = 0.33
-drag_bottom_margin = 0.33
+drag_left_margin = 0.25
+drag_top_margin = 0.25
+drag_right_margin = 0.25
+drag_bottom_margin = 0.25
 editor_draw_limits = true
 editor_draw_drag_margin = true
