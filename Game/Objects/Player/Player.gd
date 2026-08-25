@@ -8,6 +8,8 @@ class_name Player
 @export var DefaultWeapon: PackedScene
 @export var AttackLocation: Node2D
 @export var Camera: Camera2D
+@export var HealthBarRef : HealthBar
+@export var MaxHealth : int = 100
 
 var EquippedWeapon: Weapon = null
 var IsMoving: bool = false
@@ -22,6 +24,8 @@ func _ready() -> void:
 		EquippedWeapon = DefaultWeapon.instantiate()
 		AttackLocation.add_child(EquippedWeapon)
 		EquippedWeapon.add_to_group(get_groups()[0])
+	
+	HealthBarRef._initialize(MaxHealth)
 
 func _physics_process(delta: float) -> void:
 	var vertical = Input.get_axis("Player_Move_Up","Player_Move_Down")
@@ -76,4 +80,5 @@ func _update_bobbing(delta: float) -> void:
 	scale = Vector2(new_scale, new_scale)
 
 func take_damage (damage : float) -> void:
-	pass
+	if HealthBarRef._update_health(damage):
+		queue_free()

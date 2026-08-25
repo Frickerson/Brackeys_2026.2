@@ -6,6 +6,7 @@ class_name Weapon
 @export var AttackSpeed: float = 1.0
 @export var MaxAmmo : int = 5
 @export var AmmoPerShot : int = 1
+@export var Damage : float = 5.0
 
 var AttackTimer: float = 0.0
 var Enabled: bool = false
@@ -60,8 +61,9 @@ func _spawn_attack() -> void:
 	attack.rotation = global_rotation
 	
 func _create_attack() -> Node:
-	var attack = AttackType.instantiate()
+	var attack = AttackType.instantiate() as Bullet
 	get_tree().root.add_child(attack)
 	attack.add_to_group(get_groups()[0])
+	attack._initialize(Damage)
 	
 	return attack

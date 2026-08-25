@@ -11,6 +11,8 @@ class_name Enemy
 @export var MinMoveRange : float = 100
 @export var MaxMoveRange : float = 300
 @export var UseAmmo : bool = false
+@export var HealthBarRef : HealthBar
+@export var MaxHealth : int = 100
 
 @onready var PlayerRef : Player = get_tree().get_first_node_in_group("Player")
 
@@ -27,6 +29,7 @@ func _ready() -> void:
 		EquippedWeapon._toggle_uses_ammo(UseAmmo)
 		
 	RayCast.add_exception(PlayerRef)
+	HealthBarRef._initialize(MaxHealth)
 
 func _physics_process(delta: float) -> void:
 	if PlayerRef == null:
@@ -48,7 +51,8 @@ func _physics_process(delta: float) -> void:
 	EquippedWeapon._toggle_attack(enable_attack)
 	
 func _take_damage(damage : float) -> void:
-	queue_free()
+	if HealthBarRef._update_health(damage):
+		queue_free()
 	
 func _move_towards_player(player_position : Vector2, in_line_of_sight : bool) -> void:
 	var dir_from_player = player_position.direction_to(global_position)

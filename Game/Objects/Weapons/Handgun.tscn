@@ -3,3 +3,4 @@
 [ext_resource type="PackedScene" uid="uid://c6s7ym12qv8lv" path="res://Game/Objects/Weapons/Base/Weapon.tscn" id="1_hhaqp"]
 
 [node name="Weapon" unique_id=294193981 instance=ExtResource("1_hhaqp")]
+Damage = 10.0
