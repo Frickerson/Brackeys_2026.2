@@ -2,10 +2,16 @@
 
 [ext_resource type="Script" uid="uid://db8148t3ujfbt" path="res://Game/Objects/Weapons/Base/Weapon.gd" id="1_lkrpe"]
 [ext_resource type="PackedScene" uid="uid://qjyuecuw6ve5" path="res://Game/Objects/Bullets/Bullet.tscn" id="2_4q7qq"]
+[ext_resource type="Texture2D" uid="uid://bvxgil5ysfjue" path="res://Game/Assets/Tilesets/tiles_packed.png" id="3_t7qir"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6x1um"]
+atlas = ExtResource("3_t7qir")
+region = Rect2(0, 0, 16, 16)
 
 [node name="Weapon" type="Node2D" unique_id=294193981]
 script = ExtResource("1_lkrpe")
 AttackType = ExtResource("2_4q7qq")
+BulletSprite = SubResource("AtlasTexture_6x1um")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=969157106]
 max_polyphony = 5
