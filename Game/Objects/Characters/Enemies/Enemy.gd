@@ -20,6 +20,9 @@ static var Multipliers : CharacterMultipliers
 static var AdditionalMultipliers : CharacterMultipliers
 
 func _ready() -> void:
+	if !Multipliers && DefaultMultipliers:
+		Multipliers = DefaultMultipliers
+	
 	super._ready()
 	
 	if EquippedWeapon != null:
@@ -27,9 +30,6 @@ func _ready() -> void:
 		
 	RayCast.add_exception(PlayerRef)
 	NavigationAgent.radius = AvoidanceRadius
-	
-	if !Multipliers && DefaultMultipliers:
-		Multipliers = DefaultMultipliers
 
 func _physics_process(_delta: float) -> void:
 	if Dying:

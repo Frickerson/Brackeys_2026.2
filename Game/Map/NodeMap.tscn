@@ -61,6 +61,10 @@ script = ExtResource("6_c6e86")
 AttackSpeedMultiplier = 2.0
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
+[sub_resource type="Resource" id="Resource_aw0qy"]
+script = ExtResource("6_c6e86")
+metadata/_custom_type_script = "uid://do8q2bwentmfw"
+
 [node name="NodeMap" type="Node2D" unique_id=453470996 node_paths=PackedStringArray("StarterNode")]
 script = ExtResource("1_43jg8")
 StarterNode = NodePath("Map/MarginContainer/ScrollContainer/VBoxContainer/Layer0/Layer0_Battle_01")
@@ -140,7 +144,7 @@ theme_override_constants/separation = 100
 
 [node name="Layer0_Battle_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer0" unique_id=1220550427 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_bkk0o")]
 layout_mode = 2
-DifficultyMultiplier = null
+DifficultyMultiplier = SubResource("Resource_aw0qy")
 scene_to_load = ExtResource("5_1t1ls")
 ChildNodes = [NodePath("../../Layer1/Layer1_EventNode_01"), NodePath("../../Layer1/Layer1_Battle_01")]
 

@@ -36,6 +36,9 @@ func _ready() -> void:
 	HealthBarRef._initialize(MaxHealth)
 	
 func _take_damage(damage : float) -> void:
+	if Dying:
+		return
+		
 	if HealthBarRef._update_health(damage):
 		$DeathParticles.emitting = true
 		$DeathParticles.finished.connect(func(): queue_free())
