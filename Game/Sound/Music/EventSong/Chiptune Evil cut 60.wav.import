@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bg5rkdw8xwsiu"
+path="res://.godot/imported/Chiptune Evil cut 60.wav-6bbae4b8985c31b4fbd14f1d6fd9a178.sample"
+
+[deps]
+
+source_file="res://Game/Sound/Music/EventSong/Chiptune Evil cut 60.wav"
+dest_files=["res://.godot/imported/Chiptune Evil cut 60.wav-6bbae4b8985c31b4fbd14f1d6fd9a178.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

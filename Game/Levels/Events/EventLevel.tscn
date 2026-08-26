@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://cmci1sfpn7a0m"]
 
 [ext_resource type="Script" uid="uid://dvxhxwjo2tkex" path="res://Game/Levels/Events/EventLevel.gd" id="1_h1hrm"]
+[ext_resource type="Resource" uid="uid://bk52vfup5s1qm" path="res://Game/Sound/Music/EventSong/EventSong.tres" id="2_j1mgq"]
 
 [node name="EventLevel" type="Node2D" unique_id=803163974 node_paths=PackedStringArray("Title", "Description", "Option")]
 script = ExtResource("1_h1hrm")
 Title = NodePath("Control/VBoxContainer/Title")
 Description = NodePath("Control/VBoxContainer/Description")
 Option = NodePath("Control/VBoxContainer/Option")
+Song = ExtResource("2_j1mgq")
 
 [node name="Control" type="Control" parent="." unique_id=488715265]
 layout_mode = 3
