@@ -6,5 +6,6 @@
 custom_minimum_size = Vector2(100, 50)
 offset_right = 100.0
 offset_bottom = 50.0
+disabled = true
 text = "Base"
 script = ExtResource("1_1lt5e")

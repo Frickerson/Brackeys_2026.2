@@ -5,8 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://s6gt2rbjktmx" path="res://Game/Map/Nodes/LevelOneNode.tscn" id="2_coimo"]
 [ext_resource type="PackedScene" uid="uid://2aus6lk0is78" path="res://Game/Map/Nodes/LevelTwoNode.tscn" id="3_fai3e"]
 
-[node name="NodeMap" type="Node2D" unique_id=453470996]
+[node name="NodeMap" type="Node2D" unique_id=453470996 node_paths=PackedStringArray("StarterNode")]
 script = ExtResource("1_43jg8")
+StarterNode = NodePath("Map/ScrollContainer/VBoxContainer/LevelOne")
 
 [node name="Map" type="Control" parent="." unique_id=1093423881]
 unique_name_in_owner = true
@@ -39,14 +40,18 @@ size_flags_horizontal = 6
 size_flags_vertical = 3
 alignment = 2
 
-[node name="LevelThree" parent="Map/ScrollContainer/VBoxContainer" unique_id=546445709 groups=["Node"] instance=ExtResource("2_bkk0o")]
+[node name="HBoxContainer" type="HBoxContainer" parent="Map/ScrollContainer/VBoxContainer" unique_id=2108882114]
 layout_mode = 2
 
-[node name="LevelTwo" parent="Map/ScrollContainer/VBoxContainer" unique_id=789534163 groups=["Node"] instance=ExtResource("3_fai3e")]
+[node name="LevelThree" parent="Map/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=546445709 groups=["Node"] instance=ExtResource("2_bkk0o")]
 layout_mode = 2
 
-[node name="LevelOne" parent="Map/ScrollContainer/VBoxContainer" unique_id=1648746746 groups=["Node"] instance=ExtResource("2_coimo")]
+[node name="LevelTwo" parent="Map/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=789534163 groups=["Node"] instance=ExtResource("3_fai3e")]
 layout_mode = 2
+
+[node name="LevelOne" parent="Map/ScrollContainer/VBoxContainer" unique_id=1648746746 node_paths=PackedStringArray("ChildNodes") groups=["Node"] instance=ExtResource("2_coimo")]
+layout_mode = 2
+ChildNodes = [NodePath("../HBoxContainer/LevelTwo"), NodePath("../HBoxContainer/LevelThree")]
 
 [node name="CurrentScene" type="Node2D" parent="." unique_id=1835926991]
 unique_name_in_owner = true
