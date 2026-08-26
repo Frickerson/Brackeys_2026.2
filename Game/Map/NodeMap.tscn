@@ -18,7 +18,7 @@ metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
 [sub_resource type="Resource" id="Resource_rpydu"]
 script = ExtResource("6_c6e86")
 AttackSpeedMultiplier = 0.0
-DamageMultiplier = 0.0
+DamageMultiplier = 0.1
 AttackRangeMultiplier = 0.0
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
