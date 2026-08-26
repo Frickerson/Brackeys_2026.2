@@ -85,7 +85,7 @@ func _spawn_attack() -> void:
 func _create_attack() -> Node:
 	var attack = AttackType.instantiate() as Bullet
 	attack.add_to_group(get_groups()[0])
-	attack._initialize(Damage, ShotSpeed, ShotLifeSpan)
+	attack._initialize(Damage, ShotSpeed, ShotLifeSpan, BulletSprite)
 	get_tree().root.add_child(attack)
 	
 	return attack
