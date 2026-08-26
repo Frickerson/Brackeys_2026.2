@@ -16,7 +16,7 @@ func _set_options(options : Array[Dictionary]) -> void:
 	for option in options:
 		var new_option = _create_option()
 		new_option.text = option.Title
-		new_option.pressed.connect(_on_option_pressed.bind(new_option))
+		new_option.pressed.connect(_on_option_pressed.bind(option))
 	
 	Option.queue_free()
 
