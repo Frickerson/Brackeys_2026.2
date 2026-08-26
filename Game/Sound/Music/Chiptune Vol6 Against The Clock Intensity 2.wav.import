@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ccir4hgph0igd"
+path="res://.godot/imported/Chiptune Vol6 Against The Clock Intensity 2.wav-bda6ad406b59089a362f8b2d651ca08b.sample"
+
+[deps]
+
+source_file="res://Game/Sound/Music/Chiptune Vol6 Against The Clock Intensity 2.wav"
+dest_files=["res://.godot/imported/Chiptune Vol6 Against The Clock Intensity 2.wav-bda6ad406b59089a362f8b2d651ca08b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
