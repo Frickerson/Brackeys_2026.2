@@ -58,12 +58,9 @@ func _on_body_entered(body: Node2D) -> void:
 		character._take_damage(Damage)
 	
 	$HitParticles.emitting = true
-	$HitParticles.finished.connect(delete_self_after_particles)
+	$HitParticles.finished.connect(func(): queue_free())
 	$CollisionShape2D.queue_free()
 	Deleting = true
-	
-func delete_self_after_particles():
-	queue_free()
 	
 func _initialize(damage : float, shot_speed: float, shot_life_span : float, bullet_sprite: Texture2D) -> void:
 	Damage = damage

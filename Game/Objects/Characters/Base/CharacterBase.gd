@@ -28,7 +28,7 @@ var EquippedWeapon: Weapon = null
 var IsMoving: bool = false
 var ShouldScaleUp: bool = false
 var BobTime: float = 0.5
-
+var Dying: bool = false
 signal OnDied
 
 func _ready() -> void:	
@@ -39,9 +39,13 @@ func _ready() -> void:
 	
 func _take_damage(damage : float) -> void:
 	if HealthBarRef._update_health(damage):
+		$DeathParticles.emitting = true
+		$DeathParticles.finished.connect(func(): queue_free())
+		$CollisionShape2D.queue_free()
+		$HealthBar.visible = false
 		OnDied.emit()
-		queue_free()
-		
+		Dying = true
+
 func _process(delta: float) -> void:
 	if IsMoving:
 		_update_bobbing(delta)
