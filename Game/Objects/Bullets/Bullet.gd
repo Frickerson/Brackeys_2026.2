@@ -27,9 +27,11 @@ func _process(delta: float) -> void:
 		queue_free()
 	
 	if IsFake:
-		BulletSprite.modulate = lerp(DefaultColor, FakeColor, ease(LifeTimer / LifeSpan, FakeColorCurve))
+		var fake_weight = clampf(ease(LifeTimer / LifeSpan, FakeColorCurve) * 2 - 1, 0.0, 1.0)
+		BulletSprite.modulate = DefaultColor.lerp(FakeColor, fake_weight)
 	
-	var transparency = lerp(1.0, 0.0, ease( LifeTimer / LifeSpan, FadeOutCurve))
+	var transparency_weight = clampf(ease(LifeTimer / LifeSpan, FadeOutCurve) * 2 - 1, 0.0, 1.0)
+	var transparency = lerpf(1.0, 0.0, transparency_weight)
 	BulletSprite.modulate.a = transparency
 		
 func _physics_process(delta: float) -> void:
@@ -38,6 +40,9 @@ func _physics_process(delta: float) -> void:
 	global_position += velocity * delta
 
 func _on_body_entered(body: Node2D) -> void:
+	if IsFake:
+		return
+		
 	if is_in_group("PlayerTeam") && body.is_in_group("Player"):
 		return
 	
@@ -46,8 +51,7 @@ func _on_body_entered(body: Node2D) -> void:
 		
 	var character := body as CharacterBase
 	if character:
-		if !IsFake:
-			character._take_damage(Damage)
+		character._take_damage(Damage)
 		
 	queue_free()
 	
