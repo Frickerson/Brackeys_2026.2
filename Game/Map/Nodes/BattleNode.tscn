@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://c4gavm1wg14av"]
 
 [ext_resource type="PackedScene" uid="uid://c5u2i12ivbylt" path="res://Game/Map/Nodes/BaseNode.tscn" id="1_dte3s"]
+[ext_resource type="Script" uid="uid://b13sjq57t02vq" path="res://Game/Map/Nodes/BattleNode.gd" id="2_ipte8"]
 
 [node name="BattleNode" unique_id=546445709 instance=ExtResource("1_dte3s")]
 text = "Battle"
+script = ExtResource("2_ipte8")
+DifficultyMultiplier = 1.0

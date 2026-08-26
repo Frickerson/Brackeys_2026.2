@@ -1,8 +1,9 @@
 extends Button
+
 class_name BaseNode
+
 @export var scene_to_load: PackedScene
 @export var ChildNodes : Array[BaseNode]
-@export var DifficultyMultiplier : float = 1.0
 
 var LoadedLevel : Level = null
 
@@ -18,7 +19,6 @@ func _get_loaded_level() -> Level:
 		return LoadedLevel
 	
 	LoadedLevel = scene_to_load.instantiate() as Level
-	LoadedLevel.LevelMultiplier = DifficultyMultiplier
 	return LoadedLevel
 
 func _toggle_children(enable : bool, callable : Callable) ->void:

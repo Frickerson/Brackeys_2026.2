@@ -6,8 +6,9 @@ class_name Enemy
 @export var UseAmmo : bool = false
 
 @export_group("Movement")
-@export var MinMoveRange : float = 100
-@export var MaxMoveRange : float = 300
+@export var MinMoveRange : float = 100.0
+@export var MaxMoveRange : float = 300.0
+@export var AvoidanceRadius : float = 30.0
 
 @export_group("")
 @export var NavigationAgent : NavigationAgent2D
@@ -22,6 +23,7 @@ func _ready() -> void:
 		EquippedWeapon._toggle_uses_ammo(UseAmmo)
 		
 	RayCast.add_exception(PlayerRef)
+	NavigationAgent.radius = AvoidanceRadius
 
 func _physics_process(delta: float) -> void:
 	if PlayerRef == null:

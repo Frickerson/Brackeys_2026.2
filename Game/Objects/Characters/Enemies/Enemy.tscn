@@ -9,6 +9,7 @@ script = ExtResource("2_0vsr6")
 UseAmmo = false
 MinMoveRange = 100.0
 MaxMoveRange = 300.0
+AvoidanceRadius = 30.0
 NavigationAgent = NodePath("NavigationAgent2D")
 RayCast = NodePath("CollisionShape2D/Sprite2D/AttackLocation/RayCast2D")
 TeamName = &"EnemyTeam"
@@ -23,3 +24,6 @@ region_rect = Rect2(510, 119, 16, 16)
 [node name="RayCast2D" type="RayCast2D" parent="CollisionShape2D/Sprite2D/AttackLocation" parent_id_path=PackedInt32Array(526738676) index="0" unique_id=359639645]
 hit_from_inside = true
 collide_with_areas = true
+
+[node name="NavigationAgent2D" parent="." index="1" unique_id=47733685]
+radius = 30.0
