@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://qjyuecuw6ve5" path="res://Game/Objects/Bullets/Bullet.tscn" id="2_4q7qq"]
 [ext_resource type="Texture2D" uid="uid://bvxgil5ysfjue" path="res://Game/Assets/Tilesets/tiles_packed.png" id="3_t7qir"]
 [ext_resource type="Texture2D" uid="uid://b7dy8sj2ffmn" path="res://Game/Assets/Sprites/pixel-white.png" id="4_lhyph"]
+[ext_resource type="AudioStream" uid="uid://cffmo6ghrvpdg" path="res://Game/Sound/Effects/EmptyGun.ogg" id="5_5slob"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6x1um"]
 atlas = ExtResource("3_t7qir")
@@ -40,7 +41,7 @@ script = ExtResource("1_lkrpe")
 AttackType = ExtResource("2_4q7qq")
 BulletSprite = SubResource("AtlasTexture_6x1um")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=969157106]
+[node name="ShotSound" type="AudioStreamPlayer2D" parent="." unique_id=969157106]
 max_polyphony = 5
 bus = &"Sound Effects"
 
@@ -53,3 +54,7 @@ one_shot = true
 explosiveness = 1.0
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_b8hjc")
+
+[node name="EmptyGunSound" type="AudioStreamPlayer2D" parent="." unique_id=1261060350]
+stream = ExtResource("5_5slob")
+bus = &"Sound Effects"

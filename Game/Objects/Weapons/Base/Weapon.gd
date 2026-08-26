@@ -34,7 +34,7 @@ var LevelRoot : Node2D
 func _ready() -> void:
 	Ready = true
 	CurrentAmmo = MaxAmmo
-	$AudioStreamPlayer2D.set_stream(SoundEffect)
+	$ShotSound.set_stream(SoundEffect)
 	LevelRoot = get_tree().get_first_node_in_group("LevelRoot")
 
 func _process(delta: float) -> void:
@@ -62,6 +62,8 @@ func _toggle_uses_ammo(use_ammo : bool) -> void:
 func _attack() -> void:
 	var out_of_ammo = CurrentAmmo >= 0 && CurrentAmmo < AmmoPerShot
 	if out_of_ammo :
+		$EmptyGunSound.play()
+		Ready = false
 		return
 		
 	if Reloading:
@@ -117,7 +119,7 @@ func _update_multipliers(attack_speed_multiplier : float, damage_multiplier : fl
 	AttackRangeMultiplier = range_multiplier
 	
 func play_sound():
-	$AudioStreamPlayer2D.play()
+	$ShotSound.play()
 	
 func _get_total_shots() -> int:
 	return AmmoPerShot + _get_fake_shots()
