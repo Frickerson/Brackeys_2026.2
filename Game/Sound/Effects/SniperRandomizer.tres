@@ -1,0 +1,11 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://cly8im250iaam"]
+
+[ext_resource type="AudioStream" uid="uid://b2m6whwnag6c6" path="res://Game/Sound/Effects/Gunshots Tesla 001.wav" id="1_04xv6"]
+[ext_resource type="AudioStream" uid="uid://dadte8u4hwx2o" path="res://Game/Sound/Effects/Gunshots Tesla 002.wav" id="2_senht"]
+[ext_resource type="AudioStream" uid="uid://b4meat0sno3ot" path="res://Game/Sound/Effects/Gunshots Tesla 003.wav" id="3_cb5ss"]
+
+[resource]
+streams_count = 3
+stream_0/stream = ExtResource("1_04xv6")
+stream_1/stream = ExtResource("2_senht")
+stream_2/stream = ExtResource("3_cb5ss")

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bqcb7qsk4to4s"]
+
+[ext_resource type="PackedScene" uid="uid://c6s7ym12qv8lv" path="res://Game/Objects/Weapons/Base/Weapon.tscn" id="1_uh07b"]
+[ext_resource type="AudioStream" uid="uid://cly8im250iaam" path="res://Game/Sound/Effects/SniperRandomizer.tres" id="2_e6xvi"]
+
+[node name="Weapon" unique_id=294193981 instance=ExtResource("1_uh07b")]
+AttackSpeed = 0.5
+Damage = 25.0
+ShotSpeed = 250.0
+SoundEffect = ExtResource("2_e6xvi")
+ReloadTime = 5.0
