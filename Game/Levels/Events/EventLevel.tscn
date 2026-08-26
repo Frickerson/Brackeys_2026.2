@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cmci1sfpn7a0m"]
+
+[ext_resource type="Script" uid="uid://dvxhxwjo2tkex" path="res://Game/Levels/Events/EventLevel.gd" id="1_h1hrm"]
+
+[node name="EventLevel" type="Node2D" unique_id=803163974]
+script = ExtResource("1_h1hrm")
+
+[node name="Control" type="Control" parent="." unique_id=488715265]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
