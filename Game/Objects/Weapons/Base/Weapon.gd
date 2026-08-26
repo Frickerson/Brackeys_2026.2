@@ -16,6 +16,7 @@ class_name Weapon
 @export var SoundEffect: AudioStream
 @export var BulletSprite: AtlasTexture
 @export var ReloadTime : float = 1.0
+@export var MaxFakeShots : int = 3
 
 var AttackTimer: float = 0.0
 var Enabled: bool = false
@@ -62,6 +63,8 @@ func _attack() -> void:
 		return
 	
 	_spawn_attack()
+	play_sound()
+	$ShotParticleEffect.restart()
 	
 	if UsesAmmo && CurrentAmmo > 0:
 		CurrentAmmo -= AmmoPerShot
@@ -76,11 +79,19 @@ func _reload() -> void:
 	Reloading = false
 	
 func _spawn_attack() -> void:
-	var attack = _create_attack()
-	play_sound()
-	attack.position = global_position
-	attack.rotation = global_rotation
-	$ShotParticleEffect.restart()
+	var right_vector = Vector2.UP.rotated(global_rotation)
+	var shots = _get_total_shots()
+	var offset = 10.0
+	var attacks = []
+	for index in shots:
+		var test = index - shots / 2.0
+		var current_offset = offset * (index - (shots - 1) / 2.0) * right_vector
+		var attack = _create_attack()
+		attack.global_position = global_position + current_offset
+		attack.global_rotation = global_rotation
+		attacks.push_back(attack)
+	_apply_fake_shots(attacks)
+
 	
 func _create_attack() -> Node:
 	var attack = AttackType.instantiate() as Bullet
@@ -96,3 +107,17 @@ func _update_multipliers(attack_speed_multiplier : float, damage_multiplier : fl
 	
 func play_sound():
 	$AudioStreamPlayer2D.play()
+	
+func _get_total_shots() -> int:
+	return AmmoPerShot + _get_fake_shots()
+	
+func _get_fake_shots() -> int:
+	var distrust = Player.Distrust / 100.0
+	return floor(distrust * MaxFakeShots)
+	
+func _apply_fake_shots(shots : Array) -> void:
+	var fake_shots = _get_fake_shots()
+	shots.shuffle()
+	for index in fake_shots:
+		var attack := shots.get(index) as Bullet
+		attack.IsFake = true
