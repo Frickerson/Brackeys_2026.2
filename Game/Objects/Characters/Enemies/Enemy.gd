@@ -26,6 +26,9 @@ func _ready() -> void:
 	NavigationAgent.radius = AvoidanceRadius
 
 func _physics_process(delta: float) -> void:
+	if Dying:
+		return
+	
 	if PlayerRef == null:
 		EquippedWeapon._toggle_attack(false)
 		NavigationAgent.set_velocity(Vector2.ZERO)
