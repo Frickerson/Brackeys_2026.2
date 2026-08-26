@@ -2,6 +2,9 @@ extends Button
 class_name BaseNode
 @export var scene_to_load: PackedScene
 @export var ChildNodes : Array[BaseNode]
+@export var DifficultyMultiplier : float = 1.0
+
+var LoadedLevel : Level = null
 
 func _draw() -> void:
 	var start_position = Vector2.ZERO + _get_local_center_top()
@@ -10,9 +13,12 @@ func _draw() -> void:
 		var end_position = child.global_position - global_position + child._get_local_center_bottom()
 		draw_line(start_position, end_position, Color.BLACK, 5.0, true)
 
-func get_scene() -> PackedScene:
-	scene_to_load.instantiate()
-	return scene_to_load
+func _get_loaded_level() -> Level:
+	if LoadedLevel:
+		return LoadedLevel
+	
+	LoadedLevel = scene_to_load.instantiate() as Level
+	return LoadedLevel
 
 func _toggle_children(enable : bool, callable : Callable) ->void:
 	for child in ChildNodes:

@@ -19,13 +19,16 @@ func on_node_pressed(node: BaseNode):
 		child.pressed.disconnect(on_node_pressed.bind(child))
 		
 	CurrentNode = node
-	var scene = node.get_scene().instantiate() as Level
+	var scene = CurrentNode._get_loaded_level()
 	scene._on_win.connect(on_win);
 	%CurrentScene.add_child(scene)
 	%Map.visible = false
 
-func on_win(scene: Level):
-	print("winning")
+func on_win():
+	var scene = CurrentNode._get_loaded_level()
+	scene._on_win.disconnect(on_win)
+	scene.queue_free()
+	
 	CurrentNode.disabled = true
 	if CurrentNode.ChildNodes.is_empty(): 
 		get_tree().quit()
@@ -34,5 +37,4 @@ func on_win(scene: Level):
 			child.disabled = false
 			child.pressed.connect(on_node_pressed.bind(child))
 
-		%CurrentScene.remove_child(scene)
 		%Map.visible = true

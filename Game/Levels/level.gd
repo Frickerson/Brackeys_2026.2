@@ -16,4 +16,4 @@ func _ready() -> void:
 func _on_enemy_died() -> void:
 	enemyAmount -= 1
 	if enemyAmount <= 0:
-		_on_win.emit(self)
+		_on_win.emit()
