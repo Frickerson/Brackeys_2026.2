@@ -62,7 +62,7 @@ func _attack() -> void:
 	if Reloading:
 		return
 	
-	_spawn_attack()
+	_spawn_attacks()
 	play_sound()
 	$ShotParticleEffect.restart()
 	
@@ -78,19 +78,23 @@ func _reload() -> void:
 	CurrentAmmo = MaxAmmo
 	Reloading = false
 	
-func _spawn_attack() -> void:
-	var right_vector = Vector2.UP.rotated(global_rotation)
+func _spawn_attacks() -> void:
 	var shots = _get_total_shots()
-	var offset = 10.0
 	var attacks = []
 	for index in shots:
-		var test = index - shots / 2.0
-		var current_offset = offset * (index - (shots - 1) / 2.0) * right_vector
-		var attack = _create_attack()
-		attack.global_position = global_position + current_offset
-		attack.global_rotation = global_rotation
+		var attack = _spawn_attack(shots, index)
 		attacks.push_back(attack)
 	_apply_fake_shots(attacks)
+	
+func _spawn_attack(shots : int, index : int) -> Node:
+	var right_vector = Vector2.UP.rotated(global_rotation)
+	var offset = 10.0
+	var test = index - shots / 2.0
+	var current_offset = offset * (index - (shots - 1) / 2.0) * right_vector
+	var attack = _create_attack()
+	attack.global_position = global_position + current_offset
+	attack.global_rotation = global_rotation
+	return attack
 
 	
 func _create_attack() -> Node:
