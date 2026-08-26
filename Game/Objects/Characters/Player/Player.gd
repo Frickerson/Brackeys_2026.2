@@ -5,6 +5,12 @@ class_name Player
 @export var Camera: Camera2D
 
 static var Distrust : float = 0.0
+static var Multipliers : CharacterMultipliers
+
+func _ready() -> void:
+	super._ready()
+	if !Multipliers && DefaultMultipliers:
+		Multipliers = DefaultMultipliers
 
 func _physics_process(_delta: float) -> void:
 	var vertical = Input.get_axis("Player_Move_Up","Player_Move_Down")
@@ -52,3 +58,13 @@ func _get_current_ammo() -> int:
 	if EquippedWeapon:
 		return EquippedWeapon.CurrentAmmo
 	return -1
+	
+func _update_weapon() -> void:
+	if EquippedWeapon:
+		EquippedWeapon._update_multipliers(_get_multipliers())
+
+static func _get_multipliers() -> CharacterMultipliers:
+	return Multipliers
+	
+static func _add_multipliers(additional_multipliers : CharacterMultipliers) -> void:
+	Multipliers._add(additional_multipliers)

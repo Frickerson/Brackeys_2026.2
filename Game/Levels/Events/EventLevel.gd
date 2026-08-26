@@ -12,7 +12,7 @@ func _set_title(title : String) -> void:
 func _set_description(description : String) -> void:
 	Description.text = description
 	
-func _set_options(options : Array[Dictionary]) -> void:
+func _set_options(options : Array[EventOption]) -> void:
 	for option in options:
 		var new_option = _create_option()
 		new_option.text = option.Title
@@ -25,9 +25,8 @@ func _create_option() -> Button:
 	Option.get_parent().add_child(new_option)
 	return new_option
 	
-func _on_option_pressed(option : Dictionary):
-	var player_ref : Player = get_tree().get_first_node_in_group("Player")
-	Player._update_distrust(option.Distrust)
-	#player_ref._add_multipliers(option.MultiplierIncrease)
+func _on_option_pressed(option : EventOption):
+	Player._update_distrust(option.DistrustChange)
+	Player._add_multipliers(option.MultipliersChange)
 	_on_win.emit()
 	pass
