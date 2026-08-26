@@ -2,10 +2,13 @@ extends Area2D
 
 class_name Bullet
 
+@export var BulletSprite: AtlasTexture
+
 var Speed : float = 0.0
 var Damage : float = 0.0
 var LifeSpan : float = 0.0
 var LifeTimer : float = 0.0
+var IsFake : bool = false
 
 func _process(delta: float) -> void:
 	LifeTimer += delta
@@ -26,7 +29,8 @@ func _on_body_entered(body: Node2D) -> void:
 		
 	var character := body as CharacterBase
 	if character:
-		character._take_damage(Damage)
+		if !IsFake:
+			character._take_damage(Damage)
 		
 	queue_free()
 	
