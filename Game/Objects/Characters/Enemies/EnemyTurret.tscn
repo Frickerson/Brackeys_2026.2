@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://daxwsfok8wcr1"]
+
+[ext_resource type="PackedScene" uid="uid://teyr6mhnpf5p" path="res://Game/Objects/Characters/Enemies/Enemy.tscn" id="1_y8b0v"]
+[ext_resource type="PackedScene" uid="uid://b41p3vi1b188i" path="res://Game/Objects/Weapons/Machinegun.tscn" id="2_b01po"]
+
+[node name="EnemyTurret" unique_id=2024416287 instance=ExtResource("1_y8b0v")]
+MoveSpeed = 0.0
+DefaultWeapon = ExtResource("2_b01po")
