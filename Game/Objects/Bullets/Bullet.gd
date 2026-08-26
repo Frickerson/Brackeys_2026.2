@@ -4,6 +4,8 @@ class_name Bullet
 
 @export var BulletSprite: Sprite2D
 @export var FakeColor : Color = Color.RED
+@export var FakeColorCurve : float = 0.4
+@export var FadeOutCurve : float = 5.0
 
 var Speed : float = 0.0
 var Damage : float = 0.0
@@ -22,9 +24,9 @@ func _process(delta: float) -> void:
 		
 	var desired_color = Color.TRANSPARENT
 	if IsFake:
-		BulletSprite.self_modulate = lerp(DefaultColor, FakeColor, ease(LifeTimer / LifeSpan, 0.3))
+		BulletSprite.self_modulate = lerp(DefaultColor, FakeColor, ease(LifeTimer / LifeSpan, FakeColorCurve))
 
-	BulletSprite.modulate = lerp(Color.WHITE, Color.TRANSPARENT, ease( LifeTimer / LifeSpan, 5.0))
+	BulletSprite.modulate = lerp(Color.WHITE, Color.TRANSPARENT, ease( LifeTimer / LifeSpan, FadeOutCurve))
 		
 func _physics_process(delta: float) -> void:
 	var direction = Vector2.RIGHT.rotated(rotation)

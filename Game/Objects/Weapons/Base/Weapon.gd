@@ -12,11 +12,13 @@ class_name Weapon
 	get:
 		return Damage * DamageMultiplier
 @export var ShotSpeed : float = 200.0
-@export var ShotLifeSpan : float = 5.0
 @export var SoundEffect: AudioStream
 @export var BulletSprite: AtlasTexture
 @export var ReloadTime : float = 1.0
 @export var MaxFakeShots : int = 3
+@export var AttackRange: float = 200.0:
+	get:
+		return AttackRange * AttackRangeMultiplier
 
 var AttackTimer: float = 0.0
 var Enabled: bool = false
@@ -25,6 +27,7 @@ var CurrentAmmo : int = 0
 var UsesAmmo : bool = true
 var AttackSpeedMultiplier : float = 1.0
 var DamageMultiplier : float = 1.0
+var AttackRangeMultiplier : float = 1.0
 var Reloading : bool = false
 
 func _ready() -> void:
@@ -100,14 +103,16 @@ func _spawn_attack(shots : int, index : int) -> Node:
 func _create_attack() -> Node:
 	var attack = AttackType.instantiate() as Bullet
 	attack.add_to_group(get_groups()[0])
-	attack._initialize(Damage, ShotSpeed, ShotLifeSpan, BulletSprite)
+	var life_span = AttackRange / ShotSpeed
+	attack._initialize(Damage, ShotSpeed, life_span, BulletSprite)
 	get_tree().root.add_child(attack)
 	
 	return attack
 	
-func _update_multipliers(attack_speed_multiplier : float, damage_multiplier : float) -> void:
+func _update_multipliers(attack_speed_multiplier : float, damage_multiplier : float, range_multiplier : float) -> void:
 	AttackSpeedMultiplier = attack_speed_multiplier
 	DamageMultiplier = damage_multiplier
+	AttackRangeMultiplier = range_multiplier
 	
 func play_sound():
 	$AudioStreamPlayer2D.play()

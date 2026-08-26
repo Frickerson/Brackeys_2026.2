@@ -22,6 +22,7 @@ class_name CharacterBase
 @export_group("Multipliers")
 @export var AttackSpeedMultiplier : float = 1.0
 @export var DamageMultiplier : float = 1.0
+@export var AttackRangeMultiplier : float = 1.0
 
 var EquippedWeapon: Weapon = null
 var IsMoving: bool = false
@@ -32,10 +33,7 @@ signal OnDied
 
 func _ready() -> void:	
 	if DefaultWeapon != null:
-		EquippedWeapon = DefaultWeapon.instantiate()
-		AttackLocation.add_child(EquippedWeapon)
-		EquippedWeapon.add_to_group(TeamName)
-		EquippedWeapon._update_multipliers(AttackSpeedMultiplier, DamageMultiplier)
+		_equip_weapon(DefaultWeapon)
 		
 	HealthBarRef._initialize(MaxHealth)
 	
@@ -69,3 +67,9 @@ func _update_bobbing(delta: float) -> void:
 	
 	var new_scale = lerp(1.0 - BobDifference, 1.0 + BobDifference, BobTime)
 	scale = Vector2(new_scale, new_scale)
+	
+func _equip_weapon(weapon_class : PackedScene) -> void:
+	EquippedWeapon = weapon_class.instantiate()
+	AttackLocation.add_child(EquippedWeapon)
+	EquippedWeapon.add_to_group(TeamName)
+	EquippedWeapon._update_multipliers(AttackSpeedMultiplier, DamageMultiplier, AttackRangeMultiplier)
