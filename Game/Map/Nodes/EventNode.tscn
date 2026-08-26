@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://chnydkutel05w"]
 
 [ext_resource type="PackedScene" uid="uid://c5u2i12ivbylt" path="res://Game/Map/Nodes/BaseNode.tscn" id="1_u3nac"]
+[ext_resource type="Script" uid="uid://djyukuhna8rus" path="res://Game/Map/Nodes/EventNode.gd" id="2_naada"]
 
 [node name="EventNode" unique_id=546445709 instance=ExtResource("1_u3nac")]
 text = "Event"
+script = ExtResource("2_naada")

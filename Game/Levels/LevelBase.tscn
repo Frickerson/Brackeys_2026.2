@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ba7k0r8ymmyye"]
 
-[ext_resource type="Script" uid="uid://kbnynsfegdr6" path="res://Game/Levels/level.gd" id="1_0vweu"]
+[ext_resource type="Script" uid="uid://bg047ud8jaheo" path="res://Game/Levels/BattleLevel.gd" id="1_0vweu"]
 [ext_resource type="TileSet" uid="uid://bnb5pg3vlg73b" path="res://Game/Assets/Tilesets/PixelTileset.tres" id="1_upo77"]
 [ext_resource type="PackedScene" uid="uid://cbwjgcaupx561" path="res://Game/Objects/Characters/Player/Player.tscn" id="3_upo77"]
 [ext_resource type="PackedScene" uid="uid://dy6nnaibx8ckc" path="res://Game/UI/HUD.tscn" id="4_0vweu"]
@@ -14,6 +14,7 @@ cell_size = 10.0
 [node name="LevelRoot" type="NavigationRegion2D" unique_id=2058048662 groups=["LevelRoot"]]
 navigation_polygon = SubResource("NavigationPolygon_bu7o8")
 script = ExtResource("1_0vweu")
+alternativeTimerWin = null
 
 [node name="Terrain" type="Node2D" parent="." unique_id=1609298999]
 
