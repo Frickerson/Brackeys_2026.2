@@ -5,12 +5,17 @@ class_name Weapon
 @export var AttackType: PackedScene
 @export var AttackSpeed: float = 1.0:
 	get:
-		return AttackSpeed * AttackSpeedMultiplier
+		if Multipliers:
+			return AttackSpeed * Multipliers.AttackSpeedMultiplier
+		return AttackSpeed
+		
 @export var MaxAmmo : int = 5
 @export var AmmoPerShot : int = 1
 @export var Damage : float = 5.0:
 	get:
-		return Damage * DamageMultiplier
+		if Multipliers:
+			return Damage * Multipliers.DamageMultiplier
+		return Damage
 @export var ShotSpeed : float = 200.0
 @export var SoundEffect: AudioStream
 @export var BulletSprite: Texture2D
@@ -18,16 +23,16 @@ class_name Weapon
 @export var MaxFakeShots : int = 3
 @export var AttackRange: float = 200.0:
 	get:
-		return AttackRange * AttackRangeMultiplier
+		if Multipliers:
+			return AttackRange * Multipliers.AttackRangeMultiplier
+		return AttackRange
 
 var AttackTimer: float = 0.0
 var Enabled: bool = false
 var Ready: bool = false
 var CurrentAmmo : int = 0
 var UsesAmmo : bool = true
-var AttackSpeedMultiplier : float = 1.0
-var DamageMultiplier : float = 1.0
-var AttackRangeMultiplier : float = 1.0
+var Multipliers : CharacterMultipliers = null
 var Reloading : bool = false
 var LevelRoot : Node2D
 
@@ -116,10 +121,8 @@ func _create_attack() -> Node:
 	
 	return attack
 	
-func _update_multipliers(attack_speed_multiplier : float, damage_multiplier : float, range_multiplier : float) -> void:
-	AttackSpeedMultiplier = attack_speed_multiplier
-	DamageMultiplier = damage_multiplier
-	AttackRangeMultiplier = range_multiplier
+func _update_multipliers(multipliers : CharacterMultipliers) -> void:
+	Multipliers = multipliers
 	
 func play_sound():
 	$ShotSound.play()

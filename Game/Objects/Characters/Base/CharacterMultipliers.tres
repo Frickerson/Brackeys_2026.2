@@ -1,0 +1,6 @@
+[gd_resource type="Resource" format=3 uid="uid://w8ofv4beg7js"]
+
+[ext_resource type="Script" uid="uid://do8q2bwentmfw" path="res://Game/Objects/Characters/Base/CharacterMultipliers.gd" id="1_234cc"]
+
+[resource]
+script = ExtResource("1_234cc")

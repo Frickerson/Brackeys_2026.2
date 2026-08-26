@@ -10,9 +10,6 @@ class_name EventNode
 	MultiplierIncrease = 0.0
 }]
 
-func _ready() -> void:
-	print(Options[0].Title)
-
 func _load_level() -> Level:
 	var level : EventLevel = super._load_level()
 	level._set_title(Title)

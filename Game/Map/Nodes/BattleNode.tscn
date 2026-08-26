@@ -2,8 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://c5u2i12ivbylt" path="res://Game/Map/Nodes/BaseNode.tscn" id="1_dte3s"]
 [ext_resource type="Script" uid="uid://b13sjq57t02vq" path="res://Game/Map/Nodes/BattleNode.gd" id="2_ipte8"]
+[ext_resource type="Script" uid="uid://do8q2bwentmfw" path="res://Game/Objects/Characters/Base/CharacterMultipliers.gd" id="3_c0ssg"]
+
+[sub_resource type="Resource" id="Resource_ipte8"]
+script = ExtResource("3_c0ssg")
+metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [node name="BattleNode" unique_id=546445709 instance=ExtResource("1_dte3s")]
 text = "Battle"
 script = ExtResource("2_ipte8")
-DifficultyMultiplier = 1.0
+DifficultyMultiplier = SubResource("Resource_ipte8")

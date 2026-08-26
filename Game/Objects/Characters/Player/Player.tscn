@@ -3,7 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://bnlyu2aqs00du" path="res://Game/Objects/Characters/Base/CharacterBase.tscn" id="1_dxvqc"]
 [ext_resource type="Script" uid="uid://by12bqobms5mi" path="res://Game/Objects/Characters/Player/Player.gd" id="2_e0uyt"]
 [ext_resource type="PackedScene" uid="uid://b41p3vi1b188i" path="res://Game/Objects/Weapons/Machinegun.tscn" id="3_nh8tb"]
+[ext_resource type="Script" uid="uid://do8q2bwentmfw" path="res://Game/Objects/Characters/Base/CharacterMultipliers.gd" id="4_aeaxy"]
 [ext_resource type="Material" uid="uid://dp5xut6f6ajkd" path="res://Game/Assets/Shaders/PixelShadowMaterial.tres" id="4_s1ydr"]
+
+[sub_resource type="Resource" id="Resource_ib7iv"]
+script = ExtResource("4_aeaxy")
+metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [node name="Player" unique_id=2024416287 node_paths=PackedStringArray("Camera", "AttackLocation", "HealthBarRef") groups=["Player"] instance=ExtResource("1_dxvqc")]
 script = ExtResource("2_e0uyt")
@@ -12,6 +17,7 @@ TeamName = &"PlayerTeam"
 DefaultWeapon = ExtResource("3_nh8tb")
 AttackLocation = NodePath("CollisionShape2D/Sprite2D/AttackLocation")
 HealthBarRef = NodePath("HealthBar")
+Multipliers = SubResource("Resource_ib7iv")
 
 [node name="Sprite2D" parent="CollisionShape2D" parent_id_path=PackedInt32Array(816673183) index="0" unique_id=1978200661]
 region_rect = Rect2(510, 17, 16, 16)

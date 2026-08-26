@@ -37,7 +37,7 @@ func _process(delta: float) -> void:
 	
 	_update_distrust(1.0 * delta)
 		
-func _update_distrust(value : float) -> void:
+static func _update_distrust(value : float) -> void:
 	Distrust += value
 
 	if Distrust > 100.0:

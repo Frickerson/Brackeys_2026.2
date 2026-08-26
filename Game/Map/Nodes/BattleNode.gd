@@ -2,7 +2,7 @@ extends BaseNode
 
 class_name BattleNode
 
-@export var DifficultyMultiplier : float = 1.0
+@export var DifficultyMultiplier : CharacterMultipliers = null
 
 func _load_level() -> Level:
 	var level = super._load_level()

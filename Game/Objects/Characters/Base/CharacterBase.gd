@@ -24,6 +24,8 @@ class_name CharacterBase
 @export var DamageMultiplier : float = 1.0
 @export var AttackRangeMultiplier : float = 1.0
 
+@export var Multipliers : CharacterMultipliers
+
 var EquippedWeapon: Weapon = null
 var IsMoving: bool = false
 var ShouldScaleUp: bool = false
@@ -76,12 +78,16 @@ func _equip_weapon(weapon_class : PackedScene) -> void:
 	EquippedWeapon = weapon_class.instantiate()
 	AttackLocation.add_child(EquippedWeapon)
 	EquippedWeapon.add_to_group(TeamName)
-	EquippedWeapon._update_multipliers(AttackSpeedMultiplier, DamageMultiplier, AttackRangeMultiplier)
+	EquippedWeapon._update_multipliers(Multipliers)
 	
-func _update_multipliers(multiplier : float) -> void:
-	AttackSpeedMultiplier = multiplier
-	DamageMultiplier = multiplier
-	AttackRangeMultiplier = multiplier
+func _override_multipliers(multipliers : CharacterMultipliers) -> void:
+	Multipliers = multipliers
 	
 	if EquippedWeapon:
-		EquippedWeapon._update_multipliers(AttackSpeedMultiplier, DamageMultiplier, AttackRangeMultiplier)
+		EquippedWeapon._update_multipliers(Multipliers)
+	
+func _add_multipliers(multipliers : CharacterMultipliers) -> void:
+	Multipliers._add( multipliers )
+	
+	if EquippedWeapon:
+		EquippedWeapon._update_multipliers(Multipliers)
