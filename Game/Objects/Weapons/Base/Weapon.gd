@@ -13,7 +13,7 @@ class_name Weapon
 		return Damage * DamageMultiplier
 @export var ShotSpeed : float = 200.0
 @export var SoundEffect: AudioStream
-@export var BulletSprite: AtlasTexture
+@export var BulletSprite: Texture2D
 @export var ReloadTime : float = 1.0
 @export var MaxFakeShots : int = 3
 @export var AttackRange: float = 200.0:
@@ -51,6 +51,9 @@ func _process(delta: float) -> void:
 func _toggle_attack(enable: bool) -> void:
 	if enable == Enabled:
 		return
+		
+	if Reloading:
+		return
 
 	Enabled = enable
 	if Enabled && Ready:
@@ -62,8 +65,9 @@ func _toggle_uses_ammo(use_ammo : bool) -> void:
 func _attack() -> void:
 	var out_of_ammo = CurrentAmmo >= 0 && CurrentAmmo < AmmoPerShot
 	if out_of_ammo :
-		$EmptyGunSound.play()
 		Ready = false
+		$EmptyGunSound.play()
+		Enabled = false
 		return
 		
 	if Reloading:
@@ -96,7 +100,6 @@ func _spawn_attacks() -> void:
 func _spawn_attack(shots : int, index : int) -> Node:
 	var right_vector = Vector2.UP.rotated(global_rotation)
 	var offset = 10.0
-	var test = index - shots / 2.0
 	var current_offset = offset * (index - (shots - 1) / 2.0) * right_vector
 	var attack = _create_attack()
 	attack.global_position = global_position + current_offset

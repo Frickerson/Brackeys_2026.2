@@ -51,7 +51,7 @@ func _on_body_entered(body: Node2D) -> void:
 		
 	queue_free()
 	
-func _initialize(damage : float, shot_speed: float, shot_life_span : float, bullet_sprite: AtlasTexture) -> void:
+func _initialize(damage : float, shot_speed: float, shot_life_span : float, bullet_sprite: Texture2D) -> void:
 	Damage = damage
 	Speed = shot_speed
 	LifeSpan = shot_life_span

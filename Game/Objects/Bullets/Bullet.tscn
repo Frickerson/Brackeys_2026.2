@@ -1,14 +1,10 @@
 [gd_scene format=3 uid="uid://qjyuecuw6ve5"]
 
 [ext_resource type="Script" uid="uid://0st2yvo8wdhu" path="res://Game/Objects/Bullets/Bullet.gd" id="1_niiov"]
-[ext_resource type="Texture2D" uid="uid://bvxgil5ysfjue" path="res://Game/Assets/Tilesets/tiles_packed.png" id="2_niiov"]
+[ext_resource type="Texture2D" uid="uid://n2ajxit2asr1" path="res://Game/Assets/Sprites/Objects/tile_0000.png" id="2_niiov"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bu7o8"]
 size = Vector2(31.5, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_niiov"]
-atlas = ExtResource("2_niiov")
-region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="Environment" id="Environment_b8hjc"]
 background_mode = 3
@@ -39,7 +35,7 @@ texture_filter = 1
 position = Vector2(-0.25, 7.450581e-09)
 rotation = 1.5707964
 scale = Vector2(0.99021435, 1.994737)
-texture = SubResource("AtlasTexture_niiov")
+texture = ExtResource("2_niiov")
 region_rect = Rect2(0, 0, 16, 16)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1431776725]
