@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dls1bpx8qq5em" path="res://Game/Objects/Weapons/Handgun.tscn" id="3_3m4rq"]
 [ext_resource type="Script" uid="uid://do8q2bwentmfw" path="res://Game/Objects/Characters/Base/CharacterMultipliers.gd" id="4_y0rvw"]
 
-[sub_resource type="Resource" id="Resource_1lt5e"]
+[sub_resource type="Resource" id="Resource_v68tq"]
 script = ExtResource("4_y0rvw")
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
@@ -22,7 +22,7 @@ MoveSpeed = 50.0
 DefaultWeapon = ExtResource("3_3m4rq")
 AttackLocation = NodePath("CollisionShape2D/Sprite2D/AttackLocation")
 HealthBarRef = NodePath("HealthBar")
-Multipliers = SubResource("Resource_1lt5e")
+DefaultMultipliers = SubResource("Resource_v68tq")
 
 [node name="Sprite2D" parent="CollisionShape2D" parent_id_path=PackedInt32Array(816673183) index="0" unique_id=1978200661]
 region_rect = Rect2(510, 119, 16, 16)

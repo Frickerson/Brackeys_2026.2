@@ -20,11 +20,7 @@ class_name CharacterBase
 @export var MaxHealth : int = 100
 
 @export_group("Multipliers")
-@export var AttackSpeedMultiplier : float = 1.0
-@export var DamageMultiplier : float = 1.0
-@export var AttackRangeMultiplier : float = 1.0
-
-@export var Multipliers : CharacterMultipliers
+@export var DefaultMultipliers : CharacterMultipliers
 
 var EquippedWeapon: Weapon = null
 var IsMoving: bool = false
@@ -78,16 +74,7 @@ func _equip_weapon(weapon_class : PackedScene) -> void:
 	EquippedWeapon = weapon_class.instantiate()
 	AttackLocation.add_child(EquippedWeapon)
 	EquippedWeapon.add_to_group(TeamName)
-	EquippedWeapon._update_multipliers(Multipliers)
-	
-func _override_multipliers(multipliers : CharacterMultipliers) -> void:
-	Multipliers = multipliers
-	
-	if EquippedWeapon:
-		EquippedWeapon._update_multipliers(Multipliers)
-	
-func _add_multipliers(multipliers : CharacterMultipliers) -> void:
-	Multipliers._add( multipliers )
-	
-	if EquippedWeapon:
-		EquippedWeapon._update_multipliers(Multipliers)
+	_update_weapon()
+
+func _update_weapon() -> void:
+	pass

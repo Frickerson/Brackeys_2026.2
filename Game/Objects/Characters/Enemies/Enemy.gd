@@ -16,6 +16,9 @@ class_name Enemy
 
 @onready var PlayerRef : Player = get_tree().get_first_node_in_group("Player")
 
+static var Multipliers : CharacterMultipliers
+static var AdditionalMultipliers : CharacterMultipliers
+
 func _ready() -> void:
 	super._ready()
 	
@@ -24,6 +27,9 @@ func _ready() -> void:
 		
 	RayCast.add_exception(PlayerRef)
 	NavigationAgent.radius = AvoidanceRadius
+	
+	if !Multipliers && DefaultMultipliers:
+		Multipliers = DefaultMultipliers
 
 func _physics_process(_delta: float) -> void:
 	if Dying:
@@ -110,3 +116,16 @@ func _find_line_of_sight(dir : Vector2) -> Vector2:
 			return current_dir
 			
 	return dir
+	
+func _update_weapon() -> void:
+	if EquippedWeapon:
+		EquippedWeapon._update_multipliers(_get_multipliers())
+	
+static func _get_multipliers() -> CharacterMultipliers:
+	var result = Multipliers
+	if AdditionalMultipliers:
+		result._add(AdditionalMultipliers)
+	return result
+	
+static func _override_multipliers(new_multipliers : CharacterMultipliers) -> void:
+	Multipliers = new_multipliers

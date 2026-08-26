@@ -26,8 +26,7 @@ func _create_option() -> Button:
 	return new_option
 	
 func _on_option_pressed(option : EventOption):
-	var player_ref : Player = get_tree().get_first_node_in_group("Player")
-	Player._update_distrust(option.Distrust)
-	#player_ref._add_multipliers(option.MultiplierIncrease)
+	Player._update_distrust(option.DistrustChange)
+	Player._add_multipliers(option.MultipliersChange)
 	_on_win.emit()
 	pass

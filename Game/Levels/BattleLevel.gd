@@ -7,6 +7,10 @@ var LevelMultiplier : CharacterMultipliers = null
 @export var Song: OvaniSong
 
 func _ready() -> void:
+	if LevelMultiplier:
+		Enemy._override_multipliers(LevelMultiplier)
+		get_tree().call_group("Enemy", "_update_weapon")
+
 	var enemies = get_tree().get_nodes_in_group("Enemy")
 	for enemy : Enemy in enemies:
 		enemy.OnDied.connect(_on_enemy_died)

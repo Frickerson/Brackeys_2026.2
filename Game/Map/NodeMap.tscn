@@ -9,6 +9,24 @@
 [ext_resource type="Script" uid="uid://b7ppuiu3c0i8x" path="res://Game/Levels/Events/EventOption.gd" id="5_v68tq"]
 [ext_resource type="Script" uid="uid://do8q2bwentmfw" path="res://Game/Objects/Characters/Base/CharacterMultipliers.gd" id="6_c6e86"]
 
+[sub_resource type="Resource" id="Resource_c6e86"]
+script = ExtResource("6_c6e86")
+DamageMultiplier = 2.0
+metadata/_custom_type_script = "uid://do8q2bwentmfw"
+
+[sub_resource type="Resource" id="Resource_q3x87"]
+script = ExtResource("6_c6e86")
+AttackSpeedMultiplier = 1.5
+DamageMultiplier = 1.5
+metadata/_custom_type_script = "uid://do8q2bwentmfw"
+
+[sub_resource type="Resource" id="Resource_puf6v"]
+script = ExtResource("6_c6e86")
+AttackSpeedMultiplier = 3.0
+DamageMultiplier = 3.0
+AttackRangeMultiplier = 0.5
+metadata/_custom_type_script = "uid://do8q2bwentmfw"
+
 [sub_resource type="Resource" id="Resource_1y2qw"]
 script = ExtResource("5_v68tq")
 Title = "Gain 20 trust"
@@ -17,17 +35,22 @@ metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
 
 [sub_resource type="Resource" id="Resource_rpydu"]
 script = ExtResource("6_c6e86")
-AttackSpeedMultiplier = 0.0
+AttackSpeedMultiplier = 3.0
 DamageMultiplier = 0.1
 AttackRangeMultiplier = 0.0
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [sub_resource type="Resource" id="Resource_fomk6"]
 script = ExtResource("5_v68tq")
-Title = "Lose 10 trust but increase damage by 10%"
+Title = "Lose 10 trust but increase damage by 10% and attack speed by 300%"
 DistrustChange = 10.0
 MultipliersChange = SubResource("Resource_rpydu")
 metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
+
+[sub_resource type="Resource" id="Resource_v68tq"]
+script = ExtResource("6_c6e86")
+AttackSpeedMultiplier = 2.0
+metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [node name="NodeMap" type="Node2D" unique_id=453470996 node_paths=PackedStringArray("StarterNode")]
 script = ExtResource("1_43jg8")
@@ -72,17 +95,17 @@ theme_override_constants/separation = 100
 
 [node name="Layer2_Battle_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer2" unique_id=546445709 instance=ExtResource("4_bkk0o")]
 layout_mode = 2
-DifficultyMultiplier = null
+DifficultyMultiplier = SubResource("Resource_c6e86")
 scene_to_load = ExtResource("3_bkk0o")
 
 [node name="Layer2_Battle_02" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer2" unique_id=1840558396 instance=ExtResource("4_bkk0o")]
 layout_mode = 2
-DifficultyMultiplier = null
+DifficultyMultiplier = SubResource("Resource_q3x87")
 scene_to_load = ExtResource("3_bkk0o")
 
 [node name="Layer2_Battle_03" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer2" unique_id=1713918069 instance=ExtResource("4_bkk0o")]
 layout_mode = 2
-DifficultyMultiplier = null
+DifficultyMultiplier = SubResource("Resource_puf6v")
 scene_to_load = ExtResource("3_bkk0o")
 
 [node name="Layer1" type="HBoxContainer" parent="Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=2108882114]
@@ -97,7 +120,7 @@ ChildNodes = [NodePath("../../Layer2/Layer2_Battle_01"), NodePath("../../Layer2/
 
 [node name="Layer1_Battle_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer1" unique_id=18038481 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_bkk0o")]
 layout_mode = 2
-DifficultyMultiplier = null
+DifficultyMultiplier = SubResource("Resource_v68tq")
 scene_to_load = ExtResource("3_fai3e")
 ChildNodes = [NodePath("../../Layer2/Layer2_Battle_03")]
 
@@ -108,7 +131,6 @@ theme_override_constants/separation = 100
 
 [node name="Layer0_Battle_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer0" unique_id=1220550427 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_bkk0o")]
 layout_mode = 2
-DifficultyMultiplier = null
 scene_to_load = ExtResource("5_1t1ls")
 ChildNodes = [NodePath("../../Layer1/Layer1_EventNode_01"), NodePath("../../Layer1/Layer1_Battle_01")]
 
