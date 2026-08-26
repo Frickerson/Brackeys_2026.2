@@ -45,7 +45,8 @@ func _on_body_entered(body: Node2D) -> void:
 		
 	queue_free()
 	
-func _initialize(damage : float, shot_speed: float, shot_life_span : float) -> void:
+func _initialize(damage : float, shot_speed: float, shot_life_span : float, bullet_sprite: AtlasTexture) -> void:
 	Damage = damage
 	Speed = shot_speed
 	LifeSpan = shot_life_span
+	$CollisionShape2D/Sprite2D.texture = bullet_sprite

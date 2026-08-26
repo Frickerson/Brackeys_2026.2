@@ -5,6 +5,8 @@
 [ext_resource type="AudioStream" uid="uid://su2xyk880fjr" path="res://Game/Sound/Effects/Gunshots Pistol 003.wav" id="3_thf5w"]
 
 [resource]
+random_pitch = 1.0594631
+random_volume_offset_db = 3.0
 streams_count = 3
 stream_0/stream = ExtResource("1_u73xm")
 stream_1/stream = ExtResource("2_0tly0")

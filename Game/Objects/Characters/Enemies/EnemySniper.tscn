@@ -9,3 +9,4 @@ MinMoveRange = 400.0
 MaxMoveRange = 500.0
 MoveSpeed = 40.0
 DefaultWeapon = ExtResource("2_6vvwg")
+MaxHealth = 25

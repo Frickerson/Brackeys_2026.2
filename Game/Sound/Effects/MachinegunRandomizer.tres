@@ -5,6 +5,8 @@
 [ext_resource type="AudioStream" uid="uid://dgg118e2gbt1t" path="res://Game/Sound/Effects/Gunshots Railgun 003.wav" id="3_hgp2n"]
 
 [resource]
+random_pitch = 1.0594631
+random_volume_offset_db = 3.0
 streams_count = 3
 stream_0/stream = ExtResource("1_2efpt")
 stream_1/stream = ExtResource("2_07jvh")

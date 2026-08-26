@@ -8,3 +8,4 @@ script = ExtResource("2_t25vd")
 Angle = 45.0
 MaxAmmo = 15
 AmmoPerShot = 3
+ShotSpeed = 250.0

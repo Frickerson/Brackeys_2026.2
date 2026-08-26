@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://dcfga7omincif"]
 
 [ext_resource type="PackedScene" uid="uid://dimp0i6jmuvgs" path="res://Game/Objects/Weapons/Base/MultiShot.tscn" id="1_1gji4"]
-[ext_resource type="AudioStream" uid="uid://ccpku13kr0p6" path="res://Game/Sound/Effects/ShotgunRandomizer.tres" id="2_2h60h"]
+[ext_resource type="Texture2D" uid="uid://bvxgil5ysfjue" path="res://Game/Assets/Tilesets/tiles_packed.png" id="2_2h60h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2skp"]
+atlas = ExtResource("2_2h60h")
+region = Rect2(0, 0, 16, 16)
 
 [node name="Weapon" unique_id=294193981 instance=ExtResource("1_1gji4")]
-soundEffect = ExtResource("2_2h60h")
+BulletSprite = SubResource("AtlasTexture_i2skp")
