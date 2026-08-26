@@ -11,7 +11,7 @@ class_name Weapon
 @export var Damage : float = 5.0:
 	get:
 		return Damage * DamageMultiplier
-@export var ShotSpeed : float = 500.0
+@export var ShotSpeed : float = 200.0
 @export var ShotLifeSpan : float = 5.0
 @export var SoundEffect: AudioStream
 @export var BulletSprite: AtlasTexture

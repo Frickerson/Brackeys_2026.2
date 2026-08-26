@@ -7,7 +7,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6x1um"]
 atlas = ExtResource("3_t7qir")
-region = Rect2(48, 0, 16, 16)
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="Gradient" id="Gradient_lhyph"]
 colors = PackedColorArray(0.8862745, 0.9411765, 0.21960784, 1, 1, 0, 0, 1)
