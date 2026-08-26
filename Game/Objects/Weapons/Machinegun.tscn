@@ -6,7 +6,6 @@
 [node name="Weapon" unique_id=294193981 instance=ExtResource("1_2nddt")]
 AttackSpeed = 5.0
 MaxAmmo = 20
-Damage = 2.0
 ShotSpeed = 150.0
 SoundEffect = ExtResource("2_ghtm4")
 

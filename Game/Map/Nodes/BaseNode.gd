@@ -18,6 +18,9 @@ func _get_loaded_level() -> Level:
 	if LoadedLevel:
 		return LoadedLevel
 	
+	return _load_level()
+
+func _load_level() -> Level:
 	LoadedLevel = scene_to_load.instantiate() as Level
 	return LoadedLevel
 

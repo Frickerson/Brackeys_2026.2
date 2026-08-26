@@ -17,7 +17,6 @@ var DefaultColor : Color
 var Deleting : bool = false
 
 func _ready() -> void:
-	var groups = get_groups()
 	var color = ColorPerTeam.get(get_groups()[0])
 	DefaultColor = color
 	BulletSprite.modulate = color

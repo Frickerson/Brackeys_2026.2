@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://xtp8fowqiim1" path="res://Game/Map/NodeMapSystem.gd" id="1_43jg8"]
 [ext_resource type="PackedScene" uid="uid://bvjusqc4oyq0w" path="res://Game/Levels/LevelBattle3.tscn" id="3_bkk0o"]
 [ext_resource type="PackedScene" uid="uid://dseqt64qilxym" path="res://Game/Levels/LevelBattle2.tscn" id="3_fai3e"]
+[ext_resource type="PackedScene" uid="uid://chnydkutel05w" path="res://Game/Map/Nodes/EventNode.tscn" id="4_1t1ls"]
 [ext_resource type="PackedScene" uid="uid://c4gavm1wg14av" path="res://Game/Map/Nodes/BattleNode.tscn" id="4_bkk0o"]
 [ext_resource type="PackedScene" uid="uid://cpywopvhwk047" path="res://Game/Levels/LevelBattle1.tscn" id="5_1t1ls"]
 
@@ -64,12 +65,22 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 100
 
-[node name="Layer1_Battle_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer1" unique_id=451395160 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_bkk0o")]
+[node name="Layer1_EventNode_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer1" unique_id=2065172955 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_1t1ls")]
 layout_mode = 2
-scene_to_load = ExtResource("3_fai3e")
+Title = "Test Title"
+Descrition = "This is a description"
+Options = Array[Dictionary]([{
+&"Distrust": -20.0,
+&"MultiplierIncrease": 0.0,
+&"Title": "You lose 20 distrust"
+}, {
+&"Distrust": 10.0,
+&"MultiplierIncrease": 0.5,
+&"Title": "You gain 10 distrust for 0.5 multiplier increase"
+}])
 ChildNodes = [NodePath("../../Layer2/Layer2_Battle_01"), NodePath("../../Layer2/Layer2_Battle_02")]
 
-[node name="Layer1_Battle_02" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer1" unique_id=18038481 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_bkk0o")]
+[node name="Layer1_Battle_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer1" unique_id=18038481 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_bkk0o")]
 layout_mode = 2
 scene_to_load = ExtResource("3_fai3e")
 ChildNodes = [NodePath("../../Layer2/Layer2_Battle_03")]
@@ -82,7 +93,7 @@ theme_override_constants/separation = 100
 [node name="Layer0_Battle_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer0" unique_id=1220550427 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_bkk0o")]
 layout_mode = 2
 scene_to_load = ExtResource("5_1t1ls")
-ChildNodes = [NodePath("../../Layer1/Layer1_Battle_01"), NodePath("../../Layer1/Layer1_Battle_02")]
+ChildNodes = [NodePath("../../Layer1/Layer1_EventNode_01"), NodePath("../../Layer1/Layer1_Battle_01")]
 
 [node name="CurrentScene" type="Node2D" parent="." unique_id=1835926991]
 unique_name_in_owner = true

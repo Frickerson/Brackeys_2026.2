@@ -6,7 +6,7 @@ class_name Player
 
 static var Distrust : float = 0.0
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var vertical = Input.get_axis("Player_Move_Up","Player_Move_Down")
 	var horizontal = Input.get_axis("Player_Move_Left","Player_Move_Right")
 	

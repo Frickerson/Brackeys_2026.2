@@ -13,7 +13,7 @@ func _ready() -> void:
 	AmmoCounterRef._set_max_ammo_count(PlayerRef._get_max_ammo())
 	AmmoCounterRef._set_current_ammo_count(PlayerRef._get_current_ammo())
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if PlayerRef == null:
 		return
 		
