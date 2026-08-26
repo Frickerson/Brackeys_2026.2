@@ -18,6 +18,7 @@ func _get_loaded_level() -> Level:
 		return LoadedLevel
 	
 	LoadedLevel = scene_to_load.instantiate() as Level
+	LoadedLevel.LevelMultiplier = DifficultyMultiplier
 	return LoadedLevel
 
 func _toggle_children(enable : bool, callable : Callable) ->void:

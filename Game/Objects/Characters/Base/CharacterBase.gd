@@ -73,3 +73,11 @@ func _equip_weapon(weapon_class : PackedScene) -> void:
 	AttackLocation.add_child(EquippedWeapon)
 	EquippedWeapon.add_to_group(TeamName)
 	EquippedWeapon._update_multipliers(AttackSpeedMultiplier, DamageMultiplier, AttackRangeMultiplier)
+	
+func _update_multipliers(multiplier : float) -> void:
+	AttackSpeedMultiplier = multiplier
+	DamageMultiplier = multiplier
+	AttackRangeMultiplier = multiplier
+	
+	if EquippedWeapon:
+		EquippedWeapon._update_multipliers(AttackSpeedMultiplier, DamageMultiplier, AttackRangeMultiplier)
