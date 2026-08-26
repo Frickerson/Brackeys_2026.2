@@ -14,6 +14,7 @@ var LifeSpan : float = 0.0
 var LifeTimer : float = 0.0
 var IsFake : bool = false
 var DefaultColor : Color
+var Deleting : bool = false
 
 func _ready() -> void:
 	var groups = get_groups()
@@ -22,6 +23,8 @@ func _ready() -> void:
 	BulletSprite.modulate = color
 
 func _process(delta: float) -> void:
+	if Deleting:
+		return
 	LifeTimer += delta
 	if LifeTimer >= LifeSpan:
 		queue_free()
@@ -51,8 +54,15 @@ func _on_body_entered(body: Node2D) -> void:
 		
 	var character := body as CharacterBase
 	if character:
+		$HitParticles.process_material.color = Color.RED
 		character._take_damage(Damage)
-		
+	
+	$HitParticles.emitting = true
+	$HitParticles.finished.connect(delete_self_after_particles)
+	$CollisionShape2D.queue_free()
+	Deleting = true
+	
+func delete_self_after_particles():
 	queue_free()
 	
 func _initialize(damage : float, shot_speed: float, shot_life_span : float, bullet_sprite: Texture2D) -> void:
