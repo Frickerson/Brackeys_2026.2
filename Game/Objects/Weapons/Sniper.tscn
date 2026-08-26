@@ -15,3 +15,4 @@ ShotSpeed = 350.0
 SoundEffect = ExtResource("2_e6xvi")
 BulletSprite = SubResource("AtlasTexture_o64ch")
 ReloadTime = 5.0
+AttackRange = 400.0

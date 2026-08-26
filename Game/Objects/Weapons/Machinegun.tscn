@@ -10,6 +10,8 @@ region = Rect2(0, 0, 16, 16)
 
 [node name="Weapon" unique_id=294193981 instance=ExtResource("1_2nddt")]
 AttackSpeed = 5.0
+MaxAmmo = 20
+Damage = 2.0
 ShotSpeed = 150.0
 SoundEffect = ExtResource("2_ghtm4")
 BulletSprite = SubResource("AtlasTexture_8v0vl")

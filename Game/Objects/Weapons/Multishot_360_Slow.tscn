@@ -9,8 +9,7 @@ region = Rect2(0, 0, 16, 16)
 
 [node name="Weapon" unique_id=294193981 instance=ExtResource("1_18tbg")]
 Angle = 360.0
-AttackSpeed = 2.0
 MaxAmmo = 100
-AmmoPerShot = 16
+AmmoPerShot = 12
 ShotSpeed = 25.0
 BulletSprite = SubResource("AtlasTexture_2a2kn")
