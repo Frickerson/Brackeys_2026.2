@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://teyr6mhnpf5p" path="res://Game/Objects/Characters/Enemies/Enemy.tscn" id="1_5jfnu"]
 [ext_resource type="PackedScene" uid="uid://bqcb7qsk4to4s" path="res://Game/Objects/Weapons/Sniper.tscn" id="2_6vvwg"]
 
-[node name="Enemy" unique_id=2024416287 instance=ExtResource("1_5jfnu")]
+[node name="EnemySniper" unique_id=2024416287 instance=ExtResource("1_5jfnu")]
 AttackRange = 450.0
 MinMoveRange = 400.0
 MaxMoveRange = 500.0
