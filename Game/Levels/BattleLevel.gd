@@ -4,7 +4,6 @@ class_name BattleLevel
 
 var enemyAmount : int = 0
 var LevelMultiplier : CharacterMultipliers = null
-@export var Song: OvaniSong
 
 func _ready() -> void:
 	var enemies = get_tree().get_nodes_in_group("Enemy")

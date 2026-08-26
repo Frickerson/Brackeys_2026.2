@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dexodm5tlpn8r"
+path="res://.godot/imported/Chiptune Vol4 Scheming Cut 30.wav-a8f28f81dd9c524b1e242a9b7d6ed5b9.sample"
+
+[deps]
+
+source_file="res://Game/Sound/Music/BattleSong2/Chiptune Vol4 Scheming Cut 30.wav"
+dest_files=["res://.godot/imported/Chiptune Vol4 Scheming Cut 30.wav-a8f28f81dd9c524b1e242a9b7d6ed5b9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

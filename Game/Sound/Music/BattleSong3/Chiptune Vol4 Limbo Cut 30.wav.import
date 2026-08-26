@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bbwbo8xuaph5g"
+path="res://.godot/imported/Chiptune Vol4 Limbo Cut 30.wav-342b826c240192ac576467aff5207bbd.sample"
+
+[deps]
+
+source_file="res://Game/Sound/Music/BattleSong3/Chiptune Vol4 Limbo Cut 30.wav"
+dest_files=["res://.godot/imported/Chiptune Vol4 Limbo Cut 30.wav-342b826c240192ac576467aff5207bbd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

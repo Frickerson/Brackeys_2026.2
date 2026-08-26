@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d17hmn2rcbf37"
+path="res://.godot/imported/Chiptune Vol4 Limbo Intensity 2.wav-5b4e55f9753902d3af429d790a96b8fe.sample"
+
+[deps]
+
+source_file="res://Game/Sound/Music/BattleSong3/Chiptune Vol4 Limbo Intensity 2.wav"
+dest_files=["res://.godot/imported/Chiptune Vol4 Limbo Intensity 2.wav-5b4e55f9753902d3af429d790a96b8fe.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

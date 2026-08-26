@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bwtr6gt5fv8nx"
+path="res://.godot/imported/Chiptune Vol5 Party Castle Intensity 1.wav-d698321a64400bf7d77aa1d904e36149.sample"
+
+[deps]
+
+source_file="res://Game/Sound/Music/MapSong/Chiptune Vol5 Party Castle Intensity 1.wav"
+dest_files=["res://.godot/imported/Chiptune Vol5 Party Castle Intensity 1.wav-d698321a64400bf7d77aa1d904e36149.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

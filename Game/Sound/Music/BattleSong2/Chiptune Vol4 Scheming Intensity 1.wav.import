@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://3y2mnl1i5p8j"
+path="res://.godot/imported/Chiptune Vol4 Scheming Intensity 1.wav-09fb6e1145e5c07e95c86b2fbca19641.sample"
+
+[deps]
+
+source_file="res://Game/Sound/Music/BattleSong2/Chiptune Vol4 Scheming Intensity 1.wav"
+dest_files=["res://.godot/imported/Chiptune Vol4 Scheming Intensity 1.wav-09fb6e1145e5c07e95c86b2fbca19641.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

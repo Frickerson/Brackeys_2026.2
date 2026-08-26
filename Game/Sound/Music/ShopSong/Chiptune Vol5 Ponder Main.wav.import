@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://csxqbbd4he13l"
+path="res://.godot/imported/Chiptune Vol5 Ponder Main.wav-93871dafea87a60d72ff880987712558.sample"
+
+[deps]
+
+source_file="res://Game/Sound/Music/ShopSong/Chiptune Vol5 Ponder Main.wav"
+dest_files=["res://.godot/imported/Chiptune Vol5 Ponder Main.wav-93871dafea87a60d72ff880987712558.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

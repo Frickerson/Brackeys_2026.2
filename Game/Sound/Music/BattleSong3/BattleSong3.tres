@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="OvaniSong" format=3 uid="uid://c27soe4tbpr41"]
+
+[ext_resource type="Script" uid="uid://0bp8bxio18ie" path="res://OvaniPlugin/OvaniSong.gd" id="1_hg3ug"]
+[ext_resource type="AudioStream" uid="uid://dlvcrck1c6rmq" path="res://Game/Sound/Music/BattleSong3/Chiptune Vol4 Limbo Intensity 1.wav" id="1_kivtm"]
+[ext_resource type="AudioStream" uid="uid://d17hmn2rcbf37" path="res://Game/Sound/Music/BattleSong3/Chiptune Vol4 Limbo Intensity 2.wav" id="2_d51na"]
+[ext_resource type="AudioStream" uid="uid://dk8tp3gm5qseg" path="res://Game/Sound/Music/BattleSong3/Chiptune Vol4 Limbo Main.wav" id="3_f1fxb"]
+[ext_resource type="AudioStream" uid="uid://bbwbo8xuaph5g" path="res://Game/Sound/Music/BattleSong3/Chiptune Vol4 Limbo Cut 30.wav" id="4_tn38s"]
+[ext_resource type="AudioStream" uid="uid://dru4nrmibnycv" path="res://Game/Sound/Music/BattleSong3/Chiptune Vol4 Limbo Cut 60.wav" id="5_cb8w4"]
+
+[resource]
+script = ExtResource("1_hg3ug")
+Intensity1 = ExtResource("1_kivtm")
+Intensity2 = ExtResource("2_d51na")
+Intensity3 = ExtResource("3_f1fxb")
+Loop30 = ExtResource("4_tn38s")
+Loop60 = ExtResource("5_cb8w4")
+ReverbTail = 3.933
+metadata/_custom_type_script = "uid://0bp8bxio18ie"

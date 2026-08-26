@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://chnydkutel05w" path="res://Game/Map/Nodes/EventNode.tscn" id="4_1t1ls"]
 [ext_resource type="PackedScene" uid="uid://c4gavm1wg14av" path="res://Game/Map/Nodes/BattleNode.tscn" id="4_bkk0o"]
 [ext_resource type="PackedScene" uid="uid://cpywopvhwk047" path="res://Game/Levels/LevelBattle1.tscn" id="5_1t1ls"]
+[ext_resource type="Script" uid="uid://7gj4ox0gu1vj" path="res://OvaniPlugin/OvaniPlayer.gd" id="7_fq2qd"]
 
 [node name="NodeMap" type="Node2D" unique_id=453470996 node_paths=PackedStringArray("StarterNode")]
 script = ExtResource("1_43jg8")
@@ -50,14 +51,17 @@ theme_override_constants/separation = 100
 
 [node name="Layer2_Battle_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer2" unique_id=546445709 instance=ExtResource("4_bkk0o")]
 layout_mode = 2
+DifficultyMultiplier = null
 scene_to_load = ExtResource("3_bkk0o")
 
 [node name="Layer2_Battle_02" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer2" unique_id=1840558396 instance=ExtResource("4_bkk0o")]
 layout_mode = 2
+DifficultyMultiplier = null
 scene_to_load = ExtResource("3_bkk0o")
 
 [node name="Layer2_Battle_03" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer2" unique_id=1713918069 instance=ExtResource("4_bkk0o")]
 layout_mode = 2
+DifficultyMultiplier = null
 scene_to_load = ExtResource("3_bkk0o")
 
 [node name="Layer1" type="HBoxContainer" parent="Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=2108882114]
@@ -67,8 +71,6 @@ theme_override_constants/separation = 100
 
 [node name="Layer1_EventNode_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer1" unique_id=2065172955 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_1t1ls")]
 layout_mode = 2
-Title = "Test Title"
-Descrition = "This is a description"
 Options = Array[Dictionary]([{
 &"Distrust": -20.0,
 &"MultiplierIncrease": 0.0,
@@ -82,6 +84,7 @@ ChildNodes = [NodePath("../../Layer2/Layer2_Battle_01"), NodePath("../../Layer2/
 
 [node name="Layer1_Battle_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer1" unique_id=18038481 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_bkk0o")]
 layout_mode = 2
+DifficultyMultiplier = null
 scene_to_load = ExtResource("3_fai3e")
 ChildNodes = [NodePath("../../Layer2/Layer2_Battle_03")]
 
@@ -92,8 +95,14 @@ theme_override_constants/separation = 100
 
 [node name="Layer0_Battle_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer0" unique_id=1220550427 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_bkk0o")]
 layout_mode = 2
+DifficultyMultiplier = null
 scene_to_load = ExtResource("5_1t1ls")
 ChildNodes = [NodePath("../../Layer1/Layer1_EventNode_01"), NodePath("../../Layer1/Layer1_Battle_01")]
 
 [node name="CurrentScene" type="Node2D" parent="." unique_id=1835926991]
 unique_name_in_owner = true
+
+[node name="OvaniPlayer" type="Node" parent="." unique_id=1323224286]
+script = ExtResource("7_fq2qd")
+Volume = -10.0
+metadata/_custom_type_script = "uid://7gj4ox0gu1vj"
