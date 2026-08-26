@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cag5cox6tfu2p"
-path="res://.godot/imported/effect_shotLarge.png-0902c191af6618a64cfb46371e77636a.ctex"
+uid="uid://cjie7j04y5bnm"
+path="res://.godot/imported/tile_0002.png-4767427f5924999d1865fbe4d9f08310.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Assets/Sprites/Objects/effect_shotLarge.png"
-dest_files=["res://.godot/imported/effect_shotLarge.png-0902c191af6618a64cfb46371e77636a.ctex"]
+source_file="res://Game/Assets/Sprites/Objects/tile_0002.png"
+dest_files=["res://.godot/imported/tile_0002.png-4767427f5924999d1865fbe4d9f08310.ctex"]
 
 [params]
 
