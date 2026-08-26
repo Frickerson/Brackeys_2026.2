@@ -12,11 +12,13 @@ class_name Weapon
 	get:
 		return Damage * DamageMultiplier
 @export var ShotSpeed : float = 200.0
-@export var ShotLifeSpan : float = 5.0
 @export var SoundEffect: AudioStream
 @export var BulletSprite: AtlasTexture
 @export var ReloadTime : float = 1.0
 @export var MaxFakeShots : int = 3
+@export var AttackRange: float = 200.0:
+	get:
+		return AttackRange * AttackRangeMultiplier
 
 var AttackTimer: float = 0.0
 var Enabled: bool = false
@@ -25,6 +27,7 @@ var CurrentAmmo : int = 0
 var UsesAmmo : bool = true
 var AttackSpeedMultiplier : float = 1.0
 var DamageMultiplier : float = 1.0
+var AttackRangeMultiplier : float = 1.0
 var Reloading : bool = false
 var LevelRoot : Node2D
 
@@ -64,7 +67,7 @@ func _attack() -> void:
 	if Reloading:
 		return
 	
-	_spawn_attack()
+	_spawn_attacks()
 	play_sound()
 	$ShotParticleEffect.restart()
 	
@@ -80,32 +83,38 @@ func _reload() -> void:
 	CurrentAmmo = MaxAmmo
 	Reloading = false
 	
-func _spawn_attack() -> void:
-	var right_vector = Vector2.UP.rotated(global_rotation)
+func _spawn_attacks() -> void:
 	var shots = _get_total_shots()
-	var offset = 10.0
 	var attacks = []
 	for index in shots:
-		var test = index - shots / 2.0
-		var current_offset = offset * (index - (shots - 1) / 2.0) * right_vector
-		var attack = _create_attack()
-		attack.global_position = global_position + current_offset
-		attack.global_rotation = global_rotation
+		var attack = _spawn_attack(shots, index)
 		attacks.push_back(attack)
 	_apply_fake_shots(attacks)
+	
+func _spawn_attack(shots : int, index : int) -> Node:
+	var right_vector = Vector2.UP.rotated(global_rotation)
+	var offset = 10.0
+	var test = index - shots / 2.0
+	var current_offset = offset * (index - (shots - 1) / 2.0) * right_vector
+	var attack = _create_attack()
+	attack.global_position = global_position + current_offset
+	attack.global_rotation = global_rotation
+	return attack
 
 	
 func _create_attack() -> Node:
 	var attack = AttackType.instantiate() as Bullet
 	attack.add_to_group(get_groups()[0])
-	attack._initialize(Damage, ShotSpeed, ShotLifeSpan, BulletSprite)
+	var life_span = AttackRange / ShotSpeed
+	attack._initialize(Damage, ShotSpeed, life_span, BulletSprite)
 	LevelRoot.add_child(attack)
 	
 	return attack
 	
-func _update_multipliers(attack_speed_multiplier : float, damage_multiplier : float) -> void:
+func _update_multipliers(attack_speed_multiplier : float, damage_multiplier : float, range_multiplier : float) -> void:
 	AttackSpeedMultiplier = attack_speed_multiplier
 	DamageMultiplier = damage_multiplier
+	AttackRangeMultiplier = range_multiplier
 	
 func play_sound():
 	$AudioStreamPlayer2D.play()

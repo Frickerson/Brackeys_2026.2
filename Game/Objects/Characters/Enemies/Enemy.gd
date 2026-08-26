@@ -3,7 +3,6 @@ extends CharacterBase
 class_name Enemy
 
 @export_group("Weapon")
-@export var AttackRange: float = 200.0
 @export var UseAmmo : bool = false
 
 @export_group("Movement")
@@ -66,7 +65,7 @@ func _in_attack_range(player_position : Vector2) -> bool:
 		return false
 		
 	var squared_distance = global_position.distance_squared_to(player_position)
-	return squared_distance <= AttackRange * AttackRange
+	return squared_distance <= pow(EquippedWeapon.AttackRange, 2.0)
 	
 func _in_line_of_sight(player_position : Vector2) -> bool:
 	RayCast.target_position = RayCast.to_local(player_position)
