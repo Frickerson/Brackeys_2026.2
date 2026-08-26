@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bquu0105bsw0g" path="res://Game/Map/Nodes/BaseNode.gd" id="1_1lt5e"]
 
-[node name="Map" type="Button" unique_id=546445709]
+[node name="BaseNode" type="Button" unique_id=546445709]
 custom_minimum_size = Vector2(100, 50)
 offset_right = 100.0
 offset_bottom = 50.0

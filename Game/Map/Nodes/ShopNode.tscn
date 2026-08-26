@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dfbvi5vrcyq3f"]
+
+[ext_resource type="PackedScene" uid="uid://c5u2i12ivbylt" path="res://Game/Map/Nodes/BaseNode.tscn" id="1_0c51g"]
+
+[node name="ShopNode" unique_id=546445709 instance=ExtResource("1_0c51g")]
+text = "Shop"

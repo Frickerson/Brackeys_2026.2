@@ -1,57 +1,88 @@
 [gd_scene format=3 uid="uid://corsfbaob34an"]
 
 [ext_resource type="Script" uid="uid://xtp8fowqiim1" path="res://Game/Map/NodeMapSystem.gd" id="1_43jg8"]
-[ext_resource type="PackedScene" uid="uid://bqxd5hum0h46e" path="res://Game/Map/Nodes/LevelThreeNode.tscn" id="2_bkk0o"]
-[ext_resource type="PackedScene" uid="uid://s6gt2rbjktmx" path="res://Game/Map/Nodes/LevelOneNode.tscn" id="2_coimo"]
-[ext_resource type="PackedScene" uid="uid://2aus6lk0is78" path="res://Game/Map/Nodes/LevelTwoNode.tscn" id="3_fai3e"]
+[ext_resource type="PackedScene" uid="uid://bvjusqc4oyq0w" path="res://Game/Levels/LevelBattle3.tscn" id="3_bkk0o"]
+[ext_resource type="PackedScene" uid="uid://dseqt64qilxym" path="res://Game/Levels/LevelBattle2.tscn" id="3_fai3e"]
+[ext_resource type="PackedScene" uid="uid://c4gavm1wg14av" path="res://Game/Map/Nodes/BattleNode.tscn" id="4_bkk0o"]
+[ext_resource type="PackedScene" uid="uid://cpywopvhwk047" path="res://Game/Levels/LevelBattle1.tscn" id="5_1t1ls"]
 
 [node name="NodeMap" type="Node2D" unique_id=453470996 node_paths=PackedStringArray("StarterNode")]
 script = ExtResource("1_43jg8")
-StarterNode = NodePath("Map/ScrollContainer/VBoxContainer/LevelOne")
+StarterNode = NodePath("Map/MarginContainer/ScrollContainer/VBoxContainer/Layer0/Layer0_Battle_01")
 
 [node name="Map" type="Control" parent="." unique_id=1093423881]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(200, 200)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1154.0
-offset_bottom = 656.0
+offset_right = 1152.0
+offset_bottom = 648.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Map" unique_id=994869441]
-custom_minimum_size = Vector2(200, 200)
+[node name="MarginContainer" type="MarginContainer" parent="Map" unique_id=896096029]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Map/MarginContainer" unique_id=994869441]
 clip_contents = false
-layout_mode = 0
-offset_left = 7.0
-offset_top = 11.0
-offset_right = 1150.0
-offset_bottom = 648.0
+layout_mode = 2
 horizontal_scroll_mode = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Map/ScrollContainer" unique_id=1037636862]
+[node name="VBoxContainer" type="VBoxContainer" parent="Map/MarginContainer/ScrollContainer" unique_id=1037636862]
 propagate_maximum_size = false
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/separation = 50
 alignment = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Map/ScrollContainer/VBoxContainer" unique_id=2108882114]
+[node name="Layer2" type="HBoxContainer" parent="Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=768422164]
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 100
 
-[node name="LevelThree" parent="Map/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=546445709 groups=["Node"] instance=ExtResource("2_bkk0o")]
+[node name="Layer2_Battle_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer2" unique_id=546445709 instance=ExtResource("4_bkk0o")]
 layout_mode = 2
+scene_to_load = ExtResource("3_bkk0o")
 
-[node name="LevelTwo" parent="Map/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=789534163 groups=["Node"] instance=ExtResource("3_fai3e")]
+[node name="Layer2_Battle_02" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer2" unique_id=1840558396 instance=ExtResource("4_bkk0o")]
 layout_mode = 2
+scene_to_load = ExtResource("3_bkk0o")
 
-[node name="LevelOne" parent="Map/ScrollContainer/VBoxContainer" unique_id=1648746746 node_paths=PackedStringArray("ChildNodes") groups=["Node"] instance=ExtResource("2_coimo")]
+[node name="Layer2_Battle_03" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer2" unique_id=1713918069 instance=ExtResource("4_bkk0o")]
 layout_mode = 2
-ChildNodes = [NodePath("../HBoxContainer/LevelTwo"), NodePath("../HBoxContainer/LevelThree")]
+scene_to_load = ExtResource("3_bkk0o")
+
+[node name="Layer1" type="HBoxContainer" parent="Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=2108882114]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 100
+
+[node name="Layer1_Battle_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer1" unique_id=451395160 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_bkk0o")]
+layout_mode = 2
+scene_to_load = ExtResource("3_fai3e")
+ChildNodes = [NodePath("../../Layer2/Layer2_Battle_01"), NodePath("../../Layer2/Layer2_Battle_02")]
+
+[node name="Layer1_Battle_02" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer1" unique_id=18038481 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_bkk0o")]
+layout_mode = 2
+scene_to_load = ExtResource("3_fai3e")
+ChildNodes = [NodePath("../../Layer2/Layer2_Battle_03")]
+
+[node name="Layer0" type="HBoxContainer" parent="Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1166320292]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 100
+
+[node name="Layer0_Battle_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer0" unique_id=1220550427 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_bkk0o")]
+layout_mode = 2
+scene_to_load = ExtResource("5_1t1ls")
+ChildNodes = [NodePath("../../Layer1/Layer1_Battle_01"), NodePath("../../Layer1/Layer1_Battle_02")]
 
 [node name="CurrentScene" type="Node2D" parent="." unique_id=1835926991]
 unique_name_in_owner = true
