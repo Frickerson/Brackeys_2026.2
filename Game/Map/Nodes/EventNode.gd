@@ -4,11 +4,7 @@ class_name EventNode
 
 @export var Title : String = "Test Title"
 @export var Descrition : String = "This is a description"
-@export var Options : Array[Dictionary] = [{
-	Title = "Option",
-	Distrust = 0.0,
-	MultiplierIncrease = 0.0
-}]
+@export var Options : Array[EventOption]
 
 func _load_level() -> Level:
 	var level : EventLevel = super._load_level()

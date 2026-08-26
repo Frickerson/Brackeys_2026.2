@@ -1,0 +1,6 @@
+[gd_resource type="Resource" format=3 uid="uid://cwr2qfabgbgqu"]
+
+[ext_resource type="Script" uid="uid://b7ppuiu3c0i8x" path="res://Game/Levels/Events/EventOption.gd" id="1_5famc"]
+
+[resource]
+script = ExtResource("1_5famc")
