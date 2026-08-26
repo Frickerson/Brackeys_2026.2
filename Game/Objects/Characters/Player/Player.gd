@@ -8,9 +8,10 @@ static var Distrust : float = 0.0
 static var Multipliers : CharacterMultipliers
 
 func _ready() -> void:
-	super._ready()
 	if !Multipliers && DefaultMultipliers:
 		Multipliers = DefaultMultipliers
+	
+	super._ready()
 
 func _physics_process(_delta: float) -> void:
 	var vertical = Input.get_axis("Player_Move_Up","Player_Move_Down")

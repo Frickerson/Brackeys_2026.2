@@ -17,7 +17,8 @@ func on_node_pressed(node: BaseNode):
 	CurrentNode.disabled = true
 	for child in CurrentNode.ChildNodes:
 		child.disabled = true
-		child.pressed.disconnect(on_node_pressed.bind(child))
+		if child.pressed.is_connected(on_node_pressed.bind(child)):
+			child.pressed.disconnect(on_node_pressed.bind(child))
 		
 	CurrentNode = node
 	var scene = CurrentNode._get_loaded_level()
