@@ -11,7 +11,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Arr
 outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 528, 0, 528, 384, 0, 384)])
 cell_size = 10.0
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" unique_id=2058048662]
+[node name="LevelRoot" type="NavigationRegion2D" unique_id=2058048662 groups=["LevelRoot"]]
 navigation_polygon = SubResource("NavigationPolygon_bu7o8")
 script = ExtResource("1_0vweu")
 

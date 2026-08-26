@@ -26,11 +26,13 @@ var UsesAmmo : bool = true
 var AttackSpeedMultiplier : float = 1.0
 var DamageMultiplier : float = 1.0
 var Reloading : bool = false
+var LevelRoot : Node2D
 
 func _ready() -> void:
 	Ready = true
 	CurrentAmmo = MaxAmmo
 	$AudioStreamPlayer2D.set_stream(SoundEffect)
+	LevelRoot = get_tree().get_first_node_in_group("LevelRoot")
 
 func _process(delta: float) -> void:
 	if Ready:
@@ -97,7 +99,7 @@ func _create_attack() -> Node:
 	var attack = AttackType.instantiate() as Bullet
 	attack.add_to_group(get_groups()[0])
 	attack._initialize(Damage, ShotSpeed, ShotLifeSpan, BulletSprite)
-	get_tree().root.add_child(attack)
+	LevelRoot.add_child(attack)
 	
 	return attack
 	

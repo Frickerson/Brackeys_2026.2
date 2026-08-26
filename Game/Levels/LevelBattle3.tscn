@@ -12,7 +12,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Arr
 outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 528, 0, 528, 384, 0, 384)])
 cell_size = 10.0
 
-[node name="NavigationRegion2D" unique_id=2058048662 instance=ExtResource("1_ak53g")]
+[node name="LevelRoot" unique_id=2058048662 instance=ExtResource("1_ak53g")]
 navigation_polygon = SubResource("NavigationPolygon_3d36i")
 
 [node name="Background" parent="Terrain" parent_id_path=PackedInt32Array(1609298999) index="0" unique_id=1521443357]
