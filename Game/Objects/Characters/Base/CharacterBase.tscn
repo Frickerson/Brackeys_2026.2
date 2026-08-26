@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c72ficu10fm3q" path="res://Game/Objects/Characters/Base/CharacterBase.gd" id="1_gp7rn"]
 [ext_resource type="Texture2D" uid="uid://bj37e1k6so76t" path="res://Game/Assets/Tilesets/tilesheet_transparent.png" id="3_eljxm"]
 [ext_resource type="PackedScene" uid="uid://bkb5662wbxhsi" path="res://Game/Objects/HealthBar/HealthBar.tscn" id="4_80e8x"]
+[ext_resource type="Texture2D" uid="uid://b7dy8sj2ffmn" path="res://Game/Assets/Sprites/pixel-white.png" id="4_lgely"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bu7o8"]
 radius = 7.0
@@ -10,6 +11,27 @@ radius = 7.0
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6nsbb"]
 cull_mode = 2
 polygon = PackedVector2Array(-7, -7.2, -7, 5.2, -0.8000002, 4, 1.6999998, 4, 2.1999998, 2.8000002, -0.5999999, 0, -1, -2.4, 2, -3.3000002, 2, -5.9)
+
+[sub_resource type="Curve" id="Curve_f0chh"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_e7grk"]
+curve = SubResource("Curve_f0chh")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_b8hjc"]
+particle_flag_disable_z = true
+direction = Vector3(1, 1, 0)
+spread = 180.0
+initial_velocity_min = 11.139999
+initial_velocity_max = 39.0
+angular_velocity_min = -36.100014
+angular_velocity_max = 56.15998
+orbit_velocity_min = -0.12199991
+orbit_velocity_max = 0.1110001
+gravity = Vector3(0, 0, 0)
+color = Color(1, 0, 0, 1)
+alpha_curve = SubResource("CurveTexture_e7grk")
 
 [node name="CharacterBase" type="CharacterBody2D" unique_id=2024416287]
 collision_layer = 2
@@ -36,5 +58,14 @@ avoidance_enabled = true
 time_horizon_obstacles = 1.0
 
 [node name="HealthBar" parent="." unique_id=1457432008 instance=ExtResource("4_80e8x")]
+
+[node name="DeathParticles" type="GPUParticles2D" parent="." unique_id=1469489112]
+emitting = false
+amount = 24
+texture = ExtResource("4_lgely")
+lifetime = 0.41000000000000003
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_b8hjc")
 
 [connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_velocity_computed"]

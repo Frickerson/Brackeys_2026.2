@@ -40,8 +40,13 @@ func _ready() -> void:
 func _take_damage(damage : float) -> void:
 	if HealthBarRef._update_health(damage):
 		OnDied.emit()
-		queue_free()
-		
+		$DeathParticles.emitting = true
+		$DeathParticles.finished.connect(delete_after_particles)
+
+
+func delete_after_particles():
+	queue_free()
+	
 func _process(delta: float) -> void:
 	if IsMoving:
 		_update_bobbing(delta)
