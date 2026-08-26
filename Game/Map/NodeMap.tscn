@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cpywopvhwk047" path="res://Game/Levels/LevelBattle1.tscn" id="5_1t1ls"]
 [ext_resource type="Script" uid="uid://b7ppuiu3c0i8x" path="res://Game/Levels/Events/EventOption.gd" id="5_v68tq"]
 [ext_resource type="Script" uid="uid://do8q2bwentmfw" path="res://Game/Objects/Characters/Base/CharacterMultipliers.gd" id="6_c6e86"]
+[ext_resource type="Script" uid="uid://7gj4ox0gu1vj" path="res://OvaniPlugin/OvaniPlayer.gd" id="7_fq2qd"]
 
 [sub_resource type="Resource" id="Resource_c6e86"]
 script = ExtResource("6_c6e86")
@@ -27,10 +28,18 @@ DamageMultiplier = 3.0
 AttackRangeMultiplier = 0.5
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
+[sub_resource type="Resource" id="Resource_pg43f"]
+script = ExtResource("6_c6e86")
+AttackSpeedMultiplier = 0.0
+DamageMultiplier = 0.0
+AttackRangeMultiplier = 0.0
+metadata/_custom_type_script = "uid://do8q2bwentmfw"
+
 [sub_resource type="Resource" id="Resource_1y2qw"]
 script = ExtResource("5_v68tq")
 Title = "Gain 20 trust"
 DistrustChange = -20.0
+MultipliersChange = SubResource("Resource_pg43f")
 metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
 
 [sub_resource type="Resource" id="Resource_rpydu"]
@@ -51,7 +60,6 @@ metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
 script = ExtResource("6_c6e86")
 AttackSpeedMultiplier = 2.0
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
-[ext_resource type="Script" uid="uid://7gj4ox0gu1vj" path="res://OvaniPlugin/OvaniPlayer.gd" id="7_fq2qd"]
 
 [node name="NodeMap" type="Node2D" unique_id=453470996 node_paths=PackedStringArray("StarterNode")]
 script = ExtResource("1_43jg8")
