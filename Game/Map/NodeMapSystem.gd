@@ -8,9 +8,7 @@ var CurrentNode : BaseNode = null
 var current_floor = 0
 
 func _ready() -> void:
-	var image = mouseCursor.get_image()
-	image.resize(mouseCursor.get_width() * 2, mouseCursor.get_height() * 2)
-	Input.set_custom_mouse_cursor(image)
+	setup_cursor()
 	current_floor = 0
 	$OvaniPlayer.PlaySongNow(mapSong, 1)
 	if StarterNode:
@@ -48,3 +46,8 @@ func on_win():
 
 		%Map.visible = true
 		$OvaniPlayer.PlaySongNow(mapSong, 1)
+
+func setup_cursor():
+	var image = mouseCursor.get_image()
+	image.resize(mouseCursor.get_width() * 2, mouseCursor.get_height() * 2)
+	Input.set_custom_mouse_cursor(image)
