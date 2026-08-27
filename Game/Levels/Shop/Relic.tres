@@ -1,0 +1,7 @@
+[gd_resource type="Resource" format=3 uid="uid://bcjla7rj2gnvg"]
+
+[ext_resource type="Script" uid="uid://drgly3oe5f0vj" path="res://Game/Levels/Shop/Relic.gd" id="1_mwjwb"]
+
+[resource]
+script = ExtResource("1_mwjwb")
+metadata/_custom_type_script = "uid://cu7821jxwoey4"

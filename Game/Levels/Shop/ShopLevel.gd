@@ -44,6 +44,7 @@ func _update_items() -> void:
 func _on_item_pressed(item : ShopItem):
 	Player._update_gold(-item.Cost)
 	ItemMap.find_key(item).disabled = true
+	item._on_buy()
 	_update_items()
 		
 func _on_exit():

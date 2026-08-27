@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dfbvi5vrcyq3f" path="res://Game/Map/Nodes/ShopNode.tscn" id="7_c6e86"]
 [ext_resource type="Script" uid="uid://q01x67dllf0s" path="res://OvaniPlugin/OvaniPlayer.gd" id="7_fq2qd"]
 [ext_resource type="Script" uid="uid://cu7821jxwoey4" path="res://Game/Levels/Shop/ShopItem.gd" id="8_q3x87"]
+[ext_resource type="Resource" uid="uid://drao7uaigwc0o" path="res://Game/Levels/Shop/Items/Relic_AttackSpeed.tres" id="9_puf6v"]
 
 [sub_resource type="Resource" id="Resource_c6e86"]
 script = ExtResource("6_c6e86")
@@ -56,12 +57,6 @@ Title = "Lose 10 trust but increase damage by 10% and attack speed by 300%"
 TrustChange = -10.0
 MultipliersChange = SubResource("Resource_rpydu")
 metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
-
-[sub_resource type="Resource" id="Resource_78ql8"]
-script = ExtResource("8_q3x87")
-Title = "Lose 20 Trust"
-Cost = 30
-metadata/_custom_type_script = "uid://cu7821jxwoey4"
 
 [sub_resource type="Resource" id="Resource_xktwb"]
 script = ExtResource("8_q3x87")
@@ -153,7 +148,7 @@ ChildNodes = [NodePath("../../Layer2/Layer2_Battle_01"), NodePath("../../Layer2/
 
 [node name="Layer1_ShopNode_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer1" unique_id=1133477007 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("7_c6e86")]
 layout_mode = 2
-Items = Array[ExtResource("8_q3x87")]([SubResource("Resource_78ql8"), SubResource("Resource_xktwb"), SubResource("Resource_yvp5d"), SubResource("Resource_y0jfu")])
+Items = Array[ExtResource("8_q3x87")]([ExtResource("9_puf6v"), SubResource("Resource_xktwb"), SubResource("Resource_yvp5d"), SubResource("Resource_y0jfu")])
 ChildNodes = [NodePath("../../Layer2/Layer2_Battle_02"), NodePath("../../Layer2/Layer2_Battle_03")]
 
 [node name="Layer0" type="HBoxContainer" parent="Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1166320292]
