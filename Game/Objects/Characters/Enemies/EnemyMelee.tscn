@@ -4,9 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://dcfga7omincif" path="res://Game/Objects/Weapons/Shotgun.tscn" id="2_8nsvt"]
 
 [node name="EnemyMelee" unique_id=2024416287 instance=ExtResource("1_e7y3t")]
-AttackRange = 50.0
 MinMoveRange = 25.0
-MaxMoveRange = 150.0
+MaxMoveRange = 250.0
 MoveSpeed = 75.0
 DefaultWeapon = ExtResource("2_8nsvt")
 MaxHealth = 40

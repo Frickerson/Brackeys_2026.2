@@ -10,23 +10,23 @@ Description = NodePath("Control/VBoxContainer/Description")
 Option = NodePath("Control/VBoxContainer/Option")
 Song = ExtResource("2_j1mgq")
 
-[node name="Control" type="Control" parent="." unique_id=488715265]
-layout_mode = 3
+[node name="Control" type="MarginContainer" parent="." unique_id=25985455]
+custom_minimum_size = Vector2(1280, 720)
+custom_maximum_size = Vector2(1280, 720)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_right = 1280.0
+offset_bottom = 720.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1357929563]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 theme_override_constants/separation = 20
 
 [node name="Title" type="Label" parent="Control/VBoxContainer" unique_id=1603734448]
@@ -36,6 +36,7 @@ text = "Title
 
 "
 horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="Description" type="Label" parent="Control/VBoxContainer" unique_id=261468280]
 layout_mode = 2
@@ -43,9 +44,12 @@ theme_override_font_sizes/font_size = 42
 text = "Description
 "
 horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="Option" type="Button" parent="Control/VBoxContainer" unique_id=1403581693]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 32
 text = "Option 1"
+autowrap_mode = 3

@@ -21,6 +21,9 @@ buses/default_bus_layout="uid://caruap80cq5ba"
 
 [display]
 
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
