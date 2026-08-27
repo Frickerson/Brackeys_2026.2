@@ -11,7 +11,7 @@ func _physics_process(_delta: float) -> void:
 	if PlayerRef.Respawning:
 		return
 	
-	$Laser.clear_posints()
+	$Laser.clear_points()
 	$Laser.add_point(Vector2(0,0),0)
 	if RayCast.is_colliding():
 		$Laser.add_point(to_local(RayCast.get_collision_point()))

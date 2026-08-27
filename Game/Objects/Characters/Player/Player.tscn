@@ -6,10 +6,40 @@
 [ext_resource type="Script" uid="uid://do8q2bwentmfw" path="res://Game/Objects/Characters/Base/CharacterMultipliers.gd" id="4_aeaxy"]
 [ext_resource type="Material" uid="uid://dp5xut6f6ajkd" path="res://Game/Assets/Shaders/PixelShadowMaterial.tres" id="4_s1ydr"]
 [ext_resource type="Texture2D" uid="uid://befd6c83jog8t" path="res://Game/Assets/Sprites/Objects/reloadCircle.png" id="6_14jth"]
+[ext_resource type="Texture2D" uid="uid://b7dy8sj2ffmn" path="res://Game/Assets/Sprites/pixel-white.png" id="7_h2uju"]
 
 [sub_resource type="Resource" id="Resource_y0rvw"]
 script = ExtResource("4_aeaxy")
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
+
+[sub_resource type="Curve" id="Curve_vxsb8"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.49532706, 1), 0.0, 0.0, 0, 0, Vector2(0.98130834, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_li00e"]
+curve = SubResource("Curve_vxsb8")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_b8hjc"]
+particle_flag_disable_z = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 64.73
+emission_ring_radius = 5.24
+emission_ring_inner_radius = 2.0
+emission_ring_cone_angle = 90.0
+inherit_velocity_ratio = 0.211
+direction = Vector3(1, 1, 0)
+spread = 90.0
+initial_velocity_max = 50.14
+orbit_velocity_min = 0.0780001
+orbit_velocity_max = 1.3150002
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -6.690002
+radial_accel_max = 3.8999977
+damping_min = 26.741001
+damping_max = 48.747
+scale_curve = SubResource("CurveTexture_li00e")
+color = Color(1, 0, 0, 1)
 
 [node name="Player" unique_id=2024416287 node_paths=PackedStringArray("Camera", "Collision", "AttackLocation", "HealthBarRef") groups=["Player"] instance=ExtResource("1_dxvqc")]
 script = ExtResource("2_e0uyt")
@@ -60,3 +90,10 @@ nine_patch_stretch = true
 texture_under = ExtResource("6_14jth")
 texture_progress = ExtResource("6_14jth")
 tint_under = Color(0, 0, 0, 1)
+
+[node name="ReviveParticles" type="GPUParticles2D" parent="." index="6" unique_id=2074427768]
+emitting = false
+texture = ExtResource("7_h2uju")
+lifetime = 0.7
+randomness = 0.2
+process_material = SubResource("ParticleProcessMaterial_b8hjc")

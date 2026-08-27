@@ -89,18 +89,23 @@ func _on_death():
 		return
 	
 	Respawning = true
-	visible = false
 	HealthBarRef._initialize(MaxHealth)
 	_update_trust(-RespawnTrustDecrease)
 	Collision.set_deferred("disabled", true)
+	$CollisionShape2D.visible = false
+	$HealthBar.visible = false
 	EquippedWeapon._toggle_attack(false)
 	EquippedWeapon._reload()
 	OnDied.emit()
+	$ReviveParticles.emitting = true
+	var onRespawnComplete = func():
+		$ReviveParticles.emitting = false
+		$CollisionShape2D.visible = true
+		$HealthBar.visible = true
+		Respawning = false
+		Collision.set_deferred("disabled", false)
 	
-	await get_tree().create_timer(RespawnTime).timeout
-	visible = true
-	Respawning = false
-	Collision.set_deferred("disabled", false)
+	get_tree().create_timer(RespawnTime).timeout.connect(onRespawnComplete)
 	
 static func _update_gold(increase : int) -> void:
 	Gold = maxi(Gold + increase, 0)
