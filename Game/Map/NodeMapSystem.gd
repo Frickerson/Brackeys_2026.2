@@ -2,11 +2,15 @@ extends Node2D
 
 @export var StarterNode : BaseNode
 var mapSong :OvaniSong = preload("res://Game/Sound/Music/MapSong/MapSong.tres")
+@export var mouseCursor: Texture2D = preload("res://Game/Assets/Sprites/tile_0027.png")
 
 var CurrentNode : BaseNode = null
 var current_floor = 0
 
 func _ready() -> void:
+	var image = mouseCursor.get_image()
+	image.resize(mouseCursor.get_width() * 2, mouseCursor.get_height() * 2)
+	Input.set_custom_mouse_cursor(image)
 	current_floor = 0
 	$OvaniPlayer.PlaySongNow(mapSong, 1)
 	if StarterNode:
