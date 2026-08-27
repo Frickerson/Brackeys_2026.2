@@ -34,6 +34,7 @@ var CurrentAmmo : int = 0
 var UsesAmmo : bool = true
 var Multipliers : CharacterMultipliers = null
 var Reloading : bool = false
+var OutOfAmmo : bool = false
 var LevelRoot : Node2D
 
 func _ready() -> void:
@@ -44,7 +45,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if Ready:
-		if Enabled:
+		if Enabled && !OutOfAmmo:
 			_attack()
 		return
 	
@@ -61,18 +62,23 @@ func _toggle_attack(enable: bool) -> void:
 		return
 
 	Enabled = enable
-	if Enabled && Ready:
-		_attack()
+	
+	if Enabled:
+		if OutOfAmmo:
+			$EmptyGunSound.play()
+			return
+	
+		if Ready:
+			_attack()
 		
 func _toggle_uses_ammo(use_ammo : bool) -> void:
 	UsesAmmo = use_ammo
 		
 func _attack() -> void:
-	var out_of_ammo = CurrentAmmo >= 0 && CurrentAmmo < AmmoPerShot
-	if out_of_ammo :
+	OutOfAmmo = CurrentAmmo >= 0 && CurrentAmmo < AmmoPerShot
+	if OutOfAmmo :
 		Ready = false
 		$EmptyGunSound.play()
-		Enabled = false
 		return
 		
 	if Reloading:
@@ -88,10 +94,14 @@ func _attack() -> void:
 	Ready = false
 		
 func _reload() -> void:
+	if CurrentAmmo == MaxAmmo:
+		return
+		
 	Reloading = true
 	await get_tree().create_timer(ReloadTime).timeout
 	
 	CurrentAmmo = MaxAmmo
+	OutOfAmmo = false
 	Reloading = false
 	
 func _spawn_attacks() -> void:
