@@ -19,6 +19,8 @@ class_name Enemy
 static var Multipliers : CharacterMultipliers
 static var AdditionalMultipliers : CharacterMultipliers
 
+var SpawnPosition : Vector2
+
 func _ready() -> void:
 	if !Multipliers && DefaultMultipliers:
 		Multipliers = DefaultMultipliers
@@ -30,6 +32,8 @@ func _ready() -> void:
 		
 	RayCast.add_exception(PlayerRef)
 	NavigationAgent.radius = AvoidanceRadius
+	
+	SpawnPosition = global_position
 
 func _physics_process(_delta: float) -> void:
 	if Dying:
@@ -38,6 +42,12 @@ func _physics_process(_delta: float) -> void:
 	if PlayerRef == null:
 		EquippedWeapon._toggle_attack(false)
 		NavigationAgent.set_velocity(Vector2.ZERO)
+		return
+	
+	if PlayerRef.Respawning:
+		EquippedWeapon._toggle_attack(false)
+		_move_to(SpawnPosition)
+		_rotate_towards(SpawnPosition)
 		return
 
 	var player_position = PlayerRef.global_position
@@ -49,8 +59,7 @@ func _physics_process(_delta: float) -> void:
 		_move_towards_player(player_position, in_line_of_sight)
 	
 	if in_move_range || (in_attack_range && in_line_of_sight):
-		var player_dir = AttackLocation.global_position.direction_to(player_position)
-		rotation = player_dir.angle()
+		_rotate_towards(player_position)
 
 	var enable_attack = in_attack_range && in_line_of_sight
 	EquippedWeapon._toggle_attack(enable_attack)
@@ -61,15 +70,23 @@ func _move_towards_player(player_position : Vector2, in_line_of_sight : bool) ->
 		dir_from_player = _find_line_of_sight(dir_from_player)
 	
 	var target_position = player_position + dir_from_player * MinMoveRange
-	NavigationAgent.target_position = target_position
-		
+	_move_to(target_position)
+	
+func _move_to(new_position : Vector2) -> void:
+	NavigationAgent.target_position = new_position
 	if NavigationAgent.is_navigation_finished():
 		return
 	
 	var next_position = NavigationAgent.get_next_path_position()
 	var dir = global_position.direction_to(next_position)
-	velocity = dir * MoveSpeed
 	NavigationAgent.set_velocity(dir * MoveSpeed)
+	
+func _rotate_towards(rotate_position : Vector2) -> void:
+	if rotate_position.distance_squared_to(global_position) <= 100.0:
+		return
+		
+	var direction = AttackLocation.global_position.direction_to(rotate_position)
+	rotation = direction.angle()
 
 func _in_attack_range(player_position : Vector2) -> bool:
 	if EquippedWeapon == null:

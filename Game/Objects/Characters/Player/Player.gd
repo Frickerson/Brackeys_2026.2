@@ -2,10 +2,14 @@ extends CharacterBase
 
 class_name Player
 
+@export var RespawnTrustDecrease : float = 20.0
+@export var RespawnTime : float = 3.0
 @export var Camera: Camera2D
 
 static var Trust : float = 100.0
 static var Multipliers : CharacterMultipliers
+
+var Respawning : bool = false
 
 func _ready() -> void:
 	if !Multipliers && DefaultMultipliers:
@@ -61,11 +65,16 @@ func _on_death():
 		super._on_death()
 		return
 	
+	Respawning = true
 	visible = false
 	HealthBarRef._initialize(MaxHealth)
-	_update_trust(-20.0)
-	await get_tree().create_timer(3.0).timeout
+	_update_trust(-RespawnTrustDecrease)
+	$CollisionShape2D.disabled = true
+	
+	await get_tree().create_timer(RespawnTime).timeout
 	visible = true
+	Respawning = false
+	$CollisionShape2D.disabled = false
 
 static func _get_multipliers() -> CharacterMultipliers:
 	return Multipliers
