@@ -8,6 +8,7 @@ var current_floor = 0
 
 func _ready() -> void:
 	current_floor = 0
+	$OvaniPlayer.PlaySongNow(mapSong, 1)
 	if StarterNode:
 		CurrentNode = StarterNode
 		CurrentNode.disabled = false
@@ -24,7 +25,7 @@ func on_node_pressed(node: BaseNode):
 	var scene = CurrentNode._get_loaded_level()
 	scene._on_win.connect(on_win);
 	$OvaniPlayer.PlaySongNow((scene as Level).Song, 1)
-	$OvaniPlayer.FadeIntensity(Player.Distrust/100, 1)
+	$OvaniPlayer.FadeIntensity(1.0 - (Player.Trust/100), 1)
 	%CurrentScene.add_child(scene)
 	%Map.visible = false
 
