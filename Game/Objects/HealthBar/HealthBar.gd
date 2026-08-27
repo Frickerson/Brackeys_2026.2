@@ -31,8 +31,9 @@ func _update_health_visual(delta : float) -> void:
 	var change_percent = (MaxTrustChangePercent / 100.0) * distrust_percent
 	var change_value = change_percent * MaxHealth * DistrustMultiplier
 	
-	var new_health = ((CurrentHealth - change_value) / MaxHealth) * 100.0
-	Health.value = lerp(Health.value, new_health, LerpSpeed * delta)
+	var new_health = maxf(CurrentHealth - change_value, 0.0)
+	var new_health_percent = (new_health / MaxHealth) * 100.0
+	Health.value = lerp(Health.value, new_health_percent, LerpSpeed * delta)
 	
 func _update_health(damage : float) -> bool:
 	CurrentHealth -= damage
