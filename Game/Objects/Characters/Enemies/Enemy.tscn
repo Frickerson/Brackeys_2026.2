@@ -9,7 +9,7 @@
 script = ExtResource("4_y0rvw")
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
-[node name="Enemy" unique_id=2024416287 node_paths=PackedStringArray("NavigationAgent", "RayCast", "AttackLocation", "HealthBarRef") groups=["Enemy"] instance=ExtResource("1_koanu")]
+[node name="Enemy" unique_id=2024416287 node_paths=PackedStringArray("NavigationAgent", "RayCast", "Collision", "AttackLocation", "HealthBarRef") groups=["Enemy"] instance=ExtResource("1_koanu")]
 script = ExtResource("2_0vsr6")
 UseAmmo = false
 MinMoveRange = 100.0
@@ -18,6 +18,7 @@ AvoidanceRadius = 30.0
 NavigationAgent = NodePath("NavigationAgent2D")
 RayCast = NodePath("CollisionShape2D/Sprite2D/AttackLocation/RayCast2D")
 TeamName = &"EnemyTeam"
+Collision = NodePath("CollisionShape2D")
 MoveSpeed = 50.0
 DefaultWeapon = ExtResource("3_3m4rq")
 AttackLocation = NodePath("CollisionShape2D/Sprite2D/AttackLocation")

@@ -18,6 +18,9 @@ func _ready() -> void:
 	super._ready()
 
 func _physics_process(_delta: float) -> void:
+	if Respawning:
+		return
+
 	var vertical = Input.get_axis("Player_Move_Up","Player_Move_Down")
 	var horizontal = Input.get_axis("Player_Move_Left","Player_Move_Right")
 	
@@ -32,6 +35,9 @@ func _physics_process(_delta: float) -> void:
 	
 func _input(event):
 	if EquippedWeapon == null:
+		return
+		
+	if Respawning:
 		return
 		
 	if event.is_action("Player_Shoot"):
@@ -69,12 +75,13 @@ func _on_death():
 	visible = false
 	HealthBarRef._initialize(MaxHealth)
 	_update_trust(-RespawnTrustDecrease)
-	$CollisionShape2D.disabled = true
+	Collision.set_deferred("disabled", true)
+	EquippedWeapon._toggle_attack(false)
 	
 	await get_tree().create_timer(RespawnTime).timeout
 	visible = true
 	Respawning = false
-	$CollisionShape2D.disabled = false
+	Collision.set_deferred("disabled", false)
 
 static func _get_multipliers() -> CharacterMultipliers:
 	return Multipliers

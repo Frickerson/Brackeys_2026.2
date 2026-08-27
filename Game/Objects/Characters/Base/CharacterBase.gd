@@ -4,6 +4,9 @@ class_name CharacterBase
 
 @export var TeamName : StringName = ""
 
+@export_group("Components")
+@export var Collision : CollisionShape2D
+
 @export_group("Movement")
 @export var MoveSpeed: float = 150.0
 
@@ -45,8 +48,8 @@ func _take_damage(damage : float) -> void:
 func _on_death():
 	$DeathParticles.emitting = true
 	$DeathParticles.finished.connect(func(): queue_free())
-	$CollisionShape2D.queue_free()
-	$HealthBar.visible = false
+	Collision.queue_free()
+	HealthBarRef.visible = false
 	OnDied.emit()
 	Dying = true
 
