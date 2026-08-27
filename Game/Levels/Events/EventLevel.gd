@@ -26,7 +26,7 @@ func _create_option() -> Button:
 	return new_option
 	
 func _on_option_pressed(option : EventOption):
-	Player._update_distrust(option.DistrustChange)
+	Player._update_trust(option.TrustChange)
 	Player._add_multipliers(option.MultipliersChange)
 	_on_win.emit()
 	pass

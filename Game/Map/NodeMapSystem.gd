@@ -24,7 +24,7 @@ func on_node_pressed(node: BaseNode):
 	var scene = CurrentNode._get_loaded_level()
 	scene._on_win.connect(on_win);
 	$OvaniPlayer.PlaySongNow((scene as Level).Song)
-	$OvaniPlayer.FadeIntensity(Player.Distrust/100, 1)
+	$OvaniPlayer.FadeIntensity(Player.Trust/100.0, 1)
 	%CurrentScene.add_child(scene)
 	%Map.visible = false
 

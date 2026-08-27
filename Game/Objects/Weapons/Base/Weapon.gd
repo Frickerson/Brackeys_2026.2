@@ -131,7 +131,7 @@ func _get_total_shots() -> int:
 	return AmmoPerShot + _get_fake_shots()
 	
 func _get_fake_shots() -> int:
-	var distrust = Player.Distrust / 100.0
+	var distrust = 1.0 - Player.Trust / 100.0
 	return floor(distrust * MaxFakeShots)
 	
 func _apply_fake_shots(shots : Array) -> void:

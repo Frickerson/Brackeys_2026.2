@@ -4,7 +4,7 @@ class_name Player
 
 @export var Camera: Camera2D
 
-static var Distrust : float = 0.0
+static var Trust : float = 100.0
 static var Multipliers : CharacterMultipliers
 
 func _ready() -> void:
@@ -39,16 +39,8 @@ func _input(event):
 	if event.is_action("Player_Reload"):
 		EquippedWeapon._reload()
 		
-func _process(delta: float) -> void:
-	super._process(delta)
-	
-	_update_distrust(1.0 * delta)
-		
-static func _update_distrust(value : float) -> void:
-	Distrust += value
-
-	if Distrust > 100.0:
-		Distrust = 100.0
+static func _update_trust(value : float) -> void:
+	Trust = clampf(Trust + value, 0.0, 100.0)
 	
 func _get_max_ammo() -> int:
 	if EquippedWeapon:

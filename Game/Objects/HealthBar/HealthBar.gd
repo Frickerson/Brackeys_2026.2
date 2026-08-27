@@ -3,7 +3,7 @@ extends Node2D
 class_name HealthBar
 
 @export var Health : ProgressBar = null
-@export var MaxDistrustChangePercent : float = 50.0
+@export var MaxTrustChangePercent : float = 50.0
 @export var LerpSpeed : float = 10.0
 @export var DistrustChangeTime : float = 3.0
 
@@ -27,8 +27,8 @@ func _initialize(max_health : int) -> void:
 	CurrentHealth = max_health
 	
 func _update_health_visual(delta : float) -> void:
-	var distrust_percent = Player.Distrust / 100.0
-	var change_percent = (MaxDistrustChangePercent / 100.0) * distrust_percent
+	var distrust_percent = 1 - Player.Trust / 100.0
+	var change_percent = (MaxTrustChangePercent / 100.0) * distrust_percent
 	var change_value = change_percent * MaxHealth * DistrustMultiplier
 	
 	var new_health = ((CurrentHealth - change_value) / MaxHealth) * 100.0
