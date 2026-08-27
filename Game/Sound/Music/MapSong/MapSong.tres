@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="OvaniSong" format=3 uid="uid://b4dm0nh8fhxs2"]
 
-[ext_resource type="Script" uid="uid://0bp8bxio18ie" path="res://OvaniPlugin/OvaniSong.gd" id="1_3yc8r"]
+[ext_resource type="Script" uid="uid://dd4sux7yrhd3k" path="res://OvaniPlugin/OvaniSong.gd" id="1_3yc8r"]
 [ext_resource type="AudioStream" uid="uid://bwtr6gt5fv8nx" path="res://Game/Sound/Music/MapSong/Chiptune Vol5 Party Castle Intensity 1.wav" id="1_v4uup"]
 [ext_resource type="AudioStream" uid="uid://bkj42h1squ5b" path="res://Game/Sound/Music/MapSong/Chiptune Vol5 Party Castle Intensity 2.wav" id="2_uq6pj"]
 [ext_resource type="AudioStream" uid="uid://3vu2rbom4kk7" path="res://Game/Sound/Music/MapSong/Chiptune Vol5 Party Castle Main.wav" id="3_8f2m5"]
@@ -15,4 +15,3 @@ Intensity3 = ExtResource("3_8f2m5")
 Loop30 = ExtResource("4_8hnah")
 Loop60 = ExtResource("5_gecij")
 ReverbTail = 0.828
-metadata/_custom_type_script = "uid://0bp8bxio18ie"

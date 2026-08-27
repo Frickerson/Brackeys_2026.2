@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="OvaniSong" format=3 uid="uid://8j18ovmtpm13"]
 
 [ext_resource type="AudioStream" uid="uid://iu15m7xny3h1" path="res://Game/Sound/Music/ShopSong/Chiptune Vol5 Ponder Intensity 1.wav" id="1_0myc5"]
-[ext_resource type="Script" uid="uid://0bp8bxio18ie" path="res://OvaniPlugin/OvaniSong.gd" id="1_1ftpt"]
+[ext_resource type="Script" uid="uid://dd4sux7yrhd3k" path="res://OvaniPlugin/OvaniSong.gd" id="1_1ftpt"]
 [ext_resource type="AudioStream" uid="uid://bsxvef17lwbsp" path="res://Game/Sound/Music/ShopSong/Chiptune Vol5 Ponder Intensity 2.wav" id="2_d78t0"]
 [ext_resource type="AudioStream" uid="uid://csxqbbd4he13l" path="res://Game/Sound/Music/ShopSong/Chiptune Vol5 Ponder Main.wav" id="3_ohob4"]
 [ext_resource type="AudioStream" uid="uid://bxo0osccuncat" path="res://Game/Sound/Music/ShopSong/Chiptune Vol5 Ponder Cut 30.wav" id="4_fyglr"]
@@ -15,4 +15,3 @@ Intensity3 = ExtResource("3_ohob4")
 Loop30 = ExtResource("4_fyglr")
 Loop60 = ExtResource("5_04pkm")
 ReverbTail = 2.474
-metadata/_custom_type_script = "uid://0bp8bxio18ie"

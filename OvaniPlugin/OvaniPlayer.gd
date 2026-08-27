@@ -60,14 +60,23 @@ var _audioPlayer : AudioStreamPlayer:
 ## Use transitionTime to govern how fast it fades to the next song.[br]
 ## Setting transitionTime to -1 will use the current songs reverbTail to fade.
 func PlaySongNow(song : OvaniSong, transitionTime : float = -1):
-	if (len(QueuedSongs) > 0):
-		QueuedSongs.insert(1, song);
+	if (len(QueuedSongs) == 0):
+		QueuedSongs.append(null)
+	
+	QueuedSongs.insert(1, song);
+	if (len(_soundManagers) != 0):
 		if (transitionTime == -1):
 			_soundManagers[0].StartTime = (_curTime - _soundManagers[0].SongLength) + _soundManagers[0].ReverbTail;
+			_soundManagers[0].FadeOut = _soundManagers[0].ReverbTail
 		else:
 			_soundManagers[0].StartTime = (_curTime - _soundManagers[0].SongLength) + transitionTime;
-	else:
-		QueuedSongs.append(song);
+			_soundManagers[0].FadeOut = transitionTime
+
+## Clears the song queue, and optionally fades to silence.
+func StopSongsNow(transition_time : int = 0):
+	if (len(QueuedSongs) > 0):
+		QueuedSongs = [QueuedSongs[0]]
+		PlaySongNow(null, transition_time)
 
 func QueueSong(song : OvaniSong):
 	QueuedSongs.append(song);
@@ -131,7 +140,7 @@ func _constructPolySoundManager(song : OvaniSong) -> PolySoundManager:
 			o.Intensity = 0;
 			o.SongLength = song.Loop60.get_length();
 		o.ReverbTail = song.ReverbTail;
-
+	
 	o.Volume = Volume;
 	o.StartTime = _curTime;
 	return o;
@@ -169,6 +178,21 @@ func FadeVolume(volume : float, transitionTime : float):
 	_startVolFadeVal = Volume;
 	_endVolFadeVal = volume;
 
+## The Current time In the Current Song.
+var CurrentSongTime : float:
+	get:
+		if (len(_soundManagers) > 0):
+			return _curTime - _soundManagers[0].StartTime;
+		else:
+			return 0;
+## The Current Length Of the Current Song.
+var CurrentSongLength : float:
+	get:
+		if (len(_soundManagers) > 0):
+			return _soundManagers[0].SongLength;
+		else:
+			return 0;
+
 var _curTime : float = 500;
 func _process(delta):
 	if (Engine.is_editor_hint() && !PlayInEditor):
@@ -180,6 +204,7 @@ func _process(delta):
 
 	_curTime += delta / Engine.time_scale;
 
+	
 	# Intensity Fade Logic
 	if (_timeIntFadeStarted < _curTime && _timeIntFadeEnded > _curTime):
 		Intensity = lerp(_startIntFadeVal, _endIntFadeVal, (_curTime - _timeIntFadeStarted)/(_timeIntFadeEnded - _timeIntFadeStarted))
@@ -201,8 +226,9 @@ func _process(delta):
 			var remainingTime : float = -(_curTime - (psm.StartTime + psm.SongLength));
 			if (psm.FadeOut != -1 && remainingTime < psm.FadeOut):
 				psm.Volume = linear_to_db((remainingTime / psm.FadeOut) * db_to_linear(Volume));
+				
 			
-			if (remainingTime < psm.ReverbTail):
+			if (remainingTime < psm.ReverbTail || remainingTime < psm.FadeOut):
 				if (psm.StartedNextState == NextState.None):
 					
 					if (!Engine.is_editor_hint() || PlayInEditor):
@@ -213,7 +239,10 @@ func _process(delta):
 						else:
 							nextSong = QueuedSongs[1];
 							psm.StartedNextState = NextState.StartedDifferent;
-						_soundManagers.append(_constructPolySoundManager(nextSong));
+						var newPSM : PolySoundManager = _constructPolySoundManager(nextSong)
+						_soundManagers.append(newPSM);
+						if remainingTime < psm.FadeOut:
+							newPSM.FadeIn = psm.FadeOut;
 				if (remainingTime < 0):
 					_soundManagers.erase(psm);
 					for id in psm.Ids:

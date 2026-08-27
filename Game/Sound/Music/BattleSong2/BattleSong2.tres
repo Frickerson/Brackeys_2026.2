@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="OvaniSong" format=3 uid="uid://devv8xp6f7d5e"]
+[gd_resource type="Resource" script_class="OvaniSong" format=3 uid="uid://bauh2fpvyljyh"]
 
-[ext_resource type="Script" uid="uid://0bp8bxio18ie" path="res://OvaniPlugin/OvaniSong.gd" id="1_g5vey"]
+[ext_resource type="Script" uid="uid://dd4sux7yrhd3k" path="res://OvaniPlugin/OvaniSong.gd" id="1_g5vey"]
 [ext_resource type="AudioStream" uid="uid://3y2mnl1i5p8j" path="res://Game/Sound/Music/BattleSong2/Chiptune Vol4 Scheming Intensity 1.wav" id="1_xk4pg"]
 [ext_resource type="AudioStream" uid="uid://dor6wsemsua51" path="res://Game/Sound/Music/BattleSong2/Chiptune Vol4 Scheming Intensity 2.wav" id="2_2ppun"]
 [ext_resource type="AudioStream" uid="uid://isca23w7fg1k" path="res://Game/Sound/Music/BattleSong2/Chiptune Vol4 Scheming Main.wav" id="3_uc3uj"]
@@ -15,4 +15,4 @@ Intensity3 = ExtResource("3_uc3uj")
 Loop30 = ExtResource("4_5vtg0")
 Loop60 = ExtResource("5_upcwk")
 ReverbTail = 2.427
-metadata/_custom_type_script = "uid://0bp8bxio18ie"
+metadata/_custom_type_script = "uid://dd4sux7yrhd3k"

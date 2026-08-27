@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cpywopvhwk047" path="res://Game/Levels/LevelBattle1.tscn" id="5_1t1ls"]
 [ext_resource type="Script" uid="uid://b7ppuiu3c0i8x" path="res://Game/Levels/Events/EventOption.gd" id="5_v68tq"]
 [ext_resource type="Script" uid="uid://do8q2bwentmfw" path="res://Game/Objects/Characters/Base/CharacterMultipliers.gd" id="6_c6e86"]
-[ext_resource type="Script" uid="uid://7gj4ox0gu1vj" path="res://OvaniPlugin/OvaniPlayer.gd" id="7_fq2qd"]
+[ext_resource type="Script" uid="uid://q01x67dllf0s" path="res://OvaniPlugin/OvaniPlayer.gd" id="7_fq2qd"]
 
 [sub_resource type="Resource" id="Resource_c6e86"]
 script = ExtResource("6_c6e86")
@@ -151,7 +151,7 @@ ChildNodes = [NodePath("../../Layer1/Layer1_EventNode_01"), NodePath("../../Laye
 [node name="CurrentScene" type="Node2D" parent="." unique_id=1835926991]
 unique_name_in_owner = true
 
-[node name="OvaniPlayer" type="Node" parent="." unique_id=1323224286]
+[node name="OvaniPlayer" type="Node" parent="." unique_id=1418687610]
 script = ExtResource("7_fq2qd")
-Volume = -10.0
-metadata/_custom_type_script = "uid://7gj4ox0gu1vj"
+Bus = &"Music"
+metadata/_custom_type_script = "uid://q01x67dllf0s"

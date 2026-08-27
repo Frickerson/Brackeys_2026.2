@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="OvaniSong" format=3 uid="uid://bk52vfup5s1qm"]
 
 [ext_resource type="AudioStream" uid="uid://5oj8dmyyt7mv" path="res://Game/Sound/Music/EventSong/Chiptune Evil cut 30.wav" id="1_5pgy7"]
-[ext_resource type="Script" uid="uid://0bp8bxio18ie" path="res://OvaniPlugin/OvaniSong.gd" id="1_mnb26"]
+[ext_resource type="Script" uid="uid://dd4sux7yrhd3k" path="res://OvaniPlugin/OvaniSong.gd" id="1_mnb26"]
 [ext_resource type="AudioStream" uid="uid://bg5rkdw8xwsiu" path="res://Game/Sound/Music/EventSong/Chiptune Evil cut 60.wav" id="2_qq4me"]
 [ext_resource type="AudioStream" uid="uid://rtnvu3jufbwu" path="res://Game/Sound/Music/EventSong/Chiptune Evil Intensity 1.wav" id="3_i10hc"]
 [ext_resource type="AudioStream" uid="uid://dljk8rqdjwia2" path="res://Game/Sound/Music/EventSong/Chiptune Evil Intensity 2.wav" id="4_hhcey"]
@@ -9,10 +9,9 @@
 
 [resource]
 script = ExtResource("1_mnb26")
-Intensity1 = ExtResource("1_5pgy7")
-Intensity2 = ExtResource("2_qq4me")
-Intensity3 = ExtResource("3_i10hc")
-Loop30 = ExtResource("4_hhcey")
-Loop60 = ExtResource("5_bt5ha")
+Intensity1 = ExtResource("3_i10hc")
+Intensity2 = ExtResource("4_hhcey")
+Intensity3 = ExtResource("5_bt5ha")
+Loop30 = ExtResource("1_5pgy7")
+Loop60 = ExtResource("2_qq4me")
 ReverbTail = 3.0
-metadata/_custom_type_script = "uid://0bp8bxio18ie"
