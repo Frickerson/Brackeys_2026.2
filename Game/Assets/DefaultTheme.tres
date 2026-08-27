@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://ds340prw68pms"]
+
+[ext_resource type="FontFile" uid="uid://ca1obxom7tobs" path="res://Game/Assets/Kenney Blocks.ttf" id="1_qacaj"]
+
+[resource]
+default_font = ExtResource("1_qacaj")
+default_font_size = 32
