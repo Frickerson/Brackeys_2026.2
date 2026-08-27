@@ -55,6 +55,17 @@ func _get_current_ammo() -> int:
 func _update_weapon() -> void:
 	if EquippedWeapon:
 		EquippedWeapon._update_multipliers(_get_multipliers())
+		
+func _on_death():
+	if Trust <= 0.0:
+		super._on_death()
+		return
+	
+	visible = false
+	HealthBarRef._initialize(MaxHealth)
+	_update_trust(-20.0)
+	await get_tree().create_timer(3.0).timeout
+	visible = true
 
 static func _get_multipliers() -> CharacterMultipliers:
 	return Multipliers

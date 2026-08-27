@@ -40,12 +40,15 @@ func _take_damage(damage : float) -> void:
 		return
 		
 	if HealthBarRef._update_health(damage):
-		$DeathParticles.emitting = true
-		$DeathParticles.finished.connect(func(): queue_free())
-		$CollisionShape2D.queue_free()
-		$HealthBar.visible = false
-		OnDied.emit()
-		Dying = true
+		_on_death()
+		
+func _on_death():
+	$DeathParticles.emitting = true
+	$DeathParticles.finished.connect(func(): queue_free())
+	$CollisionShape2D.queue_free()
+	$HealthBar.visible = false
+	OnDied.emit()
+	Dying = true
 
 func _process(delta: float) -> void:
 	if IsMoving:
