@@ -34,7 +34,8 @@ func on_node_pressed(node: BaseNode):
 		$OvaniPlayer.FadeIntensity(1-(Player.Trust/100),1)
 	
 	var player = get_tree().get_first_node_in_group("Player") as Player
-	player.OnDied.connect(onPlayerDied)
+	if player:
+		player.OnDied.connect(onPlayerDied)
 	%Map.visible = false
 
 func on_win():
