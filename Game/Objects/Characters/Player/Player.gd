@@ -88,7 +88,7 @@ func _on_death():
 	Respawning = false
 	Collision.set_deferred("disabled", false)
 	
-func _update_gold(increase : int) -> void:
+static func _update_gold(increase : int) -> void:
 	Gold = maxi(Gold + increase, 0)
 
 static func _get_multipliers() -> CharacterMultipliers:
