@@ -1,6 +1,14 @@
 [gd_scene format=3 uid="uid://dfbvi5vrcyq3f"]
 
 [ext_resource type="PackedScene" uid="uid://c5u2i12ivbylt" path="res://Game/Map/Nodes/BaseNode.tscn" id="1_0c51g"]
+[ext_resource type="PackedScene" uid="uid://h4l1l8trtmq8" path="res://Game/Levels/Shop/ShopLevel.tscn" id="2_04r70"]
+[ext_resource type="Script" uid="uid://bd3f0ius6kdmd" path="res://Game/Map/Nodes/ShopNode.gd" id="2_j4goe"]
+[ext_resource type="Script" uid="uid://cu7821jxwoey4" path="res://Game/Levels/Shop/ShopItem.gd" id="3_j4goe"]
 
 [node name="ShopNode" unique_id=546445709 instance=ExtResource("1_0c51g")]
 text = "Shop"
+script = ExtResource("2_j4goe")
+Title = "Shop"
+Descrition = "Many items lay before you. You can only choose one. Choose wisely!"
+Items = Array[ExtResource("3_j4goe")]([])
+scene_to_load = ExtResource("2_04r70")
