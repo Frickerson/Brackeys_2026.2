@@ -38,7 +38,7 @@ metadata/_custom_type_script = "uid://do8q2bwentmfw"
 [sub_resource type="Resource" id="Resource_1y2qw"]
 script = ExtResource("5_v68tq")
 Title = "Gain 20 trust"
-DistrustChange = -20.0
+TrustChange = 20.0
 MultipliersChange = SubResource("Resource_pg43f")
 metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
 
@@ -52,7 +52,7 @@ metadata/_custom_type_script = "uid://do8q2bwentmfw"
 [sub_resource type="Resource" id="Resource_fomk6"]
 script = ExtResource("5_v68tq")
 Title = "Lose 10 trust but increase damage by 10% and attack speed by 300%"
-DistrustChange = 10.0
+TrustChange = -10.0
 MultipliersChange = SubResource("Resource_rpydu")
 metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
 

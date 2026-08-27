@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dlcaoemq06d62"]
 
-[ext_resource type="Script" uid="uid://4y61m320w2n0" path="res://Game/UI/DistrustMeter/DistrustMeter.gd" id="1_rfast"]
+[ext_resource type="Script" uid="uid://4y61m320w2n0" path="res://Game/UI/DistrustMeter/TrustMeter.gd" id="1_onhqh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7uuyb"]
 bg_color = Color(0.88805956, 0.47728354, 3.85046e-07, 1)
@@ -8,22 +8,22 @@ bg_color = Color(0.88805956, 0.47728354, 3.85046e-07, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j561r"]
 bg_color = Color(0.6141321, 7.4891446e-05, 0.5209789, 1)
 
-[node name="DistrustMeter" type="PanelContainer" unique_id=1605835758 node_paths=PackedStringArray("Meter")]
-anchors_preset = 3
+[node name="TrustMeter" type="PanelContainer" unique_id=1605835758 node_paths=PackedStringArray("Meter")]
+anchors_preset = 11
 anchor_left = 1.0
-anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -200.0
-offset_top = -40.0
 grow_horizontal = 0
-grow_vertical = 0
-script = ExtResource("1_rfast")
+grow_vertical = 2
+pivot_offset_ratio = Vector2(1, 0)
+script = ExtResource("1_onhqh")
 Meter = NodePath("ProgressBar")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1587276269]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_styles/background = SubResource("StyleBoxFlat_7uuyb")
 theme_override_styles/fill = SubResource("StyleBoxFlat_j561r")
 value = 25.0
+fill_mode = 3
