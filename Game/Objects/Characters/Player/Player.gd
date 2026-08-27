@@ -11,6 +11,7 @@ static var Trust : float = 100.0
 static var Gold : int = -1
 static var Multipliers : CharacterMultipliers
 static var Relics : Array[Relic]
+static var Health : float = -1.0
 
 var Respawning : bool = false
 
@@ -22,6 +23,11 @@ func _ready() -> void:
 		Gold = StarterGold
 	
 	super._ready()
+	
+	if Health == -1.0:
+		Health = HealthBarRef.CurrentHealth
+	else:
+		HealthBarRef.CurrentHealth = Health
 
 func _physics_process(_delta: float) -> void:
 	if Respawning:
@@ -54,6 +60,10 @@ func _input(event):
 	
 	if event.is_action("Player_Reload"):
 		EquippedWeapon._reload()
+		
+func _take_damage(damage : float) -> void:
+	super._take_damage(damage)
+	Health = HealthBarRef.CurrentHealth
 		
 static func _update_trust(value : float) -> void:
 	Trust = clampf(Trust + value, 0.0, 100.0)
