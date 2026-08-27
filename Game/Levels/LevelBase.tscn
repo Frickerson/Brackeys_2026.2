@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bg047ud8jaheo" path="res://Game/Levels/BattleLevel.gd" id="1_0vweu"]
 [ext_resource type="TileSet" uid="uid://bnb5pg3vlg73b" path="res://Game/Assets/Tilesets/PixelTileset.tres" id="1_upo77"]
-[ext_resource type="Resource" uid="uid://jtpspu4cg54c" path="res://Game/Sound/Music/MainBattleSong/MainBattleSong.tres" id="2_gidf0"]
+[ext_resource type="Resource" uid="uid://bcktjpfs3h6ye" path="res://Game/Sound/Music/MainBattleSong/MainBattleSong.tres" id="2_gidf0"]
 [ext_resource type="PackedScene" uid="uid://cbwjgcaupx561" path="res://Game/Objects/Characters/Player/Player.tscn" id="3_upo77"]
 [ext_resource type="PackedScene" uid="uid://dy6nnaibx8ckc" path="res://Game/UI/HUD.tscn" id="4_0vweu"]
 
@@ -28,7 +28,8 @@ one_shot = true
 
 [node name="Player" parent="." unique_id=2024416287 instance=ExtResource("3_upo77")]
 position = Vector2(233, 207)
-Multipliers = null
+RespawnTrustDecrease = 20.0
+RespawnTime = 3.0
 
 [node name="HUD" parent="." unique_id=1916852023 instance=ExtResource("4_0vweu")]
 
