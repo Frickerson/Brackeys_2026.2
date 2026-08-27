@@ -32,6 +32,10 @@ EnemyTeam=""
 PlayerTeam=""
 LevelRoot=""
 
+[gui]
+
+theme/custom="uid://ds340prw68pms"
+
 [input]
 
 Player_Move_Up={

@@ -6,9 +6,28 @@
 
 [node name="HUD" type="CanvasLayer" unique_id=1916852023 node_paths=PackedStringArray("TrustMeterRef", "AmmoCounterRef")]
 script = ExtResource("1_j561r")
-TrustMeterRef = NodePath("TrustMeter")
-AmmoCounterRef = NodePath("AmmoCounter")
+TrustMeterRef = NodePath("MarginContainer/TrustMeter")
+AmmoCounterRef = NodePath("MarginContainer/AmmoCounter")
 
-[node name="TrustMeter" parent="." unique_id=446809101 instance=ExtResource("1_7uuyb")]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=120761653]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
-[node name="AmmoCounter" parent="." unique_id=325284533 instance=ExtResource("3_0fp72")]
+[node name="TrustMeter" parent="MarginContainer" unique_id=446809101 instance=ExtResource("1_7uuyb")]
+modulate = Color(1, 1, 1, 0.69411767)
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="AmmoCounter" parent="MarginContainer" unique_id=325284533 instance=ExtResource("3_0fp72")]
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8

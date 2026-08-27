@@ -16,6 +16,7 @@ script = ExtResource("2_e0uyt")
 RespawnTrustDecrease = 20.0
 RespawnTime = 3.0
 Camera = NodePath("Camera2D")
+StarterGold = 100
 TeamName = &"PlayerTeam"
 Collision = NodePath("CollisionShape2D")
 DefaultWeapon = ExtResource("3_nh8tb")
