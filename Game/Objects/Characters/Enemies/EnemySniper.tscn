@@ -27,4 +27,4 @@ MaxHealth = 30
 [node name="Laser" type="Line2D" parent="." index="4" unique_id=449919511]
 width = 2.0
 width_curve = SubResource("Curve_ege3s")
-default_color = Color(1, 0, 0, 0.7764706)
+default_color = Color(1, 0, 0, 0.4745098)

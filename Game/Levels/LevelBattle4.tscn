@@ -12,7 +12,14 @@
 [ext_resource type="PackedScene" uid="uid://doxbk2ykbvr5n" path="res://Game/Objects/Obstacle/TreeRedBig.tscn" id="9_c18en"]
 [ext_resource type="PackedScene" uid="uid://ccgbvg6tek7v2" path="res://Game/Objects/Characters/Enemies/EnemyFear.tscn" id="11_4kmp2"]
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_4kmp2"]
+vertices = PackedVector2Array(184.57813, 310.59375, 180.78125, 304, 179.17188, 298, 186, 298, 502, 358, 186, 122, 186, 70, 310, 118, 310, 150, 182, 150, 134, 122, 178, 358, 178, 314.39063, 186, 266, 218, 266, 310, 282, 218, 186, 278, 186, 278, 266, 310, 266, 362, 282, 362, 266, 410, 266, 374, 230, 314, 230, 314, 170, 362, 170, 374, 150, 362, 118, 182, 230, 138, 230, 138, 150, 102, 150, 26, 26, 102, 266, 134, 266, 134, 298, 26, 358, 135.75, 298, 142, 308.8203, 142, 358, 134, 70, 502, 26, 410, 150)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8), PackedInt32Array(5, 8, 9, 10), PackedInt32Array(4, 11, 12, 0), PackedInt32Array(4, 3, 13, 14, 15), PackedInt32Array(14, 16, 17, 18), PackedInt32Array(18, 19, 15), PackedInt32Array(20, 21, 22, 4), PackedInt32Array(23, 24, 25, 26), PackedInt32Array(27, 23, 26, 28), PackedInt32Array(9, 29, 30, 31), PackedInt32Array(10, 9, 31), PackedInt32Array(10, 31, 32, 33), PackedInt32Array(34, 35, 36, 37), PackedInt32Array(38, 39, 40, 37, 36), PackedInt32Array(34, 37, 33, 32), PackedInt32Array(41, 10, 33), PackedInt32Array(41, 33, 42, 6), PackedInt32Array(7, 6, 42, 28), PackedInt32Array(27, 28, 42, 43), PackedInt32Array(43, 42, 4, 22), PackedInt32Array(15, 20, 4), PackedInt32Array(15, 14, 18)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 528, 0, 528, 384, 0, 384)])
+cell_size = 10.0
+
 [node name="LevelRoot" unique_id=2058048662 instance=ExtResource("1_u5jn5")]
+navigation_polygon = SubResource("NavigationPolygon_4kmp2")
 Song = ExtResource("2_i387t")
 
 [node name="Background" parent="Terrain" parent_id_path=PackedInt32Array(1609298999) index="0" unique_id=1521443357]

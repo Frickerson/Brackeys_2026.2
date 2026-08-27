@@ -39,7 +39,7 @@ radial_accel_max = 3.8999977
 damping_min = 26.741001
 damping_max = 48.747
 scale_curve = SubResource("CurveTexture_li00e")
-color = Color(1, 0, 0, 1)
+color = Color(0, 0.64012104, 0.3405291, 1)
 
 [node name="Player" unique_id=2024416287 node_paths=PackedStringArray("Camera", "Collision", "AttackLocation", "HealthBarRef") groups=["Player"] instance=ExtResource("1_dxvqc")]
 script = ExtResource("2_e0uyt")

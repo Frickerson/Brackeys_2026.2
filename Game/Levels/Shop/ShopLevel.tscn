@@ -59,6 +59,7 @@ propagate_maximum_size = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+tooltip_text = "viktor is gay"
 theme_override_font_sizes/font_size = 32
 text = "Item 1"
 autowrap_mode = 3
