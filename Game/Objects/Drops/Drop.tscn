@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bo3r0wjxe1pyd"]
+
+[ext_resource type="Script" uid="uid://87kootv4q3i5" path="res://Game/Objects/Drops/Drop.gd" id="1_uoa2t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uoa2t"]
+
+[node name="Drop" type="Area2D" unique_id=1226215494]
+collision_mask = 3
+script = ExtResource("1_uoa2t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=386458406]
+shape = SubResource("RectangleShape2D_uoa2t")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=781453345]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

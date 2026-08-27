@@ -101,12 +101,15 @@ func _attack() -> void:
 func _reload() -> void:
 	if CurrentAmmo == MaxAmmo:
 		return
+	if Reloading:
+		return
 		
 	Reloading = true
 	if ReloadIcon: 
 		ReloadIcon.max_value = ReloadTime
 		ReloadIcon.value = 0.0
 		ReloadIcon.visible = true
+	
 	var finish_reload = func():
 		CurrentAmmo = MaxAmmo
 		OutOfAmmo = false

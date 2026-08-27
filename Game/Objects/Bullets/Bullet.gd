@@ -19,7 +19,7 @@ var Deleting : bool = false
 func _ready() -> void:
 	var color = ColorPerTeam.get(get_groups()[0])
 	DefaultColor = color
-	BulletSprite.modulate = color
+	BulletSprite.self_modulate = color
 
 func _process(delta: float) -> void:
 	if Deleting:
@@ -30,11 +30,11 @@ func _process(delta: float) -> void:
 	
 	if IsFake:
 		var fake_weight = clampf(ease(LifeTimer / LifeSpan, FakeColorCurve) * 2 - 1, 0.0, 1.0)
-		BulletSprite.modulate = DefaultColor.lerp(FakeColor, fake_weight)
+		BulletSprite.self_modulate = DefaultColor.lerp(FakeColor, fake_weight)
 	
 	var transparency_weight = clampf(ease(LifeTimer / LifeSpan, FadeOutCurve) * 2 - 1, 0.0, 1.0)
 	var transparency = lerpf(1.0, 0.0, transparency_weight)
-	BulletSprite.modulate.a = transparency
+	BulletSprite.self_modulate.a = transparency
 		
 func _physics_process(delta: float) -> void:
 	var direction = Vector2.RIGHT.rotated(rotation)
@@ -55,6 +55,8 @@ func _on_body_entered(body: Node2D) -> void:
 	if character:
 		$HitParticles.process_material.color = Color.RED
 		character._take_damage(Damage)
+	else:
+		$HitParticles.process_material.color = Color.WHITE
 	
 	$HitParticles.emitting = true
 	$HitParticles.finished.connect(func(): queue_free())

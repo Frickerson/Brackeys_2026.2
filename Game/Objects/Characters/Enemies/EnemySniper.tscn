@@ -1,12 +1,30 @@
 [gd_scene format=3 uid="uid://cvveq1ievyx11"]
 
 [ext_resource type="PackedScene" uid="uid://teyr6mhnpf5p" path="res://Game/Objects/Characters/Enemies/Enemy.tscn" id="1_5jfnu"]
-[ext_resource type="PackedScene" uid="uid://bqcb7qsk4to4s" path="res://Game/Objects/Weapons/Sniper.tscn" id="2_6vvwg"]
+[ext_resource type="Script" uid="uid://biu3juy6ojp0g" path="res://Game/Objects/Characters/Enemies/Sniper.gd" id="2_6vvwg"]
+[ext_resource type="Texture2D" uid="uid://b2c5675xeo4gj" path="res://Game/Assets/Sprites/Objects/tile_0151.png" id="3_ege3s"]
+[ext_resource type="Script" uid="uid://dqj508oamglo3" path="res://Game/Objects/Drops/DropInfo.gd" id="4_shhfe"]
+[ext_resource type="PackedScene" uid="uid://bqcb7qsk4to4s" path="res://Game/Objects/Weapons/Sniper.tscn" id="5_b6aea"]
+
+[sub_resource type="Resource" id="Resource_6vvwg"]
+script = ExtResource("4_shhfe")
+ValueChange = 1.0
+image = ExtResource("3_ege3s")
+metadata/_custom_type_script = "uid://dqj508oamglo3"
+
+[sub_resource type="Curve" id="Curve_ege3s"]
+_data = [Vector2(0.008042898, 1), 0.0, 0.0, 0, 0, Vector2(0.8927614, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [node name="EnemySniper" unique_id=2024416287 instance=ExtResource("1_5jfnu")]
-AttackRange = 450.0
-MinMoveRange = 400.0
+script = ExtResource("2_6vvwg")
+MinMoveRange = 300.0
 MaxMoveRange = 500.0
-MoveSpeed = 40.0
-DefaultWeapon = ExtResource("2_6vvwg")
-MaxHealth = 25
+dropInfo = SubResource("Resource_6vvwg")
+DefaultWeapon = ExtResource("5_b6aea")
+MaxHealth = 30
+
+[node name="Laser" type="Line2D" parent="." index="4" unique_id=449919511]
+width = 2.0
+width_curve = SubResource("Curve_ege3s")
+default_color = Color(1, 0, 0, 0.7764706)

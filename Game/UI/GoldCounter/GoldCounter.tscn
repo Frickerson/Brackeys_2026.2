@@ -1,14 +1,26 @@
 [gd_scene format=3 uid="uid://csafk7gay3di3"]
 
 [ext_resource type="Script" uid="uid://ccrdjk4a87ijx" path="res://Game/UI/GoldCounter/GoldCounter.gd" id="1_mopsw"]
+[ext_resource type="Texture2D" uid="uid://b2c5675xeo4gj" path="res://Game/Assets/Sprites/Objects/tile_0151.png" id="2_ot7vk"]
 
 [node name="GoldCounter" type="PanelContainer" unique_id=209514812 node_paths=PackedStringArray("Text")]
+texture_filter = 1
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_mopsw")
-Text = NodePath("Label")
+Text = NodePath("HBoxContainer/Label")
 
-[node name="Label" type="Label" parent="." unique_id=1514182646]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1580430265]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=931330870]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("2_ot7vk")
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=1514182646]
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_vertical = 1
 text = "50"

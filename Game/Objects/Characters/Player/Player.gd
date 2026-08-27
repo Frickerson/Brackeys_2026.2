@@ -94,6 +94,7 @@ func _on_death():
 	_update_trust(-RespawnTrustDecrease)
 	Collision.set_deferred("disabled", true)
 	EquippedWeapon._toggle_attack(false)
+	EquippedWeapon._reload()
 	OnDied.emit()
 	
 	await get_tree().create_timer(RespawnTime).timeout

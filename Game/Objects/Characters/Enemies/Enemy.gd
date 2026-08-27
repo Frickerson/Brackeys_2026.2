@@ -16,6 +16,10 @@ class_name Enemy
 
 @onready var PlayerRef : Player = get_tree().get_first_node_in_group("Player")
 
+@export var dropInfo : DropInfo
+var drop: Drop = preload("res://Game/Objects/Drops/Drop.tscn").instantiate();
+@onready var LevelRoot = get_tree().get_first_node_in_group("LevelRoot")
+
 static var Multipliers : CharacterMultipliers
 static var AdditionalMultipliers : CharacterMultipliers
 
@@ -137,6 +141,13 @@ func _find_line_of_sight(dir : Vector2) -> Vector2:
 func _update_weapon() -> void:
 	if EquippedWeapon:
 		EquippedWeapon._update_multipliers(_get_multipliers())
+		
+func _on_death():
+	if not Dying:
+		super._on_death()
+		drop._initialize(dropInfo)
+		LevelRoot.call_deferred("add_child",drop)
+		drop.global_position = global_position
 	
 static func _get_multipliers() -> CharacterMultipliers:
 	var result = Multipliers
