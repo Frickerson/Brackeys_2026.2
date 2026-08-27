@@ -6,11 +6,13 @@ class_name ShopLevel
 @export var Description : Label
 @export var Items : Array[Button]
 @export var ExitShopButton : Button
+@export var GoldCounterRef : GoldCounter
 
 var ItemMap : Dictionary[Button, ShopItem]
 
 func _ready() -> void:
 	ExitShopButton.pressed.connect(_on_exit)
+	_update_gold()
 
 func _set_title(title : String) -> void:
 	Title.text = title
@@ -46,6 +48,10 @@ func _on_item_pressed(item : ShopItem):
 	ItemMap.find_key(item).disabled = true
 	item._on_buy()
 	_update_items()
+	_update_gold()
 		
 func _on_exit():
 	_on_win.emit()
+	
+func _update_gold() -> void:
+	GoldCounterRef._set_gold_amount(Player.Gold)

@@ -2,13 +2,15 @@
 
 [ext_resource type="Script" uid="uid://bxl8tt5cbi5sn" path="res://Game/Levels/Shop/ShopLevel.gd" id="1_ijum8"]
 [ext_resource type="Resource" uid="uid://8j18ovmtpm13" path="res://Game/Sound/Music/ShopSong/ShopSong.tres" id="2_1xc0b"]
+[ext_resource type="PackedScene" uid="uid://csafk7gay3di3" path="res://Game/UI/GoldCounter/GoldCounter.tscn" id="3_n4mt6"]
 
-[node name="EventLevel" type="Node2D" unique_id=803163974 node_paths=PackedStringArray("Title", "Description", "Items", "ExitShopButton")]
+[node name="EventLevel" type="Node2D" unique_id=803163974 node_paths=PackedStringArray("Title", "Description", "Items", "ExitShopButton", "GoldCounterRef")]
 script = ExtResource("1_ijum8")
 Title = NodePath("Control/VBoxContainer/Title")
 Description = NodePath("Control/VBoxContainer/Description")
 Items = [NodePath("Control/VBoxContainer/GridContainer/ShopItem1"), NodePath("Control/VBoxContainer/GridContainer/ShopItem2"), NodePath("Control/VBoxContainer/GridContainer/ShopItem3"), NodePath("Control/VBoxContainer/GridContainer/ShopItem4")]
 ExitShopButton = NodePath("Control/VBoxContainer/ShopItem5")
+GoldCounterRef = NodePath("Control/GoldCounter")
 Song = ExtResource("2_1xc0b")
 
 [node name="Control" type="Control" parent="." unique_id=488715265]
@@ -85,3 +87,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 32
 text = "Exit shop"
+
+[node name="GoldCounter" parent="Control" unique_id=209514812 instance=ExtResource("3_n4mt6")]
+layout_mode = 0
