@@ -49,7 +49,6 @@ autowrap_mode = 3
 [node name="Option" type="Button" parent="Control/VBoxContainer" unique_id=1403581693]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 32
 text = "Option 1"
 autowrap_mode = 3
