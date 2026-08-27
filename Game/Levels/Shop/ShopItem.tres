@@ -1,0 +1,6 @@
+[gd_resource type="Resource" format=3 uid="uid://g2vvvocurao4"]
+
+[ext_resource type="Script" uid="uid://cu7821jxwoey4" path="res://Game/Levels/Shop/ShopItem.gd" id="1_ors1v"]
+
+[resource]
+script = ExtResource("1_ors1v")

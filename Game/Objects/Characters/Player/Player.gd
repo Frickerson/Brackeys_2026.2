@@ -5,8 +5,10 @@ class_name Player
 @export var RespawnTrustDecrease : float = 20.0
 @export var RespawnTime : float = 3.0
 @export var Camera: Camera2D
+@export var StarterGold : int = 100
 
 static var Trust : float = 100.0
+static var Gold : int = -1
 static var Multipliers : CharacterMultipliers
 
 var Respawning : bool = false
@@ -14,6 +16,9 @@ var Respawning : bool = false
 func _ready() -> void:
 	if !Multipliers && DefaultMultipliers:
 		Multipliers = DefaultMultipliers
+		
+	if Gold == -1:
+		Gold = StarterGold
 	
 	super._ready()
 
@@ -82,6 +87,9 @@ func _on_death():
 	visible = true
 	Respawning = false
 	Collision.set_deferred("disabled", false)
+	
+func _update_gold(increase : int) -> void:
+	Gold = maxi(Gold + increase, 0)
 
 static func _get_multipliers() -> CharacterMultipliers:
 	return Multipliers
