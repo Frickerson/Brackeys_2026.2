@@ -2,6 +2,8 @@ extends Node2D
 
 class_name Weapon
 
+@export var ReloadIcon: TextureProgressBar
+
 @export var AttackType: PackedScene
 @export var AttackSpeed: float = 1.0:
 	get:
@@ -44,6 +46,9 @@ func _ready() -> void:
 	LevelRoot = get_tree().get_first_node_in_group("LevelRoot")
 
 func _process(delta: float) -> void:
+	if Reloading && ReloadIcon:
+		ReloadIcon.value += delta
+
 	if Ready:
 		if Enabled && !OutOfAmmo:
 			_attack()
@@ -98,11 +103,18 @@ func _reload() -> void:
 		return
 		
 	Reloading = true
-	await get_tree().create_timer(ReloadTime).timeout
+	if ReloadIcon: 
+		ReloadIcon.max_value = ReloadTime
+		ReloadIcon.value = 0.0
+		ReloadIcon.visible = true
+	var finish_reload = func():
+		CurrentAmmo = MaxAmmo
+		OutOfAmmo = false
+		Reloading = false
+		ReloadIcon.visible = false
 	
-	CurrentAmmo = MaxAmmo
-	OutOfAmmo = false
-	Reloading = false
+	get_tree().create_timer(ReloadTime).timeout.connect(finish_reload)
+	
 	
 func _spawn_attacks() -> void:
 	var shots = _get_total_shots()
