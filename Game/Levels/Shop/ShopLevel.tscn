@@ -101,3 +101,5 @@ text = "Exit shop"
 [node name="GoldCounter" parent="Control" unique_id=209514812 instance=ExtResource("3_n4mt6")]
 custom_maximum_size = Vector2(128, 64)
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
