@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://q01x67dllf0s" path="res://OvaniPlugin/OvaniPlayer.gd" id="7_fq2qd"]
 [ext_resource type="Script" uid="uid://cu7821jxwoey4" path="res://Game/Levels/Shop/ShopItem.gd" id="8_q3x87"]
 [ext_resource type="Resource" uid="uid://drao7uaigwc0o" path="res://Game/Levels/Shop/Items/Relic_AttackSpeed.tres" id="9_puf6v"]
+[ext_resource type="Script" uid="uid://drgly3oe5f0vj" path="res://Game/Levels/Shop/Relic.gd" id="10_78ql8"]
 
 [sub_resource type="Resource" id="Resource_c6e86"]
 script = ExtResource("6_c6e86")
@@ -58,11 +59,23 @@ TrustChange = -10.0
 MultipliersChange = SubResource("Resource_rpydu")
 metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
 
-[sub_resource type="Resource" id="Resource_xktwb"]
-script = ExtResource("8_q3x87")
-Title = "Lose 30 Trust"
-Cost = 30
-metadata/_custom_type_script = "uid://cu7821jxwoey4"
+[sub_resource type="Resource" id="Resource_7t66y"]
+script = ExtResource("6_c6e86")
+AttackSpeedMultiplier = 0.0
+DamageMultiplier = 0.0
+AttackRangeMultiplier = 0.0
+MovementSpeedMultiplier = 2.0
+ReloadSpeedMultiplier = 0.0
+BulletSizeMultiplier = 0.0
+BulletSpeedMultiplier = 0.0
+MaxHealthMultiplier = 0.0
+metadata/_custom_type_script = "uid://do8q2bwentmfw"
+
+[sub_resource type="Resource" id="Resource_n4mt6"]
+script = ExtResource("10_78ql8")
+MultipliersChange = SubResource("Resource_7t66y")
+Title = "MoveSpeed increase by 200%"
+metadata/_custom_type_script = "uid://drgly3oe5f0vj"
 
 [sub_resource type="Resource" id="Resource_yvp5d"]
 script = ExtResource("8_q3x87")
@@ -148,7 +161,7 @@ ChildNodes = [NodePath("../../Layer2/Layer2_Battle_01"), NodePath("../../Layer2/
 
 [node name="Layer1_ShopNode_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer1" unique_id=1133477007 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("7_c6e86")]
 layout_mode = 2
-Items = Array[ExtResource("8_q3x87")]([ExtResource("9_puf6v"), SubResource("Resource_xktwb"), SubResource("Resource_yvp5d"), SubResource("Resource_y0jfu")])
+Items = Array[ExtResource("8_q3x87")]([ExtResource("9_puf6v"), SubResource("Resource_n4mt6"), SubResource("Resource_yvp5d"), SubResource("Resource_y0jfu")])
 ChildNodes = [NodePath("../../Layer2/Layer2_Battle_02"), NodePath("../../Layer2/Layer2_Battle_03")]
 
 [node name="Layer0" type="HBoxContainer" parent="Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1166320292]
