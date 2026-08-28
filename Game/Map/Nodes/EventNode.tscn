@@ -1,14 +1,17 @@
 [gd_scene format=3 uid="uid://chnydkutel05w"]
 
 [ext_resource type="PackedScene" uid="uid://c5u2i12ivbylt" path="res://Game/Map/Nodes/BaseNode.tscn" id="1_u3nac"]
+[ext_resource type="Texture2D" uid="uid://c6871gikyvtgl" path="res://Game/Assets/Sprites/tile_0059.png" id="2_fomk6"]
 [ext_resource type="Script" uid="uid://djyukuhna8rus" path="res://Game/Map/Nodes/EventNode.gd" id="2_naada"]
 [ext_resource type="Script" uid="uid://b7ppuiu3c0i8x" path="res://Game/Levels/Events/EventOption.gd" id="3_1y2qw"]
 [ext_resource type="PackedScene" uid="uid://cmci1sfpn7a0m" path="res://Game/Levels/Events/EventLevel.tscn" id="3_gvx8u"]
 
 [node name="EventNode" unique_id=546445709 instance=ExtResource("1_u3nac")]
-text = "Event"
 script = ExtResource("2_naada")
 Title = "Test Title"
 Descrition = "This is a description"
 Options = Array[ExtResource("3_1y2qw")]([])
 scene_to_load = ExtResource("3_gvx8u")
+
+[node name="Image" parent="." index="0" unique_id=630111331]
+texture_normal = ExtResource("2_fomk6")
