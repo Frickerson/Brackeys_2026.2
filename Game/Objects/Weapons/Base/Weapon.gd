@@ -175,3 +175,10 @@ func _apply_fake_shots(shots : Array) -> void:
 	for index in fake_shots:
 		var attack := shots.get(index) as Bullet
 		attack.IsFake = true
+
+func _reset() -> void:
+	Ready = true
+	CurrentAmmo = MaxAmmo
+	Reloading = false
+	ReloadIcon.visible = false
+	OutOfAmmo = false

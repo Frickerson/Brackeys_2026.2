@@ -95,7 +95,7 @@ func _on_death():
 	$CollisionShape2D.visible = false
 	$HealthBar.visible = false
 	EquippedWeapon._toggle_attack(false)
-	EquippedWeapon._reload()
+	EquippedWeapon._reset()
 	OnDied.emit()
 	$ReviveParticles.emitting = true
 	var onRespawnComplete = func():
