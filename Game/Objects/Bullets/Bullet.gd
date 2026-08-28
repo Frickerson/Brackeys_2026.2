@@ -7,7 +7,7 @@ class_name Bullet
 @export var FakeColorCurve : float = 0.4
 @export var FadeOutCurve : float = 5.0
 @export var ColorPerTeam : Dictionary[StringName, Color]
-@export var HomingSpeed : float = 10.0
+@export var HomingSpeed : float = 5.0
 
 var Speed : float = 0.0
 var Damage : float = 0.0
@@ -40,10 +40,10 @@ func _process(delta: float) -> void:
 		
 func _physics_process(delta: float) -> void:
 	var homing_direction = _get_homing_direction()
-	var current_direction = Vector2.RIGHT.rotated(rotation)
+	var current_direction = Vector2.RIGHT.rotated(global_rotation)
 	
-	var adjusted_direction = current_direction.lerp(homing_direction, HomingPercentage * delta * HomingSpeed)
-	global_rotation = adjusted_direction.angle()
+	var adjusted_direction = current_direction.lerp(homing_direction, HomingPercentage )
+	global_rotation = lerp_angle(global_rotation, adjusted_direction.angle(), delta * HomingSpeed)
 	
 	var direction = Vector2.RIGHT.rotated(rotation)
 	var velocity = direction * Speed
