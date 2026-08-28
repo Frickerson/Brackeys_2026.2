@@ -21,14 +21,14 @@ script = ExtResource("6_c6e86")
 AttackSpeedMultiplier = 1.0
 DamageMultiplier = 1.0
 AttackRangeMultiplier = 1.0
-MovementSpeedMultiplier = 1.2
+MovementSpeedMultiplier = 1.5
 ReloadSpeedMultiplier = 1.0
 BulletSizeMultiplier = 1.2
-BulletSpeedMultiplier = 0.9
-MaxHealthMultiplier = 1.2
+BulletSpeedMultiplier = 0.8
+MaxHealthMultiplier = 1.5
 GoldDropMultiplier = 1.0
 HealthDropMultiplier = 1.0
-HomingMultiplier = 0.2
+HomingMultiplier = 0.1
 AccelerationMultiplier = 1.4
 DecelerationMultiplier = 1.0
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
@@ -162,35 +162,42 @@ metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [sub_resource type="Resource" id="Resource_7t66y"]
 script = ExtResource("6_c6e86")
-MovementSpeedMultiplier = 2.0
+MovementSpeedMultiplier = 0.4
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [sub_resource type="Resource" id="Resource_n4mt6"]
 script = ExtResource("10_78ql8")
 MultipliersChange = SubResource("Resource_7t66y")
-Title = "MoveSpeed increase by 200%"
+Title = "Speed juice"
+Cost = 40
+Tooltip = "Increase max move speed by 40%"
 metadata/_custom_type_script = "uid://drgly3oe5f0vj"
 
 [sub_resource type="Resource" id="Resource_vxsb8"]
 script = ExtResource("6_c6e86")
-ReloadSpeedMultiplier = 5.0
+ReloadSpeedMultiplier = 1.5
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [sub_resource type="Resource" id="Resource_xktwb"]
 script = ExtResource("10_78ql8")
 MultipliersChange = SubResource("Resource_vxsb8")
-Title = "Increase Reload Speed by 500%"
+Title = "SWAT juice"
+Cost = 100
+Tooltip = "Increase reload speed by 150%"
 metadata/_custom_type_script = "uid://drgly3oe5f0vj"
 
 [sub_resource type="Resource" id="Resource_q6nhh"]
 script = ExtResource("6_c6e86")
-BulletSizeMultiplier = 5.0
+BulletSizeMultiplier = 0.5
+BulletSpeedMultiplier = -0.3
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [sub_resource type="Resource" id="Resource_yvp5d"]
 script = ExtResource("10_78ql8")
 MultipliersChange = SubResource("Resource_q6nhh")
-Title = "Increase BulletSize by 500%"
+Title = "Gigantifier"
+Cost = 30
+Tooltip = "Gain 50% bullet size for -30% bullet speed"
 metadata/_custom_type_script = "uid://drgly3oe5f0vj"
 
 [sub_resource type="Resource" id="Resource_pg43f"]
@@ -199,32 +206,36 @@ metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [sub_resource type="Resource" id="Resource_1y2qw"]
 script = ExtResource("5_v68tq")
-Title = "Gain 20 trust"
+Title = "Close your eyes"
 TrustChange = 20.0
 MultipliersChange = SubResource("Resource_pg43f")
+TooltipText = "I wonder"
 metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
 
 [sub_resource type="Resource" id="Resource_rpydu"]
 script = ExtResource("6_c6e86")
-BulletSpeedMultiplier = 5.0
+BulletSpeedMultiplier = 0.3
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [sub_resource type="Resource" id="Resource_fomk6"]
 script = ExtResource("5_v68tq")
-Title = "Lose 10 trust but increase bullet speed by 500%"
+Title = "Leave one eye open"
 TrustChange = -10.0
 MultipliersChange = SubResource("Resource_rpydu")
+TooltipText = "Lose 10 trust but increase bullet speed by 30%"
 metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
 
 [sub_resource type="Resource" id="Resource_o4nuo"]
 script = ExtResource("6_c6e86")
-MaxHealthMultiplier = 5.0
+MaxHealthMultiplier = 1.0
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [sub_resource type="Resource" id="Resource_gv2c2"]
 script = ExtResource("5_v68tq")
-Title = "Increase Max health by 500%"
+Title = "Stare her down"
+TrustChange = -20.0
 MultipliersChange = SubResource("Resource_o4nuo")
+TooltipText = "Lost 20 trust but increase Max health by 100%"
 metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
 
 [sub_resource type="Resource" id="Resource_aw0qy"]
@@ -345,6 +356,8 @@ ChildNodes = [NodePath("../../Layer2/Layer2_Battle_01"), NodePath("../../Layer2/
 
 [node name="Layer1_EventNode_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer1" unique_id=2065172955 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_1t1ls")]
 layout_mode = 2
+Title = "An old woman asks you to close your eyes"
+Descrition = "What do you do?"
 Options = Array[ExtResource("5_v68tq")]([SubResource("Resource_1y2qw"), SubResource("Resource_fomk6"), SubResource("Resource_gv2c2")])
 ChildNodes = [NodePath("../../Layer2/Layer2_Battle_03")]
 
