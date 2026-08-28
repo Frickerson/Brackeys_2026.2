@@ -4,6 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://cvveq1ievyx11" path="res://Game/Objects/Characters/Enemies/EnemySniper.tscn" id="2_mrlmm"]
 [ext_resource type="PackedScene" uid="uid://crea8bt8um38k" path="res://Game/Objects/Characters/Enemies/EnemyMelee.tscn" id="3_i587i"]
 [ext_resource type="PackedScene" uid="uid://bltc4n8lvjp2u" path="res://Game/Objects/Obstacle/ChairWooden.tscn" id="4_i587i"]
+[ext_resource type="PackedScene" uid="uid://daxwsfok8wcr1" path="res://Game/Objects/Characters/Enemies/EnemyTurret.tscn" id="5_twaen"]
+[ext_resource type="PackedScene" uid="uid://ccgbvg6tek7v2" path="res://Game/Objects/Characters/Enemies/EnemyFear.tscn" id="6_jtjti"]
+[ext_resource type="PackedScene" uid="uid://cokfjwpgbsh1s" path="res://Game/Objects/Characters/Enemies/EnemyBulletHell.tscn" id="7_756xw"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_btmx3"]
 vertices = PackedVector2Array(502, 358, 26, 358, 26, 26, 502, 26)
@@ -30,41 +33,47 @@ position = Vector2(48, 112)
 [node name="EnemySniper2" parent="." index="6" unique_id=16343173 instance=ExtResource("2_mrlmm")]
 position = Vector2(464, 96)
 
-[node name="EnemySniper3" parent="." index="7" unique_id=940702675 instance=ExtResource("2_mrlmm")]
-position = Vector2(256, 48)
-
-[node name="EnemyMelee" parent="." index="8" unique_id=1920541156 instance=ExtResource("3_i587i")]
+[node name="EnemyMelee" parent="." index="7" unique_id=1920541156 instance=ExtResource("3_i587i")]
 position = Vector2(256, 144)
 MaxHealth = 80
 
-[node name="Obstacle" parent="." index="9" unique_id=851229595 instance=ExtResource("4_i587i")]
+[node name="Obstacle" parent="." index="8" unique_id=851229595 instance=ExtResource("4_i587i")]
 position = Vector2(192, 256)
 rotation = -0.5235988
 
-[node name="Obstacle2" parent="." index="10" unique_id=375371267 instance=ExtResource("4_i587i")]
+[node name="Obstacle2" parent="." index="9" unique_id=375371267 instance=ExtResource("4_i587i")]
 position = Vector2(192, 240)
 rotation = 0.7853982
 
-[node name="Obstacle3" parent="." index="11" unique_id=1886919028 instance=ExtResource("4_i587i")]
+[node name="Obstacle3" parent="." index="10" unique_id=1886919028 instance=ExtResource("4_i587i")]
 position = Vector2(208.00003, 215.00002)
 rotation = -1.0471976
 
-[node name="Obstacle4" parent="." index="12" unique_id=2049617697 instance=ExtResource("4_i587i")]
+[node name="Obstacle4" parent="." index="11" unique_id=2049617697 instance=ExtResource("4_i587i")]
 position = Vector2(240.00002, 208.00002)
 rotation = 0.7853982
 
-[node name="Obstacle5" parent="." index="13" unique_id=1153950992 instance=ExtResource("4_i587i")]
+[node name="Obstacle5" parent="." index="12" unique_id=1153950992 instance=ExtResource("4_i587i")]
 position = Vector2(224, 208)
 rotation = -0.2617994
 
-[node name="Obstacle6" parent="." index="14" unique_id=1600652720 instance=ExtResource("4_i587i")]
+[node name="Obstacle6" parent="." index="13" unique_id=1600652720 instance=ExtResource("4_i587i")]
 position = Vector2(352, 248)
 rotation = -2.8797934
 
-[node name="Obstacle7" parent="." index="15" unique_id=141426357 instance=ExtResource("4_i587i")]
+[node name="Obstacle7" parent="." index="14" unique_id=141426357 instance=ExtResource("4_i587i")]
 position = Vector2(352, 232)
 rotation = -1.0471976
 
-[node name="Obstacle8" parent="." index="16" unique_id=2079127424 instance=ExtResource("4_i587i")]
+[node name="Obstacle8" parent="." index="15" unique_id=2079127424 instance=ExtResource("4_i587i")]
 position = Vector2(352, 216)
 rotation = 0.5235988
+
+[node name="EnemyTurret" parent="." index="16" unique_id=1602323010 instance=ExtResource("5_twaen")]
+position = Vector2(96, 224)
+
+[node name="EnemyFear" parent="." index="17" unique_id=1941871362 instance=ExtResource("6_jtjti")]
+position = Vector2(464, 208)
+
+[node name="EnemyBulletHell" parent="." index="18" unique_id=1016961540 instance=ExtResource("7_756xw")]
+position = Vector2(256, 64)
