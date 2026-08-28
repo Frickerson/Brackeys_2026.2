@@ -12,6 +12,7 @@ static var Gold : int = -1
 static var Multipliers : CharacterMultipliers
 static var Relics : Array[Relic]
 static var Health : float = -1.0
+static var WeaponClass : PackedScene
 
 var Respawning : bool = false
 
@@ -21,6 +22,9 @@ func _ready() -> void:
 		
 	if Gold == -1:
 		Gold = StarterGold
+	
+	if WeaponClass:
+		DefaultWeapon = WeaponClass
 	
 	super._ready()
 	
