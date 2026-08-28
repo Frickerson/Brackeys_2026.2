@@ -115,20 +115,15 @@ func _update_weapon() -> void:
 	pass
 	
 func calculate_velocity(direction : Vector2, delta : float, current_velocity : Vector2) -> Vector2:
-	if abs(direction.y) > 0.0:
-		if sign(direction.y) == sign(current_velocity.y):
-			current_velocity.y += Acceleration * delta * direction.y
-		else:
-			current_velocity.y += Deceleration * delta * direction.y
+	if abs(direction.y) > 0.0 && (sign(direction.y) == sign(current_velocity.y) || current_velocity.y == 0.0):
+		current_velocity.y = move_toward(current_velocity.y, MoveSpeed * direction.y, Acceleration * delta)
 	else:
-		current_velocity.y += Deceleration * delta * sign(-current_velocity.y)
-	if abs(direction.x) > 0.0:
-		if sign(direction.x) == sign(current_velocity.x):
-			current_velocity.x += Acceleration * delta * direction.x
-		else:
-			current_velocity.x += Deceleration * delta * direction.x
+		current_velocity.y = move_toward(current_velocity.y, 0.0, Deceleration * delta)
+		
+	if abs(direction.x) > 0.0 && (sign(direction.x) == sign(current_velocity.x) || current_velocity.x == 0.0):
+		current_velocity.x = move_toward(current_velocity.x, MoveSpeed * direction.x, Acceleration * delta)
 	else:
-		current_velocity.x += Deceleration * delta * sign(-current_velocity.x)
+		current_velocity.x = move_toward(current_velocity.x, 0.0, Deceleration * delta)
 	
 	current_velocity = current_velocity.limit_length(MoveSpeed)
 	return current_velocity
