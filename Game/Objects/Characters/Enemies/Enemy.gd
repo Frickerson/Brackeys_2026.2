@@ -6,7 +6,12 @@ class_name Enemy
 @export var UseAmmo : bool = false
 
 @export_group("Movement")
-@export var MinMoveRange : float = 100.0
+@export var MinMoveRange : float = 100.0:
+	get:
+		var multipliers = _get_multipliers()
+		if multipliers:
+			return MinMoveRange * multipliers.AttackRangeMultiplier
+		return MinMoveRange
 @export var MaxMoveRange : float = 300.0
 @export var AvoidanceRadius : float = 30.0
 
