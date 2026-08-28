@@ -2,12 +2,6 @@
 
 [ext_resource type="Script" uid="uid://4y61m320w2n0" path="res://Game/UI/DistrustMeter/TrustMeter.gd" id="1_onhqh"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7uuyb"]
-bg_color = Color(0.88805956, 0.47728354, 3.85046e-07, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j561r"]
-bg_color = Color(0.6141321, 7.4891446e-05, 0.5209789, 1)
-
 [node name="TrustMeter" type="PanelContainer" unique_id=1605835758 node_paths=PackedStringArray("Meter")]
 anchors_preset = 11
 anchor_left = 1.0
@@ -21,10 +15,11 @@ Meter = NodePath("VBoxContainer/ProgressBar")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=216512062]
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=774888166]
 layout_mode = 2
+theme_override_font_sizes/font_size = 16
 text = "Trust"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -34,8 +29,11 @@ custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_vertical = 3
 offset_transform_enabled = true
-theme_override_font_sizes/font_size = 24
-theme_override_styles/background = SubResource("StyleBoxFlat_7uuyb")
-theme_override_styles/fill = SubResource("StyleBoxFlat_j561r")
 value = 25.0
 fill_mode = 3
+show_percentage = false
+
+[node name="Amount" type="Label" parent="VBoxContainer" unique_id=1718065070]
+layout_mode = 2
+text = "100"
+horizontal_alignment = 1

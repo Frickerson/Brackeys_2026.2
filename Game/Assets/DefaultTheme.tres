@@ -34,6 +34,37 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_onhqh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_onhqh"]
+texture = ExtResource("1_vtyxt")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(240, 0, 48, 48)
+modulate_color = Color(1, 1, 1, 0.79607844)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bp3eh"]
+texture = ExtResource("1_vtyxt")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(209, 99, 39, 10)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6ei1f"]
+texture = ExtResource("1_vtyxt")
+texture_margin_top = 1.0
+texture_margin_bottom = 1.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(212, 149, 34, 6)
+
 [resource]
 default_font = ExtResource("1_qacaj")
 default_font_size = 32
@@ -59,3 +90,10 @@ Button/styles/focus = SubResource("StyleBoxTexture_qh76n")
 Button/styles/hover = SubResource("StyleBoxTexture_qh76n")
 Button/styles/normal = SubResource("StyleBoxTexture_kp2hc")
 Button/styles/pressed = SubResource("StyleBoxFlat_vtyxt")
+Label/styles/focus = SubResource("StyleBoxEmpty_onhqh")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_onhqh")
+ProgressBar/colors/font_color = Color(0.95, 0.95, 0.95, 1)
+ProgressBar/colors/font_outline_color = Color(0, 0, 0, 1)
+ProgressBar/constants/outline_size = 0
+ProgressBar/styles/background = SubResource("StyleBoxTexture_bp3eh")
+ProgressBar/styles/fill = SubResource("StyleBoxTexture_6ei1f")

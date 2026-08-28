@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://b2c5675xeo4gj" path="res://Game/Assets/Sprites/Objects/tile_0151.png" id="2_ot7vk"]
 
 [node name="GoldCounter" type="PanelContainer" unique_id=209514812 node_paths=PackedStringArray("Text")]
-texture_filter = 1
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_mopsw")
