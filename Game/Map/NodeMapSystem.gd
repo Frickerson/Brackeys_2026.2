@@ -12,6 +12,7 @@ func _ready() -> void:
 	setup_cursor()
 	current_floor = 0
 	$OvaniPlayer.PlaySongNow(mapSong, SongTransitionTime)
+	$OvaniPlayer.FadeVolume(-10.0, .5)
 	if StarterNode:
 		CurrentNode = StarterNode
 		CurrentNode.set_enabled(true)

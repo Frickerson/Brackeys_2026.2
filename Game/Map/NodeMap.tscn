@@ -21,14 +21,14 @@ script = ExtResource("6_c6e86")
 AttackSpeedMultiplier = 1.0
 DamageMultiplier = 1.0
 AttackRangeMultiplier = 1.0
-MovementSpeedMultiplier = 1.5
+MovementSpeedMultiplier = 1.2
 ReloadSpeedMultiplier = 1.0
 BulletSizeMultiplier = 1.2
 BulletSpeedMultiplier = 0.8
-MaxHealthMultiplier = 1.5
+MaxHealthMultiplier = 1.2
 GoldDropMultiplier = 1.0
 HealthDropMultiplier = 1.0
-HomingMultiplier = 0.1
+HomingMultiplier = 0.4
 AccelerationMultiplier = 1.4
 DecelerationMultiplier = 1.0
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
@@ -65,19 +65,8 @@ metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
 
 [sub_resource type="Resource" id="Resource_e7grk"]
 script = ExtResource("6_c6e86")
-AttackSpeedMultiplier = -0.1
-DamageMultiplier = -0.1
-AttackRangeMultiplier = -0.1
-MovementSpeedMultiplier = -0.1
-ReloadSpeedMultiplier = -0.1
-BulletSizeMultiplier = -0.1
-BulletSpeedMultiplier = -0.1
-MaxHealthMultiplier = -0.1
-GoldDropMultiplier = -0.1
-HealthDropMultiplier = -0.1
-HomingMultiplier = -0.1
-AccelerationMultiplier = -0.1
-DecelerationMultiplier = -0.1
+DamageMultiplier = 0.6
+DecelerationMultiplier = -0.5
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [sub_resource type="Resource" id="Resource_y0jfu"]
