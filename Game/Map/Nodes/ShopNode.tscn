@@ -8,8 +8,8 @@
 
 [node name="ShopNode" unique_id=546445709 instance=ExtResource("1_0c51g")]
 script = ExtResource("2_j4goe")
-Title = "Shop"
-Descrition = "Many items lay before you. You can only choose one. Choose wisely!"
+Title = "Creepy Old Man's Shop"
+Descrition = "Check out my wares, if one dares"
 Items = Array[ExtResource("3_j4goe")]([])
 scene_to_load = ExtResource("2_04r70")
 

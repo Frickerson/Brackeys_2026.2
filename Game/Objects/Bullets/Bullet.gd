@@ -82,7 +82,7 @@ func _get_homing_direction() -> Vector2:
 	var player_ref : Player = get_tree().get_first_node_in_group("Player")
 	
 	if is_in_group("PlayerTeam"):
-		return global_position.direction_to(player_ref.Camera.get_global_mouse_position())
+		return global_position.direction_to(player_ref.CameraRef.get_global_mouse_position())
 		
 	if is_in_group("EnemyTeam"):
 		return global_position.direction_to(player_ref.global_position)
