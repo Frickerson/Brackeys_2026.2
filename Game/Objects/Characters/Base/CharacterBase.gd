@@ -54,12 +54,14 @@ func _on_death():
 	Dying = true
 
 func _process(delta: float) -> void:
+	if Dying:
+		return
 	if IsMoving:
 		_update_bobbing(delta)
 	else:
 		BobTime = lerp(BobTime, 0.5, delta * BobSpeed)
 		var new_scale = lerp(1.0 - BobDifference, 1.0 + BobDifference, BobTime)
-		scale = Vector2(new_scale, new_scale)
+		%Sprite.scale = Vector2(new_scale, new_scale)
 		
 func _update_bobbing(delta: float) -> void:
 	if ShouldScaleUp:
@@ -77,7 +79,7 @@ func _update_bobbing(delta: float) -> void:
 			BobTime = 0.0
 	
 	var new_scale = lerp(1.0 - BobDifference, 1.0 + BobDifference, BobTime)
-	scale = Vector2(new_scale, new_scale)
+	%Sprite.scale = Vector2(new_scale, new_scale)
 	
 func _equip_weapon(weapon_class : PackedScene) -> void:
 	EquippedWeapon = weapon_class.instantiate()

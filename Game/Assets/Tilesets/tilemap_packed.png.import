@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvjvha0kmgo1e"
-path="res://.godot/imported/UIpackSheet_transparent.png-09f606effb1e696554c9c6b7c9b5b0a3.ctex"
+uid="uid://dby3qkdsf1te1"
+path="res://.godot/imported/tilemap_packed.png-a380dd6d845daf4f175437cf6dae8e09.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Assets/Tilesets/UIpackSheet_transparent.png"
-dest_files=["res://.godot/imported/UIpackSheet_transparent.png-09f606effb1e696554c9c6b7c9b5b0a3.ctex"]
+source_file="res://Game/Assets/Tilesets/tilemap_packed.png"
+dest_files=["res://.godot/imported/tilemap_packed.png-a380dd6d845daf4f175437cf6dae8e09.ctex"]
 
 [params]
 

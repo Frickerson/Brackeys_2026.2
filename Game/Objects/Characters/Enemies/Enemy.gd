@@ -58,6 +58,7 @@ func _physics_process(_delta: float) -> void:
 	var in_move_range = _in_move_range(player_position)
 	var in_attack_range = _in_attack_range(player_position)
 	var in_line_of_sight = _in_line_of_sight(player_position)
+	_calculate_arrow(_delta)
 	
 	if in_move_range:
 		_move_towards_player(player_position, in_line_of_sight)
@@ -148,6 +149,38 @@ func _on_death():
 		drop._initialize(dropInfo)
 		LevelRoot.call_deferred("add_child",drop)
 		drop.global_position = global_position
+
+func _calculate_arrow(delta : float):
+	var on_screen_offset = Vector2(5, -5)
+	var screen_margin = 25
+	var smoothing_speed = 4
+	
+	var target_position = global_position + on_screen_offset
+	var viewport_dimensions = get_viewport().get_visible_rect().size
+	var screen_coordinates = (target_position - PlayerRef.Camera.get_screen_center_position()) * PlayerRef.Camera.zoom + viewport_dimensions * 0.5
+	var screen_inset_rect = get_viewport().get_visible_rect().grow(-screen_margin)
+	
+	var target_display_position: Vector2
+	var target_display_rotation: float
+	
+	if screen_inset_rect.has_point(screen_coordinates):
+		if $Arrow.visible:
+			$Arrow.visible = false
+	else:
+		if not $Arrow.visible:
+			$Arrow.visible = true
+		var clamped_x = clamp(screen_coordinates.x,screen_margin,viewport_dimensions.x-screen_margin)
+		var clamped_y = clamp(screen_coordinates.y,screen_margin,viewport_dimensions.y-screen_margin)
+		var clamped_screen_coords = Vector2(clamped_x, clamped_y)
+		
+		target_display_position = PlayerRef.Camera.get_screen_center_position() + (clamped_screen_coords - viewport_dimensions * 0.5) / PlayerRef.Camera.zoom
+		
+		var vector_to_target =  target_position - target_display_position 
+		target_display_rotation = vector_to_target.angle() + (PI * 0.5)
+	
+	$Arrow.global_position = lerp($Arrow.global_position, target_display_position, delta*smoothing_speed)
+	$Arrow.global_rotation = lerp($Arrow.global_rotation, target_display_rotation, delta*smoothing_speed)
+	return
 	
 static func _get_multipliers() -> CharacterMultipliers:
 	var result = Multipliers

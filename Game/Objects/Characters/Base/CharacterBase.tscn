@@ -33,20 +33,24 @@ gravity = Vector3(0, 0, 0)
 color = Color(1, 0, 0, 1)
 alpha_curve = SubResource("CurveTexture_e7grk")
 
-[node name="CharacterBase" type="CharacterBody2D" unique_id=2024416287]
+[node name="CharacterBase" type="CharacterBody2D" unique_id=2024416287 node_paths=PackedStringArray("Collision", "AttackLocation", "HealthBarRef")]
 collision_layer = 2
 script = ExtResource("1_gp7rn")
+Collision = NodePath("CollisionShape2D")
+AttackLocation = NodePath("CollisionShape2D/Sprite/AttackLocation")
+HealthBarRef = NodePath("HealthBar")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=816673183]
 shape = SubResource("CircleShape2D_bu7o8")
 
-[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=1978200661]
+[node name="Sprite" type="Sprite2D" parent="CollisionShape2D" unique_id=1978200661]
+unique_name_in_owner = true
 texture_filter = 1
 texture = ExtResource("3_eljxm")
 region_enabled = true
 region_rect = Rect2(510, 85, 16, 16)
 
-[node name="AttackLocation" type="Marker2D" parent="CollisionShape2D/Sprite2D" unique_id=526738676]
+[node name="AttackLocation" type="Marker2D" parent="CollisionShape2D/Sprite" unique_id=526738676]
 position = Vector2(7, 3)
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="CollisionShape2D" unique_id=1837750297]
