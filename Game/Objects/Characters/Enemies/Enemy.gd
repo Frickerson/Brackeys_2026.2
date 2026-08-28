@@ -44,7 +44,7 @@ func _ready() -> void:
 	
 	SpawnPosition = global_position
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if Dying:
 		return
 	
@@ -63,7 +63,7 @@ func _physics_process(_delta: float) -> void:
 	var in_move_range = _in_move_range(player_position)
 	var in_attack_range = _in_attack_range(player_position)
 	var in_line_of_sight = _in_line_of_sight(player_position)
-	_calculate_arrow(_delta)
+	_calculate_arrow(delta)
 	
 	if in_move_range:
 		_move_towards_player(player_position, in_line_of_sight)
@@ -89,7 +89,7 @@ func _move_to(new_position : Vector2) -> void:
 	
 	var next_position = NavigationAgent.get_next_path_position()
 	var dir = global_position.direction_to(next_position)
-	NavigationAgent.set_velocity(dir * MoveSpeed)
+	NavigationAgent.set_velocity(MoveSpeed * dir)
 	
 func _rotate_towards(rotate_position : Vector2) -> void:
 	if rotate_position.distance_squared_to(global_position) <= 100.0:
@@ -114,7 +114,7 @@ func _in_move_range(player_position : Vector2) -> bool:
 	return distance <= MaxMoveRange * MaxMoveRange
 
 func _on_velocity_computed(safe_velocity: Vector2) -> void:
-	velocity = safe_velocity
+	velocity = calculate_velocity(safe_velocity.normalized(), get_process_delta_time(), velocity)
 	IsMoving = !velocity.is_zero_approx()
 	move_and_slide()
 	

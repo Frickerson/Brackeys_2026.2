@@ -29,14 +29,16 @@ func _ready() -> void:
 	else:
 		HealthBarRef.CurrentHealth = Health
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if Respawning:
 		return
 
 	var vertical = Input.get_axis("Player_Move_Up","Player_Move_Down")
 	var horizontal = Input.get_axis("Player_Move_Left","Player_Move_Right")
 	
-	velocity = Vector2(horizontal, vertical).normalized() * MoveSpeed
+	var move_direction = Vector2(horizontal, vertical).normalized()
+	velocity = calculate_velocity(move_direction, delta, velocity)
+
 	IsMoving = !velocity.is_zero_approx()
 
 	move_and_slide()

@@ -14,6 +14,9 @@ class_name CharacterBase
 		if multipliers:
 			return MoveSpeed * multipliers.MovementSpeedMultiplier
 		return MoveSpeed
+		
+@export var Acceleration : float = 400.0
+@export var Deceleration : float = 600.0
 
 @export_group("Bobbing")
 @export var BobSpeed: float = 7.0
@@ -99,6 +102,25 @@ func _equip_weapon(weapon_class : PackedScene) -> void:
 
 func _update_weapon() -> void:
 	pass
+	
+func calculate_velocity(direction : Vector2, delta : float, current_velocity : Vector2) -> Vector2:
+	if abs(direction.y) > 0.0:
+		if sign(direction.y) == sign(current_velocity.y):
+			current_velocity.y += Acceleration * delta * direction.y
+		else:
+			current_velocity.y += Deceleration * delta * direction.y
+	else:
+		current_velocity.y += Deceleration * delta * sign(-current_velocity.y)
+	if abs(direction.x) > 0.0:
+		if sign(direction.x) == sign(current_velocity.x):
+			current_velocity.x += Acceleration * delta * direction.x
+		else:
+			current_velocity.x += Deceleration * delta * direction.x
+	else:
+		current_velocity.x += Deceleration * delta * sign(-current_velocity.x)
+	
+	current_velocity = current_velocity.limit_length(MoveSpeed)
+	return current_velocity
 	
 static func _get_multipliers() -> CharacterMultipliers:
 	return null
