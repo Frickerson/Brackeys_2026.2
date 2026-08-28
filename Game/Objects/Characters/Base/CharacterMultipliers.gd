@@ -13,6 +13,8 @@ class_name CharacterMultipliers
 @export var GoldDropMultiplier : float = 1.0
 @export var HealthDropMultiplier : float = 1.0
 @export var HomingMultiplier : float = 1.0
+@export var AccelerationMultiplier : float = 1.0
+@export var DecelerationMultiplier : float = 1.0
 
 func _add(other : CharacterMultipliers) -> void:
 	AttackSpeedMultiplier += other.AttackSpeedMultiplier
