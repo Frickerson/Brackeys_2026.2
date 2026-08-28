@@ -29,5 +29,7 @@ func _create_option() -> Button:
 func _on_option_pressed(option : EventOption):
 	Player._update_trust(option.TrustChange)
 	Player._add_multipliers(option.MultipliersChange)
+	if option.NewWeapon:
+		Player.EquippedWeapon = option.NewWeapon.instantiate() as Weapon
 	_on_win.emit()
 	pass

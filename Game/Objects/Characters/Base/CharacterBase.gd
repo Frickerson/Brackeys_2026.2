@@ -49,7 +49,7 @@ class_name CharacterBase
 @export_group("Multipliers")
 @export var DefaultMultipliers : CharacterMultipliers
 
-var EquippedWeapon: Weapon = null
+static var EquippedWeapon: Weapon = null
 var IsMoving: bool = false
 var ShouldScaleUp: bool = false
 var BobTime: float = 0.5

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b4ccebipcw12x"]
+
+[ext_resource type="PackedScene" uid="uid://c4gavm1wg14av" path="res://Game/Map/Nodes/BattleNode.tscn" id="1_lvcbq"]
+[ext_resource type="PackedScene" uid="uid://067y0g3wod4e" path="res://Game/Levels/LevelBattle4.tscn" id="2_ru0k3"]
+
+[node name="BattleNode" unique_id=546445709 instance=ExtResource("1_lvcbq")]
+scene_to_load = ExtResource("2_ru0k3")

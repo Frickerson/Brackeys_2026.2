@@ -1,17 +1,33 @@
 [gd_scene format=3 uid="uid://corsfbaob34an"]
 
 [ext_resource type="Script" uid="uid://xtp8fowqiim1" path="res://Game/Map/NodeMapSystem.gd" id="1_43jg8"]
+[ext_resource type="PackedScene" uid="uid://b4ccebipcw12x" path="res://Game/Map/Nodes/Level4Node.tscn" id="2_yvp5d"]
 [ext_resource type="PackedScene" uid="uid://bvjusqc4oyq0w" path="res://Game/Levels/LevelBattle3.tscn" id="3_bkk0o"]
 [ext_resource type="PackedScene" uid="uid://chnydkutel05w" path="res://Game/Map/Nodes/EventNode.tscn" id="4_1t1ls"]
 [ext_resource type="PackedScene" uid="uid://c4gavm1wg14av" path="res://Game/Map/Nodes/BattleNode.tscn" id="4_bkk0o"]
 [ext_resource type="PackedScene" uid="uid://cpywopvhwk047" path="res://Game/Levels/LevelBattle1.tscn" id="5_1t1ls"]
 [ext_resource type="Script" uid="uid://b7ppuiu3c0i8x" path="res://Game/Levels/Events/EventOption.gd" id="5_v68tq"]
+[ext_resource type="PackedScene" uid="uid://bqcb7qsk4to4s" path="res://Game/Objects/Weapons/Sniper.tscn" id="5_y0jfu"]
 [ext_resource type="Script" uid="uid://do8q2bwentmfw" path="res://Game/Objects/Characters/Base/CharacterMultipliers.gd" id="6_c6e86"]
 [ext_resource type="PackedScene" uid="uid://dfbvi5vrcyq3f" path="res://Game/Map/Nodes/ShopNode.tscn" id="7_c6e86"]
 [ext_resource type="Script" uid="uid://q01x67dllf0s" path="res://OvaniPlugin/OvaniPlayer.gd" id="7_fq2qd"]
 [ext_resource type="Script" uid="uid://cu7821jxwoey4" path="res://Game/Levels/Shop/ShopItem.gd" id="8_q3x87"]
 [ext_resource type="Resource" uid="uid://drao7uaigwc0o" path="res://Game/Levels/Shop/Items/Relic_AttackSpeed.tres" id="9_puf6v"]
 [ext_resource type="Script" uid="uid://drgly3oe5f0vj" path="res://Game/Levels/Shop/Relic.gd" id="10_78ql8"]
+
+[sub_resource type="Resource" id="Resource_78ql8"]
+script = ExtResource("5_v68tq")
+Title = "Swap for the sniper"
+TooltipText = ""
+NewWeapon = ExtResource("5_y0jfu")
+metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
+
+[sub_resource type="Resource" id="Resource_2n88u"]
+script = ExtResource("5_v68tq")
+Title = "I dont trust this man"
+TrustChange = -20.0
+TooltipText = "Lose 20 trust but keep your weapon"
+metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
 
 [sub_resource type="Resource" id="Resource_c6e86"]
 script = ExtResource("6_c6e86")
@@ -33,17 +49,6 @@ metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [sub_resource type="Resource" id="Resource_pg43f"]
 script = ExtResource("6_c6e86")
-AttackSpeedMultiplier = 0.0
-DamageMultiplier = 0.0
-AttackRangeMultiplier = 0.0
-MovementSpeedMultiplier = 0.0
-ReloadSpeedMultiplier = 0.0
-BulletSizeMultiplier = 0.0
-BulletSpeedMultiplier = 0.0
-MaxHealthMultiplier = 0.0
-GoldDropMultiplier = 0.0
-HealthDropMultiplier = 0.0
-HomingMultiplier = 0.0
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [sub_resource type="Resource" id="Resource_1y2qw"]
@@ -55,17 +60,7 @@ metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
 
 [sub_resource type="Resource" id="Resource_rpydu"]
 script = ExtResource("6_c6e86")
-AttackSpeedMultiplier = 0.0
-DamageMultiplier = 0.0
-AttackRangeMultiplier = 0.0
-MovementSpeedMultiplier = 0.0
-ReloadSpeedMultiplier = 0.0
-BulletSizeMultiplier = 0.0
 BulletSpeedMultiplier = 5.0
-MaxHealthMultiplier = 0.0
-GoldDropMultiplier = 0.0
-HealthDropMultiplier = 0.0
-HomingMultiplier = 0.0
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [sub_resource type="Resource" id="Resource_fomk6"]
@@ -77,20 +72,10 @@ metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
 
 [sub_resource type="Resource" id="Resource_o4nuo"]
 script = ExtResource("6_c6e86")
-AttackSpeedMultiplier = 0.0
-DamageMultiplier = 0.0
-AttackRangeMultiplier = 0.0
-MovementSpeedMultiplier = 0.0
-ReloadSpeedMultiplier = 0.0
-BulletSizeMultiplier = 0.0
-BulletSpeedMultiplier = 0.0
 MaxHealthMultiplier = 5.0
-GoldDropMultiplier = 0.0
-HealthDropMultiplier = 0.0
-HomingMultiplier = 0.0
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
-[sub_resource type="Resource" id="Resource_78ql8"]
+[sub_resource type="Resource" id="Resource_gv2c2"]
 script = ExtResource("5_v68tq")
 Title = "Increase Max health by 500%"
 MultipliersChange = SubResource("Resource_o4nuo")
@@ -98,17 +83,7 @@ metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
 
 [sub_resource type="Resource" id="Resource_7t66y"]
 script = ExtResource("6_c6e86")
-AttackSpeedMultiplier = 0.0
-DamageMultiplier = 0.0
-AttackRangeMultiplier = 0.0
 MovementSpeedMultiplier = 2.0
-ReloadSpeedMultiplier = 0.0
-BulletSizeMultiplier = 0.0
-BulletSpeedMultiplier = 0.0
-MaxHealthMultiplier = 0.0
-GoldDropMultiplier = 0.0
-HealthDropMultiplier = 0.0
-HomingMultiplier = 0.0
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [sub_resource type="Resource" id="Resource_n4mt6"]
@@ -119,17 +94,7 @@ metadata/_custom_type_script = "uid://drgly3oe5f0vj"
 
 [sub_resource type="Resource" id="Resource_vxsb8"]
 script = ExtResource("6_c6e86")
-AttackSpeedMultiplier = 0.0
-DamageMultiplier = 0.0
-AttackRangeMultiplier = 0.0
-MovementSpeedMultiplier = 0.0
 ReloadSpeedMultiplier = 5.0
-BulletSizeMultiplier = 0.0
-BulletSpeedMultiplier = 0.0
-MaxHealthMultiplier = 0.0
-GoldDropMultiplier = 0.0
-HealthDropMultiplier = 0.0
-HomingMultiplier = 0.0
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [sub_resource type="Resource" id="Resource_xktwb"]
@@ -140,17 +105,7 @@ metadata/_custom_type_script = "uid://drgly3oe5f0vj"
 
 [sub_resource type="Resource" id="Resource_q6nhh"]
 script = ExtResource("6_c6e86")
-AttackSpeedMultiplier = 0.0
-DamageMultiplier = 0.0
-AttackRangeMultiplier = 0.0
-MovementSpeedMultiplier = 0.0
-ReloadSpeedMultiplier = 0.0
 BulletSizeMultiplier = 5.0
-BulletSpeedMultiplier = 0.0
-MaxHealthMultiplier = 0.0
-GoldDropMultiplier = 0.0
-HealthDropMultiplier = 0.0
-HomingMultiplier = 0.0
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [sub_resource type="Resource" id="Resource_yvp5d"]
@@ -199,35 +154,40 @@ size_flags_vertical = 3
 theme_override_constants/separation = 50
 alignment = 2
 
+[node name="Layer3" type="HBoxContainer" parent="Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1748003898]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 100
+
+[node name="Layer3_Battle_04" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer3" unique_id=546445709 instance=ExtResource("2_yvp5d")]
+layout_mode = 2
+
+[node name="Layer3_WeaponE_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer3" unique_id=131662834 instance=ExtResource("4_1t1ls")]
+layout_mode = 2
+Title = "Weapon swap"
+Descrition = "An good samaritan wants to swap his weapon with yours"
+Options = Array[ExtResource("5_v68tq")]([SubResource("Resource_78ql8"), SubResource("Resource_2n88u")])
+
 [node name="Layer2" type="HBoxContainer" parent="Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=768422164]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 100
 
-[node name="Layer2_Battle_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer2" unique_id=546445709 instance=ExtResource("4_bkk0o")]
+[node name="Layer2_Battle_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer2" unique_id=69469363 instance=ExtResource("4_bkk0o")]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
-disabled = true
-ignore_texture_size = true
-stretch_mode = 4
 DifficultyMultiplier = SubResource("Resource_c6e86")
 scene_to_load = ExtResource("3_bkk0o")
 
 [node name="Layer2_Battle_02" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer2" unique_id=1840558396 instance=ExtResource("4_bkk0o")]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
-disabled = true
-ignore_texture_size = true
-stretch_mode = 4
 DifficultyMultiplier = SubResource("Resource_q3x87")
 scene_to_load = ExtResource("3_bkk0o")
 
 [node name="Layer2_Battle_03" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer2" unique_id=1713918069 instance=ExtResource("4_bkk0o")]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
-disabled = true
-ignore_texture_size = true
-stretch_mode = 4
 DifficultyMultiplier = SubResource("Resource_puf6v")
 scene_to_load = ExtResource("3_bkk0o")
 
@@ -239,18 +199,12 @@ theme_override_constants/separation = 100
 [node name="Layer1_EventNode_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer1" unique_id=2065172955 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_1t1ls")]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
-disabled = true
-ignore_texture_size = true
-stretch_mode = 4
-Options = Array[ExtResource("5_v68tq")]([SubResource("Resource_1y2qw"), SubResource("Resource_fomk6"), SubResource("Resource_78ql8")])
+Options = Array[ExtResource("5_v68tq")]([SubResource("Resource_1y2qw"), SubResource("Resource_fomk6"), SubResource("Resource_gv2c2")])
 ChildNodes = [NodePath("../../Layer2/Layer2_Battle_01"), NodePath("../../Layer2/Layer2_Battle_02")]
 
 [node name="Layer1_ShopNode_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer1" unique_id=1133477007 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("7_c6e86")]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
-disabled = true
-ignore_texture_size = true
-stretch_mode = 4
 Items = Array[ExtResource("8_q3x87")]([ExtResource("9_puf6v"), SubResource("Resource_n4mt6"), SubResource("Resource_xktwb"), SubResource("Resource_yvp5d")])
 ChildNodes = [NodePath("../../Layer2/Layer2_Battle_02"), NodePath("../../Layer2/Layer2_Battle_03")]
 
@@ -262,9 +216,6 @@ theme_override_constants/separation = 100
 [node name="Layer0_Battle_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer0" unique_id=1220550427 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_bkk0o")]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
-disabled = true
-ignore_texture_size = true
-stretch_mode = 4
 DifficultyMultiplier = SubResource("Resource_aw0qy")
 scene_to_load = ExtResource("5_1t1ls")
 ChildNodes = [NodePath("../../Layer1/Layer1_EventNode_01"), NodePath("../../Layer1/Layer1_ShopNode_01")]
