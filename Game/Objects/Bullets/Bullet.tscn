@@ -50,7 +50,7 @@ FakeColorCurve = 0.5
 FadeOutCurve = 10.0
 ColorPerTeam = Dictionary[StringName, Color]({
 &"EnemyTeam": Color(1, 0.16470589, 0.12156863, 1),
-&"PlayerTeam": Color(0.55731153, 0.7004525, 1, 1)
+&"PlayerTeam": Color(0, 0.38431373, 1, 1)
 })
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1271787194]

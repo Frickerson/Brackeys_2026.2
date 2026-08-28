@@ -92,5 +92,4 @@ tint_under = Color(0, 0, 0, 1)
 emitting = false
 texture = ExtResource("7_h2uju")
 lifetime = 0.7
-randomness = 0.2
 process_material = SubResource("ParticleProcessMaterial_b8hjc")
