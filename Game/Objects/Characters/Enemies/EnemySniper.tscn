@@ -24,6 +24,9 @@ dropInfo = SubResource("Resource_6vvwg")
 DefaultWeapon = ExtResource("5_b6aea")
 MaxHealth = 30
 
+[node name="AttackLocation2" type="Marker2D" parent="CollisionShape2D/Sprite" parent_id_path=PackedInt32Array(1978200661) index="0" unique_id=526738676]
+position = Vector2(7, 3)
+
 [node name="Laser" type="Line2D" parent="." index="4" unique_id=449919511]
 width = 2.0
 width_curve = SubResource("Curve_ege3s")
