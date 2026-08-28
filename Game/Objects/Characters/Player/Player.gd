@@ -95,7 +95,7 @@ func _on_death():
 	$CollisionShape2D.visible = false
 	$HealthBar.visible = false
 	EquippedWeapon._toggle_attack(false)
-	EquippedWeapon._reload()
+	EquippedWeapon._reset()
 	OnDied.emit()
 	$ReviveParticles.emitting = true
 	var onRespawnComplete = func():
@@ -111,7 +111,7 @@ static func _update_gold(increase : int) -> void:
 	Gold = maxi(Gold + increase, 0)
 
 static func _get_multipliers() -> CharacterMultipliers:
-	var result = Multipliers
+	var result = Multipliers.duplicate(true)
 	for relic in Relics:
 		result._add(relic.MultipliersChange)
 	return result

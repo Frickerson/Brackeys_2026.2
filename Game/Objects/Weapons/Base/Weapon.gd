@@ -18,10 +18,18 @@ class_name Weapon
 		if Multipliers:
 			return Damage * Multipliers.DamageMultiplier
 		return Damage
-@export var ShotSpeed : float = 200.0
+@export var ShotSpeed : float = 200.0:
+	get:
+		if Multipliers:
+			return ShotSpeed * Multipliers.BulletSpeedMultiplier
+		return ShotSpeed
 @export var SoundEffect: AudioStream
 @export var BulletSprite: Texture2D
-@export var ReloadTime : float = 1.0
+@export var ReloadTime : float = 1.0:
+	get:
+		if Multipliers:
+			return ReloadTime / Multipliers.ReloadSpeedMultiplier
+		return ReloadTime
 @export var MaxFakeShots : int = 3
 @export var AttackRange: float = 200.0:
 	get:
@@ -142,6 +150,8 @@ func _create_attack() -> Node:
 	attack.add_to_group(get_groups()[0])
 	var life_span = AttackRange / ShotSpeed
 	attack._initialize(Damage, ShotSpeed, life_span, BulletSprite)
+	if Multipliers:
+		attack.scale *= Multipliers.BulletSizeMultiplier
 	LevelRoot.add_child(attack)
 	
 	return attack
@@ -165,3 +175,10 @@ func _apply_fake_shots(shots : Array) -> void:
 	for index in fake_shots:
 		var attack := shots.get(index) as Bullet
 		attack.IsFake = true
+
+func _reset() -> void:
+	Ready = true
+	CurrentAmmo = MaxAmmo
+	Reloading = false
+	ReloadIcon.visible = false
+	OutOfAmmo = false

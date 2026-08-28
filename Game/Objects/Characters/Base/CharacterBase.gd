@@ -8,7 +8,12 @@ class_name CharacterBase
 @export var Collision : CollisionShape2D
 
 @export_group("Movement")
-@export var MoveSpeed: float = 150.0
+@export var MoveSpeed: float = 150.0:
+	get:
+		var multipliers = _get_multipliers()
+		if multipliers:
+			return MoveSpeed * multipliers.MovementSpeedMultiplier
+		return MoveSpeed
 
 @export_group("Bobbing")
 @export var BobSpeed: float = 7.0
@@ -20,7 +25,12 @@ class_name CharacterBase
 
 @export_group("Health")
 @export var HealthBarRef : HealthBar
-@export var MaxHealth : int = 100
+@export var MaxHealth : int = 100:
+	get:
+		var multipliers = _get_multipliers()
+		if multipliers:
+			return MaxHealth * multipliers.MaxHealthMultiplier
+		return MaxHealth
 
 @export_group("Multipliers")
 @export var DefaultMultipliers : CharacterMultipliers
@@ -89,3 +99,6 @@ func _equip_weapon(weapon_class : PackedScene) -> void:
 
 func _update_weapon() -> void:
 	pass
+	
+static func _get_multipliers() -> CharacterMultipliers:
+	return null
