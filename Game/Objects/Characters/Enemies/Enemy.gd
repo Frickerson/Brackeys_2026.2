@@ -152,13 +152,13 @@ func _on_death():
 
 func _calculate_arrow(delta : float):
 	var on_screen_offset = Vector2(5, -5)
-	var screen_margin = 25
-	var smoothing_speed = 4
+	var screen_margin = 40
+	var smoothing_speed = 10
 	
 	var target_position = global_position + on_screen_offset
 	var viewport_dimensions = get_viewport().get_visible_rect().size
 	var screen_coordinates = (target_position - PlayerRef.Camera.get_screen_center_position()) * PlayerRef.Camera.zoom + viewport_dimensions * 0.5
-	var screen_inset_rect = get_viewport().get_visible_rect().grow(-screen_margin)
+	var screen_inset_rect = Rect2(Vector2.ZERO, viewport_dimensions).grow(-screen_margin)
 	
 	var target_display_position: Vector2
 	var target_display_rotation: float
