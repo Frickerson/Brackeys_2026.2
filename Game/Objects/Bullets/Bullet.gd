@@ -80,6 +80,8 @@ func _initialize(damage : float, shot_speed: float, shot_life_span : float, bull
 	
 func _get_homing_direction() -> Vector2:
 	var player_ref : Player = get_tree().get_first_node_in_group("Player")
+	if not player_ref:
+		return Vector2.ZERO
 	
 	if is_in_group("PlayerTeam"):
 		return global_position.direction_to(player_ref.CameraRef.get_global_mouse_position())
