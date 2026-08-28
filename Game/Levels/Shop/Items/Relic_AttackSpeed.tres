@@ -13,9 +13,6 @@ ReloadSpeedMultiplier = 0.0
 BulletSizeMultiplier = 0.0
 BulletSpeedMultiplier = 0.0
 MaxHealthMultiplier = 0.0
-GoldDropMultiplier = 10.0
-HealthDropMultiplier = 0.0
-HomingMultiplier = 0.0
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [resource]
