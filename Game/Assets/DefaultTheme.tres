@@ -65,6 +65,15 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 region_rect = Rect2(212, 149, 34, 6)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vtyxt"]
+texture = ExtResource("1_vtyxt")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+region_rect = Rect2(144, 0, 48, 48)
+modulate_color = Color(1, 1, 1, 0.80784315)
+
 [resource]
 default_font = ExtResource("1_qacaj")
 default_font_size = 32
@@ -97,3 +106,11 @@ ProgressBar/colors/font_outline_color = Color(0, 0, 0, 1)
 ProgressBar/constants/outline_size = 0
 ProgressBar/styles/background = SubResource("StyleBoxTexture_bp3eh")
 ProgressBar/styles/fill = SubResource("StyleBoxTexture_6ei1f")
+TooltipLabel/colors/font_color = Color(0.88, 0.88, 0.88, 0.8627451)
+TooltipLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+TooltipLabel/colors/font_shadow_color = Color(0, 0, 0, 0)
+TooltipLabel/constants/outline_size = 0
+TooltipLabel/constants/shadow_offset_x = 1
+TooltipLabel/constants/shadow_offset_y = 1
+TooltipLabel/font_sizes/font_size = 12
+TooltipPanel/styles/panel = SubResource("StyleBoxTexture_vtyxt")
