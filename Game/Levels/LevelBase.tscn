@@ -5,6 +5,7 @@
 [ext_resource type="Resource" uid="uid://bcktjpfs3h6ye" path="res://Game/Sound/Music/MainBattleSong/MainBattleSong.tres" id="2_gidf0"]
 [ext_resource type="PackedScene" uid="uid://cbwjgcaupx561" path="res://Game/Objects/Characters/Player/Player.tscn" id="3_upo77"]
 [ext_resource type="PackedScene" uid="uid://dy6nnaibx8ckc" path="res://Game/UI/HUD.tscn" id="4_0vweu"]
+[ext_resource type="PackedScene" uid="uid://uup230msek2p" path="res://Game/Levels/Exit.tscn" id="6_gidf0"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_bu7o8"]
 vertices = PackedVector2Array(458, 138, 458, 70, 502, 26, 502, 358, 458, 314, 26, 358, 390, 314, 138, 314, 390, 246, 70, 314, 26, 26, 70, 246, 390, 70, 138, 246, 390, 138, 138, 138, 138, 70, 70, 70, 458, 246, 70, 138)
@@ -28,9 +29,11 @@ one_shot = true
 
 [node name="Player" parent="." unique_id=2024416287 instance=ExtResource("3_upo77")]
 position = Vector2(233, 207)
-RespawnTrustDecrease = 20.0
-RespawnTime = 3.0
 
 [node name="HUD" parent="." unique_id=1916852023 instance=ExtResource("4_0vweu")]
+
+[node name="Exit" parent="." unique_id=181809075 instance=ExtResource("6_gidf0")]
+visible = false
+position = Vector2(212, 207)
 
 [connection signal="timeout" from="AlternativeWin" to="." method="_on_alternative_win_timeout"]

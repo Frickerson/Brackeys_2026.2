@@ -1,4 +1,4 @@
-extends Button
+extends Control
 
 class_name BaseNode
 
@@ -6,6 +6,9 @@ class_name BaseNode
 @export var ChildNodes : Array[BaseNode]
 
 var LoadedLevel : Level = null
+
+func get_button() -> TextureButton:
+	return $Image
 
 func _draw() -> void:
 	var start_position = Vector2.ZERO + _get_local_center_top()
@@ -33,7 +36,16 @@ func _toggle_children(enable : bool, callable : Callable) ->void:
 			child.pressed.disconnect(callable)
 			
 func _get_local_center_top() -> Vector2:
-	return Vector2(size.x / 2.0, 0.0)
+	return Vector2($Image.size.x / 2.0, 0.0)
 	
 func _get_local_center_bottom() -> Vector2:
-	return Vector2(size.x / 2.0, size.y)
+	return Vector2($Image.size.x / 2.0, $Image.size.y)
+
+func set_enabled():
+	$Image.disabled=false
+	%AnimationPlayer.play("Active")
+
+func set_cleared() -> void:
+	$Image.disabled = true
+	$Image/TextureRect.visible = true
+	%AnimationPlayer.stop()

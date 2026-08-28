@@ -64,3 +64,6 @@ scale = Vector2(2, 2)
 
 [node name="EnemyFear" parent="." index="15" unique_id=2146308215 instance=ExtResource("11_4kmp2")]
 position = Vector2(336, 320)
+
+[node name="Exit" parent="." index="16" unique_id=181809075]
+position = Vector2(160, 176)

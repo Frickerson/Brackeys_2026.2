@@ -1,7 +1,99 @@
 [gd_resource type="Theme" format=3 uid="uid://ds340prw68pms"]
 
-[ext_resource type="FontFile" uid="uid://ca1obxom7tobs" path="res://Game/Assets/Kenney Blocks.ttf" id="1_qacaj"]
+[ext_resource type="FontFile" uid="uid://crhe7vfahokjh" path="res://Game/Assets/Kenney Thick.ttf" id="1_qacaj"]
+[ext_resource type="Texture2D" uid="uid://dby3qkdsf1te1" path="res://Game/Assets/Tilesets/tilemap_packed.png" id="1_vtyxt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b8hjc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qh76n"]
+texture = ExtResource("1_vtyxt")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(112, 66, 48, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kp2hc"]
+texture = ExtResource("1_vtyxt")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 5.0
+region_rect = Rect2(112, 48, 48, 16)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vtyxt"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.87058824, 0.6431373, 0.5921569, 1)
+border_color = Color(0.75, 0.44375002, 0.375, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_onhqh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_onhqh"]
+texture = ExtResource("1_vtyxt")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(240, 0, 48, 48)
+modulate_color = Color(1, 1, 1, 0.79607844)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bp3eh"]
+texture = ExtResource("1_vtyxt")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(209, 99, 39, 10)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6ei1f"]
+texture = ExtResource("1_vtyxt")
+texture_margin_top = 1.0
+texture_margin_bottom = 1.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(212, 149, 34, 6)
 
 [resource]
 default_font = ExtResource("1_qacaj")
 default_font_size = 32
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/styles/disabled = SubResource("StyleBoxEmpty_b8hjc")
+Button/styles/focus = SubResource("StyleBoxTexture_qh76n")
+Button/styles/hover = SubResource("StyleBoxTexture_qh76n")
+Button/styles/normal = SubResource("StyleBoxTexture_kp2hc")
+Button/styles/pressed = SubResource("StyleBoxFlat_vtyxt")
+Label/styles/focus = SubResource("StyleBoxEmpty_onhqh")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_onhqh")
+ProgressBar/colors/font_color = Color(0.95, 0.95, 0.95, 1)
+ProgressBar/colors/font_outline_color = Color(0, 0, 0, 1)
+ProgressBar/constants/outline_size = 0
+ProgressBar/styles/background = SubResource("StyleBoxTexture_bp3eh")
+ProgressBar/styles/fill = SubResource("StyleBoxTexture_6ei1f")

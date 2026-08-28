@@ -18,4 +18,10 @@ func _ready() -> void:
 func _on_enemy_died() -> void:
 	enemyAmount -= 1
 	if enemyAmount <= 0:
+		$Exit.enable()
+		$Exit.body_entered.connect(_on_exit_reached)
+		
+func _on_exit_reached(body: Node2D) -> void:
+	print("entered")
+	if body is Player:
 		_on_win.emit()

@@ -6,27 +6,28 @@ var mapSong :OvaniSong = preload("res://Game/Sound/Music/MapSong/MapSong.tres")
 
 var CurrentNode : BaseNode = null
 var current_floor = 0
+const SongTransitionTime = 0.5
 
 func _ready() -> void:
 	setup_cursor()
 	current_floor = 0
-	$OvaniPlayer.PlaySongNow(mapSong, 1)
+	$OvaniPlayer.PlaySongNow(mapSong, SongTransitionTime)
 	if StarterNode:
 		CurrentNode = StarterNode
-		CurrentNode.disabled = false
-		CurrentNode.pressed.connect(on_node_pressed.bind(CurrentNode))
+		CurrentNode.set_enabled()
+		CurrentNode.get_button().pressed.connect(on_node_pressed.bind(CurrentNode))
 
 func on_node_pressed(node: BaseNode):
-	CurrentNode.disabled = true
+	CurrentNode.get_button().disabled = true
 	for child in CurrentNode.ChildNodes:
-		child.disabled = true
-		if child.pressed.is_connected(on_node_pressed.bind(child)):
-			child.pressed.disconnect(on_node_pressed.bind(child))
+		child.get_button().disabled = true
+		if child.get_button().pressed.is_connected(on_node_pressed.bind(child)):
+			child.get_button().pressed.disconnect(on_node_pressed.bind(child))
 		
 	CurrentNode = node
 	var scene = CurrentNode._get_loaded_level()
 	scene._on_win.connect(on_win);
-	$OvaniPlayer.PlaySongNow((scene as Level).Song, 1)
+	$OvaniPlayer.PlaySongNow((scene as Level).Song, SongTransitionTime)
 	$OvaniPlayer.FadeIntensity(1.0 - (Player.Trust/100), 1)
 	%CurrentScene.add_child(scene)
 	
@@ -43,16 +44,16 @@ func on_win():
 	scene._on_win.disconnect(on_win)
 	scene.queue_free()
 	
-	CurrentNode.disabled = true
+	CurrentNode.set_cleared()
 	if CurrentNode.ChildNodes.is_empty(): 
 		get_tree().quit()
 	else:
 		for child in CurrentNode.ChildNodes:
-			child.disabled = false
-			child.pressed.connect(on_node_pressed.bind(child))
+			child.set_enabled()
+			child.get_button().pressed.connect(on_node_pressed.bind(child))
 
 		%Map.visible = true
-		$OvaniPlayer.PlaySongNow(mapSong, 1)
+		$OvaniPlayer.PlaySongNow(mapSong, SongTransitionTime)
 
 func setup_cursor():
 	var image = mouseCursor.get_image()
