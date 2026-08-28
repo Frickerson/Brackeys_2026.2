@@ -14,7 +14,7 @@ func _ready() -> void:
 	$OvaniPlayer.PlaySongNow(mapSong, SongTransitionTime)
 	if StarterNode:
 		CurrentNode = StarterNode
-		CurrentNode.set_enabled()
+		CurrentNode.set_enabled(true)
 		CurrentNode.get_button().pressed.connect(on_node_pressed.bind(CurrentNode))
 
 func on_node_pressed(node: BaseNode):
@@ -23,6 +23,8 @@ func on_node_pressed(node: BaseNode):
 		child.get_button().disabled = true
 		if child.get_button().pressed.is_connected(on_node_pressed.bind(child)):
 			child.get_button().pressed.disconnect(on_node_pressed.bind(child))
+		child.set_enabled(false)
+		
 		
 	CurrentNode = node
 	var scene = CurrentNode._get_loaded_level()
@@ -49,7 +51,7 @@ func on_win():
 		get_tree().quit()
 	else:
 		for child in CurrentNode.ChildNodes:
-			child.set_enabled()
+			child.set_enabled(true)
 			child.get_button().pressed.connect(on_node_pressed.bind(child))
 
 		%Map.visible = true

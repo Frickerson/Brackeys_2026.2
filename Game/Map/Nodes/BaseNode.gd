@@ -41,9 +41,12 @@ func _get_local_center_top() -> Vector2:
 func _get_local_center_bottom() -> Vector2:
 	return Vector2($Image.size.x / 2.0, $Image.size.y)
 
-func set_enabled():
-	$Image.disabled=false
-	%AnimationPlayer.play("Active")
+func set_enabled(enabled : bool):
+	$Image.disabled= !enabled
+	if enabled:
+		%AnimationPlayer.play("Active")
+	else:
+		%AnimationPlayer.stop()
 
 func set_cleared() -> void:
 	$Image.disabled = true
@@ -56,7 +59,6 @@ func _on_image_mouse_entered() -> void:
 		return
 	%AnimationPlayer.stop()
 	$Image/SelectionTexture.visible = true
-
 
 func _on_image_mouse_exited() -> void:
 	if $Image.disabled:
