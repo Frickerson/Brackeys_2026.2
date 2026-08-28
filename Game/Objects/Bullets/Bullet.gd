@@ -42,8 +42,8 @@ func _physics_process(delta: float) -> void:
 	var homing_direction = _get_homing_direction()
 	var current_direction = Vector2.RIGHT.rotated(rotation)
 	
-	var homing_test = current_direction.lerp(homing_direction, HomingPercentage * delta * HomingSpeed)
-	global_rotation = homing_test.angle()
+	var adjusted_direction = current_direction.lerp(homing_direction, HomingPercentage * delta * HomingSpeed)
+	global_rotation = adjusted_direction.angle()
 	
 	var direction = Vector2.RIGHT.rotated(rotation)
 	var velocity = direction * Speed
