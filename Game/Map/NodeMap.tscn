@@ -41,6 +41,9 @@ ReloadSpeedMultiplier = 0.0
 BulletSizeMultiplier = 0.0
 BulletSpeedMultiplier = 0.0
 MaxHealthMultiplier = 0.0
+GoldDropMultiplier = 0.0
+HealthDropMultiplier = 0.0
+HomingMultiplier = 0.0
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [sub_resource type="Resource" id="Resource_1y2qw"]
@@ -60,6 +63,9 @@ ReloadSpeedMultiplier = 0.0
 BulletSizeMultiplier = 0.0
 BulletSpeedMultiplier = 5.0
 MaxHealthMultiplier = 0.0
+GoldDropMultiplier = 0.0
+HealthDropMultiplier = 0.0
+HomingMultiplier = 0.0
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [sub_resource type="Resource" id="Resource_fomk6"]
@@ -79,6 +85,9 @@ ReloadSpeedMultiplier = 0.0
 BulletSizeMultiplier = 0.0
 BulletSpeedMultiplier = 0.0
 MaxHealthMultiplier = 5.0
+GoldDropMultiplier = 0.0
+HealthDropMultiplier = 0.0
+HomingMultiplier = 0.0
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [sub_resource type="Resource" id="Resource_78ql8"]
@@ -97,6 +106,9 @@ ReloadSpeedMultiplier = 0.0
 BulletSizeMultiplier = 0.0
 BulletSpeedMultiplier = 0.0
 MaxHealthMultiplier = 0.0
+GoldDropMultiplier = 0.0
+HealthDropMultiplier = 0.0
+HomingMultiplier = 0.0
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [sub_resource type="Resource" id="Resource_n4mt6"]
@@ -115,6 +127,9 @@ ReloadSpeedMultiplier = 5.0
 BulletSizeMultiplier = 0.0
 BulletSpeedMultiplier = 0.0
 MaxHealthMultiplier = 0.0
+GoldDropMultiplier = 0.0
+HealthDropMultiplier = 0.0
+HomingMultiplier = 0.0
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [sub_resource type="Resource" id="Resource_xktwb"]
@@ -133,6 +148,9 @@ ReloadSpeedMultiplier = 0.0
 BulletSizeMultiplier = 5.0
 BulletSpeedMultiplier = 0.0
 MaxHealthMultiplier = 0.0
+GoldDropMultiplier = 0.0
+HealthDropMultiplier = 0.0
+HomingMultiplier = 0.0
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [sub_resource type="Resource" id="Resource_yvp5d"]
