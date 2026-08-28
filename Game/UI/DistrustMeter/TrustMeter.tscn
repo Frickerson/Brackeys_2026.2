@@ -17,12 +17,22 @@ grow_horizontal = 0
 grow_vertical = 2
 pivot_offset_ratio = Vector2(1, 0)
 script = ExtResource("1_onhqh")
-Meter = NodePath("ProgressBar")
+Meter = NodePath("VBoxContainer/ProgressBar")
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1587276269]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=216512062]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=774888166]
+layout_mode = 2
+text = "Trust"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer" unique_id=1587276269]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
-size_flags_vertical = 1
+size_flags_vertical = 3
 offset_transform_enabled = true
 theme_override_font_sizes/font_size = 24
 theme_override_styles/background = SubResource("StyleBoxFlat_7uuyb")

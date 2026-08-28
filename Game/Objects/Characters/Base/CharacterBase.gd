@@ -15,8 +15,19 @@ class_name CharacterBase
 			return MoveSpeed * multipliers.MovementSpeedMultiplier
 		return MoveSpeed
 		
-@export var Acceleration : float = 400.0
-@export var Deceleration : float = 600.0
+@export var Acceleration : float = 400.0:
+	get:
+		var multipliers = _get_multipliers()
+		if multipliers:
+			return Acceleration * multipliers.AccelerationMultiplier
+		return Acceleration
+		
+@export var Deceleration : float = 600.0:
+	get:
+		var multipliers = _get_multipliers()
+		if multipliers:
+			return Deceleration * multipliers.DecelerationMultiplier
+		return Deceleration
 
 @export_group("Bobbing")
 @export var BobSpeed: float = 7.0

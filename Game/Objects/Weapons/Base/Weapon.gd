@@ -36,6 +36,12 @@ class_name Weapon
 		if Multipliers:
 			return AttackRange * Multipliers.AttackRangeMultiplier
 		return AttackRange
+		
+@export var HomingPercentage : float = 0.0:
+	get:
+		if Multipliers:
+			return clamp(HomingPercentage + Multipliers.HomingMultiplier, 0.0, 1.0)
+		return HomingPercentage
 
 var AttackTimer: float = 0.0
 var Enabled: bool = false
@@ -149,7 +155,7 @@ func _create_attack() -> Node:
 	var attack = AttackType.instantiate() as Bullet
 	attack.add_to_group(get_groups()[0])
 	var life_span = AttackRange / ShotSpeed
-	attack._initialize(Damage, ShotSpeed, life_span, BulletSprite)
+	attack._initialize(Damage, ShotSpeed, life_span, BulletSprite, HomingPercentage)
 	if Multipliers:
 		attack.scale *= Multipliers.BulletSizeMultiplier
 	LevelRoot.add_child(attack)
