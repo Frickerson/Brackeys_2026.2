@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bquu0105bsw0g" path="res://Game/Map/Nodes/BaseNode.gd" id="1_1lt5e"]
 [ext_resource type="Texture2D" uid="uid://dhfc8dve83ytk" path="res://Game/Assets/Sprites/tile_0055.png" id="1_7dntt"]
 [ext_resource type="Texture2D" uid="uid://dv2mxuih4541f" path="res://Game/Assets/Sprites/tile_0073.png" id="2_2gcey"]
+[ext_resource type="Texture2D" uid="uid://d1gop7trfsm5o" path="res://Game/Assets/Sprites/tile_0027.png" id="4_swhj0"]
 
 [sub_resource type="Animation" id="Animation_7dntt"]
 resource_name = "Active"
@@ -84,3 +85,13 @@ stretch_mode = 4
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Image" unique_id=1987594650]
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_esneq")
+
+[node name="SelectionTexture" type="TextureRect" parent="Image" unique_id=1334947503]
+visible = false
+layout_mode = 0
+offset_right = 75.0
+offset_bottom = 75.0
+texture = ExtResource("4_swhj0")
+
+[connection signal="mouse_entered" from="Image" to="." method="_on_image_mouse_entered"]
+[connection signal="mouse_exited" from="Image" to="." method="_on_image_mouse_exited"]

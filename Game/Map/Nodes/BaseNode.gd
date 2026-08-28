@@ -48,4 +48,18 @@ func set_enabled():
 func set_cleared() -> void:
 	$Image.disabled = true
 	$Image/TextureRect.visible = true
+	$Image/SelectionTexture.visible = false
 	%AnimationPlayer.stop()
+
+func _on_image_mouse_entered() -> void:
+	if $Image.disabled:
+		return
+	%AnimationPlayer.stop()
+	$Image/SelectionTexture.visible = true
+
+
+func _on_image_mouse_exited() -> void:
+	if $Image.disabled:
+		return
+	%AnimationPlayer.play("Active")
+	$Image/SelectionTexture.visible = false
