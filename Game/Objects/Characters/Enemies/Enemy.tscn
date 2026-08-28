@@ -16,6 +16,19 @@ metadata/_custom_type_script = "uid://dqj508oamglo3"
 
 [sub_resource type="Resource" id="Resource_v68tq"]
 script = ExtResource("4_y0rvw")
+AttackSpeedMultiplier = 1.0
+DamageMultiplier = 1.0
+AttackRangeMultiplier = 1.0
+MovementSpeedMultiplier = 1.0
+ReloadSpeedMultiplier = 1.0
+BulletSizeMultiplier = 1.0
+BulletSpeedMultiplier = 1.0
+MaxHealthMultiplier = 1.0
+GoldDropMultiplier = 1.0
+HealthDropMultiplier = 1.0
+HomingMultiplier = 1.0
+AccelerationMultiplier = 1.0
+DecelerationMultiplier = 1.0
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [node name="Enemy" unique_id=2024416287 node_paths=PackedStringArray("NavigationAgent", "RayCast") groups=["Enemy"] instance=ExtResource("1_koanu")]

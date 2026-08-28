@@ -9,8 +9,21 @@
 [ext_resource type="Script" uid="uid://5or23vygkk85" path="res://Game/Objects/Characters/Player/Camera.gd" id="6_vxsb8"]
 [ext_resource type="Texture2D" uid="uid://b7dy8sj2ffmn" path="res://Game/Assets/Sprites/pixel-white.png" id="7_h2uju"]
 
-[sub_resource type="Resource" id="Resource_y0rvw"]
+[sub_resource type="Resource" id="Resource_n4mt6"]
 script = ExtResource("4_aeaxy")
+AttackSpeedMultiplier = 1.0
+DamageMultiplier = 1.0
+AttackRangeMultiplier = 1.0
+MovementSpeedMultiplier = 1.0
+ReloadSpeedMultiplier = 1.0
+BulletSizeMultiplier = 1.0
+BulletSpeedMultiplier = 1.0
+MaxHealthMultiplier = 1.0
+GoldDropMultiplier = 1.0
+HealthDropMultiplier = 1.0
+HomingMultiplier = 1.0
+AccelerationMultiplier = 1.0
+DecelerationMultiplier = 1.0
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [sub_resource type="Curve" id="Curve_vxsb8"]
@@ -50,7 +63,7 @@ CameraRef = NodePath("Camera2D")
 StarterGold = 100
 TeamName = &"PlayerTeam"
 DefaultWeapon = ExtResource("3_nh8tb")
-DefaultMultipliers = SubResource("Resource_y0rvw")
+DefaultMultipliers = SubResource("Resource_n4mt6")
 
 [node name="Sprite" parent="CollisionShape2D" parent_id_path=PackedInt32Array(816673183) index="0" unique_id=1978200661]
 region_rect = Rect2(510, 17, 16, 16)
