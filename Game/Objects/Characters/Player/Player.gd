@@ -4,7 +4,7 @@ class_name Player
 
 @export var RespawnTrustDecrease : float = 20.0
 @export var RespawnTime : float = 3.0
-@export var Camera: Camera2D
+@export var CameraRef: Camera2D
 @export var StarterGold : int = 100
 
 static var Trust : float = 100.0
@@ -43,7 +43,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
-	var mouse_position = Camera.get_global_mouse_position()
+	var mouse_position = CameraRef.get_global_mouse_position()
 	var direction = mouse_position - position
 	rotation = direction.angle()
 	

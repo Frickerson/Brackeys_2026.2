@@ -162,7 +162,7 @@ func _calculate_arrow(delta : float):
 	
 	var target_position = global_position + on_screen_offset
 	var viewport_dimensions = get_viewport().get_visible_rect().size
-	var screen_coordinates = (target_position - PlayerRef.Camera.get_screen_center_position()) * PlayerRef.Camera.zoom + viewport_dimensions * 0.5
+	var screen_coordinates = (target_position - PlayerRef.CameraRef.get_screen_center_position()) * PlayerRef.CameraRef.zoom + viewport_dimensions * 0.5
 	var screen_inset_rect = Rect2(Vector2.ZERO, viewport_dimensions).grow(-screen_margin)
 	
 	var target_display_position: Vector2
@@ -178,7 +178,7 @@ func _calculate_arrow(delta : float):
 		var clamped_y = clamp(screen_coordinates.y,screen_margin,viewport_dimensions.y-screen_margin)
 		var clamped_screen_coords = Vector2(clamped_x, clamped_y)
 		
-		target_display_position = PlayerRef.Camera.get_screen_center_position() + (clamped_screen_coords - viewport_dimensions * 0.5) / PlayerRef.Camera.zoom
+		target_display_position = PlayerRef.CameraRef.get_screen_center_position() + (clamped_screen_coords - viewport_dimensions * 0.5) / PlayerRef.CameraRef.zoom
 		
 		var vector_to_target =  target_position - target_display_position 
 		target_display_rotation = vector_to_target.angle() + (PI * 0.5)

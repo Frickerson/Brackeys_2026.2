@@ -42,11 +42,11 @@ damping_max = 48.747
 scale_curve = SubResource("CurveTexture_li00e")
 color = Color(0, 0.64012104, 0.3405291, 1)
 
-[node name="Player" unique_id=2024416287 node_paths=PackedStringArray("Camera") groups=["Player"] instance=ExtResource("1_dxvqc")]
+[node name="Player" unique_id=2024416287 node_paths=PackedStringArray("CameraRef") groups=["Player"] instance=ExtResource("1_dxvqc")]
 script = ExtResource("2_e0uyt")
 RespawnTrustDecrease = 20.0
 RespawnTime = 3.0
-Camera = NodePath("Camera2D")
+CameraRef = NodePath("Camera2D")
 StarterGold = 100
 TeamName = &"PlayerTeam"
 DefaultWeapon = ExtResource("3_nh8tb")
@@ -73,8 +73,6 @@ drag_bottom_margin = 0.25
 editor_draw_limits = true
 editor_draw_drag_margin = true
 script = ExtResource("6_vxsb8")
-CameraDeadzone = Vector2(100, 100)
-CameraFollowSpeed = 500.0
 
 [node name="Reload" type="TextureProgressBar" parent="." index="5" unique_id=862769834]
 visible = false
