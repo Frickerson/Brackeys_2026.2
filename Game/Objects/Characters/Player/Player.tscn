@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://do8q2bwentmfw" path="res://Game/Objects/Characters/Base/CharacterMultipliers.gd" id="4_aeaxy"]
 [ext_resource type="Material" uid="uid://dp5xut6f6ajkd" path="res://Game/Assets/Shaders/PixelShadowMaterial.tres" id="4_s1ydr"]
 [ext_resource type="Texture2D" uid="uid://befd6c83jog8t" path="res://Game/Assets/Sprites/Objects/reloadCircle.png" id="6_14jth"]
+[ext_resource type="Script" uid="uid://5or23vygkk85" path="res://Game/Objects/Characters/Player/Camera.gd" id="6_vxsb8"]
 [ext_resource type="Texture2D" uid="uid://b7dy8sj2ffmn" path="res://Game/Assets/Sprites/pixel-white.png" id="7_h2uju"]
 
 [sub_resource type="Resource" id="Resource_y0rvw"]
@@ -59,20 +60,21 @@ texture_filter = 1
 material = ExtResource("4_s1ydr")
 position = Vector2(-5, 0)
 zoom = Vector2(3, 3)
+limit_enabled = false
 limit_left = 0
 limit_top = 0
 limit_right = 528
 limit_bottom = 384
-limit_smoothed = true
 position_smoothing_enabled = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
 drag_left_margin = 0.25
 drag_top_margin = 0.25
 drag_right_margin = 0.25
 drag_bottom_margin = 0.25
 editor_draw_limits = true
 editor_draw_drag_margin = true
+script = ExtResource("6_vxsb8")
+CameraDeadzone = Vector2(100, 100)
+CameraFollowSpeed = 500.0
 
 [node name="Reload" type="TextureProgressBar" parent="." index="5" unique_id=862769834]
 visible = false
