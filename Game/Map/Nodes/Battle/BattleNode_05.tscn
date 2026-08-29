@@ -2,6 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://c4gavm1wg14av" path="res://Game/Map/Nodes/BattleNode.tscn" id="1_vg20d"]
 [ext_resource type="PackedScene" uid="uid://bg31hb0t6bgcc" path="res://Game/Levels/Battle/LevelBattle_Ambush.tscn" id="2_cigqs"]
+[ext_resource type="Script" uid="uid://do8q2bwentmfw" path="res://Game/Objects/Characters/Base/CharacterMultipliers.gd" id="2_v35w2"]
+
+[sub_resource type="Resource" id="Resource_5ke4p"]
+script = ExtResource("2_v35w2")
+metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [node name="BattleNode" unique_id=546445709 instance=ExtResource("1_vg20d")]
+DifficultyMultiplier = SubResource("Resource_5ke4p")
 scene_to_load = ExtResource("2_cigqs")
