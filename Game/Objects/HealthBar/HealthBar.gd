@@ -39,7 +39,7 @@ func _update_health_visual(delta : float) -> void:
 	Health.value = lerp(Health.value, new_health_percent, LerpSpeed * delta)
 	
 func _update_health(damage : float) -> bool:
-	CurrentHealth -= damage
+	CurrentHealth = clamp(CurrentHealth - damage, 0.0, MaxHealth)
 	if CurrentHealth <= 0.0:
 		return true
 	
