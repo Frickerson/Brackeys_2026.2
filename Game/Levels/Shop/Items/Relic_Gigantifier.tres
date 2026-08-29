@@ -11,7 +11,7 @@ metadata/_custom_type_script = "uid://do8q2bwentmfw"
 [resource]
 script = ExtResource("2_4nk0a")
 MultipliersChange = SubResource("Resource_s30iv")
-Title = "SWAT Juice"
+Title = "Gigantifier"
 Cost = 40
 Tooltip = "Those are huge"
 metadata/_custom_type_script = "uid://drgly3oe5f0vj"
