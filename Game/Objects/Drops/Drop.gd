@@ -10,7 +10,7 @@ func _ready() -> void:
 func apply(player: Player):
 	match(info.stat):
 		DropInfo.Stats.Health:
-			player.Health += info.ValueChange
+			player._take_damage(-info.ValueChange)
 		DropInfo.Stats.Gold:
 			player.Gold += int(info.ValueChange)
 	

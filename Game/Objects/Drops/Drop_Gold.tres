@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DropInfo" format=3 uid="uid://fefcif1o3etv"]
+
+[ext_resource type="Texture2D" uid="uid://b2c5675xeo4gj" path="res://Game/Assets/Sprites/Objects/tile_0151.png" id="1_sw0gv"]
+[ext_resource type="Script" uid="uid://dqj508oamglo3" path="res://Game/Objects/Drops/DropInfo.gd" id="1_ymgmv"]
+
+[resource]
+script = ExtResource("1_ymgmv")
+ValueChange = 10.0
+image = ExtResource("1_sw0gv")
+metadata/_custom_type_script = "uid://dqj508oamglo3"

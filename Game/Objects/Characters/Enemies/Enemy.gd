@@ -21,7 +21,7 @@ class_name Enemy
 
 @onready var PlayerRef : Player = get_tree().get_first_node_in_group("Player")
 
-@export var dropInfo : DropInfo
+@export var DropInfos : Array[DropInfo]
 var drop: Drop = preload("res://Game/Objects/Drops/Drop.tscn").instantiate();
 @onready var LevelRoot = get_tree().get_first_node_in_group("LevelRoot")
 
@@ -151,7 +151,11 @@ func _update_weapon() -> void:
 func _on_death():
 	if not Dying:
 		super._on_death()
-		drop._initialize(dropInfo)
+		var drop_info = _get_random_drop_info()
+		if not drop_info:
+			drop.queue_free()
+			return
+		drop._initialize(drop_info)
 		LevelRoot.call_deferred("add_child",drop)
 		drop.global_position = global_position
 
@@ -186,6 +190,16 @@ func _calculate_arrow(delta : float):
 	$Arrow.global_position = lerp($Arrow.global_position, target_display_position, delta*smoothing_speed)
 	$Arrow.global_rotation = lerp($Arrow.global_rotation, target_display_rotation, delta*smoothing_speed)
 	return
+	
+func _get_random_drop_info() -> DropInfo:
+	var random_number = randf()
+	var previous_chances = 0.0
+	for info in DropInfos:
+		if random_number <= info.Chance + previous_chances:
+			return info
+		previous_chances += info.Chance
+		
+	return null
 	
 static func _get_multipliers() -> CharacterMultipliers:
 	var result = Multipliers

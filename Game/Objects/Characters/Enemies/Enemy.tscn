@@ -4,15 +4,10 @@
 [ext_resource type="Script" uid="uid://ccxsa5xfbiplf" path="res://Game/Objects/Characters/Enemies/Enemy.gd" id="2_0vsr6"]
 [ext_resource type="PackedScene" uid="uid://dls1bpx8qq5em" path="res://Game/Objects/Weapons/Handgun.tscn" id="3_3m4rq"]
 [ext_resource type="Script" uid="uid://dqj508oamglo3" path="res://Game/Objects/Drops/DropInfo.gd" id="3_ib7iv"]
-[ext_resource type="Texture2D" uid="uid://b2c5675xeo4gj" path="res://Game/Assets/Sprites/Objects/tile_0151.png" id="3_tm8vt"]
+[ext_resource type="Resource" uid="uid://fefcif1o3etv" path="res://Game/Objects/Drops/Drop_Gold.tres" id="4_f0liw"]
 [ext_resource type="Script" uid="uid://do8q2bwentmfw" path="res://Game/Objects/Characters/Base/CharacterMultipliers.gd" id="4_y0rvw"]
+[ext_resource type="Resource" uid="uid://eal6fltys5uh" path="res://Game/Objects/Drops/Drop_Health.tres" id="5_i5tgp"]
 [ext_resource type="Texture2D" uid="uid://dvyojlgh1rwim" path="res://Game/Assets/Sprites/Objects/tile_0078.png" id="7_btusc"]
-
-[sub_resource type="Resource" id="Resource_ib7iv"]
-script = ExtResource("3_ib7iv")
-ValueChange = 10.0
-image = ExtResource("3_tm8vt")
-metadata/_custom_type_script = "uid://dqj508oamglo3"
 
 [sub_resource type="Resource" id="Resource_v68tq"]
 script = ExtResource("4_y0rvw")
@@ -38,7 +33,7 @@ MaxMoveRange = 300.0
 AvoidanceRadius = 30.0
 NavigationAgent = NodePath("NavigationAgent2D")
 RayCast = NodePath("CollisionShape2D/Sprite/AttackLocation/RayCast2D")
-dropInfo = SubResource("Resource_ib7iv")
+DropInfos = Array[ExtResource("3_ib7iv")]([ExtResource("4_f0liw"), ExtResource("5_i5tgp")])
 TeamName = &"EnemyTeam"
 MoveSpeed = 50.0
 DefaultWeapon = ExtResource("3_3m4rq")

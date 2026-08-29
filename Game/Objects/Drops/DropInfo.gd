@@ -22,3 +22,4 @@ enum Stats {
 
 @export var stat : Stats = Stats.Gold
 @export var image : Texture2D
+@export var Chance : float = 0.5

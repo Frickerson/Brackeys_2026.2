@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="DropInfo" format=3 uid="uid://eal6fltys5uh"]
+
+[ext_resource type="Script" uid="uid://dqj508oamglo3" path="res://Game/Objects/Drops/DropInfo.gd" id="1_mqug0"]
+[ext_resource type="Texture2D" uid="uid://bvxgil5ysfjue" path="res://Game/Assets/Tilesets/tiles_packed.png" id="1_xarmr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cx062"]
+atlas = ExtResource("1_xarmr")
+region = Rect2(0, 34, 16, 12)
+
+[resource]
+script = ExtResource("1_mqug0")
+Name = "Health"
+ValueChange = 20.0
+stat = 0
+image = SubResource("AtlasTexture_cx062")
+Chance = 0.25
+metadata/_custom_type_script = "uid://dqj508oamglo3"
