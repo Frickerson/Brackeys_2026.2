@@ -1,9 +1,15 @@
 [gd_scene format=3 uid="uid://c6bcyrck55yqd"]
 
 [ext_resource type="PackedScene" uid="uid://dimp0i6jmuvgs" path="res://Game/Objects/Weapons/Base/MultiShot.tscn" id="1_18tbg"]
+[ext_resource type="Texture2D" uid="uid://c517yryjtflb7" path="res://Game/Assets/Sprites/Objects/Guns/minigun.png" id="2_fbel5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfuc8"]
+atlas = ExtResource("2_fbel5")
+region = Rect2(0, 0, 30, 13)
 
 [node name="Weapon" unique_id=294193981 instance=ExtResource("1_18tbg")]
 Angle = 360.0
 MaxAmmo = 100
 AmmoPerShot = 12
 ShotSpeed = 25.0
+icon = SubResource("AtlasTexture_qfuc8")

@@ -3,6 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://c6s7ym12qv8lv" path="res://Game/Objects/Weapons/Base/Weapon.tscn" id="1_uh07b"]
 [ext_resource type="AudioStream" uid="uid://cly8im250iaam" path="res://Game/Sound/Effects/SniperRandomizer.tres" id="2_e6xvi"]
 [ext_resource type="Texture2D" uid="uid://0h0j5luyakkr" path="res://Game/Assets/Sprites/Objects/tile_0003.png" id="3_6l833"]
+[ext_resource type="Texture2D" uid="uid://dbnb7qaxkblwx" path="res://Game/Assets/Sprites/Objects/Guns/sniper.png" id="4_o64ch"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6xwv"]
+atlas = ExtResource("4_o64ch")
+region = Rect2(0, 0, 36, 14)
+filter_clip = true
 
 [node name="Weapon" unique_id=294193981 instance=ExtResource("1_uh07b")]
 AttackSpeed = 0.5
@@ -12,3 +18,4 @@ SoundEffect = ExtResource("2_e6xvi")
 BulletSprite = ExtResource("3_6l833")
 ReloadTime = 5.0
 AttackRange = 400.0
+icon = SubResource("AtlasTexture_r6xwv")

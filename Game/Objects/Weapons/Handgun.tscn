@@ -2,7 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://c6s7ym12qv8lv" path="res://Game/Objects/Weapons/Base/Weapon.tscn" id="1_hhaqp"]
 [ext_resource type="AudioStream" uid="uid://82jjse6red2c" path="res://Game/Sound/Effects/PistolshotsRandomizer.tres" id="2_tkaox"]
+[ext_resource type="Texture2D" uid="uid://bd6oexps8myu4" path="res://Game/Assets/Sprites/Objects/Guns/pistol.png" id="3_5jjw2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d25ut"]
+atlas = ExtResource("3_5jjw2")
+region = Rect2(0, 0, 15, 12)
 
 [node name="Weapon" unique_id=294193981 instance=ExtResource("1_hhaqp")]
 Damage = 10.0
 SoundEffect = ExtResource("2_tkaox")
+icon = SubResource("AtlasTexture_d25ut")

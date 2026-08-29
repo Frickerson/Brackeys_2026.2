@@ -43,6 +43,8 @@ class_name Weapon
 			return clamp(HomingPercentage + Multipliers.HomingMultiplier, 0.0, 1.0)
 		return HomingPercentage
 
+@export var icon: AtlasTexture = null
+
 var AttackTimer: float = 0.0
 var Enabled: bool = false
 var Ready: bool = false
