@@ -493,26 +493,28 @@ metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [node name="NodeMap" type="Node2D" unique_id=453470996 node_paths=PackedStringArray("StarterNode")]
 script = ExtResource("1_43jg8")
-StarterNode = NodePath("Map/MarginContainer/ScrollContainer/VBoxContainer/Layer0/Layer0_Battle_01")
+StarterNode = NodePath("Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer0/Layer0_Battle_01")
 
-[node name="Map" type="PanelContainer" parent="." unique_id=1338557276]
+[node name="Control" type="CanvasLayer" parent="." unique_id=1752437310]
+
+[node name="Map" type="PanelContainer" parent="Control" unique_id=1338557276]
 unique_name_in_owner = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1280.0
-offset_bottom = 720.0
+offset_left = -4.0
+offset_right = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Map" unique_id=896096029]
+[node name="MarginContainer" type="MarginContainer" parent="Control/Map" unique_id=896096029]
 layout_mode = 2
 theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 40
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Map/MarginContainer" unique_id=994869441]
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/Map/MarginContainer" unique_id=994869441]
 clip_contents = false
 layout_mode = 2
 theme_override_colors/scroll_hint_vertical_color = Color(0, 0, 0, 0)
@@ -521,7 +523,7 @@ horizontal_scroll_mode = 0
 scroll_hint_mode = 3
 tile_scroll_hint = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Map/MarginContainer/ScrollContainer" unique_id=1037636862]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Map/MarginContainer/ScrollContainer" unique_id=1037636862]
 propagate_maximum_size = false
 layout_mode = 2
 size_flags_horizontal = 3
@@ -529,193 +531,193 @@ size_flags_vertical = 3
 theme_override_constants/separation = 50
 alignment = 2
 
-[node name="Layer9" type="HBoxContainer" parent="Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1348127842]
+[node name="Layer9" type="HBoxContainer" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1348127842]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 100
 
-[node name="Layer9_Battle" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer9" unique_id=546445709 instance=ExtResource("2_y0jfu")]
+[node name="Layer9_Battle" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer9" unique_id=546445709 instance=ExtResource("2_y0jfu")]
 modulate = Color(1, 0, 0, 1)
 layout_mode = 2
 DifficultyMultiplier = SubResource("Resource_iaf5v")
 TooltipText = "They have found you. Fight them off to win."
 scene_to_load = ExtResource("28_6tmv7")
 
-[node name="Layer8" type="HBoxContainer" parent="Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1547894661]
+[node name="Layer8" type="HBoxContainer" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1547894661]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 100
 
-[node name="Layer8_Battle" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer8" unique_id=95429492 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("2_y0jfu")]
+[node name="Layer8_Battle" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer8" unique_id=95429492 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("2_y0jfu")]
 layout_mode = 2
 DifficultyMultiplier = SubResource("Resource_yl3wy")
 scene_to_load = ExtResource("5_tldeo")
 ChildNodes = [NodePath("../../Layer9/Layer9_Battle")]
 
-[node name="Layer8_EventNode_Blind" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer8" unique_id=396442890 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("29_0jauk")]
+[node name="Layer8_EventNode_Blind" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer8" unique_id=396442890 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("29_0jauk")]
 layout_mode = 2
 Title = "Tunnel"
 Descrition = "It is pitch black, you can only see a bright light at the end of the tunnel. \\n What do you do"
 Options = Array[ExtResource("30_w30kj")]([SubResource("Resource_nov1i"), SubResource("Resource_0jauk")])
 ChildNodes = [NodePath("../../Layer9/Layer9_Battle")]
 
-[node name="Layer8_EventNode_Pyramid" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer8" unique_id=656862706 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("29_0jauk")]
+[node name="Layer8_EventNode_Pyramid" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer8" unique_id=656862706 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("29_0jauk")]
 layout_mode = 2
 Title = "You are being asked to join a multi level marketing scheme"
 Options = Array[ExtResource("30_w30kj")]([SubResource("Resource_74p4k"), SubResource("Resource_wma63")])
 ChildNodes = [NodePath("../../Layer9/Layer9_Battle")]
 
-[node name="Layer7" type="HBoxContainer" parent="Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1369569759]
+[node name="Layer7" type="HBoxContainer" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1369569759]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 100
 
-[node name="Layer7_Shop" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer7" unique_id=2114270251 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("7_c6e86")]
+[node name="Layer7_Shop" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer7" unique_id=2114270251 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("7_c6e86")]
 layout_mode = 2
 Items = Array[ExtResource("8_q3x87")]([ExtResource("9_puf6v"), ExtResource("17_vsopl"), ExtResource("16_85q8n"), ExtResource("18_nov1i"), ExtResource("19_0jauk"), ExtResource("20_w30kj"), ExtResource("21_tldeo"), ExtResource("13_y0jfu"), ExtResource("11_85q8n"), ExtResource("13_ndpkd"), ExtResource("22_xu0uq"), ExtResource("14_u8on0"), ExtResource("24_74p4k"), ExtResource("15_xwuac"), ExtResource("26_47vi8"), ExtResource("27_wma63"), ExtResource("28_iaf5v")])
 ChildNodes = [NodePath("../../Layer8/Layer8_Battle")]
 
-[node name="Layer7_WeaponSwap" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer7" unique_id=1538587119 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("5_6tmv7")]
+[node name="Layer7_WeaponSwap" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer7" unique_id=1538587119 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("5_6tmv7")]
 layout_mode = 2
 ChildNodes = [NodePath("../../Layer8/Layer8_Battle"), NodePath("../../Layer8/Layer8_EventNode_Blind")]
 
-[node name="Layer7_Battle" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer7" unique_id=807483246 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("2_y0jfu")]
+[node name="Layer7_Battle" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer7" unique_id=807483246 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("2_y0jfu")]
 layout_mode = 2
 DifficultyMultiplier = SubResource("Resource_ku673")
 scene_to_load = ExtResource("5_tldeo")
 ChildNodes = [NodePath("../../Layer8/Layer8_EventNode_Pyramid")]
 
-[node name="Layer6" type="HBoxContainer" parent="Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1897306529]
+[node name="Layer6" type="HBoxContainer" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1897306529]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 100
 
-[node name="Layer6_Battle" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer6" unique_id=1540451500 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("2_y0jfu")]
+[node name="Layer6_Battle" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer6" unique_id=1540451500 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("2_y0jfu")]
 layout_mode = 2
 DifficultyMultiplier = SubResource("Resource_hfqo7")
 scene_to_load = ExtResource("28_xu0uq")
 ChildNodes = [NodePath("../../Layer7/Layer7_Shop"), NodePath("../../Layer7/Layer7_WeaponSwap")]
 
-[node name="Layer6_Battle2" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer6" unique_id=2066546519 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("2_y0jfu")]
+[node name="Layer6_Battle2" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer6" unique_id=2066546519 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("2_y0jfu")]
 layout_mode = 2
 DifficultyMultiplier = SubResource("Resource_eiskf")
 scene_to_load = ExtResource("28_xu0uq")
 ChildNodes = [NodePath("../../Layer7/Layer7_Battle")]
 
-[node name="Layer5" type="HBoxContainer" parent="Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1285337105]
+[node name="Layer5" type="HBoxContainer" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1285337105]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 100
 
-[node name="Layer5_Battle" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer5" unique_id=2063840132 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("2_y0jfu")]
+[node name="Layer5_Battle" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer5" unique_id=2063840132 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("2_y0jfu")]
 layout_mode = 2
 DifficultyMultiplier = SubResource("Resource_xwuac")
 scene_to_load = ExtResource("14_t453o")
 ChildNodes = [NodePath("../../Layer6/Layer6_Battle")]
 
-[node name="Layer5_Battle2" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer5" unique_id=1564440890 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("2_y0jfu")]
+[node name="Layer5_Battle2" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer5" unique_id=1564440890 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("2_y0jfu")]
 layout_mode = 2
 DifficultyMultiplier = SubResource("Resource_xwuac")
 ChildNodes = [NodePath("../../Layer6/Layer6_Battle")]
 
-[node name="Layer5_Battle3" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer5" unique_id=829468610 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("2_y0jfu")]
+[node name="Layer5_Battle3" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer5" unique_id=829468610 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("2_y0jfu")]
 layout_mode = 2
 DifficultyMultiplier = SubResource("Resource_l8qyp")
 scene_to_load = ExtResource("31_74p4k")
 ChildNodes = [NodePath("../../Layer6/Layer6_Battle2")]
 
-[node name="Layer4" type="HBoxContainer" parent="Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1732066335]
+[node name="Layer4" type="HBoxContainer" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1732066335]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 100
 
-[node name="Layer4_EventNode_Fall" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer4" unique_id=1967973677 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("29_0jauk")]
+[node name="Layer4_EventNode_Fall" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer4" unique_id=1967973677 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("29_0jauk")]
 layout_mode = 2
 Title = "You are participating in a trust fall exercise"
 Options = Array[ExtResource("30_w30kj")]([SubResource("Resource_tldeo"), SubResource("Resource_7sjfb"), SubResource("Resource_eib5o")])
 ChildNodes = [NodePath("../../Layer5/Layer5_Battle")]
 
-[node name="Layer4_WeaponSwap" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer4" unique_id=235551605 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("5_6tmv7")]
+[node name="Layer4_WeaponSwap" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer4" unique_id=235551605 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("5_6tmv7")]
 layout_mode = 2
 ChildNodes = [NodePath("../../Layer5/Layer5_Battle"), NodePath("../../Layer5/Layer5_Battle2")]
 
-[node name="Layer4_EventNode_Wallet" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer4" unique_id=874965172 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("29_0jauk")]
+[node name="Layer4_EventNode_Wallet" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer4" unique_id=874965172 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("29_0jauk")]
 layout_mode = 2
 Title = "Your wallet has been lost."
 Options = Array[ExtResource("30_w30kj")]([SubResource("Resource_rdeeh"), SubResource("Resource_1bjhh")])
 ChildNodes = [NodePath("../../Layer5/Layer5_Battle2")]
 
-[node name="Layer4_EventNode_Lend" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer4" unique_id=322478801 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("29_0jauk")]
+[node name="Layer4_EventNode_Lend" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer4" unique_id=322478801 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("29_0jauk")]
 layout_mode = 2
 Title = "A friend asks you to lend money."
 Descrition = "Can you trust him to pay you back?"
 Options = Array[ExtResource("30_w30kj")]([SubResource("Resource_fwh1j"), SubResource("Resource_iqgjw"), SubResource("Resource_vgemr")])
 ChildNodes = [NodePath("../../Layer5/Layer5_Battle3")]
 
-[node name="Layer3" type="HBoxContainer" parent="Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1748003898]
+[node name="Layer3" type="HBoxContainer" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1748003898]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 100
 
-[node name="Layer3_Battle_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer3" unique_id=1329939641 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("2_yvp5d")]
+[node name="Layer3_Battle_01" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer3" unique_id=1329939641 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("2_yvp5d")]
 layout_mode = 2
 DifficultyMultiplier = SubResource("Resource_85q8n")
 ChildNodes = [NodePath("../../Layer4/Layer4_EventNode_Fall"), NodePath("../../Layer4/Layer4_WeaponSwap")]
 
-[node name="Layer3_Battle_02" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer3" unique_id=1840558396 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_bkk0o")]
+[node name="Layer3_Battle_02" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer3" unique_id=1840558396 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_bkk0o")]
 layout_mode = 2
 DifficultyMultiplier = SubResource("Resource_q3x87")
 scene_to_load = ExtResource("31_74p4k")
 ChildNodes = [NodePath("../../Layer4/Layer4_WeaponSwap")]
 
-[node name="Layer3_Shop" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer3" unique_id=95978950 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("7_c6e86")]
+[node name="Layer3_Shop" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer3" unique_id=95978950 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("7_c6e86")]
 layout_mode = 2
 Items = Array[ExtResource("8_q3x87")]([ExtResource("9_puf6v"), ExtResource("17_vsopl"), ExtResource("16_85q8n"), ExtResource("18_nov1i"), ExtResource("19_0jauk"), ExtResource("20_w30kj"), ExtResource("21_tldeo"), ExtResource("13_y0jfu"), ExtResource("11_85q8n"), ExtResource("13_ndpkd"), ExtResource("22_xu0uq"), ExtResource("14_u8on0"), ExtResource("24_74p4k"), ExtResource("15_xwuac"), ExtResource("26_47vi8"), ExtResource("27_wma63"), ExtResource("28_iaf5v")])
 ChildNodes = [NodePath("../../Layer4/Layer4_EventNode_Wallet"), NodePath("../../Layer4/Layer4_EventNode_Lend")]
 
-[node name="Layer2" type="HBoxContainer" parent="Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=768422164]
+[node name="Layer2" type="HBoxContainer" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=768422164]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 100
 
-[node name="Layer2_Battle_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer2" unique_id=69469363 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_bkk0o")]
+[node name="Layer2_Battle_01" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer2" unique_id=69469363 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_bkk0o")]
 layout_mode = 2
 DifficultyMultiplier = SubResource("Resource_c6e86")
 scene_to_load = ExtResource("3_bkk0o")
 ChildNodes = [NodePath("../../Layer3/Layer3_Battle_01")]
 
-[node name="Layer2_Battle_03" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer2" unique_id=1713918069 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_bkk0o")]
+[node name="Layer2_Battle_03" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer2" unique_id=1713918069 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_bkk0o")]
 layout_mode = 2
 DifficultyMultiplier = SubResource("Resource_puf6v")
 scene_to_load = ExtResource("3_bkk0o")
 ChildNodes = [NodePath("../../Layer3/Layer3_Battle_02")]
 
-[node name="Layer2_WeaponSwap" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer2" unique_id=2005842928 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("5_6tmv7")]
+[node name="Layer2_WeaponSwap" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer2" unique_id=2005842928 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("5_6tmv7")]
 layout_mode = 2
 ChildNodes = [NodePath("../../Layer3/Layer3_Shop")]
 
-[node name="Layer1" type="HBoxContainer" parent="Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=2108882114]
+[node name="Layer1" type="HBoxContainer" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=2108882114]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 100
 
-[node name="Layer1_ShopNode_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer1" unique_id=1133477007 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("7_c6e86")]
+[node name="Layer1_ShopNode_01" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer1" unique_id=1133477007 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("7_c6e86")]
 layout_mode = 2
 Items = Array[ExtResource("8_q3x87")]([ExtResource("9_puf6v"), ExtResource("17_vsopl"), ExtResource("16_85q8n"), ExtResource("18_nov1i"), ExtResource("19_0jauk"), ExtResource("20_w30kj"), ExtResource("21_tldeo"), ExtResource("13_y0jfu"), ExtResource("11_85q8n"), ExtResource("13_ndpkd"), ExtResource("22_xu0uq"), ExtResource("14_u8on0"), ExtResource("24_74p4k"), ExtResource("15_xwuac"), ExtResource("26_47vi8"), ExtResource("27_wma63"), ExtResource("28_iaf5v")])
 ChildNodes = [NodePath("../../Layer2/Layer2_Battle_01"), NodePath("../../Layer2/Layer2_Battle_03")]
 
-[node name="Layer1_EventNode_Child" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer1" unique_id=200112315 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("29_0jauk")]
+[node name="Layer1_EventNode_Child" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer1" unique_id=200112315 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("29_0jauk")]
 layout_mode = 2
 Title = "A child is stuck in a tree."
 Options = Array[ExtResource("30_w30kj")]([SubResource("Resource_h5e8d"), SubResource("Resource_fey5c"), SubResource("Resource_plmlu")])
 ChildNodes = [NodePath("../../Layer2/Layer2_WeaponSwap"), NodePath("../../Layer2/Layer2_Battle_03")]
 
-[node name="Layer0" type="HBoxContainer" parent="Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1166320292]
+[node name="Layer0" type="HBoxContainer" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1166320292]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 100
 
-[node name="Layer0_Battle_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer0" unique_id=1220550427 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_bkk0o")]
+[node name="Layer0_Battle_01" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer0" unique_id=1220550427 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_bkk0o")]
 layout_mode = 2
 DifficultyMultiplier = SubResource("Resource_aw0qy")
 scene_to_load = ExtResource("31_tldeo")

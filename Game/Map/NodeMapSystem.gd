@@ -16,7 +16,7 @@ func _ready() -> void:
 	current_floor = 0
 	$OvaniPlayer.PlaySongNow(mapSong, SongTransitionTime)
 	$OvaniPlayer.FadeVolume(-10.0, .5)
-	$Map/MarginContainer/ScrollContainer.scroll_vertical = $Map/MarginContainer/ScrollContainer.get_v_scroll_bar().max_value
+	$Control/Map/MarginContainer/ScrollContainer.scroll_vertical = $Control/Map/MarginContainer/ScrollContainer.get_v_scroll_bar().max_value
 	if StarterNode:
 		CurrentNode = StarterNode
 		CurrentNode.set_enabled(true)
@@ -49,7 +49,7 @@ func on_node_pressed(node: BaseNode):
 	if player:
 		player.OnDied.connect(onPlayerDied)
 		player.TrustDepleted.connect(trustDepleted)
-	%Map.visible = false
+	$Control.visible = false
 
 func on_win():
 	var scene = CurrentNode._get_loaded_level()
@@ -65,7 +65,7 @@ func on_win():
 			child.set_enabled(true)
 			child.get_button().pressed.connect(on_node_pressed.bind(child))
 
-		%Map.visible = true
+		$Control.visible = true
 		$OvaniPlayer.PlaySongNow(mapSong, SongTransitionTime)
 		
 func _reset_player() -> void:
