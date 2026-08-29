@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bw6ml5twmnjnw"]
+
+[ext_resource type="Script" uid="uid://do5oaw8x5yjyq" path="res://Game/UI/Win/win_screen.gd" id="1_g31p0"]
+
+[node name="WinScreen" type="Control" unique_id=202478622]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g31p0")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=2053254541]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer" unique_id=1161901356]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/CenterContainer" unique_id=1995879105]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=122535688]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "YOU WIN !!!"
+
+[node name="Control" type="Control" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=1978442055]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Restart" type="Button" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=1002071369]
+layout_mode = 2
+text = "Restart"
+
+[node name="Quit" type="Button" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=67497020]
+layout_mode = 2
+text = "Quit
+"
+
+[connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

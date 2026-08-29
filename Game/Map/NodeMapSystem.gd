@@ -7,7 +7,8 @@ var mapSong :OvaniSong = preload("res://Game/Sound/Music/MapSong/MapSong.tres")
 var CurrentNode : BaseNode = null
 var current_floor = 0
 const SongTransitionTime = 0.5
-@onready var MainMenu: PackedScene = preload("res://Game/UI/MainMenu.tscn")
+const MainMenu: PackedScene = preload("res://Game/UI/MainMenu.tscn")
+const WinScreen: PackedScene = preload("res://Game/UI/Win/WinScreen.tscn")
 
 func _ready() -> void:
 	setup_cursor()
@@ -54,7 +55,7 @@ func on_win():
 	
 	CurrentNode.set_cleared()
 	if CurrentNode.ChildNodes.is_empty(): 
-		get_tree().change_scene_to_packed(MainMenu)
+		get_tree().change_scene_to_packed(WinScreen)
 	else:
 		for child in CurrentNode.ChildNodes:
 			child.set_enabled(true)

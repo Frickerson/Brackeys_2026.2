@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://crhe7vfahokjh"
-path="res://.godot/imported/Kenney Thick.ttf-872e85b2635f5365c575c376dab213f4.fontdata"
+uid="uid://d3wukwjq4ujd"
+path="res://.godot/imported/Kenney Mini.ttf-9470b5178004fb4695ad3716c2359bbd.fontdata"
 
 [deps]
 
-source_file="res://Game/Assets/Kenney Thick.ttf"
-dest_files=["res://.godot/imported/Kenney Thick.ttf-872e85b2635f5365c575c376dab213f4.fontdata"]
+source_file="res://Game/Assets/Kenney Mini.ttf"
+dest_files=["res://.godot/imported/Kenney Mini.ttf-9470b5178004fb4695ad3716c2359bbd.fontdata"]
 
 [params]
 

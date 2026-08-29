@@ -1,7 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://ds340prw68pms"]
 
-[ext_resource type="FontFile" uid="uid://crhe7vfahokjh" path="res://Game/Assets/Kenney Thick.ttf" id="1_qacaj"]
 [ext_resource type="Texture2D" uid="uid://dby3qkdsf1te1" path="res://Game/Assets/Tilesets/tilemap_packed.png" id="1_vtyxt"]
+[ext_resource type="FontFile" uid="uid://d3wukwjq4ujd" path="res://Game/Assets/Kenney Mini.ttf" id="2_vtyxt"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b8hjc"]
 
@@ -11,6 +11,8 @@ texture_margin_left = 16.0
 texture_margin_top = 16.0
 texture_margin_right = 16.0
 texture_margin_bottom = 16.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
 region_rect = Rect2(48, 0, 48, 48)
 modulate_color = Color(0.57, 0.57, 0.57, 1)
 
@@ -20,6 +22,8 @@ texture_margin_left = 16.0
 texture_margin_top = 16.0
 texture_margin_right = 16.0
 texture_margin_bottom = 16.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
 region_rect = Rect2(48, 0, 48, 48)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5gwt3"]
@@ -28,6 +32,8 @@ texture_margin_left = 16.0
 texture_margin_top = 16.0
 texture_margin_right = 16.0
 texture_margin_bottom = 16.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
 region_rect = Rect2(48, 0, 48, 48)
 modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
 
@@ -39,8 +45,8 @@ texture_margin_left = 16.0
 texture_margin_top = 16.0
 texture_margin_right = 16.0
 texture_margin_bottom = 16.0
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
 region_rect = Rect2(240, 0, 48, 48)
 modulate_color = Color(1, 1, 1, 0.79607844)
 
@@ -72,8 +78,8 @@ region_rect = Rect2(144, 0, 48, 48)
 modulate_color = Color(1, 1, 1, 0.80784315)
 
 [resource]
-default_font = ExtResource("1_qacaj")
-default_font_size = 24
+default_font = ExtResource("2_vtyxt")
+default_font_size = 32
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
 Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
 Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
