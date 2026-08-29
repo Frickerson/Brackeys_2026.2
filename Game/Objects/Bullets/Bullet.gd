@@ -21,6 +21,9 @@ var IsFake : bool = false
 var DefaultColor : Color
 var Deleting : bool = false
 var HomingPercentage : float = 0.0
+var BulletDestruction : bool = false
+var BulletPenetration : bool = false
+var BulletIgnoreList : Array[Bullet]
 
 func _ready() -> void:
 	var color = ColorPerTeam.get(get_groups()[0])
@@ -56,7 +59,7 @@ func _physics_process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if IsFake:
 		return
-		
+	
 	if is_in_group("PlayerTeam") && body.is_in_group("Player"):
 		return
 	
@@ -75,6 +78,7 @@ func _on_body_entered(body: Node2D) -> void:
 	$HitParticles.finished.connect(func(): queue_free())
 	$CollisionShape2D.queue_free()
 	Deleting = true
+	
 	
 func _initialize(damage : float, shot_speed: float, shot_life_span : float, bullet_sprite: Texture2D, homing_percentage : float) -> void:
 	Damage = damage
@@ -98,3 +102,44 @@ func _get_homing_direction() -> Vector2:
 		return global_position.direction_to(player_ref.global_position)
 		
 	return Vector2.ZERO
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if not BulletDestruction:
+		return
+	
+	var other_bullet := area as Bullet
+	if not other_bullet:
+		return
+
+	if (other_bullet.is_in_group("EnemyTeam") && is_in_group("PlayerTeam")) || (other_bullet.is_in_group("PlayerTeam") && is_in_group("EnemyTeam")):
+		if BulletIgnoreList.has(other_bullet) || other_bullet.BulletIgnoreList.has(self):
+			return
+		
+		BulletIgnoreList.push_back(other_bullet)
+		other_bullet.BulletIgnoreList.push_back(self)
+		
+		if BulletPenetration:
+			Damage -= other_bullet.Damage
+			other_bullet.Damage -= Damage
+			
+			if Damage <= 0.0 || is_equal_approx(Damage, 0.0):
+				queue_free()
+			if other_bullet.Damage <= 0.0 || is_equal_approx(other_bullet.Damage, 0.0):
+				other_bullet.queue_free()
+			return
+			
+		queue_free()
+		other_bullet.queue_free()
+		
+func _on_area_exited(area: Area2D) -> void:
+	if not BulletDestruction:
+		return
+		
+	var other_bullet := area as Bullet
+	if not other_bullet:
+		return
+	
+	var index = BulletIgnoreList.find(other_bullet)
+	if index >= 0:
+		BulletIgnoreList.pop_at(index)
