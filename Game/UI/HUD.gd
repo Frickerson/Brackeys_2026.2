@@ -12,8 +12,11 @@ func _ready() -> void:
 		return
 		
 	TrustMeterRef._set_trust_value( PlayerRef.Trust )
-	AmmoCounterRef._set_max_ammo_count(PlayerRef._get_max_ammo())
-	AmmoCounterRef._set_current_ammo_count(PlayerRef._get_current_ammo())
+	if PlayerRef.EquippedWeapon.UsesAmmo:
+		AmmoCounterRef._set_max_ammo_count(PlayerRef._get_max_ammo())
+		AmmoCounterRef._set_current_ammo_count(PlayerRef._get_current_ammo())
+	else: 
+		AmmoCounterRef.visible = false
 	GoldCounterRef._set_gold_amount(Player.Gold)
 	WeaponSelectorRef.get_sprite().texture = PlayerRef.EquippedWeapon.icon
 
@@ -22,5 +25,6 @@ func _process(_delta: float) -> void:
 		return
 		
 	TrustMeterRef._set_trust_value( PlayerRef.Trust )
-	AmmoCounterRef._set_current_ammo_count(PlayerRef._get_current_ammo())
+	if PlayerRef.EquippedWeapon.UsesAmmo: 
+		AmmoCounterRef._set_current_ammo_count(PlayerRef._get_current_ammo())
 	GoldCounterRef._set_gold_amount(Player.Gold)
