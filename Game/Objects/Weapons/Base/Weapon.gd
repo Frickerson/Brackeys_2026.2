@@ -8,34 +8,39 @@ class_name Weapon
 @export var AttackSpeed: float = 1.0:
 	get:
 		if Multipliers:
-			return AttackSpeed * Multipliers.AttackSpeedMultiplier
+			return max(AttackSpeed * Multipliers.AttackSpeedMultiplier, MinAttackSpeed)
 		return AttackSpeed
+@export var MinAttackSpeed : float = 0.5
 		
 @export var MaxAmmo : int = 5
 @export var AmmoPerShot : int = 1
 @export var Damage : float = 5.0:
 	get:
 		if Multipliers:
-			return Damage * Multipliers.DamageMultiplier
+			return max(Damage * Multipliers.DamageMultiplier, MinDamage)
 		return Damage
+@export var MinDamage : float = 1.0
 @export var ShotSpeed : float = 200.0:
 	get:
 		if Multipliers:
-			return ShotSpeed * Multipliers.BulletSpeedMultiplier
+			return max(ShotSpeed * Multipliers.BulletSpeedMultiplier, MinShotSpeed)
 		return ShotSpeed
+@export var MinShotSpeed : float = 10.0
 @export var SoundEffect: AudioStream
 @export var BulletSprite: Texture2D
 @export var ReloadTime : float = 1.0:
 	get:
 		if Multipliers:
-			return ReloadTime / Multipliers.ReloadSpeedMultiplier
+			return min(ReloadTime / Multipliers.ReloadSpeedMultiplier, MaxReloadTime)
 		return ReloadTime
+@export var MaxReloadTime : float = 10.0
 @export var MaxFakeShots : int = 3
 @export var AttackRange: float = 200.0:
 	get:
 		if Multipliers:
-			return AttackRange * Multipliers.AttackRangeMultiplier
+			return max(AttackRange * Multipliers.AttackRangeMultiplier, MinAttackRange)
 		return AttackRange
+@export var MinAttackRange : float = 50.0
 		
 @export var HomingPercentage : float = 0.0:
 	get:
@@ -164,7 +169,7 @@ func _create_attack() -> Node:
 	var life_span = AttackRange / ShotSpeed
 	attack._initialize(Damage, ShotSpeed, life_span, BulletSprite, HomingPercentage)
 	if Multipliers:
-		attack.scale *= Multipliers.BulletSizeMultiplier
+		attack.scale = max(attack.scale * Multipliers.BulletSizeMultiplier, 0.2)
 	LevelRoot.add_child(attack)
 	
 	return attack

@@ -14,9 +14,9 @@ enum Stats {
 		if multipliers:
 			match(stat):
 				DropInfo.Stats.Health:
-					return ValueChange * multipliers.HealthDropMultiplier
+					return max(ValueChange * multipliers.HealthDropMultiplier, 1)
 				DropInfo.Stats.Gold:
-					return ValueChange * multipliers.GoldDropMultiplier
+					return max(ValueChange * multipliers.GoldDropMultiplier, 1)
 		return ValueChange
 		
 

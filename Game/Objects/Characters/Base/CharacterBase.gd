@@ -12,15 +12,17 @@ class_name CharacterBase
 	get:
 		var multipliers = _get_multipliers()
 		if multipliers:
-			return MoveSpeed * multipliers.MovementSpeedMultiplier
+			return max(MoveSpeed * multipliers.MovementSpeedMultiplier, MinMoveSpeed)
 		return MoveSpeed
+@export var MinMoveSpeed : float = 10.0
 		
 @export var Acceleration : float = 400.0:
 	get:
 		var multipliers = _get_multipliers()
 		if multipliers:
-			return Acceleration * multipliers.AccelerationMultiplier
+			return max(Acceleration * multipliers.AccelerationMultiplier, MinAcceleration)
 		return Acceleration
+@export var MinAcceleration : float = 50.0
 		
 @export var Deceleration : float = 600.0:
 	get:
@@ -43,8 +45,9 @@ class_name CharacterBase
 	get:
 		var multipliers = _get_multipliers()
 		if multipliers:
-			return MaxHealth * multipliers.MaxHealthMultiplier
+			return max(MaxHealth * multipliers.MaxHealthMultiplier, MinMaxHealth)
 		return MaxHealth
+@export var MinMaxHealth : int = 10
 
 @export_group("Multipliers")
 @export var DefaultMultipliers : CharacterMultipliers
