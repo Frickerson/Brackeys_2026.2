@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://corsfbaob34an"]
 
 [ext_resource type="Script" uid="uid://xtp8fowqiim1" path="res://Game/Map/NodeMapSystem.gd" id="1_43jg8"]
-[ext_resource type="PackedScene" uid="uid://ck0842b4pmqqi" path="res://Game/Map/Nodes/Level5Node.tscn" id="2_y0jfu"]
-[ext_resource type="PackedScene" uid="uid://b4ccebipcw12x" path="res://Game/Map/Nodes/Level4Node.tscn" id="2_yvp5d"]
+[ext_resource type="PackedScene" uid="uid://ck0842b4pmqqi" path="res://Game/Map/Nodes/Battle/BattleNode_05.tscn" id="2_y0jfu"]
+[ext_resource type="PackedScene" uid="uid://b4ccebipcw12x" path="res://Game/Map/Nodes/Battle/BattleNode_04.tscn" id="2_yvp5d"]
 [ext_resource type="PackedScene" uid="uid://bvjusqc4oyq0w" path="res://Game/Levels/LevelBattle3.tscn" id="3_bkk0o"]
 [ext_resource type="PackedScene" uid="uid://chnydkutel05w" path="res://Game/Map/Nodes/EventNode.tscn" id="4_1t1ls"]
 [ext_resource type="PackedScene" uid="uid://c4gavm1wg14av" path="res://Game/Map/Nodes/BattleNode.tscn" id="4_bkk0o"]
