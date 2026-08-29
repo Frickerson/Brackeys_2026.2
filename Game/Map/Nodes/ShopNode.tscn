@@ -11,8 +11,8 @@ script = ExtResource("2_j4goe")
 Title = "Creepy Old Man's Shop"
 Descrition = "Check out my wares, if one dares"
 Items = Array[ExtResource("3_j4goe")]([])
-TooltipText = "You enter a shop where you buy items with gold.
-These items will help you in your battles."
+TooltipText = "This is a shop.
+Beware of fake items."
 scene_to_load = ExtResource("2_04r70")
 
 [node name="Image" parent="." index="0" unique_id=630111331]

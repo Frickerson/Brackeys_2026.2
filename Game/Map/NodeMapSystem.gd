@@ -7,7 +7,7 @@ var mapSong :OvaniSong = preload("res://Game/Sound/Music/MapSong/MapSong.tres")
 var CurrentNode : BaseNode = null
 var current_floor = 0
 const SongTransitionTime = 0.5
-const MainMenu: PackedScene = preload("res://Game/UI/MainMenu.tscn")
+const LoseScreen: PackedScene = preload("res://Game/UI/Lose/LoseScreen.tscn")
 const WinScreen: PackedScene = preload("res://Game/UI/Win/WinScreen.tscn")
 
 func _ready() -> void:
@@ -40,7 +40,7 @@ func on_node_pressed(node: BaseNode):
 		$OvaniPlayer.FadeIntensity(1-(Player.Trust/100),1)
 	
 	var trustDepleted = func():
-		get_tree().call_deferred("change_scene_to_packed", MainMenu)
+		get_tree().call_deferred("change_scene_to_packed", LoseScreen)
 	
 	var player = get_tree().get_first_node_in_group("Player") as Player
 	if player:

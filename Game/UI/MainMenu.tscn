@@ -26,14 +26,13 @@ theme_override_constants/separation = 10
 [node name="Label" type="Label" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=1117854612]
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
-text = "trust no one"
+text = "TRUST NO ONE"
 
 [node name="Seperator" type="Control" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=2056750719]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
 [node name="StartButton" type="Button" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=969987787]
-unique_name_in_owner = true
 custom_maximum_size = Vector2(-1, 100)
 layout_mode = 2
 text = "START
