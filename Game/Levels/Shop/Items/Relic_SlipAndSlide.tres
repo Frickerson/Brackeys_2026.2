@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Relic" format=3 uid="uid://cbg8u05i2fsrf"]
+
+[ext_resource type="Script" uid="uid://do8q2bwentmfw" path="res://Game/Objects/Characters/Base/CharacterMultipliers.gd" id="1_ewvqu"]
+[ext_resource type="Script" uid="uid://drgly3oe5f0vj" path="res://Game/Levels/Shop/Relic.gd" id="2_4d3uj"]
+
+[sub_resource type="Resource" id="Resource_e7grk"]
+script = ExtResource("1_ewvqu")
+DamageMultiplier = 0.6
+DecelerationMultiplier = -0.5
+metadata/_custom_type_script = "uid://do8q2bwentmfw"
+
+[resource]
+script = ExtResource("2_4d3uj")
+MultipliersChange = SubResource("Resource_e7grk")
+Title = "Slip and slide"
+Cost = 100
+Tooltip = "Decrease acceleration by 50% but increase damage by 60%"
+metadata/_custom_type_script = "uid://drgly3oe5f0vj"

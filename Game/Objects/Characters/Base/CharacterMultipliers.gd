@@ -28,3 +28,5 @@ func _add(other : CharacterMultipliers) -> void:
 	GoldDropMultiplier += other.GoldDropMultiplier
 	HealthDropMultiplier += other.HealthDropMultiplier
 	HomingMultiplier += other.HomingMultiplier
+	AccelerationMultiplier += other.AccelerationMultiplier
+	DecelerationMultiplier += other.DecelerationMultiplier
