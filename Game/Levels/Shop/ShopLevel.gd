@@ -56,7 +56,7 @@ func _on_item_pressed(item : ShopItem):
 		style_box.bg_color = Color.FOREST_GREEN
 		item_button.add_theme_stylebox_override("disabled", style_box)
 	else:
-		style_box.bg_color = Color.CRIMSON
+		style_box.bg_color = Color.DARK_ORCHID
 		item_button.add_theme_stylebox_override("disabled", style_box)
 		item_button.text = item.ScammedText
 		item_button.tooltip_text = item.ScammedText
