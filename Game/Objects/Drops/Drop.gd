@@ -3,6 +3,9 @@ extends Node2D
 class_name Drop
 
 @export var info : DropInfo
+@export var MaxFakePercent : float = 1.0
+
+var IsFake : bool = false
 
 func _ready() -> void:
 	$Sprite2D.texture = info.image
@@ -19,10 +22,13 @@ func apply(player: Player):
 
 
 func _on_body_entered(body: Node2D) -> void:
+	if IsFake:
+		return
+		
 	if body is Player:
 		apply(body as Player)
-	pass
 
 func _initialize(new_info : DropInfo):
 	self.info = new_info
 	$Sprite2D.texture = info.image
+	IsFake = randf() < (1.0 - (Player.Trust / 100.0)) * MaxFakePercent
