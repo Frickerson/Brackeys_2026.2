@@ -11,6 +11,8 @@ script = ExtResource("2_naada")
 Title = "Test Title"
 Descrition = "This is a description"
 Options = Array[ExtResource("3_1y2qw")]([])
+TooltipText = "Something happens, but you have a choice!
+But be careful, you might trade some TRUST for upgrades."
 scene_to_load = ExtResource("3_gvx8u")
 
 [node name="Image" parent="." index="0" unique_id=630111331]

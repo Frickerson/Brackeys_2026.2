@@ -2,6 +2,7 @@ extends Control
 
 class_name BaseNode
 
+@export_multiline var TooltipText : String = "Tooltip Text"
 @export var scene_to_load: PackedScene
 @export var ChildNodes : Array[BaseNode]
 
@@ -45,14 +46,17 @@ func set_enabled(enabled : bool):
 	$Image.disabled= !enabled
 	if enabled:
 		%AnimationPlayer.play("Active")
+		$Image.tooltip_text = TooltipText
 	else:
 		%AnimationPlayer.stop()
+		$Image.tooltip_text = ""
 
 func set_cleared() -> void:
 	$Image.disabled = true
 	$Image/TextureRect.visible = true
 	$Image/SelectionTexture.visible = false
 	%AnimationPlayer.stop()
+	$Image.tooltip_text = ""
 
 func _on_image_mouse_entered() -> void:
 	if $Image.disabled:
