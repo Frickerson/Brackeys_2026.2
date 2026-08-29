@@ -9,7 +9,11 @@ region = Rect2(0, 0, 30, 13)
 
 [node name="Weapon" unique_id=294193981 instance=ExtResource("1_18tbg")]
 Angle = 360.0
+AttackSpeed = 0.75
 MaxAmmo = 100
-AmmoPerShot = 12
-ShotSpeed = 25.0
+AmmoPerShot = 8
+Damage = 15.0
+ShotSpeed = 50.0
+MaxFakeShots = 6
+AttackRange = 300.0
 icon = SubResource("AtlasTexture_qfuc8")

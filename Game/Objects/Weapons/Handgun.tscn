@@ -9,6 +9,8 @@ atlas = ExtResource("3_5jjw2")
 region = Rect2(0, 0, 15, 12)
 
 [node name="Weapon" unique_id=294193981 instance=ExtResource("1_hhaqp")]
+AttackSpeed = 2.0
+MaxAmmo = 12
 Damage = 10.0
 SoundEffect = ExtResource("2_tkaox")
 icon = SubResource("AtlasTexture_d25ut")

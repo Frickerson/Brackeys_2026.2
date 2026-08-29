@@ -9,3 +9,6 @@ MaxMoveRange = 250.0
 MoveSpeed = 75.0
 DefaultWeapon = ExtResource("2_8nsvt")
 MaxHealth = 40
+
+[node name="Sprite" parent="CollisionShape2D" parent_id_path=PackedInt32Array(816673183) index="0" unique_id=1978200661]
+region_rect = Rect2(510, 51, 16, 16)

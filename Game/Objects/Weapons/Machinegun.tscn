@@ -12,7 +12,8 @@ filter_clip = true
 [node name="Weapon" unique_id=294193981 instance=ExtResource("1_2nddt")]
 AttackSpeed = 5.0
 MaxAmmo = 20
-ShotSpeed = 150.0
+Damage = 10.0
+ShotSpeed = 250.0
 SoundEffect = ExtResource("2_ghtm4")
 icon = SubResource("AtlasTexture_5slob")
 
