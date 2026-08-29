@@ -4,12 +4,14 @@
 [ext_resource type="Script" uid="uid://bxtm00ktrrugf" path="res://Game/UI/HUD.gd" id="1_j561r"]
 [ext_resource type="PackedScene" uid="uid://dupie3p5x2dia" path="res://Game/UI/AmmoCounter/AmmoCounter.tscn" id="3_0fp72"]
 [ext_resource type="PackedScene" uid="uid://csafk7gay3di3" path="res://Game/UI/GoldCounter/GoldCounter.tscn" id="4_sba7e"]
+[ext_resource type="PackedScene" uid="uid://w3lrqmjvhv0r" path="res://Game/UI/WeaponSelector.tscn" id="5_gulwg"]
 
-[node name="HUD" type="CanvasLayer" unique_id=1916852023 node_paths=PackedStringArray("TrustMeterRef", "AmmoCounterRef", "GoldCounterRef")]
+[node name="HUD" type="CanvasLayer" unique_id=1916852023 node_paths=PackedStringArray("TrustMeterRef", "AmmoCounterRef", "GoldCounterRef", "WeaponSelectorRef")]
 script = ExtResource("1_j561r")
 TrustMeterRef = NodePath("MarginContainer/TrustMeter")
 AmmoCounterRef = NodePath("MarginContainer/AmmoCounter")
 GoldCounterRef = NodePath("MarginContainer/GoldCounter")
+WeaponSelectorRef = NodePath("MarginContainer/WeaponSelector")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=120761653]
 texture_filter = 1
@@ -40,3 +42,6 @@ custom_minimum_size = Vector2(128, 64)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+
+[node name="WeaponSelector" parent="MarginContainer" unique_id=72435250 instance=ExtResource("5_gulwg")]
+layout_mode = 2

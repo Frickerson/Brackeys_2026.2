@@ -6,6 +6,8 @@ class_name Player
 @export var RespawnTime : float = 3.0
 @export var CameraRef: Camera2D
 @export var StarterGold : int = 100
+@export_group("Weapon")
+@export var UseAmmo : bool = true
 
 static var Trust : float = 100.0
 static var Gold : int = -1
@@ -29,6 +31,9 @@ func _ready() -> void:
 		DefaultWeapon = WeaponClass
 	
 	super._ready()
+	
+	if EquippedWeapon != null:
+		EquippedWeapon._toggle_uses_ammo(UseAmmo)
 	
 	if Health == -1.0:
 		Health = HealthBarRef.CurrentHealth

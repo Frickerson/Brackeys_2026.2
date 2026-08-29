@@ -60,6 +60,7 @@ RespawnTrustDecrease = 20.0
 RespawnTime = 3.0
 CameraRef = NodePath("Camera2D")
 StarterGold = 100
+UseAmmo = true
 TeamName = &"PlayerTeam"
 DefaultWeapon = ExtResource("3_nh8tb")
 DefaultMultipliers = SubResource("Resource_n4mt6")

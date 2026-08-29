@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://w3lrqmjvhv0r"]
+
+[ext_resource type="Texture2D" uid="uid://dby3qkdsf1te1" path="res://Game/Assets/Tilesets/tilemap_packed.png" id="1_6tgu4"]
+[ext_resource type="Script" uid="uid://c7uykyga8j0t2" path="res://Game/UI/weapon_selector.gd" id="2_d25ut"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rm83n"]
+texture = ExtResource("1_6tgu4")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(240, 0, 48, 48)
+modulate_color = Color(1, 1, 1, 0.22352941)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8hjc"]
+atlas = ExtResource("1_6tgu4")
+region = Rect2(224, 80, 16, 16)
+
+[node name="WeaponSelector" type="PanelContainer" unique_id=72435250]
+custom_minimum_size = Vector2(96, 96)
+offset_right = 64.0
+offset_bottom = 64.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_rm83n")
+script = ExtResource("2_d25ut")
+
+[node name="Sprite" type="TextureRect" parent="." unique_id=1974761991]
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=403492269]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = SubResource("AtlasTexture_b8hjc")
+stretch_mode = 4
