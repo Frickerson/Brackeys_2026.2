@@ -13,9 +13,8 @@ static var Trust : float = 100.0
 static var Gold : int = -1
 static var Multipliers : CharacterMultipliers
 static var Relics : Array[Relic]
-static var Health : float = -1.0
+static var HealthRatio : float = 1.0
 static var WeaponClass : PackedScene
-static var PreviousMaxHealth : float = 0.0
 
 var Respawning : bool = false
 const hurtStream: AudioStream = preload("res://Game/Sound/Effects/hurt/hurt-a.ogg")
@@ -28,23 +27,16 @@ func _ready() -> void:
 		
 	if Gold == -1:
 		Gold = StarterGold
-	
+		
 	if WeaponClass:
 		DefaultWeapon = WeaponClass
 	
 	super._ready()
+	HealthBarRef.CurrentHealth = HealthBarRef.MaxHealth * HealthRatio
 	
 	if EquippedWeapon != null:
 		EquippedWeapon._toggle_uses_ammo(UseAmmo)
-	
-	if Health == -1.0:
-		Health = HealthBarRef.CurrentHealth
-		PreviousMaxHealth = HealthBarRef.MaxHealth
-	else:
-		if PreviousMaxHealth != HealthBarRef.MaxHealth:
-			var ratio = HealthBarRef.MaxHealth / PreviousMaxHealth
-			Health *= ratio
-		HealthBarRef.CurrentHealth = Health
+		
 	$HurtAudio.stream = hurtStream
 
 func _physics_process(delta: float) -> void:
@@ -83,7 +75,7 @@ func _input(event):
 		
 func _take_damage(damage : float) -> void:
 	super._take_damage(damage)
-	Health = HealthBarRef.CurrentHealth
+	HealthRatio = HealthBarRef.CurrentHealth / HealthBarRef.MaxHealth
 		
 static func _update_trust(value : float) -> void:
 	Trust = clampf(Trust + value, 0.0, 100.0)

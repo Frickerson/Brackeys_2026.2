@@ -58,7 +58,7 @@ func _ready() -> void:
 	if DefaultWeapon != null:
 		_equip_weapon(DefaultWeapon)
 		
-	HealthBarRef._initialize(MaxHealth)
+	HealthBarRef._initialize(int(MaxHealth * _get_multipliers().MaxHealthMultiplier))
 	
 func _take_damage(damage : float) -> void:
 	if Dying:

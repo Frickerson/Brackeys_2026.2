@@ -38,7 +38,7 @@ var WakingUp : bool = false
 func _ready() -> void:
 	if !Multipliers && DefaultMultipliers:
 		Multipliers = DefaultMultipliers
-	
+		
 	super._ready()
 	
 	if EquippedWeapon != null:
@@ -165,7 +165,7 @@ func _update_weapon() -> void:
 		
 func _update_multipliers() -> void:
 	_update_weapon()
-	HealthBarRef._initialize( MaxHealth * _get_multipliers().MaxHealthMultiplier)
+	HealthBarRef._initialize( int(MaxHealth * _get_multipliers().MaxHealthMultiplier))
 		
 func _on_death():
 	if not Dying:
@@ -227,7 +227,10 @@ func _wake_up() -> void:
 	WakingUp = false
 	
 static func _get_multipliers() -> CharacterMultipliers:
-	var result = Multipliers
+	if not Multipliers:
+		return null
+	
+	var result = Multipliers.duplicate(true)
 	if AdditionalMultipliers:
 		result._add(AdditionalMultipliers)
 	return result

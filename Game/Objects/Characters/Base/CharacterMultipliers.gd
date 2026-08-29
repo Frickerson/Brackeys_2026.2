@@ -53,13 +53,13 @@ func _get_modifier_additive_text(multiplier : float, name : String) -> String:
 	if multiplier == 0.0:
 		return ""
 		
-	var sign : String
+	var mutliplier_sign : String
 	if multiplier > 0.0:
-		sign =  "+"
+		mutliplier_sign =  "+"
 	else:
-		sign =  ""	
+		mutliplier_sign =  ""	
 		
-	return str(name, " ", sign, multiplier * 100, "%", "\n")
+	return str(name, " ", mutliplier_sign, multiplier * 100, "%", "\n")
 
 func _get_total_text() -> String:
 	var result = ""

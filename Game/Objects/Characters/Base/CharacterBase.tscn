@@ -1,10 +1,27 @@
 [gd_scene format=3 uid="uid://bnlyu2aqs00du"]
 
 [ext_resource type="Script" uid="uid://c72ficu10fm3q" path="res://Game/Objects/Characters/Base/CharacterBase.gd" id="1_gp7rn"]
+[ext_resource type="Script" uid="uid://do8q2bwentmfw" path="res://Game/Objects/Characters/Base/CharacterMultipliers.gd" id="2_hf88h"]
 [ext_resource type="Texture2D" uid="uid://bj37e1k6so76t" path="res://Game/Assets/Tilesets/tilesheet_transparent.png" id="3_eljxm"]
 [ext_resource type="PackedScene" uid="uid://bkb5662wbxhsi" path="res://Game/Objects/HealthBar/HealthBar.tscn" id="4_80e8x"]
 [ext_resource type="Texture2D" uid="uid://b7dy8sj2ffmn" path="res://Game/Assets/Sprites/pixel-white.png" id="4_lgely"]
 [ext_resource type="Texture2D" uid="uid://befd6c83jog8t" path="res://Game/Assets/Sprites/Objects/reloadCircle.png" id="5_4unul"]
+
+[sub_resource type="Resource" id="Resource_xu0uq"]
+script = ExtResource("2_hf88h")
+AttackSpeedMultiplier = 1.0
+DamageMultiplier = 1.0
+AttackRangeMultiplier = 1.0
+MovementSpeedMultiplier = 1.0
+ReloadSpeedMultiplier = 1.0
+BulletSizeMultiplier = 1.0
+BulletSpeedMultiplier = 1.0
+MaxHealthMultiplier = 1.0
+GoldDropMultiplier = 1.0
+HealthDropMultiplier = 1.0
+AccelerationMultiplier = 1.0
+DecelerationMultiplier = 1.0
+metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bu7o8"]
 radius = 7.0
@@ -40,6 +57,7 @@ script = ExtResource("1_gp7rn")
 Collision = NodePath("CollisionShape2D")
 AttackLocation = NodePath("CollisionShape2D/Sprite/AttackLocation")
 HealthBarRef = NodePath("HealthBar")
+DefaultMultipliers = SubResource("Resource_xu0uq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=816673183]
 shape = SubResource("CircleShape2D_bu7o8")
