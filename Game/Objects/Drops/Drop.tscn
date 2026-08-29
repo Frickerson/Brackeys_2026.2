@@ -4,6 +4,21 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uoa2t"]
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uoa2t"]
+particle_flag_disable_z = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 16.0
+emission_ring_inner_radius = 14.0
+emission_ring_cone_angle = 90.0
+angle_min = -188.29999
+angle_max = 164.80002
+direction = Vector3(0, 0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+gravity = Vector3(0, 0, 0)
+
 [node name="Drop" type="Area2D" unique_id=1226215494]
 collision_mask = 3
 script = ExtResource("1_uoa2t")
@@ -12,5 +27,8 @@ script = ExtResource("1_uoa2t")
 shape = SubResource("RectangleShape2D_uoa2t")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=781453345]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=655062072]
+process_material = SubResource("ParticleProcessMaterial_uoa2t")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

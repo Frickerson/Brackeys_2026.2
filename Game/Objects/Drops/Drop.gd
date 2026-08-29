@@ -3,6 +3,7 @@ extends Node2D
 class_name Drop
 
 @export var info : DropInfo
+const FakeColor: Color = Color(0.78, 0.172, 0.812, 1.0)
 
 func _ready() -> void:
 	$Sprite2D.texture = info.image
