@@ -18,7 +18,7 @@ TrustChange = -20.0
 TooltipText = "Lose 20 trust but keep your weapon"
 metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
 
-[node name="EventNode" unique_id=546445709 instance=ExtResource("1_35gqp")]
+[node name="WeaponSwap" unique_id=546445709 instance=ExtResource("1_35gqp")]
 Title = "Weapon swap"
 Descrition = "An good samaritan wants to swap his weapon with yours"
 Options = Array[ExtResource("2_pvk7f")]([SubResource("Resource_pvk7f"), SubResource("Resource_u4w3n")])
