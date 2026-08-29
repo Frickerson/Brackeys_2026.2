@@ -116,7 +116,7 @@ func _equip_weapon(weapon_class : PackedScene) -> void:
 	_update_weapon()
 
 func _update_weapon() -> void:
-	pass
+	EquippedWeapon.ReloadIcon = $Reload
 	
 func calculate_velocity(direction : Vector2, delta : float, current_velocity : Vector2) -> Vector2:
 	if abs(direction.y) > 0.0 && (sign(direction.y) == sign(current_velocity.y) || current_velocity.y == 0.0):

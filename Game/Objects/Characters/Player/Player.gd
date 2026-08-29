@@ -99,7 +99,7 @@ func _get_current_ammo() -> int:
 	return -1
 	
 func _update_weapon() -> void:
-	EquippedWeapon.ReloadIcon = $Reload
+	super._update_weapon()
 	if EquippedWeapon:
 		EquippedWeapon._update_multipliers(_get_multipliers())
 		

@@ -3,7 +3,7 @@ extends CharacterBase
 class_name Enemy
 
 @export_group("Weapon")
-@export var UseAmmo : bool = false
+@export var UseAmmo : bool = true
 
 @export_group("Movement")
 @export var MinMoveRange : float = 100.0:
@@ -160,6 +160,7 @@ func _find_line_of_sight(dir : Vector2) -> Vector2:
 	return dir
 	
 func _update_weapon() -> void:
+	super._update_weapon()
 	if EquippedWeapon:
 		EquippedWeapon._update_multipliers(_get_multipliers())
 		

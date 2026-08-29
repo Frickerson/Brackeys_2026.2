@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://dls1bpx8qq5em" path="res://Game/Objects/Weapons/Handgun.tscn" id="3_vxsb8"]
 [ext_resource type="Script" uid="uid://do8q2bwentmfw" path="res://Game/Objects/Characters/Base/CharacterMultipliers.gd" id="4_aeaxy"]
 [ext_resource type="Material" uid="uid://dp5xut6f6ajkd" path="res://Game/Assets/Shaders/PixelShadowMaterial.tres" id="4_s1ydr"]
-[ext_resource type="Texture2D" uid="uid://befd6c83jog8t" path="res://Game/Assets/Sprites/Objects/reloadCircle.png" id="6_14jth"]
 [ext_resource type="Script" uid="uid://5or23vygkk85" path="res://Game/Objects/Characters/Player/Camera.gd" id="6_vxsb8"]
 [ext_resource type="Texture2D" uid="uid://b7dy8sj2ffmn" path="res://Game/Assets/Sprites/pixel-white.png" id="7_h2uju"]
 
@@ -87,21 +86,7 @@ editor_draw_limits = true
 editor_draw_drag_margin = true
 script = ExtResource("6_vxsb8")
 
-[node name="Reload" type="TextureProgressBar" parent="." index="5" unique_id=862769834]
-visible = false
-offset_left = 13.0
-offset_top = -5.0
-offset_right = 21.0
-offset_bottom = 3.0
-step = 0.0
-value = 25.0
-fill_mode = 4
-nine_patch_stretch = true
-texture_under = ExtResource("6_14jth")
-texture_progress = ExtResource("6_14jth")
-tint_under = Color(0, 0, 0, 1)
-
-[node name="ReviveParticles" type="GPUParticles2D" parent="." index="6" unique_id=2074427768]
+[node name="ReviveParticles" type="GPUParticles2D" parent="." index="5" unique_id=2074427768]
 emitting = false
 texture = ExtResource("7_h2uju")
 lifetime = 0.7
