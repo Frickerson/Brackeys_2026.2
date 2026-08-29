@@ -15,6 +15,9 @@
 [ext_resource type="Script" uid="uid://cu7821jxwoey4" path="res://Game/Levels/Shop/ShopItem.gd" id="8_q3x87"]
 [ext_resource type="Resource" uid="uid://drao7uaigwc0o" path="res://Game/Levels/Shop/Items/Relic_Brrrrrrr.tres" id="9_puf6v"]
 [ext_resource type="Script" uid="uid://drgly3oe5f0vj" path="res://Game/Levels/Shop/Relic.gd" id="10_78ql8"]
+[ext_resource type="Resource" uid="uid://dsdt7xwvpk3yi" path="res://Game/Levels/Shop/Items/Relic_SpeedJuice.tres" id="14_u8on0"]
+[ext_resource type="Resource" uid="uid://bjcnlkt5gp7ur" path="res://Game/Levels/Shop/Items/Relic_SWATJuice.tres" id="15_xwuac"]
+[ext_resource type="Resource" uid="uid://vhu374qmcmy4" path="res://Game/Levels/Shop/Items/Relic_Gigantifier.tres" id="16_85q8n"]
 [ext_resource type="PackedScene" uid="uid://xwgn73p1qflw" path="res://Game/UI/Pause/pause_menu.tscn" id="16_gv2c2"]
 
 [sub_resource type="Resource" id="Resource_xwuac"]
@@ -149,46 +152,6 @@ HealthDropMultiplier = 1.0
 AccelerationMultiplier = 1.0
 DecelerationMultiplier = 1.0
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
-
-[sub_resource type="Resource" id="Resource_7t66y"]
-script = ExtResource("6_c6e86")
-MovementSpeedMultiplier = 0.4
-metadata/_custom_type_script = "uid://do8q2bwentmfw"
-
-[sub_resource type="Resource" id="Resource_n4mt6"]
-script = ExtResource("10_78ql8")
-MultipliersChange = SubResource("Resource_7t66y")
-Title = "Speed juice"
-Cost = 40
-Tooltip = "Increase max move speed by 40%"
-metadata/_custom_type_script = "uid://drgly3oe5f0vj"
-
-[sub_resource type="Resource" id="Resource_vxsb8"]
-script = ExtResource("6_c6e86")
-ReloadSpeedMultiplier = 1.5
-metadata/_custom_type_script = "uid://do8q2bwentmfw"
-
-[sub_resource type="Resource" id="Resource_xktwb"]
-script = ExtResource("10_78ql8")
-MultipliersChange = SubResource("Resource_vxsb8")
-Title = "SWAT juice"
-Cost = 100
-Tooltip = "Increase reload speed by 150%"
-metadata/_custom_type_script = "uid://drgly3oe5f0vj"
-
-[sub_resource type="Resource" id="Resource_q6nhh"]
-script = ExtResource("6_c6e86")
-BulletSizeMultiplier = 0.5
-BulletSpeedMultiplier = -0.3
-metadata/_custom_type_script = "uid://do8q2bwentmfw"
-
-[sub_resource type="Resource" id="Resource_yvp5d"]
-script = ExtResource("10_78ql8")
-MultipliersChange = SubResource("Resource_q6nhh")
-Title = "Gigantifier"
-Cost = 30
-Tooltip = "Gain 50% bullet size for -30% bullet speed"
-metadata/_custom_type_script = "uid://drgly3oe5f0vj"
 
 [sub_resource type="Resource" id="Resource_pg43f"]
 script = ExtResource("6_c6e86")
@@ -352,7 +315,7 @@ theme_override_constants/separation = 100
 
 [node name="Layer1_ShopNode_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer1" unique_id=1133477007 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("7_c6e86")]
 layout_mode = 2
-Items = Array[ExtResource("8_q3x87")]([ExtResource("9_puf6v"), SubResource("Resource_n4mt6"), SubResource("Resource_xktwb"), SubResource("Resource_yvp5d")])
+Items = Array[ExtResource("8_q3x87")]([ExtResource("9_puf6v"), ExtResource("14_u8on0"), ExtResource("15_xwuac"), ExtResource("16_85q8n")])
 ChildNodes = [NodePath("../../Layer2/Layer2_Battle_01"), NodePath("../../Layer2/Layer2_Battle_02")]
 
 [node name="Layer1_EventNode_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer1" unique_id=2065172955 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_1t1ls")]
