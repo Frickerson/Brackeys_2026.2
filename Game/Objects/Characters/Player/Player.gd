@@ -15,6 +15,7 @@ static var Multipliers : CharacterMultipliers
 static var Relics : Array[Relic]
 static var Health : float = -1.0
 static var WeaponClass : PackedScene
+static var PreviousMaxHealth : float = 0.0
 
 var Respawning : bool = false
 const hurtStream: AudioStream = preload("res://Game/Sound/Effects/hurt/hurt-a.ogg")
@@ -38,7 +39,11 @@ func _ready() -> void:
 	
 	if Health == -1.0:
 		Health = HealthBarRef.CurrentHealth
+		PreviousMaxHealth = HealthBarRef.MaxHealth
 	else:
+		if PreviousMaxHealth != HealthBarRef.MaxHealth:
+			var ratio = HealthBarRef.MaxHealth / PreviousMaxHealth
+			Health *= ratio
 		HealthBarRef.CurrentHealth = Health
 	$HurtAudio.stream = hurtStream
 
