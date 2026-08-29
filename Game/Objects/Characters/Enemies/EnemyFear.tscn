@@ -5,3 +5,7 @@
 [node name="EnemyFear" unique_id=2024416287 instance=ExtResource("1_53o0b")]
 MinMoveRange = 300.0
 MaxMoveRange = 500.0
+MaxHealth = 20
+
+[node name="Sprite" parent="CollisionShape2D" parent_id_path=PackedInt32Array(816673183) index="0" unique_id=1978200661]
+region_rect = Rect2(509, 0, 16, 16)

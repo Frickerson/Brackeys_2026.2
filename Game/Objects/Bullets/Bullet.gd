@@ -69,6 +69,7 @@ func _on_body_entered(body: Node2D) -> void:
 		character._take_damage(Damage)
 	else:
 		$HitParticles.process_material.color = Color.WHITE
+		$AudioStreamPlayer2D.play()
 	
 	$HitParticles.emitting = true
 	$HitParticles.finished.connect(func(): queue_free())

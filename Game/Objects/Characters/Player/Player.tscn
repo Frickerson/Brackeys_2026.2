@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bnlyu2aqs00du" path="res://Game/Objects/Characters/Base/CharacterBase.tscn" id="1_dxvqc"]
 [ext_resource type="Script" uid="uid://by12bqobms5mi" path="res://Game/Objects/Characters/Player/Player.gd" id="2_e0uyt"]
-[ext_resource type="PackedScene" uid="uid://b41p3vi1b188i" path="res://Game/Objects/Weapons/Machinegun.tscn" id="3_nh8tb"]
+[ext_resource type="PackedScene" uid="uid://dls1bpx8qq5em" path="res://Game/Objects/Weapons/Handgun.tscn" id="3_vxsb8"]
 [ext_resource type="Script" uid="uid://do8q2bwentmfw" path="res://Game/Objects/Characters/Base/CharacterMultipliers.gd" id="4_aeaxy"]
 [ext_resource type="Material" uid="uid://dp5xut6f6ajkd" path="res://Game/Assets/Shaders/PixelShadowMaterial.tres" id="4_s1ydr"]
 [ext_resource type="Texture2D" uid="uid://befd6c83jog8t" path="res://Game/Assets/Sprites/Objects/reloadCircle.png" id="6_14jth"]
@@ -62,7 +62,7 @@ CameraRef = NodePath("Camera2D")
 StarterGold = 100
 UseAmmo = true
 TeamName = &"PlayerTeam"
-DefaultWeapon = ExtResource("3_nh8tb")
+DefaultWeapon = ExtResource("3_vxsb8")
 DefaultMultipliers = SubResource("Resource_n4mt6")
 
 [node name="Sprite" parent="CollisionShape2D" parent_id_path=PackedInt32Array(816673183) index="0" unique_id=1978200661]

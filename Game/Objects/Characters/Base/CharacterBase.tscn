@@ -73,6 +73,7 @@ explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_b8hjc")
 
 [node name="HurtAudio" type="AudioStreamPlayer2D" parent="." unique_id=1809118897]
+volume_db = -10.03
 max_polyphony = 2
 bus = &"Sound Effects"
 

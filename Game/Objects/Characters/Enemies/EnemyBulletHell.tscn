@@ -4,5 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://c6bcyrck55yqd" path="res://Game/Objects/Weapons/Multishot_360_Slow.tscn" id="2_kir42"]
 
 [node name="EnemyBulletHell" unique_id=2024416287 instance=ExtResource("1_nj8sf")]
+MinMoveRange = 200.0
+MaxMoveRange = 500.0
+MoveSpeed = 75.0
 DefaultWeapon = ExtResource("2_kir42")
-MaxHealth = 30
+MaxHealth = 40
+
+[node name="Sprite" parent="CollisionShape2D" parent_id_path=PackedInt32Array(816673183) index="0" unique_id=1978200661]
+region_rect = Rect2(510, 187, 16, 16)
