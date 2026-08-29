@@ -44,6 +44,7 @@ class_name Weapon
 		return HomingPercentage
 
 @export var icon: AtlasTexture = null
+@export var AttackOffset : float = 5.0
 
 var AttackTimer: float = 0.0
 var Enabled: bool = false
@@ -150,8 +151,7 @@ func _spawn_attacks() -> void:
 	
 func _spawn_attack(shots : int, index : int) -> Node:
 	var right_vector = Vector2.UP.rotated(global_rotation)
-	var offset = 10.0
-	var current_offset = offset * (index - (shots - 1) / 2.0) * right_vector
+	var current_offset = AttackOffset * (index - (shots - 1) / 2.0) * right_vector
 	var attack = _create_attack()
 	attack.global_position = global_position + current_offset
 	attack.global_rotation = global_rotation
