@@ -120,6 +120,7 @@ func _on_death():
 		$HealthBar.visible = true
 		Respawning = false
 		Collision.set_deferred("disabled", false)
+		EquippedWeapon._toggle_attack(Input.is_action_pressed("Player_Shoot"))
 	
 	get_tree().create_timer(RespawnTime).timeout.connect(onRespawnComplete)
 	
