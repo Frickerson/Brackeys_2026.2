@@ -42,6 +42,7 @@ func on_node_pressed(node: BaseNode):
 		$OvaniPlayer.FadeIntensity(1-(Player.Trust/100),1)
 	
 	var trustDepleted = func():
+		_reset_player()
 		get_tree().call_deferred("change_scene_to_packed", LoseScreen)
 	
 	var player = get_tree().get_first_node_in_group("Player") as Player
@@ -57,11 +58,7 @@ func on_win():
 	
 	CurrentNode.set_cleared()
 	if CurrentNode.ChildNodes.is_empty(): 
-		Player.Multipliers = null
-		Player.HealthRatio = 1.0
-		Player.Gold = 100
-		Player.Trust = 100
-		Player.Relics = []
+		_reset_player()
 		get_tree().call_deferred("change_scene_to_packed", WinScreen)
 	else:
 		for child in CurrentNode.ChildNodes:
@@ -70,6 +67,13 @@ func on_win():
 
 		%Map.visible = true
 		$OvaniPlayer.PlaySongNow(mapSong, SongTransitionTime)
+		
+func _reset_player() -> void:
+	Player.Multipliers = CharacterMultipliers.get_default()
+	Player.HealthRatio = 1.0
+	Player.Gold = 100
+	Player.Trust = 100
+	Player.Relics = []
 
 func setup_cursor():
 	var image = mouseCursor.get_image()
