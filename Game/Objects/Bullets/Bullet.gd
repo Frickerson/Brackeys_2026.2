@@ -47,7 +47,7 @@ func _process(delta: float) -> void:
 		
 func _physics_process(delta: float) -> void:
 	var homing_direction = _get_homing_direction()
-	var current_direction = Vector2.RIGHT.rotated(global_rotation)
+	var current_direction = _get_move_direction()
 	
 	var adjusted_direction = current_direction.lerp(homing_direction, HomingPercentage )
 	global_rotation = lerp_angle(global_rotation, adjusted_direction.angle(), delta * HomingSpeed)
@@ -55,6 +55,9 @@ func _physics_process(delta: float) -> void:
 	var direction = Vector2.RIGHT.rotated(rotation)
 	var velocity = direction * Speed
 	global_position += velocity * delta
+	
+func _get_move_direction() -> Vector2:
+	return Vector2.RIGHT.rotated(global_rotation)
 
 func _on_body_entered(body: Node2D) -> void:
 	if IsFake:

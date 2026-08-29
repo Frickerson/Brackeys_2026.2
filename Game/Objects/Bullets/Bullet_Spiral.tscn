@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c47ygqo5hl6om"]
+
+[ext_resource type="PackedScene" uid="uid://qjyuecuw6ve5" path="res://Game/Objects/Bullets/Bullet.tscn" id="1_njkkk"]
+[ext_resource type="Script" uid="uid://b4f703vran78e" path="res://Game/Objects/Bullets/BulletSpiral.gd" id="2_abxlx"]
+
+[node name="Bullet" unique_id=1582658277 instance=ExtResource("1_njkkk")]
+script = ExtResource("2_abxlx")
