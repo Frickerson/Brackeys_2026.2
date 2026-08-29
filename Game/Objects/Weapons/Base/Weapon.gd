@@ -169,7 +169,10 @@ func _create_attack() -> Node:
 	var life_span = AttackRange / ShotSpeed
 	attack._initialize(Damage, ShotSpeed, life_span, BulletSprite, HomingPercentage)
 	if Multipliers:
-		attack.scale = max(attack.scale * Multipliers.BulletSizeMultiplier, 0.2)
+		var new_scale_x = max(attack.scale.x * Multipliers.BulletSizeMultiplier, 0.2)
+		var new_scale_y = max(attack.scale.y * Multipliers.BulletSizeMultiplier, 0.2)
+		attack.scale = Vector2(new_scale_x, new_scale_y)
+		
 	LevelRoot.add_child(attack)
 	
 	return attack
