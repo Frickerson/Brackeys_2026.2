@@ -4,11 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://ck0842b4pmqqi" path="res://Game/Map/Nodes/Battle/BattleNode_05.tscn" id="2_y0jfu"]
 [ext_resource type="PackedScene" uid="uid://b4ccebipcw12x" path="res://Game/Map/Nodes/Battle/BattleNode_04.tscn" id="2_yvp5d"]
 [ext_resource type="PackedScene" uid="uid://bvjusqc4oyq0w" path="res://Game/Levels/LevelBattle3.tscn" id="3_bkk0o"]
-[ext_resource type="PackedScene" uid="uid://chnydkutel05w" path="res://Game/Map/Nodes/EventNode.tscn" id="4_1t1ls"]
 [ext_resource type="PackedScene" uid="uid://c4gavm1wg14av" path="res://Game/Map/Nodes/BattleNode.tscn" id="4_bkk0o"]
 [ext_resource type="PackedScene" uid="uid://cpywopvhwk047" path="res://Game/Levels/LevelBattle1.tscn" id="5_1t1ls"]
-[ext_resource type="Script" uid="uid://b7ppuiu3c0i8x" path="res://Game/Levels/Events/EventOption.gd" id="5_v68tq"]
-[ext_resource type="PackedScene" uid="uid://bqcb7qsk4to4s" path="res://Game/Objects/Weapons/Sniper.tscn" id="5_y0jfu"]
+[ext_resource type="PackedScene" uid="uid://cqant1enutjoj" path="res://Game/Map/Nodes/Event/EventNode_02.tscn" id="5_6tmv7"]
 [ext_resource type="Script" uid="uid://do8q2bwentmfw" path="res://Game/Objects/Characters/Base/CharacterMultipliers.gd" id="6_c6e86"]
 [ext_resource type="PackedScene" uid="uid://dfbvi5vrcyq3f" path="res://Game/Map/Nodes/ShopNode.tscn" id="7_c6e86"]
 [ext_resource type="Script" uid="uid://q01x67dllf0s" path="res://OvaniPlugin/OvaniPlayer.gd" id="7_fq2qd"]
@@ -31,6 +29,7 @@
 [ext_resource type="Resource" uid="uid://bobnjlxe3lb8h" path="res://Game/Levels/Shop/Items/Relic_Tank.tres" id="26_47vi8"]
 [ext_resource type="Resource" uid="uid://cajoxad14qi4f" path="res://Game/Levels/Shop/Items/Relic_Troll.tres" id="27_wma63"]
 [ext_resource type="Resource" uid="uid://cuspiveseyrrc" path="res://Game/Levels/Shop/Items/Relic_WreckingBall.tres" id="28_iaf5v"]
+[ext_resource type="PackedScene" uid="uid://dn0q65gh1otfb" path="res://Game/Map/Nodes/Event/EventNode_01.tscn" id="29_nov1i"]
 
 [sub_resource type="Resource" id="Resource_xwuac"]
 script = ExtResource("6_c6e86")
@@ -64,20 +63,6 @@ HealthDropMultiplier = 1.0
 AccelerationMultiplier = 1.0
 DecelerationMultiplier = 1.0
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
-
-[sub_resource type="Resource" id="Resource_78ql8"]
-script = ExtResource("5_v68tq")
-Title = "Swap for the sniper"
-TooltipText = ""
-NewWeapon = ExtResource("5_y0jfu")
-metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
-
-[sub_resource type="Resource" id="Resource_2n88u"]
-script = ExtResource("5_v68tq")
-Title = "I dont trust this man"
-TrustChange = -20.0
-TooltipText = "Lose 20 trust but keep your weapon"
-metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
 
 [sub_resource type="Resource" id="Resource_c6e86"]
 script = ExtResource("6_c6e86")
@@ -126,44 +111,6 @@ HealthDropMultiplier = 1.0
 AccelerationMultiplier = 1.0
 DecelerationMultiplier = 1.0
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
-
-[sub_resource type="Resource" id="Resource_pg43f"]
-script = ExtResource("6_c6e86")
-metadata/_custom_type_script = "uid://do8q2bwentmfw"
-
-[sub_resource type="Resource" id="Resource_1y2qw"]
-script = ExtResource("5_v68tq")
-Title = "Close your eyes"
-TrustChange = 20.0
-MultipliersChange = SubResource("Resource_pg43f")
-TooltipText = "I wonder"
-metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
-
-[sub_resource type="Resource" id="Resource_rpydu"]
-script = ExtResource("6_c6e86")
-BulletSpeedMultiplier = 0.3
-metadata/_custom_type_script = "uid://do8q2bwentmfw"
-
-[sub_resource type="Resource" id="Resource_fomk6"]
-script = ExtResource("5_v68tq")
-Title = "Leave one eye open"
-TrustChange = -10.0
-MultipliersChange = SubResource("Resource_rpydu")
-TooltipText = "Lose 10 trust but increase bullet speed by 30%"
-metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
-
-[sub_resource type="Resource" id="Resource_o4nuo"]
-script = ExtResource("6_c6e86")
-MaxHealthMultiplier = 1.0
-metadata/_custom_type_script = "uid://do8q2bwentmfw"
-
-[sub_resource type="Resource" id="Resource_gv2c2"]
-script = ExtResource("5_v68tq")
-Title = "Stare her down"
-TrustChange = -20.0
-MultipliersChange = SubResource("Resource_o4nuo")
-TooltipText = "Lost 20 trust but increase Max health by 100%"
-metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
 
 [sub_resource type="Resource" id="Resource_aw0qy"]
 script = ExtResource("6_c6e86")
@@ -244,11 +191,8 @@ DifficultyMultiplier = SubResource("Resource_85q8n")
 TooltipText = "Tooltip Text"
 ChildNodes = [NodePath("../../Layer4/Layer4_Battle")]
 
-[node name="Layer3_WeaponE_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer3" unique_id=131662834 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_1t1ls")]
+[node name="Layer3_WeaponE_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer3" unique_id=657765391 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("5_6tmv7")]
 layout_mode = 2
-Title = "Weapon swap"
-Descrition = "An good samaritan wants to swap his weapon with yours"
-Options = Array[ExtResource("5_v68tq")]([SubResource("Resource_78ql8"), SubResource("Resource_2n88u")])
 ChildNodes = [NodePath("../../Layer4/Layer4_Battle")]
 
 [node name="Layer3_Shop" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer3" unique_id=1489677040 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("7_c6e86")]
@@ -292,12 +236,9 @@ layout_mode = 2
 Items = Array[ExtResource("8_q3x87")]([ExtResource("9_puf6v"), ExtResource("17_vsopl"), ExtResource("16_85q8n"), ExtResource("18_nov1i"), ExtResource("19_0jauk"), ExtResource("20_w30kj"), ExtResource("21_tldeo"), ExtResource("13_y0jfu"), ExtResource("11_85q8n"), ExtResource("13_ndpkd"), ExtResource("22_xu0uq"), ExtResource("14_u8on0"), ExtResource("24_74p4k"), ExtResource("15_xwuac"), ExtResource("26_47vi8"), ExtResource("27_wma63"), ExtResource("28_iaf5v")])
 ChildNodes = [NodePath("../../Layer2/Layer2_Battle_01"), NodePath("../../Layer2/Layer2_Battle_02")]
 
-[node name="Layer1_EventNode_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer1" unique_id=2065172955 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_1t1ls")]
+[node name="Layer1_EventNode_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer1" unique_id=558368138 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("29_nov1i")]
 layout_mode = 2
-Title = "An old woman asks you to close your eyes"
-Descrition = "What do you do?"
-Options = Array[ExtResource("5_v68tq")]([SubResource("Resource_1y2qw"), SubResource("Resource_fomk6"), SubResource("Resource_gv2c2")])
-ChildNodes = [NodePath("../../Layer2/Layer2_Battle_03")]
+ChildNodes = [NodePath("../../Layer2/Layer2_Battle_02"), NodePath("../../Layer2/Layer2_Battle_03")]
 
 [node name="Layer0" type="HBoxContainer" parent="Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1166320292]
 layout_mode = 2
