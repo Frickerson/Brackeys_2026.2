@@ -81,14 +81,17 @@ func _get_total_text() -> String:
 	
 func _get_modifier_total_text(multiplier : float, name : String) -> String:
 	var total_multiplier = multiplier - 1.0
-		
-	var sign : String
+	
+	var color = "white"
+	var sign = ""
 	if total_multiplier > 0.0:
 		sign =  "+"
-	else:
-		sign =  ""	
+		color = "green"
 		
-	return str(name, " ", sign, total_multiplier * 100, "%", "\n")
+	if total_multiplier < 0.0:
+		color = "red"
+		
+	return str(name, " ", "[color=", color, "]", sign, total_multiplier * 100, "%[/color]", "\n")
 	
 static func get_default() -> CharacterMultipliers:
 	var result = CharacterMultipliers.new()
