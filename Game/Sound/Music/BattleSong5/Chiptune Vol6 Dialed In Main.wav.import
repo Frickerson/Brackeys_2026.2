@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://8oicwicaayef"
+path="res://.godot/imported/Chiptune Vol6 Dialed In Main.wav-704fc0c4a971060611e813f11cee381b.sample"
+
+[deps]
+
+source_file="res://Game/Sound/Music/BattleSong5/Chiptune Vol6 Dialed In Main.wav"
+dest_files=["res://.godot/imported/Chiptune Vol6 Dialed In Main.wav-704fc0c4a971060611e813f11cee381b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

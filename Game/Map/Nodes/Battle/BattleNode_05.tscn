@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ck0842b4pmqqi"]
 
 [ext_resource type="PackedScene" uid="uid://c4gavm1wg14av" path="res://Game/Map/Nodes/BattleNode.tscn" id="1_vg20d"]
-[ext_resource type="PackedScene" uid="uid://bg31hb0t6bgcc" path="res://Game/Levels/Battle/LevelBattle5.tscn" id="2_cigqs"]
+[ext_resource type="PackedScene" uid="uid://bg31hb0t6bgcc" path="res://Game/Levels/Battle/LevelBattle_Ambush.tscn" id="2_cigqs"]
 
 [node name="BattleNode" unique_id=546445709 instance=ExtResource("1_vg20d")]
 scene_to_load = ExtResource("2_cigqs")

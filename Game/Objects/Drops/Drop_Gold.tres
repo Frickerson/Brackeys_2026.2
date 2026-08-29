@@ -7,4 +7,5 @@
 script = ExtResource("1_ymgmv")
 ValueChange = 10.0
 image = ExtResource("1_sw0gv")
+Chance = 0.65
 metadata/_custom_type_script = "uid://dqj508oamglo3"

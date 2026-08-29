@@ -14,7 +14,6 @@
 [ext_resource type="Resource" uid="uid://ceqd58ge66ip7" path="res://Game/Levels/Shop/Items/Relic_SlowButSteady.tres" id="11_85q8n"]
 [ext_resource type="Resource" uid="uid://dhssbwlkm7qid" path="res://Game/Levels/Shop/Items/Relic_SmallReset.tres" id="13_ndpkd"]
 [ext_resource type="Resource" uid="uid://cbg8u05i2fsrf" path="res://Game/Levels/Shop/Items/Relic_SlipAndSlide.tres" id="13_y0jfu"]
-[ext_resource type="PackedScene" uid="uid://067y0g3wod4e" path="res://Game/Levels/Battle/LevelBattle4.tscn" id="14_t453o"]
 [ext_resource type="Resource" uid="uid://dsdt7xwvpk3yi" path="res://Game/Levels/Shop/Items/Relic_SpeedJuice.tres" id="14_u8on0"]
 [ext_resource type="Resource" uid="uid://bjcnlkt5gp7ur" path="res://Game/Levels/Shop/Items/Relic_SWATJuice.tres" id="15_xwuac"]
 [ext_resource type="Resource" uid="uid://vhu374qmcmy4" path="res://Game/Levels/Shop/Items/Relic_Gigantifier.tres" id="16_85q8n"]
@@ -28,7 +27,11 @@
 [ext_resource type="Resource" uid="uid://ckojqahybkn27" path="res://Game/Levels/Shop/Items/Relic_SprayAndPray.tres" id="24_74p4k"]
 [ext_resource type="Resource" uid="uid://bobnjlxe3lb8h" path="res://Game/Levels/Shop/Items/Relic_Tank.tres" id="26_47vi8"]
 [ext_resource type="Resource" uid="uid://cajoxad14qi4f" path="res://Game/Levels/Shop/Items/Relic_Troll.tres" id="27_wma63"]
+[ext_resource type="PackedScene" uid="uid://cgixhn5rr3ppi" path="res://Game/Levels/Battle/LevelBattle_HouseFight.tscn" id="28_6tmv7"]
 [ext_resource type="Resource" uid="uid://cuspiveseyrrc" path="res://Game/Levels/Shop/Items/Relic_WreckingBall.tres" id="28_iaf5v"]
+[ext_resource type="PackedScene" uid="uid://dn0q65gh1otfb" path="res://Game/Map/Nodes/Event/EventNode_01.tscn" id="29_0jauk"]
+[ext_resource type="Script" uid="uid://b7ppuiu3c0i8x" path="res://Game/Levels/Events/EventOption.gd" id="30_w30kj"]
+[ext_resource type="PackedScene" uid="uid://cpywopvhwk047" path="res://Game/Levels/Battle/LevelBattle1v1.tscn" id="31_tldeo"]
 
 [sub_resource type="Resource" id="Resource_xwuac"]
 script = ExtResource("6_c6e86")
@@ -65,13 +68,13 @@ metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [sub_resource type="Resource" id="Resource_c6e86"]
 script = ExtResource("6_c6e86")
-AttackSpeedMultiplier = 1.0
-DamageMultiplier = 2.0
+AttackSpeedMultiplier = 0.8
+DamageMultiplier = 1.5
 AttackRangeMultiplier = 1.0
 MovementSpeedMultiplier = 1.0
 ReloadSpeedMultiplier = 1.0
 BulletSizeMultiplier = 1.0
-BulletSpeedMultiplier = 1.0
+BulletSpeedMultiplier = 0.7
 MaxHealthMultiplier = 1.0
 GoldDropMultiplier = 1.0
 HealthDropMultiplier = 1.0
@@ -82,7 +85,7 @@ metadata/_custom_type_script = "uid://do8q2bwentmfw"
 [sub_resource type="Resource" id="Resource_q3x87"]
 script = ExtResource("6_c6e86")
 AttackSpeedMultiplier = 1.5
-DamageMultiplier = 1.5
+DamageMultiplier = 0.7
 AttackRangeMultiplier = 1.0
 MovementSpeedMultiplier = 1.0
 ReloadSpeedMultiplier = 1.0
@@ -91,18 +94,19 @@ BulletSpeedMultiplier = 1.0
 MaxHealthMultiplier = 1.0
 GoldDropMultiplier = 1.0
 HealthDropMultiplier = 1.0
+HomingMultiplier = 0.1
 AccelerationMultiplier = 1.0
-DecelerationMultiplier = 1.0
+DecelerationMultiplier = 0.5
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [sub_resource type="Resource" id="Resource_puf6v"]
 script = ExtResource("6_c6e86")
-AttackSpeedMultiplier = 3.0
-DamageMultiplier = 3.0
-AttackRangeMultiplier = 0.5
-MovementSpeedMultiplier = 1.0
-ReloadSpeedMultiplier = 1.0
-BulletSizeMultiplier = 1.0
+AttackSpeedMultiplier = 1.1
+DamageMultiplier = 1.0
+AttackRangeMultiplier = 0.9
+MovementSpeedMultiplier = 1.1
+ReloadSpeedMultiplier = 1.2
+BulletSizeMultiplier = 0.9
 BulletSpeedMultiplier = 1.0
 MaxHealthMultiplier = 1.0
 GoldDropMultiplier = 1.0
@@ -110,6 +114,44 @@ HealthDropMultiplier = 1.0
 AccelerationMultiplier = 1.0
 DecelerationMultiplier = 1.0
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
+
+[sub_resource type="Resource" id="Resource_xu0uq"]
+script = ExtResource("6_c6e86")
+metadata/_custom_type_script = "uid://do8q2bwentmfw"
+
+[sub_resource type="Resource" id="Resource_74p4k"]
+script = ExtResource("30_w30kj")
+Title = "Help them down"
+TrustChange = 10.0
+MultipliersChange = SubResource("Resource_xu0uq")
+TooltipText = "You trust more"
+metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
+
+[sub_resource type="Resource" id="Resource_47vi8"]
+script = ExtResource("6_c6e86")
+AccelerationMultiplier = 0.2
+metadata/_custom_type_script = "uid://do8q2bwentmfw"
+
+[sub_resource type="Resource" id="Resource_wma63"]
+script = ExtResource("30_w30kj")
+Title = "This child is bait"
+TrustChange = -10.0
+MultipliersChange = SubResource("Resource_47vi8")
+TooltipText = "Lose trust but gain acceleration"
+metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
+
+[sub_resource type="Resource" id="Resource_iaf5v"]
+script = ExtResource("6_c6e86")
+DamageMultiplier = 0.2
+metadata/_custom_type_script = "uid://do8q2bwentmfw"
+
+[sub_resource type="Resource" id="Resource_yl3wy"]
+script = ExtResource("30_w30kj")
+Title = "Tickle the child until they fall down"
+TrustChange = -5.0
+MultipliersChange = SubResource("Resource_iaf5v")
+TooltipText = "Lost trust but gain damage"
+metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
 
 [sub_resource type="Resource" id="Resource_aw0qy"]
 script = ExtResource("6_c6e86")
@@ -171,9 +213,10 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 100
 
-[node name="Layer4_Battle" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer9" unique_id=546445709 instance=ExtResource("2_y0jfu")]
+[node name="Layer9_Battle" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer9" unique_id=546445709 instance=ExtResource("2_y0jfu")]
 layout_mode = 2
 DifficultyMultiplier = SubResource("Resource_xwuac")
+scene_to_load = ExtResource("28_6tmv7")
 
 [node name="Layer8" type="HBoxContainer" parent="Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1547894661]
 layout_mode = 2
@@ -240,9 +283,10 @@ DifficultyMultiplier = SubResource("Resource_85q8n")
 [node name="Layer3_WeaponE_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer3" unique_id=657765391 instance=ExtResource("5_6tmv7")]
 layout_mode = 2
 
-[node name="Layer3_Shop" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer3" unique_id=1489677040 instance=ExtResource("7_c6e86")]
+[node name="Layer3_Shop" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer3" unique_id=95978950 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("7_c6e86")]
 layout_mode = 2
-Items = Array[ExtResource("8_q3x87")]([ExtResource("16_85q8n"), ExtResource("11_85q8n"), ExtResource("13_y0jfu"), ExtResource("13_ndpkd")])
+Items = Array[ExtResource("8_q3x87")]([ExtResource("9_puf6v"), ExtResource("17_vsopl"), ExtResource("16_85q8n"), ExtResource("18_nov1i"), ExtResource("19_0jauk"), ExtResource("20_w30kj"), ExtResource("21_tldeo"), ExtResource("13_y0jfu"), ExtResource("11_85q8n"), ExtResource("13_ndpkd"), ExtResource("22_xu0uq"), ExtResource("14_u8on0"), ExtResource("24_74p4k"), ExtResource("15_xwuac"), ExtResource("26_47vi8"), ExtResource("27_wma63"), ExtResource("28_iaf5v")])
+ChildNodes = [NodePath("../../Layer2/Layer2_Battle_01"), NodePath("../../Layer2/Layer2_Battle_02")]
 
 [node name="Layer2" type="HBoxContainer" parent="Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=768422164]
 layout_mode = 2
@@ -258,14 +302,14 @@ ChildNodes = [NodePath("../../Layer3/Layer3_Battle_01")]
 [node name="Layer2_Battle_02" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer2" unique_id=1840558396 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_bkk0o")]
 layout_mode = 2
 DifficultyMultiplier = SubResource("Resource_q3x87")
-scene_to_load = ExtResource("14_t453o")
+scene_to_load = ExtResource("3_bkk0o")
 ChildNodes = [NodePath("../../Layer3/Layer3_WeaponE_01")]
 
 [node name="Layer2_Battle_03" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer2" unique_id=1713918069 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_bkk0o")]
 layout_mode = 2
 DifficultyMultiplier = SubResource("Resource_puf6v")
 scene_to_load = ExtResource("3_bkk0o")
-ChildNodes = [NodePath("../../Layer3/Layer3_Shop")]
+ChildNodes = [NodePath("")]
 
 [node name="Layer1" type="HBoxContainer" parent="Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=2108882114]
 layout_mode = 2
@@ -277,6 +321,11 @@ layout_mode = 2
 Items = Array[ExtResource("8_q3x87")]([ExtResource("9_puf6v"), ExtResource("17_vsopl"), ExtResource("16_85q8n"), ExtResource("18_nov1i"), ExtResource("19_0jauk"), ExtResource("20_w30kj"), ExtResource("21_tldeo"), ExtResource("13_y0jfu"), ExtResource("11_85q8n"), ExtResource("13_ndpkd"), ExtResource("22_xu0uq"), ExtResource("14_u8on0"), ExtResource("24_74p4k"), ExtResource("15_xwuac"), ExtResource("26_47vi8"), ExtResource("27_wma63"), ExtResource("28_iaf5v")])
 ChildNodes = [NodePath("../../Layer2/Layer2_Battle_01"), NodePath("../../Layer2/Layer2_Battle_02")]
 
+[node name="Layer1_EventNode_Child" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer1" unique_id=200112315 instance=ExtResource("29_0jauk")]
+layout_mode = 2
+Title = "A child is stuck in a tree."
+Options = Array[ExtResource("30_w30kj")]([SubResource("Resource_74p4k"), SubResource("Resource_wma63"), SubResource("Resource_yl3wy")])
+
 [node name="Layer0" type="HBoxContainer" parent="Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1166320292]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -285,8 +334,8 @@ theme_override_constants/separation = 100
 [node name="Layer0_Battle_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer0" unique_id=1220550427 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_bkk0o")]
 layout_mode = 2
 DifficultyMultiplier = SubResource("Resource_aw0qy")
-scene_to_load = ExtResource("3_bkk0o")
-ChildNodes = [NodePath("../../Layer1/Layer1_ShopNode_01")]
+scene_to_load = ExtResource("31_tldeo")
+ChildNodes = [NodePath("../../Layer1/Layer1_ShopNode_01"), NodePath("../../Layer1/Layer1_EventNode_Child")]
 
 [node name="CurrentScene" type="Node2D" parent="." unique_id=1835926991]
 unique_name_in_owner = true

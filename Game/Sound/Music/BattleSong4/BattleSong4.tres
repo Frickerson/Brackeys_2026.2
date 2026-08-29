@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="OvaniSong" format=3 uid="uid://ctmr4n6bqkdv3"]
+
+[ext_resource type="AudioStream" uid="uid://dxfwos7s2d0sg" path="res://Game/Sound/Music/BattleSong4/Chiptune Vol4 Urgent Intensity 1.wav" id="1_h4bh0"]
+[ext_resource type="Script" uid="uid://dd4sux7yrhd3k" path="res://OvaniPlugin/OvaniSong.gd" id="1_rd2ra"]
+[ext_resource type="AudioStream" uid="uid://b0b3aoffryhy8" path="res://Game/Sound/Music/BattleSong4/Chiptune Vol4 Urgent Intensity 2.wav" id="2_wwqm4"]
+[ext_resource type="AudioStream" uid="uid://chwsgshkm1vpd" path="res://Game/Sound/Music/BattleSong4/Chiptune Vol4 Urgent Main.wav" id="3_n2b63"]
+[ext_resource type="AudioStream" uid="uid://dpjqsdlerg3wk" path="res://Game/Sound/Music/BattleSong4/Chiptune Vol4 Urgent Cut 30.wav" id="4_jf8ql"]
+[ext_resource type="AudioStream" uid="uid://bpq1urwhoqvgv" path="res://Game/Sound/Music/BattleSong4/Chiptune Vol4 Urgent Cut 60.wav" id="5_ll6jw"]
+
+[resource]
+script = ExtResource("1_rd2ra")
+Intensity1 = ExtResource("1_h4bh0")
+Intensity2 = ExtResource("2_wwqm4")
+Intensity3 = ExtResource("3_n2b63")
+Loop30 = ExtResource("4_jf8ql")
+Loop60 = ExtResource("5_ll6jw")
+ReverbTail = 3.5869999999999997
+metadata/_custom_type_script = "uid://dd4sux7yrhd3k"
