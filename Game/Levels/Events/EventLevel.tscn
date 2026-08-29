@@ -5,31 +5,26 @@
 
 [node name="EventLevel" type="Node2D" unique_id=803163974 node_paths=PackedStringArray("Title", "Description", "Option")]
 script = ExtResource("1_h1hrm")
-Title = NodePath("Control/VBoxContainer/Title")
-Description = NodePath("Control/VBoxContainer/Description")
-Option = NodePath("Control/VBoxContainer/Option")
+Title = NodePath("CanvasLayer/Control/VBoxContainer/Title")
+Description = NodePath("CanvasLayer/Control/VBoxContainer/Description")
+Option = NodePath("CanvasLayer/Control/VBoxContainer/Option")
 Song = ExtResource("2_j1mgq")
 
-[node name="Control" type="MarginContainer" parent="." unique_id=25985455]
-custom_minimum_size = Vector2(1280, 720)
-custom_maximum_size = Vector2(1280, 720)
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=36850191]
+
+[node name="Control" type="PanelContainer" parent="CanvasLayer" unique_id=1981729552]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1280.0
-offset_bottom = 720.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1357929563]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=1357929563]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Title" type="Label" parent="Control/VBoxContainer" unique_id=1603734448]
+[node name="Title" type="Label" parent="CanvasLayer/Control/VBoxContainer" unique_id=1603734448]
+custom_maximum_size = Vector2(1920, 1080)
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "Title
@@ -38,7 +33,8 @@ text = "Title
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="Description" type="Label" parent="Control/VBoxContainer" unique_id=261468280]
+[node name="Description" type="Label" parent="CanvasLayer/Control/VBoxContainer" unique_id=261468280]
+custom_maximum_size = Vector2(1920, 1080)
 layout_mode = 2
 theme_override_font_sizes/font_size = 42
 text = "Description
@@ -46,7 +42,7 @@ text = "Description
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="Option" type="Button" parent="Control/VBoxContainer" unique_id=1403581693]
+[node name="Option" type="Button" parent="CanvasLayer/Control/VBoxContainer" unique_id=1403581693]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
