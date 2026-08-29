@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://cu7821jxwoey4" path="res://Game/Levels/Shop/ShopItem.gd" id="8_q3x87"]
 [ext_resource type="Resource" uid="uid://drao7uaigwc0o" path="res://Game/Levels/Shop/Items/Relic_AttackSpeed.tres" id="9_puf6v"]
 [ext_resource type="Script" uid="uid://drgly3oe5f0vj" path="res://Game/Levels/Shop/Relic.gd" id="10_78ql8"]
+[ext_resource type="PackedScene" uid="uid://xwgn73p1qflw" path="res://Game/UI/Pause/pause_menu.tscn" id="16_gv2c2"]
 
 [sub_resource type="Resource" id="Resource_xwuac"]
 script = ExtResource("6_c6e86")
@@ -263,8 +264,14 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 128.0
+offset_bottom = 72.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 40
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Map/MarginContainer" unique_id=994869441]
 clip_contents = false
@@ -287,6 +294,7 @@ theme_override_constants/separation = 100
 [node name="Layer4_Battle" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer4" unique_id=546445709 instance=ExtResource("2_y0jfu")]
 layout_mode = 2
 DifficultyMultiplier = SubResource("Resource_xwuac")
+TooltipText = "Tooltip Text"
 
 [node name="Layer3" type="HBoxContainer" parent="Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1748003898]
 layout_mode = 2
@@ -296,6 +304,7 @@ theme_override_constants/separation = 100
 [node name="Layer3_Battle_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer3" unique_id=1329939641 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("2_yvp5d")]
 layout_mode = 2
 DifficultyMultiplier = SubResource("Resource_85q8n")
+TooltipText = "Tooltip Text"
 ChildNodes = [NodePath("../../Layer4/Layer4_Battle")]
 
 [node name="Layer3_WeaponE_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer3" unique_id=131662834 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_1t1ls")]
@@ -318,18 +327,21 @@ theme_override_constants/separation = 100
 [node name="Layer2_Battle_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer2" unique_id=69469363 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_bkk0o")]
 layout_mode = 2
 DifficultyMultiplier = SubResource("Resource_c6e86")
+TooltipText = "Tooltip Text"
 scene_to_load = ExtResource("3_bkk0o")
 ChildNodes = [NodePath("../../Layer3/Layer3_Battle_01")]
 
 [node name="Layer2_Battle_02" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer2" unique_id=1840558396 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_bkk0o")]
 layout_mode = 2
 DifficultyMultiplier = SubResource("Resource_q3x87")
+TooltipText = "Tooltip Text"
 scene_to_load = ExtResource("3_bkk0o")
 ChildNodes = [NodePath("../../Layer3/Layer3_WeaponE_01")]
 
 [node name="Layer2_Battle_03" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer2" unique_id=1713918069 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_bkk0o")]
 layout_mode = 2
 DifficultyMultiplier = SubResource("Resource_puf6v")
+TooltipText = "Tooltip Text"
 scene_to_load = ExtResource("3_bkk0o")
 ChildNodes = [NodePath("../../Layer3/Layer3_Shop")]
 
@@ -358,6 +370,7 @@ theme_override_constants/separation = 100
 [node name="Layer0_Battle_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer0" unique_id=1220550427 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_bkk0o")]
 layout_mode = 2
 DifficultyMultiplier = SubResource("Resource_aw0qy")
+TooltipText = "Tooltip Text"
 scene_to_load = ExtResource("5_1t1ls")
 ChildNodes = [NodePath("../../Layer1/Layer1_EventNode_01"), NodePath("../../Layer1/Layer1_ShopNode_01")]
 
@@ -368,3 +381,8 @@ unique_name_in_owner = true
 script = ExtResource("7_fq2qd")
 Bus = &"Music"
 metadata/_custom_type_script = "uid://q01x67dllf0s"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=16007206]
+
+[node name="PauseMenu" parent="CanvasLayer" unique_id=562291486 instance=ExtResource("16_gv2c2")]
+visible = false

@@ -39,7 +39,7 @@ modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_onhqh"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_onhqh"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cg0tf"]
 texture = ExtResource("1_vtyxt")
 texture_margin_left = 16.0
 texture_margin_top = 16.0
@@ -103,7 +103,7 @@ Button/styles/hover = SubResource("StyleBoxTexture_qh76n")
 Button/styles/normal = SubResource("StyleBoxTexture_kp2hc")
 Button/styles/pressed = SubResource("StyleBoxTexture_5gwt3")
 Label/styles/focus = SubResource("StyleBoxEmpty_onhqh")
-PanelContainer/styles/panel = SubResource("StyleBoxTexture_onhqh")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_cg0tf")
 ProgressBar/colors/font_color = Color(0.95, 0.95, 0.95, 1)
 ProgressBar/colors/font_outline_color = Color(0, 0, 0, 1)
 ProgressBar/constants/outline_size = 0

@@ -9,6 +9,7 @@ var current_floor = 0
 const SongTransitionTime = 0.5
 const LoseScreen: PackedScene = preload("res://Game/UI/Lose/LoseScreen.tscn")
 const WinScreen: PackedScene = preload("res://Game/UI/Win/WinScreen.tscn")
+@onready var pauseMenu: PauseMenu = $CanvasLayer/PauseMenu
 
 func _ready() -> void:
 	setup_cursor()
@@ -68,3 +69,8 @@ func setup_cursor():
 	var image = mouseCursor.get_image()
 	image.resize(mouseCursor.get_width() * 2, mouseCursor.get_height() * 2)
 	Input.set_custom_mouse_cursor(image)
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().paused = true
+		pauseMenu.visible = true

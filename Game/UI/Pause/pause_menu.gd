@@ -1,0 +1,14 @@
+extends Control
+
+class_name PauseMenu
+
+func _on_continue_pressed() -> void:
+	get_tree().paused = false
+	visible = false
+	pass # Replace with function body.
+
+
+func _on_back_to_main_menu_pressed() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://Game/UI/MainMenu.tscn")
+	pass # Replace with function body.
