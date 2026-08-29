@@ -32,7 +32,8 @@ You are a hitman with trust issues.
 Your trust meter is the most important number to keep track off.
 As it gets lower, more \"fake\" things will happen.
 such as fake bullets that do not hurt.
-Try to keep your trust up."
+Try to keep your trust up.
+Everything that is fake will show itself as PURPLE once you interact with it"
 horizontal_alignment = 1
 vertical_alignment = 1
 
