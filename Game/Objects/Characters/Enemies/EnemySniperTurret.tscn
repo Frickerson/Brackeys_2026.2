@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cy2njsi3i6a2f"]
+
+[ext_resource type="PackedScene" uid="uid://teyr6mhnpf5p" path="res://Game/Objects/Characters/Enemies/Enemy.tscn" id="1_nu573"]
+[ext_resource type="Script" uid="uid://biu3juy6ojp0g" path="res://Game/Objects/Characters/Enemies/Sniper.gd" id="2_7tanp"]
+[ext_resource type="PackedScene" uid="uid://bqcb7qsk4to4s" path="res://Game/Objects/Weapons/Sniper.tscn" id="3_fqeer"]
+
+[sub_resource type="Curve" id="Curve_ege3s"]
+_data = [Vector2(0.008042898, 1), 0.0, 0.0, 0, 0, Vector2(0.8927614, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="EnemySniper" unique_id=2024416287 instance=ExtResource("1_nu573")]
+script = ExtResource("2_7tanp")
+MinMoveRange = 0.0
+MaxMoveRange = 0.0
+MoveSpeed = 0.0
+MinMoveSpeed = 0.0
+Acceleration = 0.0
+MinAcceleration = 0.0
+Deceleration = 0.0
+DefaultWeapon = ExtResource("3_fqeer")
+MaxHealth = 40
+
+[node name="Sprite" parent="CollisionShape2D" parent_id_path=PackedInt32Array(816673183) index="0" unique_id=1978200661]
+region_rect = Rect2(561, 85, 16, 16)
+
+[node name="Laser" type="Line2D" parent="." index="4" unique_id=449919511]
+width = 2.0
+width_curve = SubResource("Curve_ege3s")
+default_color = Color(1, 0, 0, 0.4745098)
