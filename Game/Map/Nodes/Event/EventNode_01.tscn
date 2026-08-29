@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dn0q65gh1otfb"]
+
+[ext_resource type="PackedScene" uid="uid://chnydkutel05w" path="res://Game/Map/Nodes/EventNode.tscn" id="1_st313"]
+[ext_resource type="Script" uid="uid://b7ppuiu3c0i8x" path="res://Game/Levels/Events/EventOption.gd" id="2_xs560"]
+[ext_resource type="Script" uid="uid://do8q2bwentmfw" path="res://Game/Objects/Characters/Base/CharacterMultipliers.gd" id="3_qy8j1"]
+
+[sub_resource type="Resource" id="Resource_irvwc"]
+script = ExtResource("3_qy8j1")
+metadata/_custom_type_script = "uid://do8q2bwentmfw"
+
+[sub_resource type="Resource" id="Resource_f15dg"]
+script = ExtResource("2_xs560")
+Title = "Close your eyes"
+TrustChange = 20.0
+MultipliersChange = SubResource("Resource_irvwc")
+TooltipText = "I wonder"
+metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
+
+[sub_resource type="Resource" id="Resource_pfe2c"]
+script = ExtResource("3_qy8j1")
+BulletSpeedMultiplier = 0.3
+metadata/_custom_type_script = "uid://do8q2bwentmfw"
+
+[sub_resource type="Resource" id="Resource_chjyf"]
+script = ExtResource("2_xs560")
+Title = "Leave one eye open"
+TrustChange = -10.0
+MultipliersChange = SubResource("Resource_pfe2c")
+TooltipText = "Lose 10 trust but increase bullet speed by 30%"
+metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
+
+[sub_resource type="Resource" id="Resource_7afi4"]
+script = ExtResource("3_qy8j1")
+MaxHealthMultiplier = 1.0
+metadata/_custom_type_script = "uid://do8q2bwentmfw"
+
+[sub_resource type="Resource" id="Resource_scqhg"]
+script = ExtResource("2_xs560")
+Title = "Stare her down"
+TrustChange = -20.0
+MultipliersChange = SubResource("Resource_7afi4")
+TooltipText = "Lost 20 trust but increase Max health by 100%"
+metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
+
+[node name="EventNode" unique_id=546445709 instance=ExtResource("1_st313")]
+Title = "An old woman asks you to close your eyes"
+Descrition = "What do you do?"
+Options = Array[ExtResource("2_xs560")]([SubResource("Resource_f15dg"), SubResource("Resource_chjyf"), SubResource("Resource_scqhg")])
