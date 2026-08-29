@@ -16,6 +16,8 @@ static var WeaponClass : PackedScene
 
 var Respawning : bool = false
 
+signal TrustDepleted
+
 func _ready() -> void:
 	if !Multipliers && DefaultMultipliers:
 		Multipliers = DefaultMultipliers
@@ -92,6 +94,7 @@ func _update_weapon() -> void:
 func _on_death():
 	if Trust <= 0.0:
 		super._on_death()
+		TrustDepleted.emit()
 		return
 	
 	Respawning = true

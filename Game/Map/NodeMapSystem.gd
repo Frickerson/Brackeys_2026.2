@@ -7,6 +7,7 @@ var mapSong :OvaniSong = preload("res://Game/Sound/Music/MapSong/MapSong.tres")
 var CurrentNode : BaseNode = null
 var current_floor = 0
 const SongTransitionTime = 0.5
+@onready var MainMenu: PackedScene = preload("res://Game/UI/MainMenu.tscn")
 
 func _ready() -> void:
 	setup_cursor()
@@ -37,9 +38,13 @@ func on_node_pressed(node: BaseNode):
 	var onPlayerDied = func():
 		$OvaniPlayer.FadeIntensity(1-(Player.Trust/100),1)
 	
+	var trustDepleted = func():
+		get_tree().call_deferred("change_scene_to_packed", MainMenu)
+	
 	var player = get_tree().get_first_node_in_group("Player") as Player
 	if player:
 		player.OnDied.connect(onPlayerDied)
+		player.TrustDepleted.connect(trustDepleted)
 	%Map.visible = false
 
 func on_win():
@@ -49,7 +54,7 @@ func on_win():
 	
 	CurrentNode.set_cleared()
 	if CurrentNode.ChildNodes.is_empty(): 
-		get_tree().quit()
+		get_tree().change_scene_to_packed(MainMenu)
 	else:
 		for child in CurrentNode.ChildNodes:
 			child.set_enabled(true)
