@@ -83,15 +83,15 @@ func _get_modifier_total_text(multiplier : float, name : String) -> String:
 	var total_multiplier = multiplier - 1.0
 	
 	var color = "white"
-	var sign = ""
+	var multiplier_sign = ""
 	if total_multiplier > 0.0:
-		sign =  "+"
+		multiplier_sign =  "+"
 		color = "green"
 		
 	if total_multiplier < 0.0:
 		color = "red"
 		
-	return str(name, " ", "[color=", color, "]", sign, total_multiplier * 100, "%[/color]", "\n")
+	return str(name, " ", "[color=", color, "]", multiplier_sign, total_multiplier * 100, "%[/color]", "\n")
 	
 static func get_default() -> CharacterMultipliers:
 	var result = CharacterMultipliers.new()
@@ -110,4 +110,39 @@ static func get_default() -> CharacterMultipliers:
 	result.DecelerationMultiplier = 1.0
 	
 	return result
+
+static func _get_random_multiplier(amount : float) -> CharacterMultipliers:
+	var result = CharacterMultipliers.new()
+	var multiplier_array = [
+			amount,
+			0.0,
+			0.0,
+			0.0,
+			0.0,
+			0.0,
+			0.0,
+			0.0,
+			0.0,
+			0.0,
+			0.0,
+			0.0,
+			0.0,
+		]
 	
+	multiplier_array.shuffle()
+	
+	result.AttackSpeedMultiplier = multiplier_array[0]
+	result.AttackRangeMultiplier = multiplier_array[1]
+	result.DamageMultiplier = multiplier_array[2]
+	result.MovementSpeedMultiplier = multiplier_array[3]
+	result.ReloadSpeedMultiplier = multiplier_array[4]
+	result.BulletSizeMultiplier = multiplier_array[5]
+	result.BulletSpeedMultiplier = multiplier_array[6]
+	result.MaxHealthMultiplier = multiplier_array[7]
+	result.GoldDropMultiplier = multiplier_array[8]
+	result.HealthDropMultiplier = multiplier_array[9]
+	result.HomingMultiplier = multiplier_array[10]
+	result.AccelerationMultiplier = multiplier_array[11]
+	result.DecelerationMultiplier = multiplier_array[12]
+	
+	return result

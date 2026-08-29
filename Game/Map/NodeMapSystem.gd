@@ -54,6 +54,7 @@ func on_node_pressed(node: BaseNode):
 func on_win():
 	var scene = CurrentNode._get_loaded_level()
 	scene._on_win.disconnect(on_win)
+	scene._finish()
 	scene.queue_free()
 	
 	CurrentNode.set_cleared()
