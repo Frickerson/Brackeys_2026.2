@@ -75,16 +75,3 @@ func setup_cursor():
 	var image = mouseCursor.get_image()
 	image.resize(mouseCursor.get_width() * 2, mouseCursor.get_height() * 2)
 	Input.set_custom_mouse_cursor(image)
-
-func _input(event: InputEvent) -> void:
-	if not event.is_pressed():
-		return
-	
-	if get_tree().paused || pauseMenu.visible:
-		get_tree().paused = false
-		pauseMenu.visible = false
-		return
-	
-	if event.is_action("ui_cancel"):
-		get_tree().paused = true
-		pauseMenu.visible = true
