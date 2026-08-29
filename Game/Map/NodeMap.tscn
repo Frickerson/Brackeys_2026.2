@@ -15,7 +15,6 @@
 [ext_resource type="Resource" uid="uid://ceqd58ge66ip7" path="res://Game/Levels/Shop/Items/Relic_SlowButSteady.tres" id="11_85q8n"]
 [ext_resource type="Resource" uid="uid://dhssbwlkm7qid" path="res://Game/Levels/Shop/Items/Relic_SmallReset.tres" id="13_ndpkd"]
 [ext_resource type="Resource" uid="uid://cbg8u05i2fsrf" path="res://Game/Levels/Shop/Items/Relic_SlipAndSlide.tres" id="13_y0jfu"]
-[ext_resource type="PackedScene" uid="uid://067y0g3wod4e" path="res://Game/Levels/Battle/LevelBattle_HomingTurret.tscn" id="14_t453o"]
 [ext_resource type="Resource" uid="uid://dsdt7xwvpk3yi" path="res://Game/Levels/Shop/Items/Relic_SpeedJuice.tres" id="14_u8on0"]
 [ext_resource type="Resource" uid="uid://bjcnlkt5gp7ur" path="res://Game/Levels/Shop/Items/Relic_SWATJuice.tres" id="15_xwuac"]
 [ext_resource type="Resource" uid="uid://vhu374qmcmy4" path="res://Game/Levels/Shop/Items/Relic_Gigantifier.tres" id="16_85q8n"]
@@ -253,14 +252,14 @@ metadata/_custom_type_script = "uid://do8q2bwentmfw"
 [sub_resource type="Resource" id="Resource_tldeo"]
 script = ExtResource("30_w30kj")
 Title = "Trust your partner"
-TrustChange = 20.0
+TrustChange = 30.0
 MultipliersChange = SubResource("Resource_w30kj")
-TooltipText = "you lose money with every coin. but all your other multipliers increase"
+TooltipText = "As you fall on the ground, you are at least glad you trusted them"
 metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
 
 [sub_resource type="Resource" id="Resource_aru4v"]
 script = ExtResource("6_c6e86")
-HomingMultiplier = 0.1
+HomingMultiplier = 0.3
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [sub_resource type="Resource" id="Resource_7sjfb"]
@@ -612,7 +611,6 @@ theme_override_constants/separation = 100
 [node name="Layer5_Battle" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer5" unique_id=2063840132 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("2_y0jfu")]
 layout_mode = 2
 DifficultyMultiplier = SubResource("Resource_xwuac")
-scene_to_load = ExtResource("14_t453o")
 ChildNodes = [NodePath("../../Layer6/Layer6_Battle")]
 
 [node name="Layer5_Battle2" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer5" unique_id=1564440890 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("2_y0jfu")]
