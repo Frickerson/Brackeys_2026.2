@@ -14,9 +14,10 @@ func _set_description(description : String) -> void:
 	
 func _set_options(options : Array[EventOption]) -> void:
 	for option in options:
+		option._select_weapon()
 		var new_option = _create_option()
-		new_option.text = option.Title
-		new_option.tooltip_text = option.TooltipText
+		new_option.text = option._get_title()
+		new_option.tooltip_text = option._get_tooltip()
 		new_option.pressed.connect(_on_option_pressed.bind(option))
 	
 	Option.queue_free()
@@ -30,8 +31,7 @@ func _on_option_pressed(option : EventOption):
 	Player._update_trust(option.TrustChange)
 	if option.MultipliersChange: 
 		Player._add_multipliers(option.MultipliersChange)
-	if not option.NewWeaponList.is_empty():
-		var new_weapon = option.NewWeaponList.pick_random()
-		Player.WeaponClass = new_weapon
+	if option.ChosenWeapon:
+		Player.WeaponClass = option.ChosenWeapon
 	_on_win.emit()
 	pass

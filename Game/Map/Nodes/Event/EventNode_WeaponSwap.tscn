@@ -2,13 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://chnydkutel05w" path="res://Game/Map/Nodes/EventNode.tscn" id="1_35gqp"]
 [ext_resource type="Script" uid="uid://b7ppuiu3c0i8x" path="res://Game/Levels/Events/EventOption.gd" id="2_pvk7f"]
-[ext_resource type="PackedScene" uid="uid://b41p3vi1b188i" path="res://Game/Objects/Weapons/Machinegun.tscn" id="3_kx7af"]
 
 [sub_resource type="Resource" id="Resource_pvk7f"]
 script = ExtResource("2_pvk7f")
 Title = "Swap for the sniper"
 TooltipText = ""
-NewWeaponList = Array[PackedScene]([ExtResource("3_kx7af")])
 metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
 
 [sub_resource type="Resource" id="Resource_u4w3n"]
