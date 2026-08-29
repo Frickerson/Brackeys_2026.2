@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="Relic" format=3 uid="uid://dhssbwlkm7qid"]
+
+[ext_resource type="Script" uid="uid://do8q2bwentmfw" path="res://Game/Objects/Characters/Base/CharacterMultipliers.gd" id="1_wqlsq"]
+[ext_resource type="Script" uid="uid://drgly3oe5f0vj" path="res://Game/Levels/Shop/Relic.gd" id="2_sa7c5"]
+
+[sub_resource type="Resource" id="Resource_x84eq"]
+script = ExtResource("1_wqlsq")
+AttackSpeedMultiplier = -0.1
+DamageMultiplier = -0.1
+AttackRangeMultiplier = -0.1
+MovementSpeedMultiplier = -0.1
+ReloadSpeedMultiplier = -0.1
+BulletSizeMultiplier = -0.1
+BulletSpeedMultiplier = -0.1
+MaxHealthMultiplier = -0.1
+GoldDropMultiplier = -0.1
+HealthDropMultiplier = -0.1
+HomingMultiplier = -0.1
+AccelerationMultiplier = -0.1
+DecelerationMultiplier = -0.1
+metadata/_custom_type_script = "uid://do8q2bwentmfw"
+
+[resource]
+script = ExtResource("2_sa7c5")
+MultipliersChange = SubResource("Resource_x84eq")
+Title = "Small Reset"
+Cost = 1
+Tooltip = "That was overwhelming"
+metadata/_custom_type_script = "uid://drgly3oe5f0vj"
