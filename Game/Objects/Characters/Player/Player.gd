@@ -30,6 +30,8 @@ func _ready() -> void:
 		
 	if WeaponClass:
 		DefaultWeapon = WeaponClass
+	else:
+		WeaponClass = DefaultWeapon
 	
 	super._ready()
 	HealthBarRef.CurrentHealth = HealthBarRef.MaxHealth * HealthRatio

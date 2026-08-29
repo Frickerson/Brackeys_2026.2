@@ -14,7 +14,17 @@ var ChosenWeaponName : String = ""
 func _select_weapon() -> void:
 	if NewWeaponList.is_empty():
 		return
+	
+	var player_weapon : String = ""
+	for key in NewWeaponList.keys():
+		var value = NewWeaponList[key]
+		if value.resource_path == Player.WeaponClass.resource_path:
+			player_weapon = key
+			break
 		
+	if player_weapon != "":
+		NewWeaponList.erase(player_weapon)
+	
 	ChosenWeaponName = NewWeaponList.keys().pick_random()
 	ChosenWeapon = NewWeaponList[ChosenWeaponName]
 
