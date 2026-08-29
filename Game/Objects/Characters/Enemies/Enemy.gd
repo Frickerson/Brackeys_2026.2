@@ -52,7 +52,6 @@ func _ready() -> void:
 	
 	_wake_up()
 
-
 func _physics_process(delta: float) -> void:
 	if Dying:
 		return
@@ -163,6 +162,10 @@ func _update_weapon() -> void:
 	super._update_weapon()
 	if EquippedWeapon:
 		EquippedWeapon._update_multipliers(_get_multipliers())
+		
+func _update_multipliers() -> void:
+	_update_weapon()
+	HealthBarRef._initialize( MaxHealth * _get_multipliers().MaxHealthMultiplier)
 		
 func _on_death():
 	if not Dying:

@@ -8,7 +8,7 @@ var LevelMultiplier : CharacterMultipliers = null
 func _ready() -> void:
 	if LevelMultiplier:
 		Enemy._override_multipliers(LevelMultiplier)
-		get_tree().call_group("Enemy", "_update_weapon")
+		get_tree().call_group("Enemy", "_update_multipliers")
 
 	var enemies = get_tree().get_nodes_in_group("Enemy")
 	for enemy : Enemy in enemies:

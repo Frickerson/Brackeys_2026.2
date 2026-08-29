@@ -41,12 +41,7 @@ class_name CharacterBase
 
 @export_group("Health")
 @export var HealthBarRef : HealthBar
-@export var MaxHealth : int = 100:
-	get:
-		var multipliers = _get_multipliers()
-		if multipliers:
-			return max(MaxHealth * multipliers.MaxHealthMultiplier, MinMaxHealth)
-		return MaxHealth
+@export var MaxHealth : int = 100
 @export var MinMaxHealth : int = 10
 
 @export_group("Multipliers")
