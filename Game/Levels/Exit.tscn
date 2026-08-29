@@ -25,6 +25,12 @@ curve = SubResource("Curve_5qt2r")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_b8hjc"]
 particle_flag_disable_z = true
+emission_shape = 6
+emission_ring_axis = Vector3(1, 1, 1)
+emission_ring_height = 16.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
 angle_min = -192.2
 angle_max = 196.20001
 orbit_velocity_min = -1.053
@@ -33,7 +39,7 @@ radial_velocity_min = 7.4999776
 radial_velocity_max = 7.4999776
 gravity = Vector3(0, 0, 0)
 scale_max = 4.0
-color = Color(0.0522, 0.0522, 0.87, 1)
+color = Color(0.32364523, 0.51357657, 0.9985618, 1)
 alpha_curve = SubResource("CurveTexture_c4ryr")
 
 [node name="Exit" type="Area2D" unique_id=181809075]
