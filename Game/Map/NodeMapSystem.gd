@@ -58,8 +58,7 @@ func on_win():
 	CurrentNode.set_cleared()
 	if CurrentNode.ChildNodes.is_empty(): 
 		Player.Multipliers = null
-		Player.Health = 100
-		Player.PreviousMaxHealth = 100
+		Player.HealthRatio = 1.0
 		Player.Gold = 100
 		Player.Trust = 100
 		Player.Relics = []
