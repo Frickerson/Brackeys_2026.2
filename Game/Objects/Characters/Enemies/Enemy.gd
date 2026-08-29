@@ -18,6 +18,7 @@ class_name Enemy
 @export_group("")
 @export var NavigationAgent : NavigationAgent2D
 @export var RayCast : RayCast2D
+@export var WakeUpTime : float = 1.0
 
 @onready var PlayerRef : Player = get_tree().get_first_node_in_group("Player")
 
@@ -30,6 +31,9 @@ static var AdditionalMultipliers : CharacterMultipliers
 
 var SpawnPosition : Vector2
 const hurtStream: AudioStream = preload("res://Game/Sound/Effects/hurt/hurt-e.ogg")
+
+var Awake : bool = false
+var WakingUp : bool = false
 
 func _ready() -> void:
 	if !Multipliers && DefaultMultipliers:
@@ -45,6 +49,8 @@ func _ready() -> void:
 	
 	SpawnPosition = global_position
 	$HurtAudio.stream = hurtStream
+	
+	_wake_up()
 
 
 func _physics_process(delta: float) -> void:
@@ -60,6 +66,12 @@ func _physics_process(delta: float) -> void:
 		EquippedWeapon._toggle_attack(false)
 		_move_to(SpawnPosition)
 		_rotate_towards(SpawnPosition)
+		Awake = false
+		return
+		
+	if not Awake:
+		if not WakingUp:
+			_wake_up()
 		return
 
 	var player_position = PlayerRef.global_position
@@ -203,6 +215,12 @@ func _get_random_drop_info() -> DropInfo:
 		previous_chances += info.Chance
 		
 	return null
+	
+func _wake_up() -> void:
+	WakingUp = true
+	await get_tree().create_timer(WakeUpTime).timeout
+	Awake = true
+	WakingUp = false
 	
 static func _get_multipliers() -> CharacterMultipliers:
 	var result = Multipliers
