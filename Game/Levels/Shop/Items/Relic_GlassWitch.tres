@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Relic" format=3 uid="uid://wepde5aw5a5d"]
+
+[ext_resource type="Script" uid="uid://do8q2bwentmfw" path="res://Game/Objects/Characters/Base/CharacterMultipliers.gd" id="1_46kdb"]
+[ext_resource type="Script" uid="uid://drgly3oe5f0vj" path="res://Game/Levels/Shop/Relic.gd" id="2_1ou2r"]
+
+[sub_resource type="Resource" id="Resource_x84eq"]
+script = ExtResource("1_46kdb")
+AttackSpeedMultiplier = -0.5
+DamageMultiplier = 1.0
+MaxHealthMultiplier = -0.4
+HomingMultiplier = 1.0
+metadata/_custom_type_script = "uid://do8q2bwentmfw"
+
+[resource]
+script = ExtResource("2_1ou2r")
+MultipliersChange = SubResource("Resource_x84eq")
+Title = "Glass Witch"
+Cost = 50
+Tooltip = "You're casting spells"
+metadata/_custom_type_script = "uid://drgly3oe5f0vj"

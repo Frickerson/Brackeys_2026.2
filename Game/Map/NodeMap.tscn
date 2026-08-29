@@ -21,6 +21,16 @@
 [ext_resource type="Resource" uid="uid://bjcnlkt5gp7ur" path="res://Game/Levels/Shop/Items/Relic_SWATJuice.tres" id="15_xwuac"]
 [ext_resource type="Resource" uid="uid://vhu374qmcmy4" path="res://Game/Levels/Shop/Items/Relic_Gigantifier.tres" id="16_85q8n"]
 [ext_resource type="PackedScene" uid="uid://xwgn73p1qflw" path="res://Game/UI/Pause/pause_menu.tscn" id="16_gv2c2"]
+[ext_resource type="Resource" uid="uid://c1yt5nyybpcb3" path="res://Game/Levels/Shop/Items/Relic_Gambler.tres" id="17_vsopl"]
+[ext_resource type="Resource" uid="uid://wepde5aw5a5d" path="res://Game/Levels/Shop/Items/Relic_GlassWitch.tres" id="18_nov1i"]
+[ext_resource type="Resource" uid="uid://u1mann4h1m27" path="res://Game/Levels/Shop/Items/Relic_GoldMiner.tres" id="19_0jauk"]
+[ext_resource type="Resource" uid="uid://d008a1d1ykist" path="res://Game/Levels/Shop/Items/Relic_IceSkater.tres" id="20_w30kj"]
+[ext_resource type="Resource" uid="uid://7imhvwyl74ye" path="res://Game/Levels/Shop/Items/Relic_Medic.tres" id="21_tldeo"]
+[ext_resource type="Resource" uid="uid://df1acxckooo88" path="res://Game/Levels/Shop/Items/Relic_Sniper.tres" id="22_xu0uq"]
+[ext_resource type="Resource" uid="uid://ckojqahybkn27" path="res://Game/Levels/Shop/Items/Relic_SprayAndPray.tres" id="24_74p4k"]
+[ext_resource type="Resource" uid="uid://bobnjlxe3lb8h" path="res://Game/Levels/Shop/Items/Relic_Tank.tres" id="26_47vi8"]
+[ext_resource type="Resource" uid="uid://cajoxad14qi4f" path="res://Game/Levels/Shop/Items/Relic_Troll.tres" id="27_wma63"]
+[ext_resource type="Resource" uid="uid://cuspiveseyrrc" path="res://Game/Levels/Shop/Items/Relic_WreckingBall.tres" id="28_iaf5v"]
 
 [sub_resource type="Resource" id="Resource_xwuac"]
 script = ExtResource("6_c6e86")
@@ -279,7 +289,7 @@ theme_override_constants/separation = 100
 
 [node name="Layer1_ShopNode_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer1" unique_id=1133477007 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("7_c6e86")]
 layout_mode = 2
-Items = Array[ExtResource("8_q3x87")]([ExtResource("9_puf6v"), ExtResource("14_u8on0"), ExtResource("15_xwuac"), ExtResource("16_85q8n")])
+Items = Array[ExtResource("8_q3x87")]([ExtResource("9_puf6v"), ExtResource("17_vsopl"), ExtResource("16_85q8n"), ExtResource("18_nov1i"), ExtResource("19_0jauk"), ExtResource("20_w30kj"), ExtResource("21_tldeo"), ExtResource("13_y0jfu"), ExtResource("11_85q8n"), ExtResource("13_ndpkd"), ExtResource("22_xu0uq"), ExtResource("14_u8on0"), ExtResource("24_74p4k"), ExtResource("15_xwuac"), ExtResource("26_47vi8"), ExtResource("27_wma63"), ExtResource("28_iaf5v")])
 ChildNodes = [NodePath("../../Layer2/Layer2_Battle_01"), NodePath("../../Layer2/Layer2_Battle_02")]
 
 [node name="Layer1_EventNode_01" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Layer1" unique_id=2065172955 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_1t1ls")]
