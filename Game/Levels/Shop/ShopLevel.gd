@@ -24,6 +24,8 @@ func _set_items(items : Array[ShopItem]) -> void:
 	if items.size() < Items.size():
 		return
 	
+	items = _set_fake_items(items)
+	
 	items.shuffle()
 	for index in Items.size():
 		var current_item = Items[index]
@@ -46,8 +48,18 @@ func _update_items() -> void:
 
 func _on_item_pressed(item : ShopItem):
 	Player._update_gold(-item.Cost)
-	ItemMap.find_key(item).disabled = true
-	item._on_buy()
+	var item_button : Button = ItemMap.find_key(item)
+	var style_box = StyleBoxFlat.new()
+	item_button.disabled = true
+	if not item.IsFake:
+		item._on_buy()
+		style_box.bg_color = Color.FOREST_GREEN
+		item_button.add_theme_stylebox_override("disabled", style_box)
+	else:
+		style_box.bg_color = Color.CRIMSON
+		item_button.add_theme_stylebox_override("disabled", style_box)
+		item_button.text = item.ScammedText
+		item_button.tooltip_text = item.ScammedText
 	_update_items()
 	_update_gold()
 		
@@ -56,3 +68,13 @@ func _on_exit():
 	
 func _update_gold() -> void:
 	GoldCounterRef._set_gold_amount(Player.Gold)
+	
+func _set_fake_items(items : Array[ShopItem]) -> Array[ShopItem]:
+	var distrust = (100.0 - Player.Trust) / 100.0
+	var fake_item_amount = floori(4.0 * distrust)
+	items.shuffle()
+	
+	for index in fake_item_amount:
+		items[index].IsFake = true
+		
+	return items
