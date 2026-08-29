@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://qjyuecuw6ve5" path="res://Game/Objects/Bullets/Bullet.tscn" id="2_4q7qq"]
 [ext_resource type="Texture2D" uid="uid://n2ajxit2asr1" path="res://Game/Assets/Sprites/Objects/tile_0000.png" id="3_5slob"]
 [ext_resource type="Texture2D" uid="uid://b7dy8sj2ffmn" path="res://Game/Assets/Sprites/pixel-white.png" id="4_lhyph"]
-[ext_resource type="AudioStream" uid="uid://cffmo6ghrvpdg" path="res://Game/Sound/Effects/EmptyGun.ogg" id="5_5slob"]
+[ext_resource type="AudioStream" uid="uid://cffmo6ghrvpdg" path="res://Game/Sound/Effects/Gun/EmptyGun.ogg" id="5_5slob"]
 [ext_resource type="Texture2D" uid="uid://dby3qkdsf1te1" path="res://Game/Assets/Tilesets/tilemap_packed.png" id="6_3tqch"]
 
 [sub_resource type="Gradient" id="Gradient_lhyph"]

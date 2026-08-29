@@ -1,0 +1,65 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://hgj3f2yo2qxp"]
+
+[ext_resource type="Texture2D" uid="uid://divekcta86cr0" path="res://Game/Assets/Sprites/Objects/Guns/subfusile.png" id="1_hj17u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqvj6"]
+atlas = ExtResource("1_hj17u")
+region = Rect2(0, 0, 21, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51155"]
+atlas = ExtResource("1_hj17u")
+region = Rect2(21, 0, 21, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7kc7d"]
+atlas = ExtResource("1_hj17u")
+region = Rect2(42, 0, 21, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqiux"]
+atlas = ExtResource("1_hj17u")
+region = Rect2(63, 0, 21, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7jwe"]
+atlas = ExtResource("1_hj17u")
+region = Rect2(84, 0, 21, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6ad3"]
+atlas = ExtResource("1_hj17u")
+region = Rect2(105, 0, 21, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65qik"]
+atlas = ExtResource("1_hj17u")
+region = Rect2(0, 0, 21, 13)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jqvj6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51155")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7kc7d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqiux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7jwe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6ad3")
+}],
+"loop": 1,
+"name": &"Shooting",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65qik")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]

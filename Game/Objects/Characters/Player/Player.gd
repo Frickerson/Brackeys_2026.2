@@ -17,6 +17,7 @@ static var Health : float = -1.0
 static var WeaponClass : PackedScene
 
 var Respawning : bool = false
+const hurtStream: AudioStream = preload("res://Game/Sound/Effects/hurt/hurt-a.ogg")
 
 signal TrustDepleted
 
@@ -39,6 +40,7 @@ func _ready() -> void:
 		Health = HealthBarRef.CurrentHealth
 	else:
 		HealthBarRef.CurrentHealth = Health
+	$HurtAudio.stream = hurtStream
 
 func _physics_process(delta: float) -> void:
 	if Respawning:

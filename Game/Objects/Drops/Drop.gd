@@ -21,6 +21,9 @@ func apply(player: Player):
 	return
 
 func _on_body_entered(body: Node2D) -> void:
+	if body is not Player:
+		return
+	
 	if IsFake:
 		$GPUParticles2D.process_material.color = FakeColor
 		$GPUParticles2D.process_material.radial_velocity = Vector2(30,50)
@@ -32,13 +35,15 @@ func _on_body_entered(body: Node2D) -> void:
 		$AudioStreamPlayer2D.play()
 		return
 		
-	if body is Player:
-		apply(body as Player)
-		$GPUParticles2D.emitting = true
-		$GPUParticles2D.finished.connect(func(): queue_free())
-		$CollisionShape2D.call_deferred("set_disabled", true)
-		$Sprite2D.visible = false
-		$AudioStreamPlayer2D.play()
+	
+	apply(body as Player)
+	$GPUParticles2D.process_material.color = Color.WHITE
+	$GPUParticles2D.process_material.radial_velocity = Vector2(-50,-30)
+	$GPUParticles2D.emitting = true
+	$GPUParticles2D.finished.connect(func(): queue_free())
+	$CollisionShape2D.call_deferred("set_disabled", true)
+	$Sprite2D.visible = false
+	$AudioStreamPlayer2D.play()
 
 func _initialize(new_info : DropInfo):
 	self.info = new_info

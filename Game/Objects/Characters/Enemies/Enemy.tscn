@@ -52,3 +52,6 @@ radius = 30.0
 [node name="Arrow" type="Sprite2D" parent="." index="4" unique_id=1740017085]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("7_btusc")
+
+[node name="HurtAudio" parent="." index="5" unique_id=1809118897]
+volume_db = -6.863

@@ -29,6 +29,7 @@ static var Multipliers : CharacterMultipliers
 static var AdditionalMultipliers : CharacterMultipliers
 
 var SpawnPosition : Vector2
+const hurtStream: AudioStream = preload("res://Game/Sound/Effects/hurt/hurt-e.ogg")
 
 func _ready() -> void:
 	if !Multipliers && DefaultMultipliers:
@@ -43,6 +44,8 @@ func _ready() -> void:
 	NavigationAgent.radius = AvoidanceRadius
 	
 	SpawnPosition = global_position
+	$HurtAudio.stream = hurtStream
+
 
 func _physics_process(delta: float) -> void:
 	if Dying:

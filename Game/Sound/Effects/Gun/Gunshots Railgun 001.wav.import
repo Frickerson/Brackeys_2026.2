@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dauwikaaeyo5"
-path="res://.godot/imported/Gunshots Railgun 001.wav-8bb30f7570b211d0a2eacf65b84c4eb9.sample"
+path="res://.godot/imported/Gunshots Railgun 001.wav-ddf5e8d7dfa0ace03d465fa243df3da7.sample"
 
 [deps]
 
-source_file="res://Game/Sound/Effects/Gunshots Railgun 001.wav"
-dest_files=["res://.godot/imported/Gunshots Railgun 001.wav-8bb30f7570b211d0a2eacf65b84c4eb9.sample"]
+source_file="res://Game/Sound/Effects/Gun/Gunshots Railgun 001.wav"
+dest_files=["res://.godot/imported/Gunshots Railgun 001.wav-ddf5e8d7dfa0ace03d465fa243df3da7.sample"]
 
 [params]
 

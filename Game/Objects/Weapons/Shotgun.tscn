@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dcfga7omincif"]
 
 [ext_resource type="PackedScene" uid="uid://dimp0i6jmuvgs" path="res://Game/Objects/Weapons/Base/MultiShot.tscn" id="1_1gji4"]
-[ext_resource type="AudioStream" uid="uid://ccpku13kr0p6" path="res://Game/Sound/Effects/ShotgunRandomizer.tres" id="2_2h60h"]
+[ext_resource type="AudioStream" uid="uid://ccpku13kr0p6" path="res://Game/Sound/Effects/Gun/ShotgunRandomizer.tres" id="2_2h60h"]
 [ext_resource type="Texture2D" uid="uid://c2lxfx7vxurmb" path="res://Game/Assets/Sprites/Objects/Guns/shotgun.png" id="3_i2skp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2a2kn"]
