@@ -57,6 +57,12 @@ func on_win():
 	
 	CurrentNode.set_cleared()
 	if CurrentNode.ChildNodes.is_empty(): 
+		Player.Multipliers = null
+		Player.Health = 100
+		Player.PreviousMaxHealth = 100
+		Player.Gold = 100
+		Player.Trust = 100
+		Player.Relics = []
 		get_tree().call_deferred("change_scene_to_packed", WinScreen)
 	else:
 		for child in CurrentNode.ChildNodes:
