@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://cpywopvhwk047"]
 
-[ext_resource type="PackedScene" uid="uid://ba7k0r8ymmyye" path="res://Game/Levels/LevelBase.tscn" id="1_sajmr"]
+[ext_resource type="PackedScene" uid="uid://ba7k0r8ymmyye" path="res://Game/Levels/Battle/LevelBase.tscn" id="1_sajmr"]
 [ext_resource type="PackedScene" uid="uid://bltc4n8lvjp2u" path="res://Game/Objects/Obstacle/ChairWooden.tscn" id="2_tqs5p"]
 [ext_resource type="Material" uid="uid://dp5xut6f6ajkd" path="res://Game/Assets/Shaders/PixelShadowMaterial.tres" id="3_ikfvd"]
 [ext_resource type="PackedScene" uid="uid://c6j2r7s6g07yi" path="res://Game/Objects/Obstacle/CouchBlue.tscn" id="4_sxrpo"]
@@ -11,8 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://fyexdlhx0gwv" path="res://Game/Objects/Obstacle/TreeGreenBig.tscn" id="9_yvwxh"]
 [ext_resource type="PackedScene" uid="uid://doxbk2ykbvr5n" path="res://Game/Objects/Obstacle/TreeRedBig.tscn" id="10_supw7"]
 [ext_resource type="Texture2D" uid="uid://bt5imsn2k1y4m" path="res://Game/Assets/Sprites/gradient-radial.png" id="12_078ue"]
-[ext_resource type="PackedScene" uid="uid://cokfjwpgbsh1s" path="res://Game/Objects/Characters/Enemies/EnemyBulletHell.tscn" id="12_tqs5p"]
-[ext_resource type="PackedScene" uid="uid://bfifcr7mqxhyu" path="res://Game/Objects/Characters/Enemies/EnemyStandard.tscn" id="13_ikfvd"]
+[ext_resource type="PackedScene" uid="uid://c1d5trbh8ys4o" path="res://Game/Objects/Characters/Enemies/EnemyAreaDenial.tscn" id="12_sajmr"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_tqs5p"]
 vertices = PackedVector2Array(306, 354, 502, 358, 26, 358, 270, 354, 270, 318, 98, 286, 162, 234, 222, 226, 258, 226, 286, 234, 306, 318, 206, 98, 242, 98, 482, 198, 446, 198, 98, 146, 98, 110, 502, 26, 482, 234, 242, 62, 286, 198, 258, 190, 26, 26, 206, 62, 446, 234, 322, 234, 162, 198, 222, 190, 98, 322, 62, 322, 62, 286, 322, 198, 126, 234, 62, 110, 62, 146, 126, 198)
@@ -69,11 +68,5 @@ shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
 texture = ExtResource("12_078ue")
 
-[node name="EnemyBulletHell" parent="." index="14" unique_id=1572116529 instance=ExtResource("12_tqs5p")]
-position = Vector2(112, 80)
-
-[node name="Enemy" parent="." index="15" unique_id=400437618 instance=ExtResource("13_ikfvd")]
-position = Vector2(400, 80)
-
-[node name="Enemy2" parent="." index="16" unique_id=435665848 instance=ExtResource("13_ikfvd")]
-position = Vector2(144, 272)
+[node name="Enemy2" parent="." index="15" unique_id=239107728 instance=ExtResource("12_sajmr")]
+position = Vector2(224, 144)

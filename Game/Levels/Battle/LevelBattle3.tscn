@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://bvjusqc4oyq0w"]
 
-[ext_resource type="PackedScene" uid="uid://ba7k0r8ymmyye" path="res://Game/Levels/LevelBase.tscn" id="1_ak53g"]
+[ext_resource type="PackedScene" uid="uid://ba7k0r8ymmyye" path="res://Game/Levels/Battle/LevelBase.tscn" id="1_ak53g"]
 [ext_resource type="PackedScene" uid="uid://daxwsfok8wcr1" path="res://Game/Objects/Characters/Enemies/EnemyTurret.tscn" id="2_ch3ge"]
 [ext_resource type="Resource" uid="uid://c27soe4tbpr41" path="res://Game/Sound/Music/BattleSong3/BattleSong3.tres" id="2_pw8q1"]
 [ext_resource type="PackedScene" uid="uid://cvveq1ievyx11" path="res://Game/Objects/Characters/Enemies/EnemySniper.tscn" id="3_pw8q1"]

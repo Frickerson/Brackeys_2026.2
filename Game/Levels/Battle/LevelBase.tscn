@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ba7k0r8ymmyye"]
 
-[ext_resource type="Script" uid="uid://bg047ud8jaheo" path="res://Game/Levels/BattleLevel.gd" id="1_0vweu"]
+[ext_resource type="Script" uid="uid://bg047ud8jaheo" path="res://Game/Levels/Battle/BattleLevel.gd" id="1_0vweu"]
 [ext_resource type="TileSet" uid="uid://bnb5pg3vlg73b" path="res://Game/Assets/Tilesets/PixelTileset.tres" id="1_upo77"]
 [ext_resource type="Resource" uid="uid://bcktjpfs3h6ye" path="res://Game/Sound/Music/MainBattleSong/MainBattleSong.tres" id="2_gidf0"]
 [ext_resource type="PackedScene" uid="uid://cbwjgcaupx561" path="res://Game/Objects/Characters/Player/Player.tscn" id="3_upo77"]

@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://dseqt64qilxym"]
 
-[ext_resource type="PackedScene" uid="uid://ba7k0r8ymmyye" path="res://Game/Levels/LevelBase.tscn" id="1_mn6va"]
+[ext_resource type="PackedScene" uid="uid://ba7k0r8ymmyye" path="res://Game/Levels/Battle/LevelBase.tscn" id="1_mn6va"]
 [ext_resource type="Resource" uid="uid://bauh2fpvyljyh" path="res://Game/Sound/Music/BattleSong2/BattleSong2.tres" id="2_ti0c3"]
 [ext_resource type="PackedScene" uid="uid://fvnw6e8cwohp" path="res://Game/Objects/Obstacle/Crate.tscn" id="2_yypau"]
 [ext_resource type="PackedScene" uid="uid://dibwqfnrepojj" path="res://Game/Objects/Obstacle/CrateSkewed.tscn" id="3_y5qeh"]

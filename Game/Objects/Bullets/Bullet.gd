@@ -4,7 +4,7 @@ class_name Bullet
 
 @export var BulletSprite: Sprite2D
 @export var FakeColor : Color = Color.RED
-@export var FakeColorCurve : float = 0.4
+@export var FakeColorCurve : float = 0.2
 @export var FadeOutCurve : float = 5.0
 @export var ColorPerTeam : Dictionary[StringName, Color]
 @export var HomingSpeed : float = 5.0

@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://bg31hb0t6bgcc"]
 
-[ext_resource type="PackedScene" uid="uid://ba7k0r8ymmyye" path="res://Game/Levels/LevelBase.tscn" id="1_wnf7h"]
+[ext_resource type="PackedScene" uid="uid://ba7k0r8ymmyye" path="res://Game/Levels/Battle/LevelBase.tscn" id="1_wnf7h"]
 [ext_resource type="PackedScene" uid="uid://cvveq1ievyx11" path="res://Game/Objects/Characters/Enemies/EnemySniper.tscn" id="2_mrlmm"]
 [ext_resource type="PackedScene" uid="uid://crea8bt8um38k" path="res://Game/Objects/Characters/Enemies/EnemyMelee.tscn" id="3_i587i"]
 [ext_resource type="PackedScene" uid="uid://bltc4n8lvjp2u" path="res://Game/Objects/Obstacle/ChairWooden.tscn" id="4_i587i"]

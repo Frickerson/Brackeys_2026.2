@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dimp0i6jmuvgs" path="res://Game/Objects/Weapons/Base/MultiShot.tscn" id="1_spn0p"]
 [ext_resource type="AudioStream" uid="uid://ccpku13kr0p6" path="res://Game/Sound/Effects/Gun/ShotgunRandomizer.tres" id="2_3kv0n"]
+[ext_resource type="Texture2D" uid="uid://dx17ba7iermpf" path="res://Game/Assets/Sprites/Objects/tile_0006.png" id="3_3kv0n"]
 [ext_resource type="Texture2D" uid="uid://c2lxfx7vxurmb" path="res://Game/Assets/Sprites/Objects/Guns/shotgun.png" id="3_8rss7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2a2kn"]
@@ -10,13 +11,17 @@ region = Rect2(0, 0, 24, 15)
 filter_clip = true
 
 [node name="Weapon" unique_id=294193981 instance=ExtResource("1_spn0p")]
-Angle = 90.0
-AttackSpeed = 2.0
+Angle = 180.0
+AttackSpeed = 0.4
+MinAttackSpeed = 0.1
 MaxAmmo = 30
 AmmoPerShot = 7
-ShotSpeed = 25.0
+Damage = 10.0
+MinDamage = 5.0
+ShotSpeed = 7.5
+MinShotSpeed = 0.1
 SoundEffect = ExtResource("2_3kv0n")
+BulletSprite = ExtResource("3_3kv0n")
 ReloadTime = 2.0
 MaxFakeShots = 5
-AttackRange = 150.0
 icon = SubResource("AtlasTexture_2a2kn")

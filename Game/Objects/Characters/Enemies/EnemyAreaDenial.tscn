@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://c1d5trbh8ys4o"]
+
+[ext_resource type="PackedScene" uid="uid://teyr6mhnpf5p" path="res://Game/Objects/Characters/Enemies/Enemy.tscn" id="1_eht6u"]
+[ext_resource type="PackedScene" uid="uid://b1614c40jolct" path="res://Game/Objects/Weapons/Shotgun_Slow.tscn" id="2_rtphh"]
+[ext_resource type="Script" uid="uid://do8q2bwentmfw" path="res://Game/Objects/Characters/Base/CharacterMultipliers.gd" id="3_f321a"]
+
+[sub_resource type="Resource" id="Resource_87m72"]
+script = ExtResource("3_f321a")
+AttackSpeedMultiplier = 1.0
+DamageMultiplier = 1.0
+AttackRangeMultiplier = 1.0
+MovementSpeedMultiplier = 1.0
+ReloadSpeedMultiplier = 1.0
+BulletSizeMultiplier = 1.0
+BulletSpeedMultiplier = 1.0
+MaxHealthMultiplier = 1.0
+GoldDropMultiplier = 1.0
+HealthDropMultiplier = 1.0
+AccelerationMultiplier = 1.0
+DecelerationMultiplier = 1.0
+metadata/_custom_type_script = "uid://do8q2bwentmfw"
+
+[node name="Enemy" unique_id=2024416287 instance=ExtResource("1_eht6u")]
+MinMoveRange = 150.0
+Acceleration = 500.0
+Deceleration = 700.0
+DefaultWeapon = ExtResource("2_rtphh")
+MaxHealth = 30
+DefaultMultipliers = SubResource("Resource_87m72")
