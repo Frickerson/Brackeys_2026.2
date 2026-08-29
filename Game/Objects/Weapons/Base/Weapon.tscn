@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://n2ajxit2asr1" path="res://Game/Assets/Sprites/Objects/tile_0000.png" id="3_5slob"]
 [ext_resource type="Texture2D" uid="uid://b7dy8sj2ffmn" path="res://Game/Assets/Sprites/pixel-white.png" id="4_lhyph"]
 [ext_resource type="AudioStream" uid="uid://cffmo6ghrvpdg" path="res://Game/Sound/Effects/EmptyGun.ogg" id="5_5slob"]
+[ext_resource type="Texture2D" uid="uid://dby3qkdsf1te1" path="res://Game/Assets/Tilesets/tilemap_packed.png" id="6_3tqch"]
 
 [sub_resource type="Gradient" id="Gradient_lhyph"]
 colors = PackedColorArray(0.8862745, 0.9411765, 0.21960784, 1, 1, 0, 0, 1)
@@ -32,6 +33,91 @@ scale_max = 1.5
 scale_curve = SubResource("CurveTexture_li00e")
 color_ramp = SubResource("GradientTexture1D_lhyph")
 
+[sub_resource type="Animation" id="Animation_iq20q"]
+resource_name = "AmmoOUt"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OutOfAmmoSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 10)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OutOfAmmoSprite:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.26666668, 0.5),
+"transitions": PackedFloat32Array(1, 1.5157168, 1.7411011),
+"update": 0,
+"values": [0.0, 1.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("OutOfAmmoSprite:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 12.566370614359172]
+}
+
+[sub_resource type="Animation" id="Animation_3tqch"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OutOfAmmoSprite:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OutOfAmmoSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("OutOfAmmoSprite:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_00nqk"]
+_data = {
+&"AmmoOUt": SubResource("Animation_iq20q"),
+&"RESET": SubResource("Animation_3tqch")
+}
+
 [node name="Weapon" type="Node2D" unique_id=294193981]
 script = ExtResource("1_lkrpe")
 AttackType = ExtResource("2_4q7qq")
@@ -55,3 +141,13 @@ process_material = SubResource("ParticleProcessMaterial_b8hjc")
 [node name="EmptyGunSound" type="AudioStreamPlayer2D" parent="." unique_id=1261060350]
 stream = ExtResource("5_5slob")
 bus = &"Sound Effects"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=807251734]
+libraries/ = SubResource("AnimationLibrary_00nqk")
+
+[node name="OutOfAmmoSprite" type="Sprite2D" parent="." unique_id=1115063710]
+modulate = Color(1, 0.52, 0.52, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_3tqch")
+region_enabled = true
+region_rect = Rect2(64, 64, 16, 16)

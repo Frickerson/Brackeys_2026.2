@@ -78,11 +78,11 @@ func _process(delta: float) -> void:
 func _toggle_attack(enable: bool) -> void:
 	if enable == Enabled:
 		return
-		
-	if Reloading:
-		return
 
 	Enabled = enable
+	
+	if Reloading:
+		return
 	
 	if Enabled:
 		if OutOfAmmo:
@@ -98,8 +98,6 @@ func _toggle_uses_ammo(use_ammo : bool) -> void:
 func _attack() -> void:
 	OutOfAmmo = CurrentAmmo >= 0 && CurrentAmmo < AmmoPerShot
 	if OutOfAmmo :
-		Ready = false
-		$EmptyGunSound.play()
 		return
 		
 	if Reloading:
@@ -113,6 +111,13 @@ func _attack() -> void:
 		CurrentAmmo -= AmmoPerShot
 	
 	Ready = false
+	
+	OutOfAmmo = CurrentAmmo >= 0 && CurrentAmmo < AmmoPerShot
+	if OutOfAmmo :
+		Ready = false
+		$EmptyGunSound.play()
+		$AnimationPlayer.play("AmmoOUt")
+		_reload()
 		
 func _reload() -> void:
 	if CurrentAmmo == MaxAmmo:
