@@ -187,8 +187,8 @@ func _calculate_arrow(delta : float):
 		var vector_to_target =  target_position - target_display_position 
 		target_display_rotation = vector_to_target.angle() + (PI * 0.5)
 	
-	$Arrow.global_position = lerp($Arrow.global_position, target_display_position, delta*smoothing_speed)
-	$Arrow.global_rotation = lerp($Arrow.global_rotation, target_display_rotation, delta*smoothing_speed)
+	$Arrow.global_position = lerp($Arrow.global_position, target_display_position, clampf(delta*smoothing_speed, 0.0, 1.0))
+	$Arrow.global_rotation = lerp_angle($Arrow.global_rotation, target_display_rotation, clampf(delta*smoothing_speed, 0.0, 1.0))
 	return
 	
 func _get_random_drop_info() -> DropInfo:
