@@ -11,7 +11,11 @@ class_name Bullet
 
 var Speed : float = 0.0
 var Damage : float = 0.0
-var LifeSpan : float = 0.0
+var LifeSpan : float = 0.0:
+	get:
+		if IsFake:
+			return LifeSpan / 2.0
+		return LifeSpan
 var LifeTimer : float = 0.0
 var IsFake : bool = false
 var DefaultColor : Color
