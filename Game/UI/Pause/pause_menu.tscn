@@ -13,7 +13,7 @@ texture_margin_bottom = 16.0
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 region_rect = Rect2(240, 0, 48, 48)
-modulate_color = Color(1, 1, 1, 0.26666668)
+modulate_color = Color(1, 1, 1, 0.7529412)
 
 [node name="PauseMenu" type="Control" unique_id=562291486]
 process_mode = 3
