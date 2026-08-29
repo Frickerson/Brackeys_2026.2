@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dfbvi5vrcyq3f" path="res://Game/Map/Nodes/ShopNode.tscn" id="7_c6e86"]
 [ext_resource type="Script" uid="uid://q01x67dllf0s" path="res://OvaniPlugin/OvaniPlayer.gd" id="7_fq2qd"]
 [ext_resource type="Script" uid="uid://cu7821jxwoey4" path="res://Game/Levels/Shop/ShopItem.gd" id="8_q3x87"]
-[ext_resource type="Resource" uid="uid://drao7uaigwc0o" path="res://Game/Levels/Shop/Items/Relic_AttackSpeed.tres" id="9_puf6v"]
+[ext_resource type="Resource" uid="uid://drao7uaigwc0o" path="res://Game/Levels/Shop/Items/Relic_Brrrrrrr.tres" id="9_puf6v"]
 [ext_resource type="Script" uid="uid://drgly3oe5f0vj" path="res://Game/Levels/Shop/Relic.gd" id="10_78ql8"]
 [ext_resource type="PackedScene" uid="uid://xwgn73p1qflw" path="res://Game/UI/Pause/pause_menu.tscn" id="16_gv2c2"]
 

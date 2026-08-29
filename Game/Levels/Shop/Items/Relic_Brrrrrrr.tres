@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Relic" format=3 uid="uid://drao7uaigwc0o"]
+
+[ext_resource type="Script" uid="uid://do8q2bwentmfw" path="res://Game/Objects/Characters/Base/CharacterMultipliers.gd" id="1_7mkbd"]
+[ext_resource type="Script" uid="uid://drgly3oe5f0vj" path="res://Game/Levels/Shop/Relic.gd" id="2_s6dn0"]
+
+[sub_resource type="Resource" id="Resource_gv2c2"]
+script = ExtResource("1_7mkbd")
+AttackSpeedMultiplier = 1.0
+metadata/_custom_type_script = "uid://do8q2bwentmfw"
+
+[resource]
+script = ExtResource("2_s6dn0")
+MultipliersChange = SubResource("Resource_gv2c2")
+Title = "Brrrrrrr"
+Cost = 50
+Tooltip = "Shoot faster"
+metadata/_custom_type_script = "uid://drgly3oe5f0vj"

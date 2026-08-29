@@ -11,3 +11,6 @@ var IsFake : bool = false
 
 func _on_buy() -> void:
 	pass
+	
+func _get_tooltip_text() -> String:
+	return Tooltip

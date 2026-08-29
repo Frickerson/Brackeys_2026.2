@@ -31,7 +31,7 @@ func _set_items(items : Array[ShopItem]) -> void:
 		var current_item = Items[index]
 		var wanted_item = items[index]
 		current_item.text = str(wanted_item.Title, " ( Cost ", wanted_item.Cost, " )")
-		current_item.tooltip_text = wanted_item.Tooltip
+		current_item.tooltip_text = wanted_item._get_tooltip_text()
 		ItemMap.set(current_item, wanted_item)
 		
 		if Player.Gold < wanted_item.Cost:

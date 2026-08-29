@@ -14,5 +14,5 @@ script = ExtResource("2_4d3uj")
 MultipliersChange = SubResource("Resource_e7grk")
 Title = "Slip and slide"
 Cost = 100
-Tooltip = "Decrease acceleration by 50% but increase damage by 60%"
+Tooltip = "Slide around, but hit harder"
 metadata/_custom_type_script = "uid://drgly3oe5f0vj"

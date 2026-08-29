@@ -30,3 +30,33 @@ func _add(other : CharacterMultipliers) -> void:
 	HomingMultiplier += other.HomingMultiplier
 	AccelerationMultiplier += other.AccelerationMultiplier
 	DecelerationMultiplier += other.DecelerationMultiplier
+	
+func _get_additive_text() -> String:
+	var result = ""
+	result += _get_modifier_text(AttackSpeedMultiplier, "Attack Speed")
+	result += _get_modifier_text(AttackRangeMultiplier, "Attack Range")
+	result += _get_modifier_text(DamageMultiplier, "Damage")
+	result += _get_modifier_text(MovementSpeedMultiplier, "Movement Speed")
+	result += _get_modifier_text(ReloadSpeedMultiplier, "Reload Speed")
+	result += _get_modifier_text(BulletSizeMultiplier, "Bullet Size")
+	result += _get_modifier_text(BulletSpeedMultiplier, "Bullet Speed")
+	result += _get_modifier_text(MaxHealthMultiplier, "Max Health")
+	result += _get_modifier_text(GoldDropMultiplier, "Gold Drop Size")
+	result += _get_modifier_text(HealthDropMultiplier, "Health Drop Size")
+	result += _get_modifier_text(HomingMultiplier, "Homing Strength")
+	result += _get_modifier_text(AccelerationMultiplier, "Acceleration")
+	result += _get_modifier_text(DecelerationMultiplier, "Deceleration")
+		
+	return result
+	
+func _get_modifier_text(multiplier : float, name : String) -> String:
+	if multiplier == 0.0:
+		return ""
+		
+	var sign : String
+	if multiplier > 0.0:
+		sign =  "+"
+	else:
+		sign =  ""	
+		
+	return str(name, " ", sign, multiplier * 100, "%", "\n")
