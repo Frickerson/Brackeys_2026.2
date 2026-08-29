@@ -102,7 +102,7 @@ func _on_death():
 		return
 	
 	Respawning = true
-	HealthBarRef._initialize(MaxHealth)
+	HealthBarRef._initialize(int(MaxHealth * _get_multipliers().MaxHealthMultiplier))
 	_update_trust(-RespawnTrustDecrease)
 	Collision.set_deferred("disabled", true)
 	$CollisionShape2D.visible = false
