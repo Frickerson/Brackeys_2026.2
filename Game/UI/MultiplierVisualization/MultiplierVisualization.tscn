@@ -37,6 +37,7 @@ vertical_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=432236946]
 layout_mode = 2
+theme_override_font_sizes/normal_font_size = 28
 bbcode_enabled = true
 text = "Text here"
 fit_content = true
