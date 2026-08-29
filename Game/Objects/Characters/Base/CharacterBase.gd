@@ -68,7 +68,8 @@ func _take_damage(damage : float) -> void:
 		
 	if HealthBarRef._update_health(damage):
 		_on_death()
-		
+	$HurtAudio.play()
+	
 func _on_death():
 	$DeathParticles.emitting = true
 	$DeathParticles.finished.connect(func(): queue_free())

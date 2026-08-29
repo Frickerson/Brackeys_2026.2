@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c6tmul0npxsyy"
-path="res://.godot/imported/Gunshots Pistol 001.wav-73e328cfebc4ab914ad812181c1be8e4.sample"
+path="res://.godot/imported/Gunshots Pistol 001.wav-d38b5479d79e433faf45f3713f148601.sample"
 
 [deps]
 
-source_file="res://Game/Sound/Effects/Gunshots Pistol 001.wav"
-dest_files=["res://.godot/imported/Gunshots Pistol 001.wav-73e328cfebc4ab914ad812181c1be8e4.sample"]
+source_file="res://Game/Sound/Effects/Gun/Gunshots Pistol 001.wav"
+dest_files=["res://.godot/imported/Gunshots Pistol 001.wav-d38b5479d79e433faf45f3713f148601.sample"]
 
 [params]
 

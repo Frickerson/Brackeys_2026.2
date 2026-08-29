@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bqcb7qsk4to4s"]
 
 [ext_resource type="PackedScene" uid="uid://c6s7ym12qv8lv" path="res://Game/Objects/Weapons/Base/Weapon.tscn" id="1_uh07b"]
-[ext_resource type="AudioStream" uid="uid://cly8im250iaam" path="res://Game/Sound/Effects/SniperRandomizer.tres" id="2_e6xvi"]
+[ext_resource type="AudioStream" uid="uid://cly8im250iaam" path="res://Game/Sound/Effects/Gun/SniperRandomizer.tres" id="2_e6xvi"]
 [ext_resource type="Texture2D" uid="uid://0h0j5luyakkr" path="res://Game/Assets/Sprites/Objects/tile_0003.png" id="3_6l833"]
 [ext_resource type="Texture2D" uid="uid://dbnb7qaxkblwx" path="res://Game/Assets/Sprites/Objects/Guns/sniper.png" id="4_o64ch"]
 

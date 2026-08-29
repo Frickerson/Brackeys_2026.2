@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b2m6whwnag6c6"
-path="res://.godot/imported/Gunshots Tesla 001.wav-eff27db96496cc7811466a28b8987fde.sample"
+path="res://.godot/imported/Gunshots Tesla 001.wav-c19d8bc7d36935251c13c8308a63f84d.sample"
 
 [deps]
 
-source_file="res://Game/Sound/Effects/Gunshots Tesla 001.wav"
-dest_files=["res://.godot/imported/Gunshots Tesla 001.wav-eff27db96496cc7811466a28b8987fde.sample"]
+source_file="res://Game/Sound/Effects/Gun/Gunshots Tesla 001.wav"
+dest_files=["res://.godot/imported/Gunshots Tesla 001.wav-c19d8bc7d36935251c13c8308a63f84d.sample"]
 
 [params]
 

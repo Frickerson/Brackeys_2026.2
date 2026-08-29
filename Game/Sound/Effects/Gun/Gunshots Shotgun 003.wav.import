@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bwgw5sjhu7v2b"
-path="res://.godot/imported/Gunshots Shotgun 003.wav-f5794c1058c88dd2df2fbb95933acee7.sample"
+path="res://.godot/imported/Gunshots Shotgun 003.wav-4b3742e4a40fef01a503ab2a5eac42cb.sample"
 
 [deps]
 
-source_file="res://Game/Sound/Effects/Gunshots Shotgun 003.wav"
-dest_files=["res://.godot/imported/Gunshots Shotgun 003.wav-f5794c1058c88dd2df2fbb95933acee7.sample"]
+source_file="res://Game/Sound/Effects/Gun/Gunshots Shotgun 003.wav"
+dest_files=["res://.godot/imported/Gunshots Shotgun 003.wav-4b3742e4a40fef01a503ab2a5eac42cb.sample"]
 
 [params]
 
