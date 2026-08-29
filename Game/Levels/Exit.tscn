@@ -25,11 +25,14 @@ curve = SubResource("Curve_5qt2r")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_b8hjc"]
 particle_flag_disable_z = true
+angle_min = -192.2
+angle_max = 196.20001
 orbit_velocity_min = -1.053
 orbit_velocity_max = 0.9350001
 radial_velocity_min = 7.4999776
 radial_velocity_max = 7.4999776
 gravity = Vector3(0, 0, 0)
+scale_max = 4.0
 color = Color(0.0522, 0.0522, 0.87, 1)
 alpha_curve = SubResource("CurveTexture_c4ryr")
 
@@ -45,5 +48,4 @@ disabled = true
 texture = SubResource("GradientTexture2D_shh0w")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=371423020]
-emitting = false
 process_material = SubResource("ParticleProcessMaterial_b8hjc")
