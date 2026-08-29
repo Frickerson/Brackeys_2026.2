@@ -30,7 +30,8 @@ func _on_option_pressed(option : EventOption):
 	Player._update_trust(option.TrustChange)
 	if option.MultipliersChange: 
 		Player._add_multipliers(option.MultipliersChange)
-	if option.NewWeapon:
-		Player.WeaponClass = option.NewWeapon
+	if not option.NewWeaponList.is_empty():
+		var new_weapon = option.NewWeaponList.pick_random()
+		Player.WeaponClass = new_weapon
 	_on_win.emit()
 	pass
