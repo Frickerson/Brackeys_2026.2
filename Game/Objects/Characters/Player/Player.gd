@@ -133,7 +133,13 @@ static func _update_gold(increase : int) -> void:
 	Gold = maxi(Gold + increase, 0)
 
 static func _get_multipliers() -> CharacterMultipliers:
-	var result = Multipliers.duplicate(true)
+	var result : CharacterMultipliers
+	
+	if Multipliers:
+		result = Multipliers.duplicate(true)
+	else:
+		result = CharacterMultipliers.get_default()
+		
 	for relic in Relics:
 		result._add(relic.MultipliersChange)
 	return result

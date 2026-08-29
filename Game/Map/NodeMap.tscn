@@ -170,6 +170,7 @@ DecelerationMultiplier = 1.0
 metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [node name="NodeMap" type="Node2D" unique_id=453470996 node_paths=PackedStringArray("StarterNode")]
+process_mode = 3
 script = ExtResource("1_43jg8")
 StarterNode = NodePath("Map/MarginContainer/ScrollContainer/VBoxContainer/Layer0/Layer0_Battle_01")
 

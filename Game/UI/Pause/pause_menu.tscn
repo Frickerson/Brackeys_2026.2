@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://m6yuqlekmuyt" path="res://Game/UI/Pause/pause_menu.gd" id="1_4f8j7"]
 [ext_resource type="Texture2D" uid="uid://dby3qkdsf1te1" path="res://Game/Assets/Tilesets/tilemap_packed.png" id="1_tgjn1"]
+[ext_resource type="PackedScene" uid="uid://ni052v2x0gtq" path="res://Game/UI/MultiplierVisualization/MultiplierVisualization.tscn" id="3_uennx"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4f8j7"]
 texture = ExtResource("1_tgjn1")
@@ -12,7 +13,7 @@ texture_margin_bottom = 16.0
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 region_rect = Rect2(240, 0, 48, 48)
-modulate_color = Color(1, 1, 1, 0.26666668)
+modulate_color = Color(1, 1, 1, 0.7529412)
 
 [node name="PauseMenu" type="Control" unique_id=562291486]
 process_mode = 3
@@ -28,30 +29,39 @@ offset_right = 1280.0
 offset_bottom = 720.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_4f8j7")
 
-[node name="CenterContainer" type="CenterContainer" parent="PanelContainer" unique_id=1691118390]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=2126147703]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/CenterContainer" unique_id=1994874481]
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/HBoxContainer" unique_id=1691118390]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/CenterContainer" unique_id=1994874481]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=589104032]
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/CenterContainer/VBoxContainer" unique_id=589104032]
 layout_mode = 2
+theme_override_font_sizes/font_size = 64
 text = "Pause"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Control" type="Control" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=506799383]
+[node name="Control" type="Control" parent="PanelContainer/HBoxContainer/CenterContainer/VBoxContainer" unique_id=506799383]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
-[node name="Continue" type="Button" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=1453961023]
+[node name="Continue" type="Button" parent="PanelContainer/HBoxContainer/CenterContainer/VBoxContainer" unique_id=1453961023]
 layout_mode = 2
 text = "Continue"
 
-[node name="Back to Main Menu" type="Button" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=1003299872]
+[node name="Back to Main Menu" type="Button" parent="PanelContainer/HBoxContainer/CenterContainer/VBoxContainer" unique_id=1003299872]
 layout_mode = 2
 text = "Back to main menu"
 
-[connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
-[connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Back to Main Menu" to="." method="_on_back_to_main_menu_pressed"]
+[node name="MultiplierVisualization" parent="PanelContainer/HBoxContainer" unique_id=392139184 instance=ExtResource("3_uennx")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="pressed" from="PanelContainer/HBoxContainer/CenterContainer/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/CenterContainer/VBoxContainer/Back to Main Menu" to="." method="_on_back_to_main_menu_pressed"]
