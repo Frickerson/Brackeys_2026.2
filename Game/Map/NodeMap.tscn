@@ -556,7 +556,7 @@ ChildNodes = [NodePath("../../Layer9/Layer9_Battle")]
 [node name="Layer8_EventNode_Blind" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer8" unique_id=396442890 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("29_0jauk")]
 layout_mode = 2
 Title = "Tunnel"
-Descrition = "It is pitch black, you can only see a bright light at the end of the tunnel. \\n What do you do"
+Descrition = "It is pitch black, you can only see a bright light at the end of the tunnel. What do you do"
 Options = Array[ExtResource("30_w30kj")]([SubResource("Resource_nov1i"), SubResource("Resource_0jauk")])
 ChildNodes = [NodePath("../../Layer9/Layer9_Battle")]
 
