@@ -7,19 +7,19 @@
 [ext_resource type="PackedScene" uid="uid://c6bcyrck55yqd" path="res://Game/Objects/Weapons/Multishot_360_Slow.tscn" id="5_15thm"]
 [ext_resource type="PackedScene" uid="uid://c372pnv4gsyck" path="res://Game/Objects/Weapons/MultiShot_360_Homing_Slow.tscn" id="6_n686i"]
 [ext_resource type="PackedScene" uid="uid://dcfga7omincif" path="res://Game/Objects/Weapons/Shotgun.tscn" id="7_x860w"]
-[ext_resource type="PackedScene" uid="uid://b1614c40jolct" path="res://Game/Objects/Weapons/Shotgun_Slow.tscn" id="8_oh2u3"]
+[ext_resource type="PackedScene" uid="uid://lckghef5b4h7" path="res://Game/Objects/Weapons/Multishot_Spiral.tscn" id="8_gyjoh"]
 
 [sub_resource type="Resource" id="Resource_pvk7f"]
 script = ExtResource("2_pvk7f")
 Title = "Swap for the sniper"
 TooltipText = ""
 NewWeaponList = Dictionary[String, PackedScene]({
-"Bayblade": ExtResource("8_oh2u3"),
 "Handgun": ExtResource("3_gyjoh"),
 "Homing Orbital": ExtResource("6_n686i"),
 "MachineGun": ExtResource("3_kx7af"),
 "Orbital": ExtResource("5_15thm"),
-"Shotgun": ExtResource("7_x860w")
+"Shotgun": ExtResource("7_x860w"),
+"Spiral": ExtResource("8_gyjoh")
 })
 metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
 
@@ -34,3 +34,5 @@ metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
 Title = "Weapon swap"
 Descrition = "An good samaritan wants to swap his weapon with yours"
 Options = Array[ExtResource("2_pvk7f")]([SubResource("Resource_pvk7f"), SubResource("Resource_u4w3n")])
+TooltipText = "Something happens.
+Choose carefully to gain an edge."
