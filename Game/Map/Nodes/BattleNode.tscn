@@ -12,4 +12,5 @@ metadata/_custom_type_script = "uid://do8q2bwentmfw"
 script = ExtResource("2_ipte8")
 DifficultyMultiplier = SubResource("Resource_ipte8")
 TooltipText = "Fight enemies, earn gold, but be careful not to die! 
-Your TRUST in yourself will decrease if you do!"
+Your TRUST will decrease if you do!
+There is a random reward for those who make it out!"
