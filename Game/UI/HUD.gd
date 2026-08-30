@@ -11,7 +11,6 @@ func _ready() -> void:
 	if PlayerRef == null:
 		return
 		
-	TrustMeterRef._set_trust_value( PlayerRef.Trust )
 	if PlayerRef.EquippedWeapon.UsesAmmo:
 		AmmoCounterRef._set_max_ammo_count(PlayerRef._get_max_ammo())
 		AmmoCounterRef._set_current_ammo_count(PlayerRef._get_current_ammo())
@@ -24,7 +23,6 @@ func _process(_delta: float) -> void:
 	if PlayerRef == null:
 		return
 		
-	TrustMeterRef._set_trust_value( PlayerRef.Trust )
 	if PlayerRef.EquippedWeapon.UsesAmmo: 
 		AmmoCounterRef._set_current_ammo_count(PlayerRef._get_current_ammo())
 	GoldCounterRef._set_gold_amount(Player.Gold)

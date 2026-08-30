@@ -16,7 +16,7 @@ func _ready() -> void:
 	current_floor = 0
 	$OvaniPlayer.PlaySongNow(mapSong, SongTransitionTime)
 	$OvaniPlayer.FadeVolume(-10.0, .5)
-	$Control/Map/MarginContainer/ScrollContainer.scroll_vertical = $Control/Map/MarginContainer/ScrollContainer.get_v_scroll_bar().max_value
+	$Control/Map/MarginContainer/HBoxContainer/ScrollContainer.scroll_vertical = $Control/Map/MarginContainer/HBoxContainer/ScrollContainer.get_v_scroll_bar().max_value
 	if StarterNode:
 		CurrentNode = StarterNode
 		CurrentNode.set_enabled(true)
