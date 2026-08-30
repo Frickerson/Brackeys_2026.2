@@ -114,10 +114,10 @@ metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [sub_resource type="Resource" id="Resource_0jauk"]
 script = ExtResource("30_w30kj")
-Title = "Turnback and follow the darkness"
+Title = "Turn back and follow the darkness"
 TrustChange = -15.0
 MultipliersChange = SubResource("Resource_wf6n4")
-TooltipText = "Satan gives you much power for your health"
+TooltipText = "Satan gives you much power in return for your health"
 metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
 
 [sub_resource type="Resource" id="Resource_xu0uq"]
@@ -139,7 +139,7 @@ metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [sub_resource type="Resource" id="Resource_74p4k"]
 script = ExtResource("30_w30kj")
-Title = "aw hell yea, money!!!"
+Title = "Aw hell yea, money!!!"
 TrustChange = 15.0
 MultipliersChange = SubResource("Resource_xu0uq")
 TooltipText = "You cannot gain money anymore but all your other multipliers increase"
@@ -156,7 +156,7 @@ script = ExtResource("30_w30kj")
 Title = "Do I look like an idiot?"
 TrustChange = -20.0
 MultipliersChange = SubResource("Resource_47vi8")
-TooltipText = "increased gold and movement as you run away from this"
+TooltipText = "Increased gold and movement as you run away from this"
 metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
 
 [sub_resource type="Resource" id="Resource_ku673"]
@@ -279,10 +279,10 @@ metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [sub_resource type="Resource" id="Resource_eib5o"]
 script = ExtResource("30_w30kj")
-Title = "run away from your partner who is clearly a snake"
+Title = "Run away from your partner who is clearly a snake"
 TrustChange = -15.0
 MultipliersChange = SubResource("Resource_uchpc")
-TooltipText = "Your cardio has improved your movement"
+TooltipText = "The cardio has improved your movement"
 metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
 
 [sub_resource type="Resource" id="Resource_fax8f"]
@@ -295,7 +295,7 @@ script = ExtResource("30_w30kj")
 Title = "You wait untill a good samaritan gives you back your wallet"
 TrustChange = 30.0
 MultipliersChange = SubResource("Resource_fax8f")
-TooltipText = "gain a lot of trust for a bit less money per gold"
+TooltipText = "Gain a lot of trust for a bit less money per gold"
 metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
 
 [sub_resource type="Resource" id="Resource_vg420"]
@@ -310,7 +310,7 @@ script = ExtResource("30_w30kj")
 Title = "Hunt down your wallet with your airtag"
 TrustChange = -15.0
 MultipliersChange = SubResource("Resource_vg420")
-TooltipText = "your airtag give you homing and move speed "
+TooltipText = "Your airtag gives you homing and move speed "
 metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
 
 [sub_resource type="Resource" id="Resource_bbg51"]
@@ -341,7 +341,7 @@ script = ExtResource("30_w30kj")
 Title = "Make him sign a loan with interest"
 TrustChange = -10.0
 MultipliersChange = SubResource("Resource_cqtov")
-TooltipText = "more money at the cost of sluggishness"
+TooltipText = "More money at the cost of sluggishness"
 metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
 
 [sub_resource type="Resource" id="Resource_tdd0g"]
@@ -354,7 +354,7 @@ script = ExtResource("30_w30kj")
 Title = "Do not give him the money"
 TrustChange = -20.0
 MultipliersChange = SubResource("Resource_tdd0g")
-TooltipText = "you keep your money to invest in "
+TooltipText = "You keep your money to invest"
 metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
 
 [sub_resource type="Resource" id="Resource_85q8n"]
@@ -444,7 +444,7 @@ script = ExtResource("30_w30kj")
 Title = "Help the child down"
 TrustChange = 5.0
 MultipliersChange = SubResource("Resource_r3q1d")
-TooltipText = "The child gifts you a lucky roock"
+TooltipText = "The child gifts you a lucky rock"
 metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
 
 [sub_resource type="Resource" id="Resource_coy0k"]
@@ -458,7 +458,7 @@ script = ExtResource("30_w30kj")
 Title = "Ignore the child, it is evil"
 TrustChange = -10.0
 MultipliersChange = SubResource("Resource_coy0k")
-TooltipText = "as you bravely run away, you can feel yourself moving faster"
+TooltipText = "As you bravely run away, you can feel yourself moving faster"
 metadata/_custom_type_script = "uid://b7ppuiu3c0i8x"
 
 [sub_resource type="Resource" id="Resource_1jon4"]
@@ -468,7 +468,7 @@ metadata/_custom_type_script = "uid://do8q2bwentmfw"
 
 [sub_resource type="Resource" id="Resource_plmlu"]
 script = ExtResource("30_w30kj")
-Title = "Tickle the child until he falls down"
+Title = "Tickle the child until they falls down"
 TrustChange = -6.9
 MultipliersChange = SubResource("Resource_1jon4")
 TooltipText = "Why?"
@@ -550,20 +550,26 @@ theme_override_constants/separation = 100
 [node name="Layer8_Battle" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer8" unique_id=95429492 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("2_y0jfu")]
 layout_mode = 2
 DifficultyMultiplier = SubResource("Resource_yl3wy")
+TooltipText = "Fight enemies, earn gold, but be careful not to die! 
+Your TRUST in yourself will decrease if you do!"
 scene_to_load = ExtResource("5_tldeo")
 ChildNodes = [NodePath("../../Layer9/Layer9_Battle")]
 
 [node name="Layer8_EventNode_Blind" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer8" unique_id=396442890 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("29_0jauk")]
 layout_mode = 2
 Title = "Tunnel"
-Descrition = "It is pitch black, you can only see a bright light at the end of the tunnel. What do you do"
+Descrition = "It is pitch black, you can only see a bright light at the end of the tunnel. What do you do?"
 Options = Array[ExtResource("30_w30kj")]([SubResource("Resource_nov1i"), SubResource("Resource_0jauk")])
+TooltipText = "Something happens.
+Choose carefully to gain an edge."
 ChildNodes = [NodePath("../../Layer9/Layer9_Battle")]
 
 [node name="Layer8_EventNode_Pyramid" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer8" unique_id=656862706 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("29_0jauk")]
 layout_mode = 2
 Title = "You are being asked to join a multi level marketing scheme"
 Options = Array[ExtResource("30_w30kj")]([SubResource("Resource_74p4k"), SubResource("Resource_wma63")])
+TooltipText = "Something happens.
+Choose carefully to gain an edge."
 ChildNodes = [NodePath("../../Layer9/Layer9_Battle")]
 
 [node name="Layer7" type="HBoxContainer" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1369569759]
@@ -583,6 +589,8 @@ ChildNodes = [NodePath("../../Layer8/Layer8_Battle"), NodePath("../../Layer8/Lay
 [node name="Layer7_Battle" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer7" unique_id=807483246 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("2_y0jfu")]
 layout_mode = 2
 DifficultyMultiplier = SubResource("Resource_ku673")
+TooltipText = "Fight enemies, earn gold, but be careful not to die! 
+Your TRUST in yourself will decrease if you do!"
 scene_to_load = ExtResource("5_tldeo")
 ChildNodes = [NodePath("../../Layer8/Layer8_EventNode_Pyramid")]
 
@@ -594,12 +602,16 @@ theme_override_constants/separation = 100
 [node name="Layer6_Battle" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer6" unique_id=1540451500 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("2_y0jfu")]
 layout_mode = 2
 DifficultyMultiplier = SubResource("Resource_hfqo7")
+TooltipText = "Fight enemies, earn gold, but be careful not to die! 
+Your TRUST in yourself will decrease if you do!"
 scene_to_load = ExtResource("28_xu0uq")
 ChildNodes = [NodePath("../../Layer7/Layer7_Shop"), NodePath("../../Layer7/Layer7_WeaponSwap")]
 
 [node name="Layer6_Battle2" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer6" unique_id=2066546519 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("2_y0jfu")]
 layout_mode = 2
 DifficultyMultiplier = SubResource("Resource_eiskf")
+TooltipText = "Fight enemies, earn gold, but be careful not to die! 
+Your TRUST in yourself will decrease if you do!"
 scene_to_load = ExtResource("28_xu0uq")
 ChildNodes = [NodePath("../../Layer7/Layer7_Battle")]
 
@@ -611,16 +623,22 @@ theme_override_constants/separation = 100
 [node name="Layer5_Battle" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer5" unique_id=2063840132 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("2_y0jfu")]
 layout_mode = 2
 DifficultyMultiplier = SubResource("Resource_xwuac")
+TooltipText = "Fight enemies, earn gold, but be careful not to die! 
+Your TRUST in yourself will decrease if you do!"
 ChildNodes = [NodePath("../../Layer6/Layer6_Battle")]
 
 [node name="Layer5_Battle2" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer5" unique_id=1564440890 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("2_y0jfu")]
 layout_mode = 2
 DifficultyMultiplier = SubResource("Resource_xwuac")
+TooltipText = "Fight enemies, earn gold, but be careful not to die! 
+Your TRUST in yourself will decrease if you do!"
 ChildNodes = [NodePath("../../Layer6/Layer6_Battle")]
 
 [node name="Layer5_Battle3" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer5" unique_id=829468610 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("2_y0jfu")]
 layout_mode = 2
 DifficultyMultiplier = SubResource("Resource_l8qyp")
+TooltipText = "Fight enemies, earn gold, but be careful not to die! 
+Your TRUST in yourself will decrease if you do!"
 scene_to_load = ExtResource("31_74p4k")
 ChildNodes = [NodePath("../../Layer6/Layer6_Battle2")]
 
@@ -633,6 +651,8 @@ theme_override_constants/separation = 100
 layout_mode = 2
 Title = "You are participating in a trust fall exercise"
 Options = Array[ExtResource("30_w30kj")]([SubResource("Resource_tldeo"), SubResource("Resource_7sjfb"), SubResource("Resource_eib5o")])
+TooltipText = "Something happens.
+Choose carefully to gain an edge."
 ChildNodes = [NodePath("../../Layer5/Layer5_Battle")]
 
 [node name="Layer4_WeaponSwap" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer4" unique_id=235551605 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("5_6tmv7")]
@@ -643,13 +663,17 @@ ChildNodes = [NodePath("../../Layer5/Layer5_Battle"), NodePath("../../Layer5/Lay
 layout_mode = 2
 Title = "Your wallet has been lost."
 Options = Array[ExtResource("30_w30kj")]([SubResource("Resource_rdeeh"), SubResource("Resource_1bjhh")])
+TooltipText = "Something happens.
+Choose carefully to gain an edge."
 ChildNodes = [NodePath("../../Layer5/Layer5_Battle2")]
 
 [node name="Layer4_EventNode_Lend" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer4" unique_id=322478801 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("29_0jauk")]
 layout_mode = 2
-Title = "A friend asks you to lend money."
-Descrition = "Can you trust him to pay you back?"
+Title = "A friend asks you to lend them money."
+Descrition = "Can you trust them to pay you back?"
 Options = Array[ExtResource("30_w30kj")]([SubResource("Resource_fwh1j"), SubResource("Resource_iqgjw"), SubResource("Resource_vgemr")])
+TooltipText = "Something happens.
+Choose carefully to gain an edge."
 ChildNodes = [NodePath("../../Layer5/Layer5_Battle3")]
 
 [node name="Layer3" type="HBoxContainer" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1748003898]
@@ -660,6 +684,8 @@ theme_override_constants/separation = 100
 [node name="Layer3_Battle_01" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer3" unique_id=1329939641 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("2_yvp5d")]
 layout_mode = 2
 DifficultyMultiplier = SubResource("Resource_85q8n")
+TooltipText = "Fight enemies, earn gold, but be careful not to die! 
+Your TRUST in yourself will decrease if you do!"
 ChildNodes = [NodePath("../../Layer4/Layer4_EventNode_Fall"), NodePath("../../Layer4/Layer4_WeaponSwap")]
 
 [node name="Layer3_Battle_02" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer3" unique_id=1840558396 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("4_bkk0o")]
@@ -692,6 +718,7 @@ ChildNodes = [NodePath("../../Layer3/Layer3_Battle_02")]
 
 [node name="Layer2_WeaponSwap" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer/Layer2" unique_id=2005842928 node_paths=PackedStringArray("ChildNodes") instance=ExtResource("5_6tmv7")]
 layout_mode = 2
+Descrition = "A good samaritan wants to swap his weapon with yours"
 ChildNodes = [NodePath("../../Layer3/Layer3_Shop")]
 
 [node name="Layer1" type="HBoxContainer" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=2108882114]
@@ -708,6 +735,8 @@ ChildNodes = [NodePath("../../Layer2/Layer2_Battle_01"), NodePath("../../Layer2/
 layout_mode = 2
 Title = "A child is stuck in a tree."
 Options = Array[ExtResource("30_w30kj")]([SubResource("Resource_h5e8d"), SubResource("Resource_fey5c"), SubResource("Resource_plmlu")])
+TooltipText = "Something happens.
+Choose carefully to gain an edge."
 ChildNodes = [NodePath("../../Layer2/Layer2_WeaponSwap"), NodePath("../../Layer2/Layer2_Battle_03")]
 
 [node name="Layer0" type="HBoxContainer" parent="Control/Map/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1166320292]
