@@ -32,9 +32,11 @@ layout_mode = 2
 bbcode_enabled = true
 text = "Welcome to [color=green]Trust In Your Guns[/color]
 You are a hitman with [color=coral]trust[/color] issues.
+
 Your [color=coral]trust[/color] meter is the most important number to keep track off.
 As it gets lower, more [color=orchid]Fake[/color] things will happen
-such as [color=orchid]Fake[/color] bullets, health, drops and shop items
+such as [color=orchid]Fake[/color] bullets, health, drops and shop items.
+
 Try to keep your trust up.
 Everything that is [color=orchid]Fake[/color] will show itself as [color=orchid]PURPLE[/color], 
 but only when it's already too late!"
