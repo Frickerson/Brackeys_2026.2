@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://cokfjwpgbsh1s" path="res://Game/Objects/Characters/Enemies/EnemyBulletHell.tscn" id="7_linpc"]
 [ext_resource type="PackedScene" uid="uid://cy2njsi3i6a2f" path="res://Game/Objects/Characters/Enemies/EnemySniperTurret.tscn" id="8_v56p7"]
 [ext_resource type="PackedScene" uid="uid://c1d5trbh8ys4o" path="res://Game/Objects/Characters/Enemies/EnemyAreaDenial.tscn" id="9_ca5qd"]
-[ext_resource type="PackedScene" uid="uid://bif7me573d7e" path="res://Game/Objects/Characters/Enemies/EnemyStandard_Spiral.tscn" id="11_cicfh"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mk6yr"]
 vertices = PackedVector2Array(610, 542, 510, 542, 506, 506, 506, 182, 510, 162, 610, 162, 610, 62, 678, 26, 678, 678, 610, 642, 26, 678, 510, 642, 210, 642, 110, 642, 26, 26, 510, 62, 470, 218, 470, 470, 410, 374, 394, 346, 394, 262, 110, 542, 218, 250, 218, 218, 358, 218, 358, 250, 394, 250, 394, 218, 358, 262, 218, 262, 326, 310, 298, 310, 358, 310, 278, 410, 374, 410, 374, 426, 410, 470, 410, 438, 410, 426, 374, 438, 374, 506, 314, 506, 314, 470, 218, 470, 218, 410, 250, 410, 250, 374, 218, 374, 218, 346, 298, 346, 218, 310, 210, 542, 182, 506, 94, 162, 194, 162, 194, 62, 94, 62, 278, 374, 326, 346, 182, 182, 182, 250, 182, 262)
@@ -92,8 +91,5 @@ AvoidanceRadius = 5.0
 position = Vector2(304, 272)
 AvoidanceRadius = 5.0
 
-[node name="Enemy2" parent="." index="18" unique_id=792031180 instance=ExtResource("11_cicfh")]
-position = Vector2(592, 352)
-
-[node name="EnemySniper4" parent="." index="19" unique_id=415977540 instance=ExtResource("8_v56p7")]
+[node name="EnemySniper4" parent="." index="18" unique_id=415977540 instance=ExtResource("8_v56p7")]
 position = Vector2(64, 272)
