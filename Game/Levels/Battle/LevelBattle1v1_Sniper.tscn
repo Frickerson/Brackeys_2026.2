@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://b1t2bh8k2lyag"]
 
 [ext_resource type="PackedScene" uid="uid://ba7k0r8ymmyye" path="res://Game/Levels/Battle/LevelBase.tscn" id="1_uyd5a"]
-[ext_resource type="PackedScene" uid="uid://cvveq1ievyx11" path="res://Game/Objects/Characters/Enemies/EnemySniper.tscn" id="2_uyd5a"]
+[ext_resource type="PackedScene" uid="uid://bkgblgjkhfqrn" path="res://Game/Objects/Characters/Enemies/EnemyBulletHell_Spiral.tscn" id="2_uyd5a"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_tqs5p"]
 vertices = PackedVector2Array(422, 26, 422, 278, 346, 170, 346, 134, 26, 278, 118, 170, 26, 26, 118, 134)
@@ -21,6 +21,5 @@ position = Vector2(228, 256)
 [node name="Exit" parent="." index="4" unique_id=181809075]
 position = Vector2(224, 192)
 
-[node name="EnemySniper" parent="." index="5" unique_id=585316950 instance=ExtResource("2_uyd5a")]
+[node name="EnemyBulletHell" parent="." index="5" unique_id=642160590 instance=ExtResource("2_uyd5a")]
 position = Vector2(224, 80)
-WakeUpTime = 1.0
