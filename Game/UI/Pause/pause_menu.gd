@@ -14,12 +14,14 @@ func _on_back_to_main_menu_pressed() -> void:
 func _input(event: InputEvent) -> void:
 	if not event.is_pressed():
 		return
+		
+	if !event.is_action("ui_cancel"):
+		return
 	
 	if get_tree().paused || visible:
 		get_tree().paused = false
 		visible = false
 		return
 	
-	if event.is_action("ui_cancel"):
-		get_tree().paused = true
-		visible = true
+	get_tree().paused = true
+	visible = true
