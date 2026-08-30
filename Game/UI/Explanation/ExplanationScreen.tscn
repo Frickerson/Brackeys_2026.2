@@ -29,6 +29,7 @@ theme_override_constants/separation = 10
 
 [node name="Label" type="RichTextLabel" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=1756308350]
 layout_mode = 2
+theme_override_font_sizes/normal_font_size = 28
 bbcode_enabled = true
 text = "Welcome to [color=green]Trust In Your Guns[/color]
 You are a hitman with [color=coral]trust[/color] issues.
@@ -37,9 +38,13 @@ Your [color=coral]trust[/color] meter is the most important number to keep track
 As it gets lower, more [color=orchid]Fake[/color] things will happen
 such as [color=orchid]Fake[/color] bullets, health, drops and shop items.
 
-Try to keep your trust up.
 Everything that is [color=orchid]Fake[/color] will show itself as [color=orchid]PURPLE[/color], 
-but only when it's already too late!"
+but only when it's already too late!
+
+Complete the battles ahead of you, 
+partake in trust exercises, go shopping for upgrades
+and discover new weapons.
+All to become stronger and beat the final level!"
 fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1

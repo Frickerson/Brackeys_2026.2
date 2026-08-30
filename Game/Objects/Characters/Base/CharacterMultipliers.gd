@@ -114,7 +114,7 @@ static func get_default() -> CharacterMultipliers:
 static func _get_random_multiplier(amount : float) -> CharacterMultipliers:
 	var result = CharacterMultipliers.new()
 	var multiplier_array = [
-			amount,
+			0.0,
 			0.0,
 			0.0,
 			0.0,
@@ -128,6 +128,10 @@ static func _get_random_multiplier(amount : float) -> CharacterMultipliers:
 			0.0,
 			0.0,
 		]
+	
+	var count = randi_range(2,3)
+	for index in count:
+		multiplier_array[index] = amount
 	
 	multiplier_array.shuffle()
 	

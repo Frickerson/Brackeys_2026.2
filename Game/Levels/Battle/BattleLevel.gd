@@ -27,4 +27,4 @@ func _on_exit_reached(body: Node2D) -> void:
 		_on_win.emit()
 
 func _finish() -> void:
-	Player._add_multipliers(CharacterMultipliers._get_random_multiplier(0.3))
+	Player._add_multipliers(CharacterMultipliers._get_random_multiplier(0.2))
